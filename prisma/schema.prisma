@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Conflict {
+  id             String      @id @default(uuid())
+  slug           String      @unique
+  title          String
+  shortTitle     String?
+  summary        String
+  content        String?
+  status         String
+  dateStart      String
+  dateEnd        String?
+  theatres       String      // Stored as JSON string
+  outcomeSummary String?
+  contextSummary String?
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  
+  // Relations
+  operations     Operation[]
+  people         Person[]
+  equipment      Equipment[]
+}
+
+model Person {
+  id          String      @id @default(uuid())
+  slug        String      @unique
+  title       String
+  fullName    String
+  summary     String
+  content     String?
+  status      String
+  rank        String?
+  birthDate   String?
+  deathDate   String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  
+  // Relations
+  conflicts   Conflict[]
+  operations  Operation[]
+}
+
+model Operation {
+  id          String      @id @default(uuid())
+  slug        String      @unique
+  title       String
+  category    String
+  summary     String
+  content     String?
+  status      String
+  dateStart   String
+  dateEnd     String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  // Relations
+  conflicts   Conflict[]
+  people      Person[]
+}
+
+model Equipment {
+  id               String      @id @default(uuid())
+  slug             String      @unique
+  title            String
+  domain           String
+  category         String
+  summary          String
+  content          String?
+  status           String
+  developmentModel String
+  serviceStatus    String
+  inductedYear     Int?
+  retiredYear      Int?
+  originCountries  String      // JSON string
+  specs            String      // JSON string
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  // Relations
+  conflicts        Conflict[]
+}
+
+model SourceRecord {
+  id          String      @id @default(uuid())
+  slug        String      @unique
+  title       String
+  publisher   String
+  author      String?
+  publishedAt String?
+  accessedAt  String
+  url         String
+  archiveUrl  String?
+  sourceType  String
+  tier        String
+  summary     String?
+  notes       String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
