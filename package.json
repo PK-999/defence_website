@@ -16,6 +16,7 @@
     "validate:content": "tsx scripts/validate-content.ts",
     "validate:database": "tsx scripts/validate-database.ts",
     "validate:assets": "tsx scripts/validate-assets.ts",
+    "import:collection:evidence": "tsx scripts/import-collection-evidence.ts",
     "reconcile:search": "tsx scripts/reconcile-search-index.ts",
     "link:editorial-principal": "tsx scripts/link-editorial-principal.ts",
     "postinstall": "prisma skills sync || exit 0"
