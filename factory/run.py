@@ -1,87 +1,28 @@
-import sys
+"""CLI for the fail-closed extraction assets.
+
+The command never seeds demo records and requires an explicit source slug. Model
+configuration is supplied through SENTINEL_EXTRACTION_MODEL and the Ollama adapter.
+"""
+
+import argparse
 import os
-import asyncio
-from dagster import materialize, RunConfig
-from assets import raw_source_document, candidate_claims, database_sync, ExtractionConfig
+import sys
 
-os.environ["DATABASE_URL"] = "file:../prisma/dev.db"
+from dagster import RunConfig, materialize
 
-async def seed_mock_data():
-    from prisma import Prisma
-    db = Prisma()
-    await db.connect()
-    
-    # Ensure source exists
-    source_family = await db.sourcefamily.upsert(
-        where={"slug": "drdo"},
-        data={
-            "create": {"name": "DRDO", "slug": "drdo", "tier": "A", "description": "Defense Research"},
-            "update": {}
-        }
-    )
-    
-    source = await db.source.upsert(
-        where={"slug": "drdo-tejas-brochure-2023"},
-        data={
-            "create": {
-                "title": "Tejas LCA Brochure",
-                "slug": "drdo-tejas-brochure-2023",
-                "author": "DRDO",
-                "family": {"connect": {"id": source_family.id}},
-                "versions": {
-                    "create": [{
-                        "versionTag": "v1.0"
-                    }]
-                }
-            },
-            "update": {}
-        }
-    )
+from assets import ExtractionConfig, candidate_claims, database_sync, raw_source_document
 
-    # Ensure Equipment exists
-    await db.equipment.upsert(
-        where={"slug": "hal-tejas"},
-        data={
-            "create": {
-                "title": "HAL Tejas",
-                "slug": "hal-tejas",
-                "domain": "Air",
-                "category": "Fighter Aircraft",
-                "summary": "Light Combat Aircraft",
-                "status": "Active",
-                "developmentModel": "Indigenous",
-                "serviceStatus": "Deployed",
-                "specs": "{}",
-                "originCountries": "[\"India\"]"
-            },
-            "update": {}
-        }
-    )
-    await db.disconnect()
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Extract source-backed candidate claims without publishing them.")
+    parser.add_argument("--source-slug", required=True, help="Slug of a captured markdown source under factory/data.")
+    args = parser.parse_args(argv)
+    if not os.environ.get("SENTINEL_EXTRACTION_MODEL"):
+        parser.error("SENTINEL_EXTRACTION_MODEL is required; no mock model is available")
+    config = {"ops": {name: {"config": {"source_slug": args.source_slug}} for name in ("raw_source_document", "candidate_claims", "database_sync")}}
+    result = materialize([raw_source_document, candidate_claims, database_sync], run_config=RunConfig(config))
+    return 0 if result.success else 1
+
 
 if __name__ == "__main__":
-    asyncio.run(seed_mock_data())
-    
-    # Create the config mapping for all assets that require the ExtractionConfig
-    config_dict = {
-        "ops": {
-            "raw_source_document": {
-                "config": {"source_slug": "drdo-tejas-brochure-2023"}
-            },
-            "database_sync": {
-                "config": {"source_slug": "drdo-tejas-brochure-2023"}
-            }
-        }
-    }
-    
-    result = materialize(
-        [raw_source_document, candidate_claims, database_sync],
-        run_config=config_dict
-    )
-    
-    if result.success:
-        print("Pipeline materialized successfully!")
-        sys.exit(0)
-    else:
-        print("Pipeline failed!")
-        sys.exit(1)
+    sys.exit(main())

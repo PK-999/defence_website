@@ -1,6 +1,6 @@
 # SENTINEL content factory
 
-This directory contains an experimental Python ingestion/extraction/augmentation pipeline and dbt configuration. **It is not currently verified as a production content source.** Some current scripts write directly to JSON or SQLite; `run.py` seeds demonstration records; the extraction path currently contains mock fallbacks that the recovery plan removes.
+This directory contains the Python ingestion/extraction/augmentation pipeline and dbt configuration. The extraction core is fail-closed: missing documents, unavailable models, invalid ontology properties, and quotes absent from the captured source stop the run before persistence. Candidates remain non-public until the authenticated review workflow publishes them.
 
 Read [T25 in the implementation plan](../docs/implementation-plan.md), [C04/C06/C13 contracts](../docs/implementation-contracts.md), [PIPE-01–03 tests](../docs/test-plan.md), and [the source/import runbook](../docs/content-operations.md) before executing or changing the pipeline.
 
@@ -9,7 +9,7 @@ Read [T25 in the implementation plan](../docs/implementation-plan.md), [C04/C06/
 | Area | Current purpose | Required recovery |
 | --- | --- | --- |
 | `assets.py` | Dagster assets for document/extraction/database sync | Explicit source version, schema/quote validation, no fallback claims, idempotent candidate writes |
-| `run.py` | Example materialization and demo seeding | Real argument/config validation; no silent demo seeding |
+| `run.py` | Explicit Dagster materialization | Requires `--source-slug` and `SENTINEL_EXTRACTION_MODEL`; never seeds demonstration records |
 | `generate_*.py` | Hardcoded/generated data files | Candidate/demo inputs only; never automatic verification |
 | `scrape_*.py` | Discovery scraping | Declared dependencies, captured source metadata, reviewed adapters |
 | `augment_*.py` | Heuristic augmentation/direct updates | Unknown-preserving normalization and reviewed proposals |
@@ -24,13 +24,22 @@ Do not run `run.py`, augmentation scripts, or seeds against the working database
 
 The current pyproject requests Python >=3.14. T25 verifies the complete dependency set/lock with the supported interpreter; syntax checks alone do not establish that Dagster, dbt, Prisma Python, or scraping imports work together. Do not alter the JavaScript Prisma version to repair an unrelated Python install without a separately reviewed compatibility change.
 
-After T25 adds the test dependency and test file, the planned narrow check is:
+The narrow T25 check is:
 
 ```bash
 uv run --directory factory pytest tests/test_extraction.py
 ```
 
-Run it from repository root. It must stub external extraction/network dependencies and use only disposable data. This command is a future test contract, not an assertion that the test currently exists or passes.
+Run it from repository root. It uses disposable local documents and model callables; it does not write the working database.
+
+For a deterministic operator check without an LLM, the installed `factory` command accepts an explicit captured source, ontology, and model-response JSON:
+
+```bash
+uv run --directory factory factory \
+  --source data/drdo-tejas-brochure-2023.md \
+  --claims-json /path/to/model-response.json \
+  --ontology config/ontology.yaml
+```
 
 ## Acceptance
 
@@ -41,4 +50,4 @@ Run it from repository root. It must stub external extraction/network dependenci
 - Source metadata, content hash, parser version, locator, rights, and review decision survive the pipeline.
 - Analytics output agrees with application coverage definitions and cannot overwrite source evidence.
 
-Record exact dependency/test results in [the progress tracker](../progress_tracker.md). Manual source review and canonical import can proceed while factory infrastructure is blocked.
+Record exact dependency/test results in [the progress tracker](../progress_tracker.md). Manual source review and canonical import can proceed while an external model adapter is unavailable; they must not be replaced with fallback claims.
