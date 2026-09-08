@@ -1,0 +1,984 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	Press Release Page | Press Information Bureau
+</title><link href="css/style.css" rel="stylesheet" type="text/css" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="alternate stylesheet" href="css/change.css" media="screen" title="change" /><link rel="alternate stylesheet" href="css/green.css" media="screen" title="green" /><link rel="alternate stylesheet" href="css/yellow.css" media="screen" title="yellow" /><link rel="stylesheet" type="text/css" href="css/prtint.css" media="print" /><link rel="stylesheet" href="css/style3.1.css" type="text/css" /><link id="pibA11yCss" rel="stylesheet" href="/css/accessibility.css?v=3" type="text/css" />
+      <script type="text/javascript">
+        /* Stamps the saved theme on <html> before the page paints. The
+           switcher in js/accessibility.js settles the rest, but on inner
+           pages it does not run until the end of the body and inside the
+           release frame it is a separate download - either way the reader
+           would otherwise watch a light page turn dark in front of them. */
+        (function (d) {
+            var t = "";
+            try {
+                t = window.localStorage.getItem("pibStyle") || "";
+            } catch (e) {
+                t = "";
+            }
+            if (t === "orange") {
+                t = "yellow";
+            }
+            var c = t === "change" ? " pib-hc"
+                : t === "green" ? " pib-theme-green"
+                : t === "yellow" ? " pib-theme-yellow" : "";
+            d.documentElement.className += c + " pib-a11y-content";
+        }(document));
+      </script>
+
+
+      <script src="js/jquery.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="/js/accessibility.js?v=7"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" /><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet" />
+
+      <script type="text/javascript">
+            $(document).ready(function () {
+                  function getParameterByName(name) {
+                        var url = window.location.href;
+                        name = name.replace(/[\[\]]/g, '\\$&');
+                        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                              results = regex.exec(url);
+                        if (!results) return null;
+                        if (!results[2]) return '';
+                        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+                  }
+                  // Get the IDs from the current page's URL
+                  let prid = parseInt(getParameterByName('PRID'), 10);
+
+                  if (!isNaN(prid) && prid > 0) {
+                        $.ajax({
+                              type: "POST",
+                              url: "AjaxMethod.aspx/UpdatePRHitCount",
+                              async: false,
+                              data: JSON.stringify({ 'PermId': prid }),
+                              contentType: "application/json; charset=utf-8",
+                              dataType: "json",
+                              success: function (response) {
+                                    console.log(response);
+                              },
+                              error: function (error) {
+                                    console.log("Error in AJAX request", error);
+                              }
+                        });
+                  } else {
+                        console.log("Invalid parameters:", prid);
+                  }
+
+            });
+      </script>
+      <style type="text/css">
+            .table-responsive {
+                  width: 100%;
+                  overflow-x: auto;
+            }
+
+            .banner {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  background-color: #000;
+                  color: #fff;
+                  padding: 20px;
+            }
+
+            full-width {
+                  width: 100%;
+            }
+
+            .logo-left, .logo-center, .countdown {
+                  display: flex;
+                  align-items: center;
+            }
+
+                  .logo-left img, .logo-center img {
+                        height: 70px;
+                  }
+
+            .countdown {
+                  text-align: center;
+                  background-color: #444;
+                  border-radius: 10px;
+                  padding: 10px;
+                  border: 2px solid grey;
+            }
+
+            .firstnumber {
+                  color: #000000;
+                  position: absolute;
+                  top: 50px;
+                  right: 90px;
+                  font-size: 30px;
+            }
+
+            .secondnumber {
+                  position: absolute;
+                  color: #000000;
+                  right: 45px;
+                  top: 50px;
+                  font-size: 30px;
+            }
+
+            .countdown .days {
+                  font-size: 35px;
+                  color: gold;
+            }
+
+            .countdown p {
+                  margin: 0;
+            }
+
+            .countdown .text {
+                  font-size: 16px;
+            }
+
+            a {
+                  word-break: break-all;
+            }
+
+            iframe, img {
+                  max-width: 100%;
+            }
+
+            @media(max-width:1199px) {
+                  .firstnumber {
+                        top: 40px;
+                        right: 72px;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 35px;
+                        top: 40px;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:990px) {
+                  .firstnumber {
+                        top: 25px;
+                        right: 54px;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 25px;
+                        top: 25px;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:768px) {
+                  .countdown, .days {
+                        font-size: 12px !important;
+                  }
+
+
+                  .firstnumber {
+                        top: 25%;
+                        right: 8%;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 4.5%;
+                        top: 25%;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:475px) {
+                  .countdown, .days {
+                        font-size: 10px !important;
+                        top: 20%;
+                  }
+
+                  .bannerimgdiv {
+                        padding: 0 !important;
+                  }
+
+                  .bannerimg {
+                        width: 108% !important;
+                  }
+            }
+      </style>
+      <script type="text/javascript">
+            $(function () {
+                  $("[id*=printPDF]").click(function () {
+                        $("[id*=hfGridHtml]").val($("#PdfDiv").html());
+                  });
+            });
+            $(function () {
+                  $("[id*=printPDFEvent]").click(function () {
+                        $("[id*=hfGridHtml]").val($("#PdfDiv").html());
+                  });
+            });
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112591026-1"></script>
+      <script>
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() { dataLayer.push(arguments); }
+
+            gtag('js', new Date());
+
+
+
+            gtag('config', 'UA-112591026-1');
+
+      </script>
+
+<meta property="og:title" content="PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON" /><meta property="og:url" content="www.pib.gov.in/Pressreleaseshare.aspx?PRID=1779393" /><meta property="og:description" content="Shri Ram Nath Kovind, Hon&#39;ble President of India, awarded the President’s Standard to the 22nd Missi" /><meta property="og:image" content="https:/pib.gov.in/images/indian-emblem.png" />
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="C4E7H-KSCMC-422L4-W3EM5-U36MF",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"C4E7H-KSCMC-422L4-W3EM5-U36MF";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="eqdhiaaamfsekjqacqlqa4yaabvkahc2-f-f4e06f633-clienttons-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1825201","ak.ai":parseInt("1215205",10),"ak.ol":"0","ak.cr":4,"ak.ipv":6,"ak.proto":"h2","ak.rid":"1ffa55a","ak.r":43336,"ak.a2":n,"ak.m":"dscb","ak.n":"ff","ak.cport":49494,"ak.gh":"69.192.1.126","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1788877914","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==xY6AHQ6V1O1Ei0VcrOkwJ95dEKqxKZVMNMbXgvlWPxO5HLUFjPOEj1Ncv1BFGtiN+IzBN5gLyv/kZTBwI1cHsI9pUL8Xi+O2reV+PgFatlZIx1krWmzM9BRBidJo95pX4C9LuTUIeDnExfW9E6PAD5ewpzzvikWAvma561voNX16Q+6gGUtOj9y+AWVW3ANZIgHT2mUiHvI0chXm8PgyLOL2kLdw805eO3fNoZ6CqR89qm1pH7tBh/1BUXLTOR4awxiPh8D2Eq/VyWF9BIETYuu+K3j7i/kORJ2kixt4PRiJqgEeotkOIJizV9T3aT0Y99mZfVPc7XSoBoOsvR0hoTwrLEA3Yp+6q6Csw0oOPMX3SEh1UVaYgeYp5UhFTBYw8QAJ5qbC+9msvP62j1nbgidSd941HN+BIqJeG2/9Lag=","ak.pv":"9","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+      <form method="post" action="./PressReleasePage.aspx?PRID=1779393&amp;lang=2&amp;reg=48" id="form1">
+<input type="hidden" name="sc_HiddenField" id="sc_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/ScriptResource.axd?d=YwOa_0w_u3oCLFqmIIOf-XEz4GWZ1DuyQIpxIA4LVkywj39sZSps12NbK5wNl5XN9JF3m7d-ey7BFDgj6i0380qRQ5IMWCL54sYNVU1IjMmiOWpp0&amp;t=ffffffffecf8d3f2" type="text/javascript"></script>
+<script src="/PressReleasePage.aspx?_TSM_HiddenField_=sc_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d3.5.7.123%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a5a4df314-b4a2-4da2-a207-9284f1b1e96c%3ade1feab2%3af2c8e708%3a720a52bf%3af9cec9bc%3a589eaa30%3aa67c2700%3aab09e3fe%3a87104b7c%3a8613aea7%3a3202a5a2%3abe6fb298" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="59B53027" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="fSanD9XPR5JsCdF1cGcvkuBH5qPSwAZW09xKexC1VYhx4BHA5Ar4K0GjYefLxvhStUr22ijDsJfnhBN+E3vvDjn8I0tFr7c/vvSHoeiD7K7YRDlb/9n9f8ZiH2ltp1rQwAGgFWasavkIfkdC0ptDNmZ82yRPl9f/zwSdA/v+FsfRP4NHUXhBMJzGiC8bvzdtl2RiE+7wjyMDN0C4pvvIixox+drdemY9USAGEvetE1guwA5fteIqk+1A8CrK9PeB4CSNBc+DEsTbub+MtGjp4sXawlHa9+au/ivnY9aB/B1sXlxA" />
+                              
+            <div id="templateCss"></div>
+            
+            <input type="hidden" name="hfGridHtml" id="hfGridHtml" />
+            <div class="container" style='margin-bottom: 50px;'>
+                  <div id="accessories">
+
+                        
+                        <div class="pull-right" style="display: flex">
+                              <div id="voll"></div>
+                              <div id="vollDT"></div>
+                              
+                              
+<div class="print-icons">
+<input type="image" name="Print1$print" id="Print1_print" aria-label="Print" src="images/printer_icon.png" alt="print page button" style="padding: 5px 10px 5px 10px;" />
+</div>
+                        </div>
+                  </div>
+                  <input type="hidden" name="hydpermid" id="hydpermid" value="1779393" />
+                  
+
+
+
+                  <div class="innner-page-main-about-us-content-right-part">
+
+                        <div id="MinistryName" class="MinistryNameSubhead text-center">
+                              Ministry of Defence
+                        </div>
+                        
+                        <div id="lg_g"><div class='log_oo'>  <img src='https://static.pib.gov.in/WriteReadData/specificdocs/photo/2026/sep/ph_9768_20260902_10000501.png' alt='azadi ka amrit mahotsav' /> </div></div>
+
+
+
+
+
+                        <div class="text-center event-heading-background">
+                              
+                              <h2 id="Titleh2">
+                                    PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON
+                              </h2>
+                              <h3 id="Subtitleh3">
+                                    <span id="ltrSubtitle"></span>
+                              </h3>
+                        </div>
+
+                        <div id="PrDateTime" class="ReleaseDateSubHeaddateTime text-center pt20">
+                              Posted On:
+                08 DEC 2021 6:26PM by PIB Delhi
+                        </div>
+                        
+                        <div class='pt20'>
+                        </div>
+                        <input type="hidden" name="hydphotoUrl" id="hydphotoUrl" />
+                        
+                        <p style="text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px">Shri Ram Nath Kovind, Hon&#39;ble President of India, awarded the President&rsquo;s Standard to the 22nd Missile Vessel Squadron, also known as the Killers Squadron of the Indian Navy, at an impressive ceremonial parade held at Naval Dockyard, Mumbai on 08 Dec 21.&nbsp; A special day cover and a commemorative stamp produced by the postal department were released to mark the occasion.<br />
+<br />
+The ceremony was attended by Shri Bhagat Singh Koshyari, Hon&#39;ble Governor of Maharashtra, Admiral R Hari Kumar, PVSM, AVSM, VSM, ADC, Chief of the Naval Staff, Vice Admiral Ajendra Bahadur Singh, AVSM, VSM, Flag Officer Commanding-in-Chief, Western Naval Command and several other civilian and military dignitaries.<br />
+<br />
+The 22nd Missile Vessel Squadron is based at Mumbai and comprises missile vessels Prabal, Pralaya, Nashak, Nishank, Vipul, Vibhuti, Vinash and Vidyut.<br />
+<br />
+The Killers Squadron traces its genesis to the 1971 War when Osa I class missile boats, newly inducted into the Indian Navy from the erstwhile USSR, participated in Operations Trident and Python that were decisive in enabling the Indian Navy dominate operations in the Arabian Sea. The attacks on Pakistan naval units and Karachi harbour during the two operations effectively nullified the Pakistan Navy&rsquo;s war-waging potential and earned these missile vessels the sobriquet &lsquo;Killers&rsquo;. &nbsp;<br />
+<br />
+The year 2021 marks the 50th anniversary of the victory in 1971 War and is also the 50th year of the Killers Squadron. The Squadron remains at the forefront of India&rsquo;s seaward defence on the Western seaboard.<br />
+<br />
+The President&rsquo;s Standard ceremony witnessed an immaculately conducted ceremonial parade that began with the naval armed guard presenting a salute of arms to the President and was followed by the presentation of the Standard. The ceremony concluded with a Continuity Drill performance by naval personnel and an operational demonstration by MARCOS and naval helicopters.</span></span></p>
+
+<p style="text-align:center"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/image/Pix1Z6Q5.jpg" style="width:500px" /></p>
+
+<p style="text-align:center"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/image/Pix5LGYW.jpg" style="width:500px" /></p>
+
+<p style="text-align:center"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/image/Pix10LIDZ.jpg" style="width:500px" /></p>
+
+<p style="text-align:center"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px">------------------------</span></span></p>
+
+<p style="text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px">MK/VM/JSN</span></span></p>
+
+
+                        
+                        <div id="reel_pic">
+                        </div>
+
+
+
+                        
+                        <br />
+                        <span id="ReleaseId">(Release ID: 1779393)</span>
+                        <span id="lblViews">Visitor Counter : 1104</span>
+                        <div>
+                              
+                        </div>
+                        
+
+                        <span id="lblRefPhoto"></span>
+
+                        <div class="BackgroundRelease">
+                              
+                        </div>
+                        <div>
+                              
+                        </div>
+                        <div class="ReleaseLang">Read this release in: 
+                        
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=1779476' target="_blank">
+                                          हिन्दी </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=1779704' target="_blank">
+                                          Urdu </a>
+                              
+                        </div>
+
+                        <div class="RelTag">
+                              <ul>
+                                    
+                              </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div id="RelLink" class="RelLink">
+                              <ul>
+                                    
+                                    
+                              </ul>
+                        </div>
+                        <center>
+                              
+                        </center>
+                  </div>
+
+                  <div id="update12">
+	
+                              
+                              <input type="hidden" name="Hidden" id="Hidden" />
+                              <div id="P_CategoryManagement" class="ModalWindow" style="display: none">
+		
+                                    <div>
+                                          <input type="image" name="btnClose" id="btnClose" src="images/close_flat_icon.png" />
+                                    </div>
+                                    <div id="description">
+                                    </div>
+                                    <div class="text-center">
+                                          <h2>
+                                                
+                                                <br>
+                                                
+                                          </h2>
+                                    </div>
+                                    <br />
+                                    <div class="clear">
+                                    </div>
+                                    
+                              
+	</div>
+                        
+</div>
+            </div>
+            
+            <div id="PdfDiv" style="display: none;">
+                  <table width="100%">
+                        <tr>
+                              <td style="font-weight: 200; text-align: center">
+                                    Ministry of Defence
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: center; font-size: 30px;">
+                                          PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: center; font-size: 30px;">
+                                          
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="text-align: center; font-size: 14px;">
+                                          Posted On:
+                        08 DEC 2021 6:26PM by PIB Delhi
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: left; font-size: 16px;">
+                                          <p style="text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px">Shri Ram Nath Kovind, Hon&#39;ble President of India, awarded the President&rsquo;s Standard to the 22nd Missile Vessel Squadron, also known as the Killers Squadron of the Indian Navy, at an impressive ceremonial parade held at Naval Dockyard, Mumbai on 08 Dec 21.&nbsp; A special day cover and a commemorative stamp produced by the postal department were released to mark the occasion.<br />
+<br />
+The ceremony was attended by Shri Bhagat Singh Koshyari, Hon&#39;ble Governor of Maharashtra, Admiral R Hari Kumar, PVSM, AVSM, VSM, ADC, Chief of the Naval Staff, Vice Admiral Ajendra Bahadur Singh, AVSM, VSM, Flag Officer Commanding-in-Chief, Western Naval Command and several other civilian and military dignitaries.<br />
+<br />
+The 22nd Missile Vessel Squadron is based at Mumbai and comprises missile vessels Prabal, Pralaya, Nashak, Nishank, Vipul, Vibhuti, Vinash and Vidyut.<br />
+<br />
+The Killers Squadron traces its genesis to the 1971 War when Osa I class missile boats, newly inducted into the Indian Navy from the erstwhile USSR, participated in Operations Trident and Python that were decisive in enabling the Indian Navy dominate operations in the Arabian Sea. The attacks on Pakistan naval units and Karachi harbour during the two operations effectively nullified the Pakistan Navy&rsquo;s war-waging potential and earned these missile vessels the sobriquet &lsquo;Killers&rsquo;. &nbsp;<br />
+<br />
+The year 2021 marks the 50th anniversary of the victory in 1971 War and is also the 50th year of the Killers Squadron. The Squadron remains at the forefront of India&rsquo;s seaward defence on the Western seaboard.<br />
+<br />
+The President&rsquo;s Standard ceremony witnessed an immaculately conducted ceremonial parade that began with the naval armed guard presenting a salute of arms to the President and was followed by the presentation of the Standard. The ceremony concluded with a Continuity Drill performance by naval personnel and an operational demonstration by MARCOS and naval helicopters.</span></span></p>
+
+<p style="text-align:center"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/image/Pix1Z6Q5.jpg" style="width:500px" /></p>
+
+<p style="text-align:center"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/image/Pix5LGYW.jpg" style="width:500px" /></p>
+
+<p style="text-align:center"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/image/Pix10LIDZ.jpg" style="width:500px" /></p>
+
+<p style="text-align:center"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px">------------------------</span></span></p>
+
+<p style="text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px">MK/VM/JSN</span></span></p>
+
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 100; text-align: left; font-size: 16px;">
+                                          (Release ID: 1779393)
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                              </td>
+                        </tr>
+                        <tr>
+                              <td style="font-weight: 200; text-align: center; font-size: 24px;"></td>
+                        </tr>
+                  </table>
+            </div>
+            <div class="clearfix">
+            </div>
+
+            
+
+            <div class="section1">
+                  <div id="frst_t">
+                        <div id="arr_rm"><div class='sticky-social_mb'><ul class='social_mb'><a href='http://www.facebook.com/share.php?u=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393' target='_blank'><li class='fb_b'   ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/facebook.jpg' alt='Share on facebook'  width='40' /></li></a><a href='https://twitter.com/intent/tweet?url=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393&text=PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON' target='_blank'><li class='twitter_r'  ><img  src='https://static.pib.gov.in/WriteReadData/specificdocs/photo/2023/aug/ph2023818240601.jpg' alt='Share on twitter' width='40' /> </li></a><a href='https://api.whatsapp.com/send?text=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393' target='_blank'><li class='whatsapp_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/whatsapp1.png' alt='Share on whatsapp' width='40' /></li></a><a href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON&body=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393&ui=2&tf=1&pli=1' title='Share by Email' target='_blank'><li class='fa-envelope_r' ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/email1.png' alt='Share on email'  width='40' /></li></a><a href='https://www.linkedin.com/shareArticle?mini=true&url=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393&title=PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON&summary=My%20favorite%20developer%20program&source=LinkedIn' target='_blank'><li class='fa-linkedin_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/linkedin.png' alt='Share on linkedin' width='40' /></li></a></ul></div></div>
+                  </div>
+                  <div id="second_t">
+                        <div id="sndr_rm"><div class='sticky-social'><ul class='social'><a href='http://www.facebook.com/share.php?u=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393' target='_blank'><li class='fb_b'   ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/facebook.jpg' alt='Share on facebook'  width='35' /></li></a><a href='https://twitter.com/intent/tweet?url=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393&text=PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON' target='_blank'><li class='twitter_r'  ><img  src='https://static.pib.gov.in/WriteReadData/specificdocs/photo/2023/aug/ph2023818240601.jpg' alt='Share on twitter' width='35' /> </li></a><a href='https://api.whatsapp.com/send?text=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393' target='_blank'><li class='whatsapp_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/whatsapp1.png' alt='Share on whatsapp' width='35' /></li></a><a href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON&body=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393&ui=2&tf=1&pli=1' title='Share by Email' target='_blank'><li class='fa-envelope_r' ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/email1.png' alt='Share on email'  width='35' /></li></a><a href='https://www.linkedin.com/shareArticle?mini=true&url=https://pib.gov.in/PressReleasePage.aspx?PRID=1779393&title=PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON&summary=My%20favorite%20developer%20program&source=LinkedIn' target='_blank'><li class='fa-linkedin_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/linkedin.png' alt='Share on linkedin' width='35' /></li></a></ul></div></div>
+                  </div>
+            </div>
+            <input type="hidden" name="ltrTitlee" id="ltrTitlee" value="PRESIDENT’S STANDARD AWARDED TO 22ND MISSILE VESSEL SQUADRON" />
+            <input type="hidden" name="ltrSubtitlee" id="ltrSubtitlee" />
+            <input type="hidden" name="ltrDescriptionn" id="ltrDescriptionn" value="&lt;p style=&quot;text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>Shri Ram Nath Kovind, Hon&amp;#39;ble President of India, awarded the President&amp;rsquo;s Standard to the 22nd Missile Vessel Squadron, also known as the Killers Squadron of the Indian Navy, at an impressive ceremonial parade held at Naval Dockyard, Mumbai on 08 Dec 21.&amp;nbsp; A special day cover and a commemorative stamp produced by the postal department were released to mark the occasion.&lt;br />
+&lt;br />
+The ceremony was attended by Shri Bhagat Singh Koshyari, Hon&amp;#39;ble Governor of Maharashtra, Admiral R Hari Kumar, PVSM, AVSM, VSM, ADC, Chief of the Naval Staff, Vice Admiral Ajendra Bahadur Singh, AVSM, VSM, Flag Officer Commanding-in-Chief, Western Naval Command and several other civilian and military dignitaries.&lt;br />
+&lt;br />
+The 22nd Missile Vessel Squadron is based at Mumbai and comprises missile vessels Prabal, Pralaya, Nashak, Nishank, Vipul, Vibhuti, Vinash and Vidyut.&lt;br />
+&lt;br />
+The Killers Squadron traces its genesis to the 1971 War when Osa I class missile boats, newly inducted into the Indian Navy from the erstwhile USSR, participated in Operations Trident and Python that were decisive in enabling the Indian Navy dominate operations in the Arabian Sea. The attacks on Pakistan naval units and Karachi harbour during the two operations effectively nullified the Pakistan Navy&amp;rsquo;s war-waging potential and earned these missile vessels the sobriquet &amp;lsquo;Killers&amp;rsquo;. &amp;nbsp;&lt;br />
+&lt;br />
+The year 2021 marks the 50th anniversary of the victory in 1971 War and is also the 50th year of the Killers Squadron. The Squadron remains at the forefront of India&amp;rsquo;s seaward defence on the Western seaboard.&lt;br />
+&lt;br />
+The President&amp;rsquo;s Standard ceremony witnessed an immaculately conducted ceremonial parade that began with the naval armed guard presenting a salute of arms to the President and was followed by the presentation of the Standard. The ceremony concluded with a Continuity Drill performance by naval personnel and an operational demonstration by MARCOS and naval helicopters.&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;img alt=&quot;&quot; src=&quot;https://static.pib.gov.in/WriteReadData/userfiles/image/Pix1Z6Q5.jpg&quot; style=&quot;width:500px&quot; />&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;img alt=&quot;&quot; src=&quot;https://static.pib.gov.in/WriteReadData/userfiles/image/Pix5LGYW.jpg&quot; style=&quot;width:500px&quot; />&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;img alt=&quot;&quot; src=&quot;https://static.pib.gov.in/WriteReadData/userfiles/image/Pix10LIDZ.jpg&quot; style=&quot;width:500px&quot; />&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>------------------------&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>MK/VM/JSN&lt;/span>&lt;/span>&lt;/p>
+" />
+            <script type="text/javascript">
+                  var mPlayer = document.getElementById("background_music");
+                  var mPlayAction = document.getElementById("playbutton");
+
+                  var isPlaying = false;
+
+                  function playAudio() {
+                        mPlayer.play();
+                        isPlaying = true;
+                        document.getElementById('stopA').style.display = "block";
+                        document.getElementById('playA').style.display = "none";
+                  }
+
+                  function pauseAudio() {
+                        mPlayer.pause();
+                        isPlaying = false;
+                        document.getElementById('playA').style.display = "block";
+                        document.getElementById('stopA').style.display = "none";
+                  }
+                  //function HandleAudio() {
+                  //    if (isPlaying == true) {
+                  //        //Playing already Pause it
+                  //        pauseAudio();
+                  //    } else {
+                  //        //Play the music
+                  //        playAudio();
+                  //    }
+                  //}
+            </script>
+            <script type="text/javascript">
+                  var synth = window.speechSynthesis;
+
+            
+                  function CleanHtml(html) {
+
+                        html = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+                        return html;
+                  }
+                  function stripHtml(html) {
+                        let tmp = document.createElement("DIV");
+                        tmp.innerHTML = CleanHtml(html);
+                        return tmp.textContent || tmp.innerText || "";
+                  }
+            </script>
+            <script type="text/javascript">
+                  $(document).ready(function () {
+                        //for responsive tables
+                        $("table").each(function () {
+                              if (!$(this).closest(".table-responsive").length) {
+                                    $(this).wrap("<div class='table-responsive'></div>");
+                              }
+                        });
+
+                        var width = $(window).width();
+                        if (width < 768) {
+
+                              // Extra Small Device
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+
+                        } else if (width < 991) {
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+                              // Small Device
+
+                        } else if (width < 1199) {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Medium Device
+
+                        } else {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Large Device
+
+                        }
+                  });
+            </script>
+            <script type="text/javascript">
+                  $(document).ready(function () {
+                        var width = $(window).width();
+                        if (width < 768) {
+
+                              // Extra Small Device
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+
+                        } else if (width < 991) {
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+                              // Small Device
+
+                        } else if (width < 1199) {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Medium Device
+
+                        } else {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Large Device
+
+                        }
+                  });
+            </script>
+            
+            <style type="text/css">
+                  @media print {
+                        .sticky-social, .sticky-social_mb, .pull-right, #printPDF {
+                              display: none !important;
+                        }
+                  }
+
+                  .f_vl {
+                        padding-right: 30px;
+                        font-size: 17px;
+                        cursor: pointer;
+                  }
+
+                  .log_oo {
+                        // width: 20%;
+                        display: flex;
+                        justify-content: space-between;
+                  }
+
+                        .log_oo img {
+                              width: 150px;
+                              /*width: 100%;
+                    height: auto;*/
+                        }
+
+                  .sticky-social_mb {
+                        position: fixed;
+                        bottom: 0px;
+                        padding: 0px;
+                        margin: 0px;
+                        width: 100%;
+                  }
+
+                  .social_mb {
+                        list-style: none;
+                        display: flex;
+                        width: 100%;
+                        margin-bottom: -8px;
+                  }
+
+                        .social_mb a {
+                              padding: 8px 0px;
+                              font-size: 30px;
+                              transition: all 0.8s ease-in-out;
+                              width: 20% !important;
+                              text-align: center;
+                        }
+            </style>
+            <style type="text/css">
+                  .section1 {
+                        position: relative;
+                        padding: 10px 0px;
+                        width: 100%;
+                  }
+
+
+
+                  .sticky-social {
+                        position: fixed;
+                        top: 20px;
+                        left: 0px;
+                        padding: 0px;
+                        margin: 0px;
+                  }
+
+                  .social {
+                        list-style: none;
+                  }
+
+                        .social a li {
+                              padding: 8px 12px;
+                              font-size: 25px;
+                              transition: all 0.8s ease-in-out;
+                        }
+
+                              .social a li:hover {
+                                    margin-right: -30px;
+                                    box-shadow: 2px 5px 10px grey;
+                              }
+
+                                    .social a li:hover .fa {
+                                          margin-left: 20px;
+                                    }
+
+                  .fb_b {
+                        /* background-color: rgb(59, 89, 152);*/
+                        background-color: rgba(65,103,178,255);
+                  }
+
+                  .twitter_r {
+                        /* background-color: rgb(29, 161, 242);*/
+                        background-color: #000000;
+                  }
+
+                  .whatsapp_r {
+                        /* background-color: rgb(77, 194, 71);*/
+                        background-color: rgba(13,191,67,255);
+                  }
+
+                  .fa-envelope_r {
+                        /* background-color: rgb(219, 68, 55);*/
+                        background-color: #e2123d;
+                  }
+
+                  .fa-linkedin_r {
+                        background-color: rgb(0, 119, 181);
+                  }
+            </style>
+            <style type="text/css">
+                  @media only screen and (max-device-width: 767px) {
+                        p span img {
+                              max-width: 90% !important;
+                              height: auto !important;
+                        }
+
+                        p img {
+                              max-width: 90% !important;
+                              height: auto !important;
+                        }
+
+                        h2 {
+                              font-size: 20px !important;
+                              font-weight: 600 !important;
+                        }
+
+                        h3 {
+                              font-size: 18px !important;
+                              font-weight: 600 !important;
+                        }
+                  }
+            </style>
+            <style type="text/css">
+                  /* === Film Roll Badge Styling(IFFI2025 countdown) === */
+                  .film-roll-badge {
+                        position: absolute;
+                        top:82%;
+                        right: 20px;
+                        width: 230px;
+                        height: 70px;
+                        background: repeating-linear-gradient( to right, #9a2375 0px, #9a2375 18px, #6e2b8b 18px, #6e2b8b 36px );
+                        border-top: 8px solid #9a2375;
+                        border-bottom: 8px solid #9a2375;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+                        animation: moveFilm 8s linear infinite;
+                        z-index: 10;
+                  }
+
+                        /* film sprocket holes */
+                        .film-roll-badge::before,
+                        .film-roll-badge::after {
+                              content: "";
+                              position: absolute;
+                              width: 100%;
+                              height: 10px;
+                              background: repeating-linear-gradient( to right, #9a2375 0px, #9a2375 10px, #fff 10px, #fff 20px );
+                              left: 0;
+                              z-index: 2;
+                        }
+
+                        .film-roll-badge::before {
+                              top: -4px;
+                        }
+
+                        .film-roll-badge::after {
+                              bottom: -4px;
+                        }
+
+                  .film-roll-inner {
+                        position: relative;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        animation: flicker 2s infinite ease-in-out;
+                  }
+
+                  .countdown-text {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        color: #fff;
+                        text-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 10px #000;
+                        white-space: nowrap;
+                  }
+
+                  /* === Animations === */
+                  @keyframes moveFilm {
+                        0% {
+                              background-position: 0 0;
+                        }
+
+                        100% {
+                              background-position: 120px 0;
+                        }
+                  }
+
+                  @keyframes flicker {
+                        0%, 100% {
+                              opacity: 1;
+                        }
+
+                        50% {
+                              opacity: 0.9;
+                        }
+
+                        25% {
+                              opacity: 0.95;
+                        }
+
+                        75% {
+                              opacity: 0.85;
+                        }
+                  }
+
+                  /* === Responsive Adjustments === */
+                  @media (max-width: 1500px) {
+                        .film-roll-badge {
+                              top: 68%;
+                              right: 18px;
+                              /* width: 220px; */
+                              height: 65px;
+                              font-size: 0.85rem;
+                        }
+
+                        .press-section {
+                              margin-top: 35px;
+                        }
+                  }
+
+                  @media (max-width: 992px) {
+                        .film-roll-badge {
+                              top: 52%;
+                              right: 10px;
+                               width: 200px; 
+                              height: 60px;
+                        }
+                  }
+
+                  @media (max-width: 768px) {
+                        .film-roll-badge {
+                              top: 56%;
+                              right: 10px;
+                               width: 124px; 
+                              height: 55px;
+                        }
+
+                        .countdown-text {
+                              font-size: 0.9rem;
+                        }
+                  }
+
+                  @media (max-width: 576px) {
+                        .film-roll-badge {
+                              top: 59%;
+                              right: 5px;
+                              /* width: 160px; */
+                              height: 50px;
+                        }
+
+                        .countdown-text {
+                              font-size: 0.85rem;
+                        }
+                  }
+            </style>
+          <script type="text/javascript">
+                const festivalStart = new Date("2025-11-20T00:00:00").getTime();
+                const festivalEnd = new Date("2025-11-28T23:59:59").getTime();
+
+                const countdownElement = document.getElementById("countdown");
+
+                const interval = setInterval(() => {
+                      const now = new Date().getTime();
+
+                      // BEFORE FESTIVAL — show days + hours left
+                      if (now < festivalStart) {
+                            const diff = festivalStart - now;
+                            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                            countdownElement.innerHTML = `
+              ${days} Day${days !== 1 ? 's' : ''} 
+              ${hours} Hour${hours !== 1 ? 's' : ''} to go
+          `;
+
+                      }
+
+                      // DURING FESTIVAL — show 56th IFFI - Day X
+                      else if (now >= festivalStart && now <= festivalEnd) {
+                            const dayNumber = Math.floor((now - festivalStart) / (1000 * 60 * 60 * 24)) + 1;
+                            countdownElement.innerHTML = `56th IFFI - Day ${dayNumber}`;
+                      }
+
+                      // AFTER FESTIVAL — new message
+                      else {
+                            countdownElement.innerHTML = `✨ IFFI closes but never ends…`;
+
+                            // Width change logic
+                            const elements = document.querySelectorAll('.film-roll-badge');
+                            elements.forEach(el => el.style.width = "350px");
+
+                            clearInterval(interval);
+                      }
+
+                }, 1000);
+          </script>
+ <script type="text/javascript">
+
+               const miffStart = new Date("2026-06-15T00:00:00").getTime();
+               const miffEnd = new Date("2026-06-15T23:59:59").getTime();
+
+               const miffElement = document.getElementById("miff");
+
+               if (miffElement) {
+
+                   const miffInterval = setInterval(() => {
+
+                       const now = new Date().getTime();
+
+                       // Before MIFF
+                       if (now < miffStart) {
+
+                           const diff = miffStart - now;
+                           const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                           const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        
+
+                   /*  miffElement.innerHTML = `${days} Day${days !== 1 ? 's' : ''} ${hours} Hour${hours !== 1 ? 's' : ''} to MIFF`;*/
+                           miffElement.innerHTML = `${days} Day${days === 1 ? '' : 's'} to MIFF ...`;
+
+
+                     }
+
+                       // During MIFF
+                       else if (now >= miffStart && now <= miffEnd) {
+
+                           const dayNumber =
+                               Math.floor((now - miffStart) / (1000 * 60 * 60 * 24)) + 1;
+
+                           miffElement.innerHTML = `19th MIFF - Day ${dayNumber}`;
+                       }
+
+                       // After MIFF
+                       else {
+
+                           miffElement.innerHTML = `✨ MIFF concludes, cinema lives on...`;
+
+                           document.querySelectorAll('.film-roll-badge')
+                               .forEach(el => el.style.width = "350px");
+
+                           clearInterval(miffInterval);
+                       }
+
+                   }, 1000);
+               }
+
+</script>
+
+      
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("sc_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","PopupControlID":"P_CategoryManagement","dynamicServicePath":"/PressReleasePage.aspx","id":"mpe"}, null, null, $get("Hidden"));
+});
+//]]>
+</script>
+<input type="hidden" name="__ncforminfo" value="KVDoYtZpzg0IhBkwCpsxB-rgtcBYCl7qUCa_FGr8GfluRfBlt8v2ZipvO9tJdVKC4tC_WO905Di31E3W7WoYfNGP4C1hlpzQ"/></form>
+</body>
+</html>
+

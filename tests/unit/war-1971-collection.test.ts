@@ -19,8 +19,8 @@ describe("1971 starter collection package", () => {
 
   it("accepts only known source and evidence references", () => {
     expect(validateCollectionEvidenceInput(evidence)).toEqual([]);
-    expect(evidence.sources).toHaveLength(5);
-    expect(evidence.evidence).toHaveLength(8);
+    expect(evidence.sources).toHaveLength(6);
+    expect(evidence.evidence).toHaveLength(9);
     expect(evidence.relationships).toHaveLength(3);
   });
 });
