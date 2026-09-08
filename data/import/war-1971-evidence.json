@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "sourceSystem": "sentinel-1971-source-pass-2026-09-08",
+  "sources": [
+    {
+      "sourceId": "PIB-1971-VIJAY-2020",
+      "slug": "pib-1971-vijay-diwas-2020",
+      "title": "Vijay Diwas 2020",
+      "publisher": "Press Information Bureau, Government of India",
+      "canonicalUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1681094&lang=2&reg=48",
+      "publicationDate": "2020-12-16",
+      "sourceType": "official-press-release",
+      "tier": "A",
+      "rightsNotes": "Citation and short paraphrase only; image reuse rights not established",
+      "versionId": "captured-2026-09-08",
+      "contentHash": "181c8a53b8dcc5b60df1796ffdb781c13ecfb6667fa27d566d697e8324718219",
+      "rawStoragePath": "docs/verification/2026-09-08/T28/sources/raw/pib-vijay-diwas-2020.html",
+      "parserVersion": "raw-html/no-transform"
+    },
+    {
+      "sourceId": "PIB-1971-STAMP-2021",
+      "slug": "pib-1971-vijay-stamp-2021",
+      "title": "Raksha Mantri Shri Rajnath Singh unveils commemorative stamp marking 50 years of India’s victory in 1971 Indo-Pak War",
+      "publisher": "Ministry of Defence via Press Information Bureau",
+      "canonicalUrl": "https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&reg=48&relid=228559",
+      "publicationDate": "2021-12-16",
+      "sourceType": "official-press-release",
+      "tier": "A",
+      "rightsNotes": "Citation and short paraphrase only; image reuse rights not established",
+      "versionId": "captured-2026-09-08",
+      "contentHash": "e835c3d13ed1262380e3ad23a636130362219fc5af9fcb6de5b3e432931e3abe",
+      "rawStoragePath": "docs/verification/2026-09-08/T28/sources/raw/pib-vijay-stamp-2021.html",
+      "parserVersion": "raw-html/no-transform"
+    },
+    {
+      "sourceId": "IE-1971-EXPLAINER",
+      "slug": "indian-express-1971-war-explainer-2021",
+      "title": "Explained: How the Indo-Pak War of 1971 began 50 years ago on this day",
+      "publisher": "The Indian Express",
+      "canonicalUrl": "https://indianexpress.com/article/explained/india-pakistan-1971-war-events-explained-7653653/",
+      "publicationDate": "2021-12-03",
+      "sourceType": "reputable-news-explainer",
+      "tier": "B",
+      "rightsNotes": "Citation and paraphrase only; local page capture is evidence-only and must not be published",
+      "versionId": "captured-2026-09-08",
+      "contentHash": "4353e5f7583efcc5db45a86c819c1c8795f6c1a9810351744329e66bdf496bfd",
+      "rawStoragePath": "docs/verification/2026-09-08/T28/sources/raw/indian-express-1971-explainer-2021.html",
+      "parserVersion": "raw-html/no-transform"
+    },
+    {
+      "sourceId": "WIKI-1971-WAR",
+      "slug": "wikipedia-indo-pakistani-war-1971",
+      "title": "India–Pakistan war of 1971",
+      "publisher": "Wikipedia contributors",
+      "canonicalUrl": "https://en.wikipedia.org/wiki/India%E2%80%93Pakistan_war_of_1971",
+      "sourceType": "encyclopedia",
+      "tier": "DISCOVERY",
+      "rightsNotes": "CC BY-SA 4.0; use for discovery and cross-checking with attribution",
+      "versionId": "captured-2026-09-08",
+      "contentHash": "dcec0e1e7a613f03c4961323fc36461b631d8e518bbcc8d08578d2777cd9c442",
+      "rawStoragePath": "docs/verification/2026-09-08/T28/sources/raw/wikipedia-war-1971.html",
+      "parserVersion": "raw-html/no-transform"
+    },
+    {
+      "sourceId": "WIKI-TRIDENT-1971",
+      "slug": "wikipedia-operation-trident-1971",
+      "title": "Operation Trident (1971)",
+      "publisher": "Wikipedia contributors",
+      "canonicalUrl": "https://en.wikipedia.org/wiki/Operation_Trident_(1971)",
+      "sourceType": "encyclopedia",
+      "tier": "DISCOVERY",
+      "rightsNotes": "CC BY-SA 4.0; use for discovery and cross-checking with attribution; consequential equipment claims require stronger corroboration",
+      "versionId": "captured-2026-09-08",
+      "contentHash": "fe25d50ce909c6cf6053101b86e272e2b008b07e4226204b530e9edbce09298f",
+      "rawStoragePath": "docs/verification/2026-09-08/T28/sources/raw/wikipedia-operation-trident-1971.html",
+      "parserVersion": "raw-html/no-transform"
+    }
+  ],
+  "evidence": [
+    { "id": "ev-1971-pib-start", "sourceId": "PIB-1971-VIJAY-2020", "locator": "Release body, paragraph beginning ‘The 1971 Indo-Pak War began’", "authorityType": "official" },
+    { "id": "ev-1971-pib-surrender", "sourceId": "PIB-1971-STAMP-2021", "locator": "Release body, paragraph beginning ‘December 16 is celebrated’", "authorityType": "official" },
+    { "id": "ev-1971-pib-aurora", "sourceId": "PIB-1971-STAMP-2021", "locator": "Release body, Instrument of Surrender paragraph naming Jagjit Singh Aurora", "authorityType": "official" },
+    { "id": "ev-1971-ie-start", "sourceId": "IE-1971-EXPLAINER", "locator": "Article section describing the 3 December air strikes and official beginning of the war", "authorityType": "reputable-secondary" },
+    { "id": "ev-1971-ie-longewala", "sourceId": "IE-1971-EXPLAINER", "locator": "Article section describing the 4 December Laungewala attack and Indian response", "authorityType": "reputable-secondary" },
+    { "id": "ev-1971-wiki-war", "sourceId": "WIKI-1971-WAR", "locator": "Lead and infobox; discovery cross-check only", "authorityType": "discovery" },
+    { "id": "ev-1971-wiki-trident", "sourceId": "WIKI-TRIDENT-1971", "locator": "Lead, infobox and ‘Attack’ section; discovery cross-check only", "authorityType": "discovery" },
+    { "id": "ev-1971-wiki-boats", "sourceId": "WIKI-TRIDENT-1971", "locator": "Order-of-battle section listing Vidyut-class missile boats; discovery only", "authorityType": "discovery" }
+  ],
+  "claims": [
+    { "id": "claim-1971-conflict-start", "entityType": "Conflict", "entitySlug": "indo-pakistani-war-1971", "property": "dateStart", "value": "1971-12-03", "evidenceIds": ["ev-1971-pib-start", "ev-1971-ie-start"] },
+    { "id": "claim-1971-conflict-end", "entityType": "Conflict", "entitySlug": "indo-pakistani-war-1971", "property": "dateEnd", "value": "1971-12-16", "evidenceIds": ["ev-1971-pib-surrender", "ev-1971-wiki-war"] },
+    { "id": "claim-1971-conflict-outcome", "entityType": "Conflict", "entitySlug": "indo-pakistani-war-1971", "property": "outcome", "value": "Surrender in the eastern theatre and emergence of Bangladesh", "evidenceIds": ["ev-1971-pib-surrender"] },
+    { "id": "claim-1971-trident-date", "entityType": "Operation", "entitySlug": "operation-trident-1971", "property": "dateStart", "value": "1971-12-04", "evidenceIds": ["ev-1971-wiki-trident"] },
+    { "id": "claim-1971-trident-category", "entityType": "Operation", "entitySlug": "operation-trident-1971", "property": "category", "value": "combat", "evidenceIds": ["ev-1971-wiki-trident"] },
+    { "id": "claim-1971-longewala-date", "entityType": "Operation", "entitySlug": "battle-of-longewala-1971", "property": "dateStart", "value": "1971-12-04", "evidenceIds": ["ev-1971-ie-longewala"] },
+    { "id": "claim-1971-aurora-rank", "entityType": "Person", "entitySlug": "jagjit-singh-aurora", "property": "rank", "value": "Lieutenant General", "evidenceIds": ["ev-1971-pib-aurora"] },
+    { "id": "claim-1971-boat-category", "entityType": "Equipment", "entitySlug": "vidyut-class-missile-boat-1971", "property": "category", "value": "missile boat", "evidenceIds": ["ev-1971-wiki-boats"] }
+  ],
+  "relationships": [
+    { "id": "rel-1971-conflict-trident", "sourceType": "Conflict", "sourceSlug": "indo-pakistani-war-1971", "targetType": "Operation", "targetSlug": "operation-trident-1971", "predicate": "INCLUDES_OPERATION", "validFrom": "1971-12-03", "validTo": "1971-12-16", "evidenceIds": ["ev-1971-wiki-trident"] },
+    { "id": "rel-1971-conflict-longewala", "sourceType": "Conflict", "sourceSlug": "indo-pakistani-war-1971", "targetType": "Operation", "targetSlug": "battle-of-longewala-1971", "predicate": "INCLUDES_OPERATION", "validFrom": "1971-12-03", "validTo": "1971-12-16", "evidenceIds": ["ev-1971-ie-longewala"] },
+    { "id": "rel-1971-boat-trident", "sourceType": "Equipment", "sourceSlug": "vidyut-class-missile-boat-1971", "targetType": "Operation", "targetSlug": "operation-trident-1971", "predicate": "USED_IN", "validFrom": "1971-12-04", "validTo": "1971-12-04", "evidenceIds": ["ev-1971-wiki-boats"] }
+  ]
+}

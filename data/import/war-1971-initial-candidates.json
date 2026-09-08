@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "sourceSystem": "sentinel-1971-source-pass-2026-09-08",
+  "records": [
+    {
+      "entityType": "Conflict",
+      "externalId": "indo-pakistani-war-1971",
+      "data": {
+        "slug": "indo-pakistani-war-1971",
+        "title": "Indo-Pakistani War of 1971",
+        "summary": "The December 1971 war between India and Pakistan that ended with the surrender of Pakistani forces in the eastern theatre and the emergence of Bangladesh.",
+        "content": "The bounded candidate record covers the 3–16 December 1971 interstate war and its eastern and western theatres. It deliberately omits casualty totals and political claims that require a wider, separately sourced treatment.",
+        "status": "Candidate",
+        "dateStart": "1971-12-03",
+        "dateEnd": "1971-12-16",
+        "dateStartPrecision": "day",
+        "dateEndPrecision": "day",
+        "theatres": ["Eastern theatre", "Western theatre", "Bay of Bengal"]
+      }
+    },
+    {
+      "entityType": "Operation",
+      "externalId": "operation-trident-1971",
+      "data": {
+        "slug": "operation-trident-1971",
+        "title": "Operation Trident (1971)",
+        "summary": "The Indian Navy missile-boat attack on Karachi during the 1971 war.",
+        "content": "This candidate is limited to the 4 December 1971 naval attack on Karachi and does not assert a complete order of battle or damage assessment.",
+        "status": "Candidate",
+        "category": "combat",
+        "dateStart": "1971-12-04",
+        "dateEnd": "1971-12-04",
+        "dateStartPrecision": "day",
+        "dateEndPrecision": "day"
+      }
+    },
+    {
+      "entityType": "Operation",
+      "externalId": "battle-longewala-1971",
+      "data": {
+        "slug": "battle-of-longewala-1971",
+        "title": "Battle of Longewala (1971)",
+        "summary": "The December 1971 battle in Rajasthan in which Indian defenders held the Longewala post with air support.",
+        "content": "The candidate records the battle as a bounded western-theatre event. The narrative intentionally avoids unverified vehicle-loss totals and tactical claims until a direct operational source is attached.",
+        "status": "Candidate",
+        "category": "battle",
+        "dateStart": "1971-12-04",
+        "dateEnd": "1971-12-05",
+        "dateStartPrecision": "day",
+        "dateEndPrecision": "day"
+      }
+    },
+    {
+      "entityType": "Person",
+      "externalId": "jagjit-singh-aurora",
+      "data": {
+        "slug": "jagjit-singh-aurora",
+        "title": "Lieutenant General Jagjit Singh Aurora",
+        "fullName": "Jagjit Singh Aurora",
+        "summary": "The Indian Army commander who signed the 1971 Instrument of Surrender on behalf of the Indian and Bangladesh forces in the eastern theatre.",
+        "content": "This candidate is restricted to Aurora's documented 1971 command and surrender role. It does not infer a complete biography, current status, or every unit under his command.",
+        "status": "Candidate",
+        "rank": "Lieutenant General",
+        "serviceBranch": "Indian Army",
+        "year": "1971"
+      }
+    },
+    {
+      "entityType": "Equipment",
+      "externalId": "vidyut-class-missile-boat-1971",
+      "data": {
+        "slug": "vidyut-class-missile-boat-1971",
+        "title": "Vidyut-class missile boat in Operation Trident",
+        "summary": "A candidate equipment record for the Indian Navy missile boats associated with Operation Trident in 1971.",
+        "content": "The current evidence is discovery-grade and identifies the class only in the context of the operation. Manufacturer, exact Indian pennant, specifications, and service dates remain unverified and are not asserted here.",
+        "status": "Candidate",
+        "domain": "sea",
+        "category": "missile boat",
+        "developmentModel": "imported",
+        "originCountries": [],
+        "specs": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "collection-war-1971",
+  "slug": "war-1971",
+  "title": "1971 war starter collection",
+  "description": "A bounded candidate collection covering the conflict, two named operations, one documented commander, and one discovery-grade naval equipment context.",
+  "inclusionRules": [
+    "The record has a direct documented connection to the December 1971 India–Pakistan war or is explicitly marked as discovery-grade context.",
+    "Dates are stored only at the precision supported by the captured source set.",
+    "The record can be represented accurately by the current Conflict, Operation, Person, or Equipment model."
+  ],
+  "exclusionRules": [
+    "Unresolved casualty or force-strength totals",
+    "Unattributed tactical claims",
+    "Wikipedia-only consequential claims presented as established fact",
+    "Media without documented display rights"
+  ],
+  "knownUniverseSource": "docs/verification/2026-09-08/T28/source-ledger.md",
+  "knownEntityRefs": [
+    "Conflict:indo-pakistani-war-1971",
+    "Operation:operation-trident-1971",
+    "Operation:battle-of-longewala-1971",
+    "Person:jagjit-singh-aurora",
+    "Equipment:vidyut-class-missile-boat-1971"
+  ],
+  "knownUniverseSize": 5,
+  "owner": "SENTINEL editorial pipeline",
+  "reviewer": "automated-source-pass",
+  "policyVersion": "routine-evidence-v1",
+  "updatedAt": "2026-09-08T00:00:00+05:30",
+  "gaps": [
+    "Capture a direct official naval source before treating the missile-boat class as a consequential equipment fact.",
+    "Capture an independent biographical source before expanding the Aurora profile beyond the surrender role.",
+    "Configure an authenticated batch-publisher identity before any automatic publication action.",
+    "Complete mobile and desktop source-journey acceptance after candidate relationships are attached."
+  ]
+}

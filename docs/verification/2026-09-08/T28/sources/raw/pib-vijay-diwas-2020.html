@@ -1,0 +1,981 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	Press Release Page | Press Information Bureau
+</title><link href="css/style.css" rel="stylesheet" type="text/css" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="alternate stylesheet" href="css/change.css" media="screen" title="change" /><link rel="alternate stylesheet" href="css/green.css" media="screen" title="green" /><link rel="alternate stylesheet" href="css/yellow.css" media="screen" title="yellow" /><link rel="stylesheet" type="text/css" href="css/prtint.css" media="print" /><link rel="stylesheet" href="css/style3.1.css" type="text/css" /><link id="pibA11yCss" rel="stylesheet" href="/css/accessibility.css?v=3" type="text/css" />
+      <script type="text/javascript">
+        /* Stamps the saved theme on <html> before the page paints. The
+           switcher in js/accessibility.js settles the rest, but on inner
+           pages it does not run until the end of the body and inside the
+           release frame it is a separate download - either way the reader
+           would otherwise watch a light page turn dark in front of them. */
+        (function (d) {
+            var t = "";
+            try {
+                t = window.localStorage.getItem("pibStyle") || "";
+            } catch (e) {
+                t = "";
+            }
+            if (t === "orange") {
+                t = "yellow";
+            }
+            var c = t === "change" ? " pib-hc"
+                : t === "green" ? " pib-theme-green"
+                : t === "yellow" ? " pib-theme-yellow" : "";
+            d.documentElement.className += c + " pib-a11y-content";
+        }(document));
+      </script>
+
+
+      <script src="js/jquery.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="/js/accessibility.js?v=7"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" /><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet" />
+
+      <script type="text/javascript">
+            $(document).ready(function () {
+                  function getParameterByName(name) {
+                        var url = window.location.href;
+                        name = name.replace(/[\[\]]/g, '\\$&');
+                        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                              results = regex.exec(url);
+                        if (!results) return null;
+                        if (!results[2]) return '';
+                        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+                  }
+                  // Get the IDs from the current page's URL
+                  let prid = parseInt(getParameterByName('PRID'), 10);
+
+                  if (!isNaN(prid) && prid > 0) {
+                        $.ajax({
+                              type: "POST",
+                              url: "AjaxMethod.aspx/UpdatePRHitCount",
+                              async: false,
+                              data: JSON.stringify({ 'PermId': prid }),
+                              contentType: "application/json; charset=utf-8",
+                              dataType: "json",
+                              success: function (response) {
+                                    console.log(response);
+                              },
+                              error: function (error) {
+                                    console.log("Error in AJAX request", error);
+                              }
+                        });
+                  } else {
+                        console.log("Invalid parameters:", prid);
+                  }
+
+            });
+      </script>
+      <style type="text/css">
+            .table-responsive {
+                  width: 100%;
+                  overflow-x: auto;
+            }
+
+            .banner {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  background-color: #000;
+                  color: #fff;
+                  padding: 20px;
+            }
+
+            full-width {
+                  width: 100%;
+            }
+
+            .logo-left, .logo-center, .countdown {
+                  display: flex;
+                  align-items: center;
+            }
+
+                  .logo-left img, .logo-center img {
+                        height: 70px;
+                  }
+
+            .countdown {
+                  text-align: center;
+                  background-color: #444;
+                  border-radius: 10px;
+                  padding: 10px;
+                  border: 2px solid grey;
+            }
+
+            .firstnumber {
+                  color: #000000;
+                  position: absolute;
+                  top: 50px;
+                  right: 90px;
+                  font-size: 30px;
+            }
+
+            .secondnumber {
+                  position: absolute;
+                  color: #000000;
+                  right: 45px;
+                  top: 50px;
+                  font-size: 30px;
+            }
+
+            .countdown .days {
+                  font-size: 35px;
+                  color: gold;
+            }
+
+            .countdown p {
+                  margin: 0;
+            }
+
+            .countdown .text {
+                  font-size: 16px;
+            }
+
+            a {
+                  word-break: break-all;
+            }
+
+            iframe, img {
+                  max-width: 100%;
+            }
+
+            @media(max-width:1199px) {
+                  .firstnumber {
+                        top: 40px;
+                        right: 72px;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 35px;
+                        top: 40px;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:990px) {
+                  .firstnumber {
+                        top: 25px;
+                        right: 54px;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 25px;
+                        top: 25px;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:768px) {
+                  .countdown, .days {
+                        font-size: 12px !important;
+                  }
+
+
+                  .firstnumber {
+                        top: 25%;
+                        right: 8%;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 4.5%;
+                        top: 25%;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:475px) {
+                  .countdown, .days {
+                        font-size: 10px !important;
+                        top: 20%;
+                  }
+
+                  .bannerimgdiv {
+                        padding: 0 !important;
+                  }
+
+                  .bannerimg {
+                        width: 108% !important;
+                  }
+            }
+      </style>
+      <script type="text/javascript">
+            $(function () {
+                  $("[id*=printPDF]").click(function () {
+                        $("[id*=hfGridHtml]").val($("#PdfDiv").html());
+                  });
+            });
+            $(function () {
+                  $("[id*=printPDFEvent]").click(function () {
+                        $("[id*=hfGridHtml]").val($("#PdfDiv").html());
+                  });
+            });
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112591026-1"></script>
+      <script>
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() { dataLayer.push(arguments); }
+
+            gtag('js', new Date());
+
+
+
+            gtag('config', 'UA-112591026-1');
+
+      </script>
+
+<meta property="og:title" content="Vijay Diwas celebration at National War Memorial Southern Command Pune" /><meta property="og:url" content="www.pib.gov.in/Pressreleaseshare.aspx?PRID=1681094" /><meta property="og:description" content=" 
+
+“Vijay Diwas 2020” was celebrated on 16 December 2020 with the customary pomp and fervor at Nat" /><meta property="og:image" content="https:/pib.gov.in/images/indian-emblem.png" />
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="C4E7H-KSCMC-422L4-W3EM5-U36MF",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"C4E7H-KSCMC-422L4-W3EM5-U36MF";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="eqdhiaaamfsekjqacqhqabqaabvkagqu-f-d694de3a0-clienttons-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1825201","ak.ai":parseInt("1215205",10),"ak.ol":"0","ak.cr":9,"ak.ipv":6,"ak.proto":"h2","ak.rid":"1666f4e","ak.r":37658,"ak.a2":n,"ak.m":"dscb","ak.n":"ff","ak.cport":65126,"ak.gh":"23.199.69.197","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1788877332","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==qtCOesajIYs6SLadjWDSYvO4owmEEy6ShZvzOYfTGcEDOwC3Fm0jpL+CHuiq9S+w23sy4WMI3WdtpXcdN5cyF35YppXegfSqeGgO5r3e+b0IozW8y0j04Dm+Ejf6WCFD+iGq7mY2qUuaPtHvZpTdgioVpJqvi9BnVNVe2GxGtHTlJisNJcwlU3Q8ao+x5LvrRab51Vx+dCvs7IsI6Ya2kIqayn3NWUbGYsvC7QU0CI8+hAAUaFGzzhIY5m5aCmkFI18Eb/VFhVy0dbLS2fUDm8yWoXLpe5Vb+zZfbAtLAEG8JLGUIfxIV9YHldAEIvokIat05GSsEr1w04LXfPJpNY0PgmgH509Zt/5Oz4kDRe/51X2ygI34DM60GS42DrzdB0tQJqWnEL5sleTIKFOnm0pWC25pfbvRFO42szPbDM4=","ak.pv":"9","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+      <form method="post" action="./PressReleasePage.aspx?PRID=1681094&amp;lang=2&amp;reg=48" id="form1">
+<input type="hidden" name="sc_HiddenField" id="sc_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/ScriptResource.axd?d=YwOa_0w_u3oCLFqmIIOf-XEz4GWZ1DuyQIpxIA4LVkywj39sZSps12NbK5wNl5XN9JF3m7d-ey7BFDgj6i0380qRQ5IMWCL54sYNVU1IjMmiOWpp0&amp;t=ffffffffecf8d3f2" type="text/javascript"></script>
+<script src="/PressReleasePage.aspx?_TSM_HiddenField_=sc_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d3.5.7.123%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a5a4df314-b4a2-4da2-a207-9284f1b1e96c%3ade1feab2%3af2c8e708%3a720a52bf%3af9cec9bc%3a589eaa30%3aa67c2700%3aab09e3fe%3a87104b7c%3a8613aea7%3a3202a5a2%3abe6fb298" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="59B53027" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="NJ/DjxVAiP7bav9LY0RITQqs05GiMsFP+GrrmUKmdA9gjgT6yFpS3jUVKztfI14s9iPse3eS0S2h+ChlIz3kiIcFjvMZs+4P1xZISfEeQaUMic2pZx2xYZmQeg8ORoz7hHlgntqqBtzRiPV3bIfFfyLXBOxdNZ0gdHINa9lYPGUBmJvuk/6N58FKdDxEIlg2kErhAxPc77XeqkgMA725tFnSNUVyaOVI+lV1i1x2ZBbY0ad4Yv74J4QKg9rk1BrPHxvrAXuzkOTSzMt02M5FUbaUHvqpRICAGEpHFzbhfuxsCRMG" />
+                              
+            <div id="templateCss"></div>
+            
+            <input type="hidden" name="hfGridHtml" id="hfGridHtml" />
+            <div class="container" style='margin-bottom: 50px;'>
+                  <div id="accessories">
+
+                        
+                        <div class="pull-right" style="display: flex">
+                              <div id="voll"></div>
+                              <div id="vollDT"></div>
+                              
+                              
+<div class="print-icons">
+<input type="image" name="Print1$print" id="Print1_print" aria-label="Print" src="images/printer_icon.png" alt="print page button" style="padding: 5px 10px 5px 10px;" />
+</div>
+                        </div>
+                  </div>
+                  <input type="hidden" name="hydpermid" id="hydpermid" value="1681094" />
+                  
+
+
+
+                  <div class="innner-page-main-about-us-content-right-part">
+
+                        <div id="MinistryName" class="MinistryNameSubhead text-center">
+                              Ministry of Defence
+                        </div>
+                        
+                        <div id="lg_g">
+                        </div>
+
+
+
+
+
+                        <div class="text-center event-heading-background">
+                              
+                              <h2 id="Titleh2">
+                                    Vijay Diwas celebration at National War Memorial Southern Command Pune
+                              </h2>
+                              <h3 id="Subtitleh3">
+                                    <span id="ltrSubtitle"></span>
+                              </h3>
+                        </div>
+
+                        <div id="PrDateTime" class="ReleaseDateSubHeaddateTime text-center pt20">
+                              Posted On:
+                16 DEC 2020 5:03PM by PIB Mumbai
+                        </div>
+                        
+                        <div class='pt20'>
+                        </div>
+                        <input type="hidden" name="hydphotoUrl" id="hydphotoUrl" />
+                        
+                        <p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">&ldquo;Vijay Diwas 2020&rdquo; was celebrated on 16 December 2020 with the customary pomp and fervor at National War Memorial, Southern Command, Pune. This day marks splendid victory achieved by India over Pakistan 49 years ago. The &ldquo;GREATEST VICTORY EVER&rdquo; saw the emergence of Bangladesh as an independent nation and India rose as a regional power to reckon with. With this decisive victory over a formidable opponent the Armed Forces of India once again affirmed themselves as a strong component of National power.</span></span></p>
+
+<p style="text-align:center"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/Vijay_din3.JPEG" style="height:366px; width:550px" /></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The 1971 Indo-Pak War began with Pakistan launching pre-emptive air strikes against 11 Indian airbases on 03 December 1971. The war was forced upon due to widespread genocide of people of East Pakistan carried out by an oppressive military regime under General Yahya Khan of Pakistan. The war, which was short and intense, was fought on both Eastern and Western fronts. The 13 days war resulted in complete surrender of Pakistan forces and the creation of Bangladesh. The Indian Armed Forces reigned supreme over the Pakistani military in the battle field. During the war, Southern Command valiantly defended the borders of the nation against any action by Pakistan. The notable battles which were fought in the area of responsibility of the Southern Army included the famous battles of Longewala and Parbat Ali where Pakistan&rsquo;s armoured forces were destroyed by resolute Indian troops. The raid on Pakistani town of Chachro carried out by soldiers of the renowned 10 Para Commando Battalion led by Lieutenant Colonel (Later Brigadier) Bhawani Singh, the erstwhile ruler of Jodhpur state was another famous military action. These battles have showcased in fine examples of grit, determination and bravery of our soldiers.</span></span></p>
+
+<p style="text-align:center"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/Vijay_din4.JPEG" style="height:366px; width:550px" /></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">To commemorate the occasion a wreath laying ceremony was conducted to pay homage to brave soldiers, airmen and sailors of the Indian Armed Forces who did not think twice before laying down their lives to protect the sovereignty and freedom of our great nation. The solemn ceremony was a token of remembrance for theses brave sons of India who made the supreme sacrifice in the line of duty. The ceremony was attended by military personnel of Pune Station as well as Veterans of the Indian Army who participated in the operation in Indo Pak War 1971. During the ceremony tribute was paid to the gallant soldiers of Indo Pak War 1971 at the National War Memorial. A commemorative wreath was laid by Lieutenant General DS Ahuja, Chief of Staff, Southern Command on behalf of all ranks of Headquarters Southern Command. The silence observed by all present echoed skywards to the martyrs of this great nation as an appropriate tribute to their steely resolve to defend India at all costs.</span></span></p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The event concluded with an interaction by all attendees in the Museum lawns, adjacent to the National War Memorial.</span></span></p>
+
+<p style="text-align:center"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">***</span></span></p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">PRO(Defence)/P.Kor</span></span></p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#1155cc">Follow us on social media:&nbsp;<img src="http://static.pib.gov.in/WriteReadData/userfiles/image/Twitter-iconI0HR.jpg" style="height:20px; width:20px" /></span><a href="https://twitter.com/pibmumbai" target="_blank">@PIBMumbai</a>&nbsp;&nbsp; <img alt="Image result for facebook icon" src="http://static.pib.gov.in/WriteReadData/userfiles/image/fbO3SQ.jpg" style="height:16px; width:16px" />&nbsp;/<a href="https://www.facebook.com/PIBMumbai/" target="_blank">PIBMumbai</a>&nbsp; &nbsp;<img alt="" src="http://static.pib.gov.in/WriteReadData/userfiles/image/Instagram-IconX9CA.png" style="height:20px; width:20px" />&nbsp;<a href="http://instagram.com/pibmumbai" target="_blank">/pibmumbai</a>&nbsp;&nbsp;<a style='color:black;text-decoration:none;pointer-events:none;' href=pibmumbai[at]gmail[dot]com"><img alt="" src="http://static.pib.gov.in/WriteReadData/userfiles/image/emailXG3L.jpg" style="height:22px; width:20px" />pibmumbai[at]gmail[dot]com</a></span></span></p>
+
+
+                        
+                        <div id="reel_pic">
+                        </div>
+
+
+
+                        
+                        <br />
+                        <span id="ReleaseId">(Release ID: 1681094)</span>
+                        <span id="lblViews">Visitor Counter : 908</span>
+                        <div>
+                              
+                        </div>
+                        
+
+                        <span id="lblRefPhoto"></span>
+
+                        <div class="BackgroundRelease">
+                              
+                        </div>
+                        <div>
+                              
+                        </div>
+                        <div class="ReleaseLang">Read this release in: 
+                        
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=1681301' target="_blank">
+                                          Marathi </a>
+                              
+                        </div>
+
+                        <div class="RelTag">
+                              <ul>
+                                    
+                              </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div id="RelLink" class="RelLink">
+                              <ul>
+                                    
+                                    
+                              </ul>
+                        </div>
+                        <center>
+                              
+                        </center>
+                  </div>
+
+                  <div id="update12">
+	
+                              
+                              <input type="hidden" name="Hidden" id="Hidden" />
+                              <div id="P_CategoryManagement" class="ModalWindow" style="display: none">
+		
+                                    <div>
+                                          <input type="image" name="btnClose" id="btnClose" src="images/close_flat_icon.png" />
+                                    </div>
+                                    <div id="description">
+                                    </div>
+                                    <div class="text-center">
+                                          <h2>
+                                                
+                                                <br>
+                                                
+                                          </h2>
+                                    </div>
+                                    <br />
+                                    <div class="clear">
+                                    </div>
+                                    
+                              
+	</div>
+                        
+</div>
+            </div>
+            
+            <div id="PdfDiv" style="display: none;">
+                  <table width="100%">
+                        <tr>
+                              <td style="font-weight: 200; text-align: center">
+                                    Ministry of Defence
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: center; font-size: 30px;">
+                                          Vijay Diwas celebration at National War Memorial Southern Command Pune
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: center; font-size: 30px;">
+                                          
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="text-align: center; font-size: 14px;">
+                                          Posted On:
+                        16 DEC 2020 5:03PM by PIB Mumbai
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: left; font-size: 16px;">
+                                          <p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">&ldquo;Vijay Diwas 2020&rdquo; was celebrated on 16 December 2020 with the customary pomp and fervor at National War Memorial, Southern Command, Pune. This day marks splendid victory achieved by India over Pakistan 49 years ago. The &ldquo;GREATEST VICTORY EVER&rdquo; saw the emergence of Bangladesh as an independent nation and India rose as a regional power to reckon with. With this decisive victory over a formidable opponent the Armed Forces of India once again affirmed themselves as a strong component of National power.</span></span></p>
+
+<p style="text-align:center"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/Vijay_din3.JPEG" style="height:366px; width:550px" /></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The 1971 Indo-Pak War began with Pakistan launching pre-emptive air strikes against 11 Indian airbases on 03 December 1971. The war was forced upon due to widespread genocide of people of East Pakistan carried out by an oppressive military regime under General Yahya Khan of Pakistan. The war, which was short and intense, was fought on both Eastern and Western fronts. The 13 days war resulted in complete surrender of Pakistan forces and the creation of Bangladesh. The Indian Armed Forces reigned supreme over the Pakistani military in the battle field. During the war, Southern Command valiantly defended the borders of the nation against any action by Pakistan. The notable battles which were fought in the area of responsibility of the Southern Army included the famous battles of Longewala and Parbat Ali where Pakistan&rsquo;s armoured forces were destroyed by resolute Indian troops. The raid on Pakistani town of Chachro carried out by soldiers of the renowned 10 Para Commando Battalion led by Lieutenant Colonel (Later Brigadier) Bhawani Singh, the erstwhile ruler of Jodhpur state was another famous military action. These battles have showcased in fine examples of grit, determination and bravery of our soldiers.</span></span></p>
+
+<p style="text-align:center"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><img alt="" src="https://static.pib.gov.in/WriteReadData/userfiles/Vijay_din4.JPEG" style="height:366px; width:550px" /></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">To commemorate the occasion a wreath laying ceremony was conducted to pay homage to brave soldiers, airmen and sailors of the Indian Armed Forces who did not think twice before laying down their lives to protect the sovereignty and freedom of our great nation. The solemn ceremony was a token of remembrance for theses brave sons of India who made the supreme sacrifice in the line of duty. The ceremony was attended by military personnel of Pune Station as well as Veterans of the Indian Army who participated in the operation in Indo Pak War 1971. During the ceremony tribute was paid to the gallant soldiers of Indo Pak War 1971 at the National War Memorial. A commemorative wreath was laid by Lieutenant General DS Ahuja, Chief of Staff, Southern Command on behalf of all ranks of Headquarters Southern Command. The silence observed by all present echoed skywards to the martyrs of this great nation as an appropriate tribute to their steely resolve to defend India at all costs.</span></span></p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">The event concluded with an interaction by all attendees in the Museum lawns, adjacent to the National War Memorial.</span></span></p>
+
+<p style="text-align:center"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">***</span></span></p>
+
+<p style="text-align:justify"><span style="font-size:12.0pt"><span style="font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">PRO(Defence)/P.Kor</span></span></p>
+
+<p style="text-align:center">&nbsp;</p>
+
+<p style="text-align:center"><span style="font-size:14px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="color:#1155cc">Follow us on social media:&nbsp;<img src="http://static.pib.gov.in/WriteReadData/userfiles/image/Twitter-iconI0HR.jpg" style="height:20px; width:20px" /></span><a href="https://twitter.com/pibmumbai" target="_blank">@PIBMumbai</a>&nbsp;&nbsp; <img alt="Image result for facebook icon" src="http://static.pib.gov.in/WriteReadData/userfiles/image/fbO3SQ.jpg" style="height:16px; width:16px" />&nbsp;/<a href="https://www.facebook.com/PIBMumbai/" target="_blank">PIBMumbai</a>&nbsp; &nbsp;<img alt="" src="http://static.pib.gov.in/WriteReadData/userfiles/image/Instagram-IconX9CA.png" style="height:20px; width:20px" />&nbsp;<a href="http://instagram.com/pibmumbai" target="_blank">/pibmumbai</a>&nbsp;&nbsp;<a style='color:black;text-decoration:none;pointer-events:none;' href=pibmumbai[at]gmail[dot]com"><img alt="" src="http://static.pib.gov.in/WriteReadData/userfiles/image/emailXG3L.jpg" style="height:22px; width:20px" />pibmumbai[at]gmail[dot]com</a></span></span></p>
+
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 100; text-align: left; font-size: 16px;">
+                                          (Release ID: 1681094)
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                              </td>
+                        </tr>
+                        <tr>
+                              <td style="font-weight: 200; text-align: center; font-size: 24px;"></td>
+                        </tr>
+                  </table>
+            </div>
+            <div class="clearfix">
+            </div>
+
+            
+
+            <div class="section1">
+                  <div id="frst_t">
+                        <div id="arr_rm"><div class='sticky-social_mb'><ul class='social_mb'><a href='http://www.facebook.com/share.php?u=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094' target='_blank'><li class='fb_b'   ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/facebook.jpg' alt='Share on facebook'  width='40' /></li></a><a href='https://twitter.com/intent/tweet?url=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094&text=Vijay Diwas celebration at National War Memorial Southern Command Pune' target='_blank'><li class='twitter_r'  ><img  src='https://static.pib.gov.in/WriteReadData/specificdocs/photo/2023/aug/ph2023818240601.jpg' alt='Share on twitter' width='40' /> </li></a><a href='https://api.whatsapp.com/send?text=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094' target='_blank'><li class='whatsapp_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/whatsapp1.png' alt='Share on whatsapp' width='40' /></li></a><a href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Vijay Diwas celebration at National War Memorial Southern Command Pune&body=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094&ui=2&tf=1&pli=1' title='Share by Email' target='_blank'><li class='fa-envelope_r' ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/email1.png' alt='Share on email'  width='40' /></li></a><a href='https://www.linkedin.com/shareArticle?mini=true&url=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094&title=Vijay Diwas celebration at National War Memorial Southern Command Pune&summary=My%20favorite%20developer%20program&source=LinkedIn' target='_blank'><li class='fa-linkedin_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/linkedin.png' alt='Share on linkedin' width='40' /></li></a></ul></div></div>
+                  </div>
+                  <div id="second_t">
+                        <div id="sndr_rm"><div class='sticky-social'><ul class='social'><a href='http://www.facebook.com/share.php?u=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094' target='_blank'><li class='fb_b'   ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/facebook.jpg' alt='Share on facebook'  width='35' /></li></a><a href='https://twitter.com/intent/tweet?url=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094&text=Vijay Diwas celebration at National War Memorial Southern Command Pune' target='_blank'><li class='twitter_r'  ><img  src='https://static.pib.gov.in/WriteReadData/specificdocs/photo/2023/aug/ph2023818240601.jpg' alt='Share on twitter' width='35' /> </li></a><a href='https://api.whatsapp.com/send?text=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094' target='_blank'><li class='whatsapp_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/whatsapp1.png' alt='Share on whatsapp' width='35' /></li></a><a href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Vijay Diwas celebration at National War Memorial Southern Command Pune&body=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094&ui=2&tf=1&pli=1' title='Share by Email' target='_blank'><li class='fa-envelope_r' ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/email1.png' alt='Share on email'  width='35' /></li></a><a href='https://www.linkedin.com/shareArticle?mini=true&url=https://pib.gov.in/PressReleasePage.aspx?PRID=1681094&title=Vijay Diwas celebration at National War Memorial Southern Command Pune&summary=My%20favorite%20developer%20program&source=LinkedIn' target='_blank'><li class='fa-linkedin_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/linkedin.png' alt='Share on linkedin' width='35' /></li></a></ul></div></div>
+                  </div>
+            </div>
+            <input type="hidden" name="ltrTitlee" id="ltrTitlee" value="Vijay Diwas celebration at National War Memorial Southern Command Pune" />
+            <input type="hidden" name="ltrSubtitlee" id="ltrSubtitlee" />
+            <input type="hidden" name="ltrDescriptionn" id="ltrDescriptionn" value="&lt;p style=&quot;text-align:center&quot;>&amp;nbsp;&lt;/p>
+
+&lt;p style=&quot;text-align:justify&quot;>&lt;span style=&quot;font-size:12.0pt&quot;>&lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,&amp;quot;serif&amp;quot;&quot;>&amp;ldquo;Vijay Diwas 2020&amp;rdquo; was celebrated on 16 December 2020 with the customary pomp and fervor at National War Memorial, Southern Command, Pune. This day marks splendid victory achieved by India over Pakistan 49 years ago. The &amp;ldquo;GREATEST VICTORY EVER&amp;rdquo; saw the emergence of Bangladesh as an independent nation and India rose as a regional power to reckon with. With this decisive victory over a formidable opponent the Armed Forces of India once again affirmed themselves as a strong component of National power.&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;span style=&quot;font-size:12.0pt&quot;>&lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,&amp;quot;serif&amp;quot;&quot;>&lt;img alt=&quot;&quot; src=&quot;https://static.pib.gov.in/WriteReadData/userfiles/Vijay_din3.JPEG&quot; style=&quot;height:366px; width:550px&quot; />&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:justify&quot;>&lt;span style=&quot;font-size:12.0pt&quot;>&lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,&amp;quot;serif&amp;quot;&quot;>The 1971 Indo-Pak War began with Pakistan launching pre-emptive air strikes against 11 Indian airbases on 03 December 1971. The war was forced upon due to widespread genocide of people of East Pakistan carried out by an oppressive military regime under General Yahya Khan of Pakistan. The war, which was short and intense, was fought on both Eastern and Western fronts. The 13 days war resulted in complete surrender of Pakistan forces and the creation of Bangladesh. The Indian Armed Forces reigned supreme over the Pakistani military in the battle field. During the war, Southern Command valiantly defended the borders of the nation against any action by Pakistan. The notable battles which were fought in the area of responsibility of the Southern Army included the famous battles of Longewala and Parbat Ali where Pakistan&amp;rsquo;s armoured forces were destroyed by resolute Indian troops. The raid on Pakistani town of Chachro carried out by soldiers of the renowned 10 Para Commando Battalion led by Lieutenant Colonel (Later Brigadier) Bhawani Singh, the erstwhile ruler of Jodhpur state was another famous military action. These battles have showcased in fine examples of grit, determination and bravery of our soldiers.&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;span style=&quot;font-size:12.0pt&quot;>&lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,&amp;quot;serif&amp;quot;&quot;>&lt;img alt=&quot;&quot; src=&quot;https://static.pib.gov.in/WriteReadData/userfiles/Vijay_din4.JPEG&quot; style=&quot;height:366px; width:550px&quot; />&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:justify&quot;>&lt;span style=&quot;font-size:12.0pt&quot;>&lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,&amp;quot;serif&amp;quot;&quot;>To commemorate the occasion a wreath laying ceremony was conducted to pay homage to brave soldiers, airmen and sailors of the Indian Armed Forces who did not think twice before laying down their lives to protect the sovereignty and freedom of our great nation. The solemn ceremony was a token of remembrance for theses brave sons of India who made the supreme sacrifice in the line of duty. The ceremony was attended by military personnel of Pune Station as well as Veterans of the Indian Army who participated in the operation in Indo Pak War 1971. During the ceremony tribute was paid to the gallant soldiers of Indo Pak War 1971 at the National War Memorial. A commemorative wreath was laid by Lieutenant General DS Ahuja, Chief of Staff, Southern Command on behalf of all ranks of Headquarters Southern Command. The silence observed by all present echoed skywards to the martyrs of this great nation as an appropriate tribute to their steely resolve to defend India at all costs.&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:justify&quot;>&lt;span style=&quot;font-size:12.0pt&quot;>&lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,&amp;quot;serif&amp;quot;&quot;>The event concluded with an interaction by all attendees in the Museum lawns, adjacent to the National War Memorial.&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;span style=&quot;font-size:12.0pt&quot;>&lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,&amp;quot;serif&amp;quot;&quot;>***&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:justify&quot;>&lt;span style=&quot;font-size:12.0pt&quot;>&lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,&amp;quot;serif&amp;quot;&quot;>PRO(Defence)/P.Kor&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&amp;nbsp;&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;span style=&quot;font-size:14px&quot;>&lt;span style=&quot;font-family:Arial,Helvetica,sans-serif&quot;>&lt;span style=&quot;color:#1155cc&quot;>Follow us on social media:&amp;nbsp;&lt;img src=&quot;http://static.pib.gov.in/WriteReadData/userfiles/image/Twitter-iconI0HR.jpg&quot; style=&quot;height:20px; width:20px&quot; />&lt;/span>&lt;a href=&quot;https://twitter.com/pibmumbai&quot; target=&quot;_blank&quot;>@PIBMumbai&lt;/a>&amp;nbsp;&amp;nbsp; &lt;img alt=&quot;Image result for facebook icon&quot; src=&quot;http://static.pib.gov.in/WriteReadData/userfiles/image/fbO3SQ.jpg&quot; style=&quot;height:16px; width:16px&quot; />&amp;nbsp;/&lt;a href=&quot;https://www.facebook.com/PIBMumbai/&quot; target=&quot;_blank&quot;>PIBMumbai&lt;/a>&amp;nbsp; &amp;nbsp;&lt;img alt=&quot;&quot; src=&quot;http://static.pib.gov.in/WriteReadData/userfiles/image/Instagram-IconX9CA.png&quot; style=&quot;height:20px; width:20px&quot; />&amp;nbsp;&lt;a href=&quot;http://instagram.com/pibmumbai&quot; target=&quot;_blank&quot;>/pibmumbai&lt;/a>&amp;nbsp;&amp;nbsp;&lt;a href=&quot;mailto:pibmumbai@gmail.com&quot;>&lt;img alt=&quot;&quot; src=&quot;http://static.pib.gov.in/WriteReadData/userfiles/image/emailXG3L.jpg&quot; style=&quot;height:22px; width:20px&quot; />pibmumbai@gmail.com&lt;/a>&lt;/span>&lt;/span>&lt;/p>
+" />
+            <script type="text/javascript">
+                  var mPlayer = document.getElementById("background_music");
+                  var mPlayAction = document.getElementById("playbutton");
+
+                  var isPlaying = false;
+
+                  function playAudio() {
+                        mPlayer.play();
+                        isPlaying = true;
+                        document.getElementById('stopA').style.display = "block";
+                        document.getElementById('playA').style.display = "none";
+                  }
+
+                  function pauseAudio() {
+                        mPlayer.pause();
+                        isPlaying = false;
+                        document.getElementById('playA').style.display = "block";
+                        document.getElementById('stopA').style.display = "none";
+                  }
+                  //function HandleAudio() {
+                  //    if (isPlaying == true) {
+                  //        //Playing already Pause it
+                  //        pauseAudio();
+                  //    } else {
+                  //        //Play the music
+                  //        playAudio();
+                  //    }
+                  //}
+            </script>
+            <script type="text/javascript">
+                  var synth = window.speechSynthesis;
+
+            
+                  function CleanHtml(html) {
+
+                        html = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+                        return html;
+                  }
+                  function stripHtml(html) {
+                        let tmp = document.createElement("DIV");
+                        tmp.innerHTML = CleanHtml(html);
+                        return tmp.textContent || tmp.innerText || "";
+                  }
+            </script>
+            <script type="text/javascript">
+                  $(document).ready(function () {
+                        //for responsive tables
+                        $("table").each(function () {
+                              if (!$(this).closest(".table-responsive").length) {
+                                    $(this).wrap("<div class='table-responsive'></div>");
+                              }
+                        });
+
+                        var width = $(window).width();
+                        if (width < 768) {
+
+                              // Extra Small Device
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+
+                        } else if (width < 991) {
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+                              // Small Device
+
+                        } else if (width < 1199) {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Medium Device
+
+                        } else {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Large Device
+
+                        }
+                  });
+            </script>
+            <script type="text/javascript">
+                  $(document).ready(function () {
+                        var width = $(window).width();
+                        if (width < 768) {
+
+                              // Extra Small Device
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+
+                        } else if (width < 991) {
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+                              // Small Device
+
+                        } else if (width < 1199) {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Medium Device
+
+                        } else {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Large Device
+
+                        }
+                  });
+            </script>
+            
+            <style type="text/css">
+                  @media print {
+                        .sticky-social, .sticky-social_mb, .pull-right, #printPDF {
+                              display: none !important;
+                        }
+                  }
+
+                  .f_vl {
+                        padding-right: 30px;
+                        font-size: 17px;
+                        cursor: pointer;
+                  }
+
+                  .log_oo {
+                        // width: 20%;
+                        display: flex;
+                        justify-content: space-between;
+                  }
+
+                        .log_oo img {
+                              width: 150px;
+                              /*width: 100%;
+                    height: auto;*/
+                        }
+
+                  .sticky-social_mb {
+                        position: fixed;
+                        bottom: 0px;
+                        padding: 0px;
+                        margin: 0px;
+                        width: 100%;
+                  }
+
+                  .social_mb {
+                        list-style: none;
+                        display: flex;
+                        width: 100%;
+                        margin-bottom: -8px;
+                  }
+
+                        .social_mb a {
+                              padding: 8px 0px;
+                              font-size: 30px;
+                              transition: all 0.8s ease-in-out;
+                              width: 20% !important;
+                              text-align: center;
+                        }
+            </style>
+            <style type="text/css">
+                  .section1 {
+                        position: relative;
+                        padding: 10px 0px;
+                        width: 100%;
+                  }
+
+
+
+                  .sticky-social {
+                        position: fixed;
+                        top: 20px;
+                        left: 0px;
+                        padding: 0px;
+                        margin: 0px;
+                  }
+
+                  .social {
+                        list-style: none;
+                  }
+
+                        .social a li {
+                              padding: 8px 12px;
+                              font-size: 25px;
+                              transition: all 0.8s ease-in-out;
+                        }
+
+                              .social a li:hover {
+                                    margin-right: -30px;
+                                    box-shadow: 2px 5px 10px grey;
+                              }
+
+                                    .social a li:hover .fa {
+                                          margin-left: 20px;
+                                    }
+
+                  .fb_b {
+                        /* background-color: rgb(59, 89, 152);*/
+                        background-color: rgba(65,103,178,255);
+                  }
+
+                  .twitter_r {
+                        /* background-color: rgb(29, 161, 242);*/
+                        background-color: #000000;
+                  }
+
+                  .whatsapp_r {
+                        /* background-color: rgb(77, 194, 71);*/
+                        background-color: rgba(13,191,67,255);
+                  }
+
+                  .fa-envelope_r {
+                        /* background-color: rgb(219, 68, 55);*/
+                        background-color: #e2123d;
+                  }
+
+                  .fa-linkedin_r {
+                        background-color: rgb(0, 119, 181);
+                  }
+            </style>
+            <style type="text/css">
+                  @media only screen and (max-device-width: 767px) {
+                        p span img {
+                              max-width: 90% !important;
+                              height: auto !important;
+                        }
+
+                        p img {
+                              max-width: 90% !important;
+                              height: auto !important;
+                        }
+
+                        h2 {
+                              font-size: 20px !important;
+                              font-weight: 600 !important;
+                        }
+
+                        h3 {
+                              font-size: 18px !important;
+                              font-weight: 600 !important;
+                        }
+                  }
+            </style>
+            <style type="text/css">
+                  /* === Film Roll Badge Styling(IFFI2025 countdown) === */
+                  .film-roll-badge {
+                        position: absolute;
+                        top:82%;
+                        right: 20px;
+                        width: 230px;
+                        height: 70px;
+                        background: repeating-linear-gradient( to right, #9a2375 0px, #9a2375 18px, #6e2b8b 18px, #6e2b8b 36px );
+                        border-top: 8px solid #9a2375;
+                        border-bottom: 8px solid #9a2375;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+                        animation: moveFilm 8s linear infinite;
+                        z-index: 10;
+                  }
+
+                        /* film sprocket holes */
+                        .film-roll-badge::before,
+                        .film-roll-badge::after {
+                              content: "";
+                              position: absolute;
+                              width: 100%;
+                              height: 10px;
+                              background: repeating-linear-gradient( to right, #9a2375 0px, #9a2375 10px, #fff 10px, #fff 20px );
+                              left: 0;
+                              z-index: 2;
+                        }
+
+                        .film-roll-badge::before {
+                              top: -4px;
+                        }
+
+                        .film-roll-badge::after {
+                              bottom: -4px;
+                        }
+
+                  .film-roll-inner {
+                        position: relative;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        animation: flicker 2s infinite ease-in-out;
+                  }
+
+                  .countdown-text {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        color: #fff;
+                        text-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 10px #000;
+                        white-space: nowrap;
+                  }
+
+                  /* === Animations === */
+                  @keyframes moveFilm {
+                        0% {
+                              background-position: 0 0;
+                        }
+
+                        100% {
+                              background-position: 120px 0;
+                        }
+                  }
+
+                  @keyframes flicker {
+                        0%, 100% {
+                              opacity: 1;
+                        }
+
+                        50% {
+                              opacity: 0.9;
+                        }
+
+                        25% {
+                              opacity: 0.95;
+                        }
+
+                        75% {
+                              opacity: 0.85;
+                        }
+                  }
+
+                  /* === Responsive Adjustments === */
+                  @media (max-width: 1500px) {
+                        .film-roll-badge {
+                              top: 68%;
+                              right: 18px;
+                              /* width: 220px; */
+                              height: 65px;
+                              font-size: 0.85rem;
+                        }
+
+                        .press-section {
+                              margin-top: 35px;
+                        }
+                  }
+
+                  @media (max-width: 992px) {
+                        .film-roll-badge {
+                              top: 52%;
+                              right: 10px;
+                               width: 200px; 
+                              height: 60px;
+                        }
+                  }
+
+                  @media (max-width: 768px) {
+                        .film-roll-badge {
+                              top: 56%;
+                              right: 10px;
+                               width: 124px; 
+                              height: 55px;
+                        }
+
+                        .countdown-text {
+                              font-size: 0.9rem;
+                        }
+                  }
+
+                  @media (max-width: 576px) {
+                        .film-roll-badge {
+                              top: 59%;
+                              right: 5px;
+                              /* width: 160px; */
+                              height: 50px;
+                        }
+
+                        .countdown-text {
+                              font-size: 0.85rem;
+                        }
+                  }
+            </style>
+          <script type="text/javascript">
+                const festivalStart = new Date("2025-11-20T00:00:00").getTime();
+                const festivalEnd = new Date("2025-11-28T23:59:59").getTime();
+
+                const countdownElement = document.getElementById("countdown");
+
+                const interval = setInterval(() => {
+                      const now = new Date().getTime();
+
+                      // BEFORE FESTIVAL — show days + hours left
+                      if (now < festivalStart) {
+                            const diff = festivalStart - now;
+                            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                            countdownElement.innerHTML = `
+              ${days} Day${days !== 1 ? 's' : ''} 
+              ${hours} Hour${hours !== 1 ? 's' : ''} to go
+          `;
+
+                      }
+
+                      // DURING FESTIVAL — show 56th IFFI - Day X
+                      else if (now >= festivalStart && now <= festivalEnd) {
+                            const dayNumber = Math.floor((now - festivalStart) / (1000 * 60 * 60 * 24)) + 1;
+                            countdownElement.innerHTML = `56th IFFI - Day ${dayNumber}`;
+                      }
+
+                      // AFTER FESTIVAL — new message
+                      else {
+                            countdownElement.innerHTML = `✨ IFFI closes but never ends…`;
+
+                            // Width change logic
+                            const elements = document.querySelectorAll('.film-roll-badge');
+                            elements.forEach(el => el.style.width = "350px");
+
+                            clearInterval(interval);
+                      }
+
+                }, 1000);
+          </script>
+ <script type="text/javascript">
+
+               const miffStart = new Date("2026-06-15T00:00:00").getTime();
+               const miffEnd = new Date("2026-06-15T23:59:59").getTime();
+
+               const miffElement = document.getElementById("miff");
+
+               if (miffElement) {
+
+                   const miffInterval = setInterval(() => {
+
+                       const now = new Date().getTime();
+
+                       // Before MIFF
+                       if (now < miffStart) {
+
+                           const diff = miffStart - now;
+                           const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                           const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        
+
+                   /*  miffElement.innerHTML = `${days} Day${days !== 1 ? 's' : ''} ${hours} Hour${hours !== 1 ? 's' : ''} to MIFF`;*/
+                           miffElement.innerHTML = `${days} Day${days === 1 ? '' : 's'} to MIFF ...`;
+
+
+                     }
+
+                       // During MIFF
+                       else if (now >= miffStart && now <= miffEnd) {
+
+                           const dayNumber =
+                               Math.floor((now - miffStart) / (1000 * 60 * 60 * 24)) + 1;
+
+                           miffElement.innerHTML = `19th MIFF - Day ${dayNumber}`;
+                       }
+
+                       // After MIFF
+                       else {
+
+                           miffElement.innerHTML = `✨ MIFF concludes, cinema lives on...`;
+
+                           document.querySelectorAll('.film-roll-badge')
+                               .forEach(el => el.style.width = "350px");
+
+                           clearInterval(miffInterval);
+                       }
+
+                   }, 1000);
+               }
+
+</script>
+
+      
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("sc_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","PopupControlID":"P_CategoryManagement","dynamicServicePath":"/PressReleasePage.aspx","id":"mpe"}, null, null, $get("Hidden"));
+});
+//]]>
+</script>
+<input type="hidden" name="__ncforminfo" value="vrbiyoCeDXhUe8aZb1ajCh7BorRxNSjdjrGtwaqbyWWdKKzGlkXWfsWguxlovyFP3Ei0qDybH7truA_qm0gU5KwB5uR1PCrl"/></form>
+</body>
+</html>
+

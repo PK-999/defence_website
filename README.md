@@ -58,6 +58,8 @@ npm run test:e2e
 npm run validate:content
 npm run validate:database
 npm run validate:assets
+npm run import:content -- --input <candidate-json> --mode validate
+npm run import:collection:evidence -- --input <evidence-json>
 uv run --directory factory pytest tests/test_extraction.py
 ```
 
@@ -74,7 +76,7 @@ The isolated unit, component, integration, browser, content, and database checks
 
 The intended flow is source → captured version → evidence → candidate claim/entity → policy evaluation → attributable publication action → published record. Imported or AI-produced content begins as DRAFT/CANDIDATE. Official confirmation is an evidence classification, not a side effect of approval. Routine claims may pass the automated evidence threshold documented in the content runbook; conflicts, living-person current details, and unclear rights stay held for a grouped decision.
 
-Use [the content runbook](docs/content-operations.md) for the exact source ledger, validation gates, and first connected collection. The initial Kargil source pass is in [the claim matrix](docs/verification/2026-09-07/sources/claim-matrix.md), with machine-readable candidates in [the import file](data/import/kargil-initial-candidates.json). Keep unknown facts unknown and retain provenance. The Python factory is not currently certified for production ingestion; T25 specifies its fail-closed behavior and dependency cleanup. Do not run broad extraction or legacy reset scripts merely to populate the interface.
+Use [the content runbook](docs/content-operations.md) for the exact source ledger, validation gates, and collection workflow. The initial Kargil source pass is in [the claim matrix](docs/verification/2026-09-07/sources/claim-matrix.md), with machine-readable candidates in [the import file](data/import/kargil-initial-candidates.json). The next finite 1971 candidate pass is documented in [its verification record](docs/verification/2026-09-08/T28/implementation.md), with [candidate entities](data/import/war-1971-initial-candidates.json), [evidence](data/import/war-1971-evidence.json), and [collection manifest](content/collections/war-1971.json). Keep unknown facts unknown and retain provenance. The Python factory is not currently certified for production ingestion; T25 specifies its fail-closed behavior and dependency cleanup. Do not run broad extraction or legacy reset scripts merely to populate the interface.
 
 ## Planned editor and deployment configuration
 

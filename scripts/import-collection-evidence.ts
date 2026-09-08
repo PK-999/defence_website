@@ -32,7 +32,8 @@ async function main(): Promise<void> {
   const inputPath = path.resolve(argument("--input") ?? "data/import/kargil-evidence.json");
   const databaseUrl = argument("--database-url") ?? process.env.DATABASE_URL;
   if (!databaseUrl) throw new Error("DATABASE_URL_REQUIRED");
-  if (process.env.KARGIL_CANDIDATE_APPLY_CONFIRM !== "I_UNDERSTAND") throw new Error("KARGIL_CANDIDATE_APPLY_CONFIRM_REQUIRED");
+  const confirmation = process.env.COLLECTION_CANDIDATE_APPLY_CONFIRM ?? process.env.KARGIL_CANDIDATE_APPLY_CONFIRM;
+  if (confirmation !== "I_UNDERSTAND") throw new Error("COLLECTION_CANDIDATE_APPLY_CONFIRM_REQUIRED");
   if (!databaseUrl.includes(".test-data")) throw new Error("CANDIDATE_DATABASE_REQUIRED");
   const pkg = JSON.parse(await readFile(inputPath, "utf8")) as Package;
   const issues = validateCollectionEvidenceInput(pkg);

@@ -4,7 +4,7 @@ Added `data/import/kargil-evidence.json`, a machine-readable package for nine ca
 
 Evidence against the isolated candidate database `.test-data/kargil-candidate-20260907.db`:
 
-- `KARGIL_CANDIDATE_APPLY_CONFIRM=I_UNDERSTAND DATABASE_URL=file:/Users/apple/codes/defence_website/.test-data/kargil-candidate-20260907.db npm run import:collection:evidence -- --input data/import/kargil-evidence.json` applied `9 sources / 12 evidence / 10 claims / 5 relationships`.
+- `COLLECTION_CANDIDATE_APPLY_CONFIRM=I_UNDERSTAND DATABASE_URL=file:/Users/apple/codes/defence_website/.test-data/kargil-candidate-20260907.db npm run import:collection:evidence -- --input data/import/kargil-evidence.json` applied `9 sources / 12 evidence / 10 claims / 5 relationships`.
 - Re-running the same command preserved stable counts (`9 / 9 / 12 / 10 / 5` for sources, versions, evidence, claims, relationships; link rows remained `15 / 15 / 6`).
 - `DATABASE_URL=file:/Users/apple/codes/defence_website/.test-data/kargil-candidate-20260907.db npm run validate:database` passed with zero errors and warnings.
 

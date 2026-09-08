@@ -27,17 +27,14 @@ The disposable database is ignored by Git. `prisma/dev.db` was not changed by th
 
 ## Exact remaining sequence
 
-1. Extend the canonical importer to resolve a source family by stable slug and create `Source`, immutable `SourceVersion`, and located `Evidence` records in the same transaction. Reject a ledger row when its captured hash does not match the file.
-2. Represent each accepted claim from `sources/claim-matrix.md` as a `CANDIDATE` claim linked to at least one evidence row. Record `authorityType`, `authorityBasis`, rights-to-display, and the automated policy version.
-3. Add relationship candidates for conflict → operation/battle, operation/battle → person/equipment, and entity → source. Withhold the FH-77B Kargil relationship until a direct operational source is captured.
-4. Implement the authenticated batch-publisher actor. It must use the existing issuer-plus-subject authorization model and write review/audit rows; it must not bypass the public-read predicate or stamp anonymous approvals.
-5. Run publication validation for each entity. Automatically advance only routine claims that satisfy the policy in `docs/content-operations.md`; route exceptions into one grouped queue.
-6. Reconcile the search projection and compute the Kargil collection coverage from `content/collections/kargil-1999.json`.
-7. Exercise home → Kargil conflict → operation/battle → person/equipment → source on desktop and mobile. Add E2E assertions for source labels, back navigation, narrow width, missing evidence, and held disputed facts.
-8. Run the T27 release suite and preserve screenshots, accessibility results, performance measurements, rollback proof, and remaining gaps. Do not publish while OIDC/batch identity is unconfigured.
+1. Configure the authenticated batch-publisher actor. It must use the existing issuer-plus-subject authorization model and write review/audit rows; it must not bypass the public-read predicate or stamp anonymous approvals.
+2. Run publication validation for each entity. Automatically advance only routine claims that satisfy the policy in `docs/content-operations.md`; route exceptions into one grouped queue.
+3. Reconcile the search projection and compute the Kargil collection coverage from `content/collections/kargil-1999.json`.
+4. Exercise home → Kargil conflict → operation/battle → person/equipment → source on desktop and mobile. Add E2E assertions for source labels, back navigation, narrow width, missing evidence, and held disputed facts.
+5. Run the T27 release suite and preserve screenshots, accessibility results, performance measurements, rollback proof, and remaining gaps. Do not publish while OIDC/batch identity is unconfigured.
 
 ## Current blockers
 
 - Real publication attribution needs the owner-managed OIDC provider details listed in `docs/MANUAL_WORK_AND_REQUIRED_INPUTS.md` or a separately designed service identity with equivalent auditability.
 - A direct source for FH-77B employment in Kargil is still needed before that edge can be created.
-- Source/evidence/relationship ingestion is not yet implemented in the canonical importer.
+- Source/evidence/relationship ingestion is implemented for the candidate package; public publication remains gated by authenticated editorial identity and review.
