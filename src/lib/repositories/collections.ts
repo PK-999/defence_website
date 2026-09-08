@@ -14,6 +14,7 @@ type CollectionManifest = {
   title: string;
   description: string;
   knownEntityRefs: string[];
+  updatedAt: string | undefined;
 };
 
 export type FeaturedCollection = {
@@ -23,38 +24,47 @@ export type FeaturedCollection = {
   href: string;
 };
 
-async function readCollectionManifest(): Promise<CollectionManifest | null> {
+async function readCollectionManifests(): Promise<CollectionManifest[]> {
+  const directory = path.join(process.cwd(), "content", "collections");
   try {
-    const raw = await fs.readFile(path.join(process.cwd(), "content", "collections", "kargil-1999.json"), "utf8");
-    const parsed: unknown = JSON.parse(raw);
-    if (!parsed || typeof parsed !== "object") return null;
-    const manifest = parsed as Partial<CollectionManifest>;
-    if (typeof manifest.slug !== "string" || typeof manifest.title !== "string" || typeof manifest.description !== "string" || !Array.isArray(manifest.knownEntityRefs)) return null;
-    const refs = manifest.knownEntityRefs.filter((ref): ref is string => typeof ref === "string" && ref.includes(":"));
-    return refs.length > 0 ? { slug: manifest.slug, title: manifest.title, description: manifest.description, knownEntityRefs: refs } : null;
+    const entries = await fs.readdir(directory, { withFileTypes: true });
+    const manifests = await Promise.all(entries.filter((entry) => entry.isFile() && entry.name.endsWith(".json")).map(async (entry) => {
+      try {
+        const parsed: unknown = JSON.parse(await fs.readFile(path.join(directory, entry.name), "utf8"));
+        if (!parsed || typeof parsed !== "object") return null;
+        const manifest = parsed as Partial<CollectionManifest>;
+        if (typeof manifest.slug !== "string" || typeof manifest.title !== "string" || typeof manifest.description !== "string" || !Array.isArray(manifest.knownEntityRefs)) return null;
+        const refs = manifest.knownEntityRefs.filter((ref): ref is string => typeof ref === "string" && ref.includes(":"));
+        return refs.length > 0 ? { slug: manifest.slug, title: manifest.title, description: manifest.description, knownEntityRefs: refs, updatedAt: manifest.updatedAt } : null;
+      } catch {
+        return null;
+      }
+    }));
+    return manifests.filter((manifest): manifest is CollectionManifest => manifest !== null).sort((left, right) => (right.updatedAt ?? "").localeCompare(left.updatedAt ?? "") || left.slug.localeCompare(right.slug));
   } catch {
-    return null;
+    return [];
   }
 }
 
 export async function getFeaturedCollection(db: Database = prisma): Promise<FeaturedCollection | null> {
-  const manifest = await readCollectionManifest();
-  if (!manifest) return null;
+  const manifests = await readCollectionManifests();
   const publicFilter = publicWhere();
-  for (const ref of manifest.knownEntityRefs) {
-    const separator = ref.indexOf(":");
-    const type = ref.slice(0, separator) as EntityType;
-    const slug = ref.slice(separator + 1);
-    if (!(type in entityRoutes) || !slug) continue;
-    const where = { ...publicFilter, slug };
-    let exists = false;
-    if (type === "Conflict") exists = Boolean(await db.conflict.findFirst({ where }));
-    if (type === "Operation") exists = Boolean(await db.operation.findFirst({ where }));
-    if (type === "Person") exists = Boolean(await db.person.findFirst({ where }));
-    if (type === "Equipment") exists = Boolean(await db.equipment.findFirst({ where }));
-    if (type === "Unit") exists = Boolean(await db.unit.findFirst({ where }));
-    if (type === "Source") exists = Boolean(await db.source.findFirst({ where }));
-    if (exists) return { slug: manifest.slug, title: manifest.title, description: manifest.description, href: `${entityRoutes[type]}/${encodeURIComponent(slug)}` };
+  for (const manifest of manifests) {
+    for (const ref of manifest.knownEntityRefs) {
+      const separator = ref.indexOf(":");
+      const type = ref.slice(0, separator) as EntityType;
+      const slug = ref.slice(separator + 1);
+      if (!(type in entityRoutes) || !slug) continue;
+      const where = { ...publicFilter, slug };
+      let exists = false;
+      if (type === "Conflict") exists = Boolean(await db.conflict.findFirst({ where }));
+      if (type === "Operation") exists = Boolean(await db.operation.findFirst({ where }));
+      if (type === "Person") exists = Boolean(await db.person.findFirst({ where }));
+      if (type === "Equipment") exists = Boolean(await db.equipment.findFirst({ where }));
+      if (type === "Unit") exists = Boolean(await db.unit.findFirst({ where }));
+      if (type === "Source") exists = Boolean(await db.source.findFirst({ where }));
+      if (exists) return { slug: manifest.slug, title: manifest.title, description: manifest.description, href: `${entityRoutes[type]}/${encodeURIComponent(slug)}` };
+    }
   }
   return null;
 }

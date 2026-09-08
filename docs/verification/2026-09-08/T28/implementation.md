@@ -9,6 +9,7 @@ This tranche uses the default next-collection order from `docs/MANUAL_WORK_AND_R
 - Nine locator-based evidence rows, eight candidate claims, and three candidate relationships.
 - Raw captures are SHA-256 checked before the importer opens a write transaction.
 - Wikipedia is used for discovery/cross-checking only. The official PIB source supports the Osa I class and Operation Trident context; vessel-level specifications remain explicitly unverified.
+- The homepage collection reader now discovers every valid manifest under `content/collections/`, orders them by `updatedAt`, and selects the newest one with at least one public entity; draft-only manifests remain invisible.
 
 ## Reproducible commands
 
