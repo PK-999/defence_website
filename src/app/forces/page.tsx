@@ -1,20 +1,12 @@
+import Link from "next/link";
 import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
-
-export default function ForcesPage() {
-  return (
-    <div className="container mx-auto px-4 max-w-screen-xl py-12">
-      <SiteBreadcrumbs />
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold tracking-widest text-primary mb-4">FORCES</h1>
-        <p className="text-xl text-muted-foreground">Organizational structures, commands, and units.</p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {['INDIAN ARMY', 'INDIAN NAVY', 'INDIAN AIR FORCE'].map(force => (
-          <div key={force} className="p-8 border border-border/50 rounded-lg bg-card hover:border-primary/50 cursor-pointer text-center">
-            <h2 className="text-2xl font-bold tracking-wider mb-2">{force}</h2>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+import { listPublicUnits } from "@/lib/repositories/entities";
+import { prisma } from "@/lib/db";
+export const dynamic = "force-dynamic";
+const tabs = ["overview", "organization", "units"] as const;
+export default async function ForcesPage({ searchParams }: { searchParams: Promise<{ service?: string; tab?: string }> }) {
+  const params = await searchParams; const tab = tabs.includes(params.tab as typeof tabs[number]) ? params.tab as typeof tabs[number] : "overview"; const units = await listPublicUnits(params.service, prisma);
+  const services = Array.from(new Set((await prisma.unit.findMany({ where: { publicationStatus: "PUBLISHED", contentKind: "EDITORIAL", reviewedAt: { not: null }, reviewedBy: { not: null } }, distinct: ["serviceId"], select: { serviceId: true }, orderBy: { serviceId: "asc" } })).flatMap((row) => row.serviceId ? [row.serviceId] : [])));
+  const link = (next: { service?: string; tab: string }) => { const query = new URLSearchParams({ tab: next.tab }); if (next.service) query.set("service", next.service); return `/forces?${query.toString()}`; };
+  return <div className="mx-auto max-w-6xl px-4 py-10"><SiteBreadcrumbs /><h1 className="text-4xl font-bold">Forces</h1><p className="mt-2 max-w-2xl text-muted-foreground">A reviewed directory of services and units. Unsourced command maps and strength claims are intentionally omitted.</p><div className="my-8 flex flex-wrap gap-2">{[undefined, ...services].map((service) => <Link key={service ?? "all"} href={link({ service, tab })} className={`rounded-full border px-3 py-1 text-sm ${params.service === service ? "border-primary text-primary" : "border-border"}`}>{service ?? "All services"}</Link>)}</div><nav aria-label="Forces sections" className="flex gap-4 border-b border-border pb-2">{tabs.map((name) => <Link key={name} href={link({ service: params.service, tab: name })} aria-current={tab === name ? "page" : undefined} className={`pb-2 capitalize ${tab === name ? "border-b-2 border-primary text-primary" : "text-muted-foreground"}`}>{name}</Link>)}</nav>{tab === "overview" && <section className="mt-8 rounded border border-dashed border-border p-8"><h2 className="text-2xl font-semibold">Reviewed force overview</h2><p className="mt-2 text-muted-foreground">Service summaries will appear as individually sourced records. Browse the published units tab when the reviewed corpus is available.</p></section>}{tab === "organization" && <section className="mt-8 rounded border border-dashed border-border p-8"><h2 className="text-2xl font-semibold">Organization</h2><p className="mt-2 text-muted-foreground">Hierarchy is shown only when parent and child units have reviewed records.</p></section>}{tab === "units" && <section className="mt-8"><div className="mb-4 flex items-center justify-between"><h2 className="text-2xl font-semibold">Published units</h2><span className="text-sm text-muted-foreground">{units.length} records</span></div>{units.length === 0 ? <p className="rounded border border-dashed p-8 text-center text-muted-foreground">No reviewed units are available for this service.</p> : <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{units.map((unit) => <Link key={unit.id} href={`/forces/units/${unit.slug}`} className="rounded border border-border bg-card p-5 hover:border-primary"><p className="text-xs uppercase text-primary">{unit.unitType}</p><h3 className="mt-2 text-xl font-semibold">{unit.title}</h3><p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{unit.summary}</p></Link>)}</div>}</section>}</div>;
 }

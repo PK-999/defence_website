@@ -1,0 +1,14 @@
+name: conflict
+description: "Template for mapping historical conflicts, wars, and major operations."
+required_dimensions:
+  - name: "Western Theatre Context"
+    description: "Must include details regarding the western front or borders, if applicable."
+  - name: "Naval Context"
+    description: "Must include maritime operations or blockades."
+  - name: "International Context"
+    description: "Must cover UN resolutions or foreign involvement."
+required_entities:
+  - type: Person
+    role: "Commander-in-Chief"
+  - type: Operation
+    role: "Major Offensive"

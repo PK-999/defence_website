@@ -1,0 +1,359 @@
+[
+  {
+    "title": "Battle of Badgam",
+    "slug": "battle-of-badgam-1947",
+    "category": "Battle",
+    "dateStart": "03-11-1947",
+    "status": "Published",
+    "summary": "Major Somnath Sharma leads a legendary defense against tribal raiders.",
+    "content": "A critical engagement in the 1947 Indo-Pakistani War where D Company of the 4th Battalion, Kumaon Regiment, delayed tribal raiders from reaching Srinagar airfield. Major Somnath Sharma was posthumously awarded India's first Param Vir Chakra.",
+    "coordinates": "[34.0133, 74.7214]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Badgam",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1947"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Operation Bison (Zoji La)",
+    "slug": "operation-bison-1948",
+    "category": "Military Operation",
+    "dateStart": "01-11-1948",
+    "status": "Published",
+    "summary": "Historic employment of tanks at high altitude.",
+    "content": "Operation Bison was the Indian Army's historic assault using Stuart tanks at the Zoji La pass (11,575 ft) to dislodge Pakistani forces and relieve the garrison at Leh.",
+    "coordinates": "[34.2797, 75.4608]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Operation_Bison",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1947"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Naval Action at Mormugao",
+    "slug": "naval-action-mormugao-1961",
+    "category": "Naval Battle",
+    "dateStart": "18-12-1961",
+    "status": "Published",
+    "summary": "INS Betwa and INS Beas engage the Portuguese sloop NRP Afonso de Albuquerque.",
+    "content": "During Operation Vijay, the Indian Navy engaged the Portuguese warship NRP Afonso de Albuquerque off Mormugao harbor. The Portuguese ship was heavily damaged and beached.",
+    "coordinates": "[15.4128, 73.7925]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/NRP_Afonso_de_Albuquerque",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "goa-1961"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Battle of Namka Chu",
+    "slug": "battle-of-namka-chu-1962",
+    "category": "Battle",
+    "dateStart": "20-10-1962",
+    "status": "Published",
+    "summary": "Initial massive Chinese assault marking the start of the 1962 war.",
+    "content": "Chinese forces launched a massive surprise attack across the Namka Chu river against ill-equipped Indian positions, leading to heavy Indian casualties and the beginning of the Sino-Indian War.",
+    "coordinates": "[27.7656, 91.7371]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Namka_Chu",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "sino-indian-1962"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Battle of Rezang La",
+    "slug": "battle-of-rezang-la-1962",
+    "category": "Battle",
+    "dateStart": "18-11-1962",
+    "status": "Published",
+    "summary": "Ahir Company's legendary last stand in Ladakh.",
+    "content": "120 men of C Company, 13 Kumaon, led by Major Shaitan Singh, made a legendary last stand against thousands of Chinese troops at Rezang La, preventing a breakthrough into the Chushul Valley.",
+    "coordinates": "[33.4357, 78.8351]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Rezang_La",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "sino-indian-1962"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Battle of Haji Pir",
+    "slug": "battle-of-haji-pir-1965",
+    "category": "Battle",
+    "dateStart": "28-08-1965",
+    "status": "Published",
+    "summary": "Daring capture of the strategic Haji Pir Pass.",
+    "content": "Indian forces launched a daring assault to capture the Haji Pir pass, cutting off the main infiltration route of Pakistani militants during Operation Gibraltar. Major Ranjit Singh Dayal led the successful capture.",
+    "coordinates": "[33.9535, 74.0535]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Haji_Pir_Pass",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1965"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Battle of Asal Uttar",
+    "slug": "battle-of-asal-uttar",
+    "category": "Battle",
+    "dateStart": "08-09-1965",
+    "dateEnd": "10-09-1965",
+    "status": "Published",
+    "summary": "One of the largest tank battles fought during the Indo-Pakistani War of 1965.",
+    "content": "The Battle of Asal Uttar was one of the largest tank battles fought during the Indo-Pakistani War of 1965. It resulted in a decisive Indian victory and the destruction of a large number of Pakistani Patton tanks. Company Quarter Master Havildar Abdul Hamid destroyed multiple tanks and was awarded the Param Vir Chakra.",
+    "coordinates": "[31.1448, 74.5517]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Asal_Uttar",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1965"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Battle of Chawinda",
+    "slug": "battle-of-chawinda-1965",
+    "category": "Battle",
+    "dateStart": "14-09-1965",
+    "dateEnd": "19-09-1965",
+    "status": "Published",
+    "summary": "Major tank battle in the Sialkot sector.",
+    "content": "One of the largest tank engagements since World War II, Indian armor attempted to cut off the Pakistani supply line in the Sialkot sector, leading to a massive clash of tanks at Chawinda.",
+    "coordinates": "[32.3391, 74.7170]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Chawinda",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1965"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Operation Trident",
+    "slug": "operation-trident",
+    "category": "Naval Operation",
+    "dateStart": "04-12-1971",
+    "dateEnd": "05-12-1971",
+    "status": "Published",
+    "summary": "Offensive operation by the Indian Navy on Pakistan's port city of Karachi.",
+    "content": "Operation Trident was an offensive operation launched by the Indian Navy on Pakistan's port city of Karachi during the Indo-Pakistani War of 1971. It saw the first use of anti-ship missiles in combat in the region, sinking multiple Pakistani vessels.",
+    "coordinates": "[24.8607, 66.9905]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Operation_Trident_(1971)",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Battle of Longewala",
+    "slug": "battle-of-longewala",
+    "category": "Battle",
+    "dateStart": "04-12-1971",
+    "dateEnd": "07-12-1971",
+    "status": "Published",
+    "summary": "Defensive battle in the western sector.",
+    "content": "120 Indian soldiers of the 23 Punjab regiment, commanded by Major Kuldip Singh Chandpuri, held off a massive Pakistani armored thrust at the border post of Longewala, supported by the Indian Air Force Hunter jets.",
+    "coordinates": "[27.5255, 70.1585]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Longewala",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Battle of Basantar",
+    "slug": "battle-of-basantar-1971",
+    "category": "Battle",
+    "dateStart": "04-12-1971",
+    "dateEnd": "16-12-1971",
+    "status": "Published",
+    "summary": "Fierce armored and infantry battle in the Shakargarh sector.",
+    "content": "A decisive Indian victory in the western sector involving intense armored combat. 2nd Lt Arun Khetarpal displayed exceptional bravery destroying several Pakistani tanks before falling in combat.",
+    "coordinates": "[32.4820, 75.0253]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Basantar",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Tangail Airdrop",
+    "slug": "tangail-airdrop-1971",
+    "category": "Airborne Operation",
+    "dateStart": "11-12-1971",
+    "status": "Published",
+    "summary": "Largest airborne operation by Indian forces.",
+    "content": "A massive airdrop of the 2nd Battalion of the Parachute Regiment at Tangail, East Pakistan, aimed at capturing the Poongli Bridge and cutting off the retreat of the Pakistani 93rd Brigade.",
+    "coordinates": "[24.2513, 89.9167]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Tangail_Airdrop",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Operation Rajiv (Capture of Quaid Post)",
+    "slug": "operation-rajiv-1987",
+    "category": "High Altitude Assault",
+    "dateStart": "23-06-1987",
+    "dateEnd": "26-06-1987",
+    "status": "Published",
+    "summary": "Capture of a strategic post on the Siachen glacier.",
+    "content": "A daring high-altitude assault led by Naib Subedar Bana Singh to capture the crucial Quaid Post at 21,153 feet, which gave Pakistan a commanding view of the Saltoro ridge. It was later renamed Bana Top.",
+    "coordinates": "[35.2100, 77.0200]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Operation_Rajiv",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "siachen-1984"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Infiltration Discovered",
+    "slug": "kargil-infiltration-discovered",
+    "category": "Turning Point",
+    "dateStart": "03-05-1999",
+    "status": "Published",
+    "summary": "Local shepherds report armed men on the heights.",
+    "content": "Local shepherds in Batalik sector noticed unknown armed personnel constructing bunkers on the ridgelines. Initial patrols sent by the Indian Army are ambushed.",
+    "coordinates": "[34.6186, 76.1558]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Kargil_War",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "kargil-1999"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Battle of Tololing",
+    "slug": "kargil-battle-of-tololing",
+    "category": "Battle",
+    "dateStart": "13-06-1999",
+    "dateEnd": "14-06-1999",
+    "status": "Published",
+    "summary": "Crucial victory secures the strategic peak.",
+    "content": "After weeks of bitter fighting, the Rajputana Rifles capture the Tololing peak. This was the turning point of the war, providing a foothold for further assaults.",
+    "coordinates": "[34.4533, 76.0022]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Tololing",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "kargil-1999"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Capture of Point 5140",
+    "slug": "kargil-point-5140",
+    "category": "Battle",
+    "dateStart": "20-06-1999",
+    "status": "Published",
+    "summary": "Capt. Vikram Batra leads the assault.",
+    "content": "Captured by 13 JAK RIF. Capt. Vikram Batra gave his famous victory signal 'Yeh Dil Maange More!' after successfully capturing this high-altitude feature.",
+    "coordinates": "[34.4550, 75.9900]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Vikram_Batra",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "kargil-1999"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Capture of Tiger Hill",
+    "slug": "kargil-tiger-hill",
+    "category": "Battle",
+    "dateStart": "04-07-1999",
+    "dateEnd": "08-07-1999",
+    "status": "Published",
+    "summary": "The most prominent peak falls after a grueling assault.",
+    "content": "The 18 Grenadiers, supported by artillery and the 8 Sikh, launch a multi-directional assault on Tiger Hill. The peak is captured after intense close-quarters combat.",
+    "coordinates": "[34.4633, 75.9861]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Battle_of_Tiger_Hill",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "kargil-1999"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Operation Safed Sagar",
+    "slug": "operation-safed-sagar",
+    "category": "Air Force Operation",
+    "dateStart": "11-05-1999",
+    "dateEnd": "26-07-1999",
+    "status": "Published",
+    "summary": "Air force strikes and Pakistani retreat.",
+    "content": "Major logistics camps like Muntho Dhalo were destroyed by IAF airstrikes using laser-guided bombs. Faced with overwhelming military pressure, the infiltrators retreat.",
+    "coordinates": "[34.5200, 75.8100]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Operation_Safed_Sagar",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "kargil-1999"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Operation Polo",
+    "slug": "operation-polo",
+    "category": "Military Operation",
+    "dateStart": "13-09-1948",
+    "dateEnd": "18-09-1948",
+    "status": "Published",
+    "summary": "Police action to annex the princely state of Hyderabad.",
+    "content": "Operation Polo was the code name of the Hyderabad 'police action' in September 1948, by the then newly independent Dominion of India against Hyderabad State.",
+    "coordinates": "[17.3850, 78.4867]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/Annexation_of_Hyderabad"
+  },
+  {
+    "title": "Operation Cactus",
+    "slug": "operation-cactus",
+    "category": "Military Intervention",
+    "dateStart": "03-11-1988",
+    "dateEnd": "06-11-1988",
+    "status": "Published",
+    "summary": "Indian armed forces intervention to thwart a coup attempt in the Maldives.",
+    "content": "Operation Cactus was an intervention by the Indian Armed Forces to thwart a coup d'\u00e9tat attempt against the government of President Maumoon Abdul Gayoom in the Maldives.",
+    "coordinates": "[4.1755, 73.5093]",
+    "referenceUrl": "https://en.wikipedia.org/wiki/1988_Maldives_coup_d%27%C3%A9tat_attempt"
+  }
+]

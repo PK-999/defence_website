@@ -1,5 +1,15 @@
 # SENTINEL --- Exhaustive Dataset Build Strategy
 
+## Current data implementation authority — 6 September 2026
+
+For the existing repository, use [T03–T09 and T24–T26](docs/implementation-plan.md), [canonical data contracts](docs/implementation-contracts.md), [the test matrix](docs/test-plan.md), and [the migration/editorial runbook](docs/content-operations.md). This strategy remains the long-term coverage vision. Its later automation percentages and Postgres/dbt architecture are future direction, not current implementation requirements or evidence of completion.
+
+The current recovery uses additive SQLite migrations, a guarded disposable rehearsal database, validated/idempotent imports, DRAFT defaults, separate publication/evidence statuses, and explicit editor review. Official source classification never automatically proves a claim. Missing source/model output is a failed extraction, never substitute content. Legacy seed scripts must not clear the working database or provenance. No bulk crawler or machine-generated publication is authorized by this document alone.
+
+Use [progress_tracker.md](progress_tracker.md) for actual gates. Existing checked boxes and labels such as Golden Dataset are not verified evidence. The detailed test plan specifies exact fixtures, edge cases, expected results, and database isolation.
+
+---
+
 ## Coding-Agent Implementation Specification
 
 **Purpose:** Build the durable data asset behind SENTINEL: a versioned,
@@ -1969,3 +1979,71 @@ Rooms, Data Lab, research tools and future AI become downstream
 engineering problems rather than trust problems.
 
 **Build the evidence system first. Scale second.**
+
+---
+
+# 47. The Automated Golden Dataset Factory
+
+After establishing the foundation with the first two Golden Datasets (e.g., Kargil and Aircraft/1971), the objective shifts from *human-manual construction* to *machine construction with human verification*. The target is 80–95% automated preparation, while humans focus entirely on resolving exceptions, resolving ambiguity, and final approval.
+
+## 47.1 The Pipeline Architecture
+When a new topic is initiated (e.g., 1965, Operation Meghdoot, naval classes), it follows a strict Dagster-orchestrated lineage:
+
+1. **New Dataset Request** → triggers the **Coverage Planner** to generate a specific research plan.
+2. **Source Discovery** → routes the plan to specific adapters (MoD, PIB, Parliament, Army, Navy, IAF, Archives, DRDO).
+3. **Raw / Bronze** → fetches documents into a raw storage zone.
+4. **Document Parsing** → converts HTML/PDF/CSV into structured Bronze/Silver documents.
+5. **Silver Data** → automatically extracts Entities, Claims, and Relations.
+6. **Entity Resolution** → merges known aliases and flags ambiguous new entities.
+7. **Candidate Dataset** → passes through a **Quality Engine** checking temporal, source, and conflict rules.
+8. **Research Agent** → autonomously triggers a second pass if coverage dimensions are missing.
+9. **Review Queue** → groups low confidence data, source conflicts, and missing entities.
+10. **Human Review** → editor resolves exceptions.
+11. **Gold Dataset** → approved and published to the website, graph, and search engine.
+
+## 47.2 Configuration over Prose
+Dataset structures and rules must be encoded in machine-readable YAML, not prose.
+```text
+/config
+   ontology.yaml
+   predicates.yaml
+   entity-types.yaml
+   /dataset-templates
+      conflict.yaml
+      operation.yaml
+      equipment.yaml
+   /extraction
+      person-rules.yaml
+      event-rules.yaml
+   /sources
+      mod.yaml
+      pib.yaml
+```
+
+The initial Golden Datasets serve as **regression tests** (e.g., `tests/golden/kargil/expected_claims.json`). Any future change in the pipeline's extraction AI or entity resolution algorithms is run against these benchmarks to prevent degradation.
+
+## 47.3 Automated Research Planning
+Before scraping anything, an agent acts as a Planner. For example, a request for "Indo-Pakistani War of 1965" generates a research plan with specific dimensions (e.g., western theatre, naval context, UN records) and assigns them to authoritative source families (e.g., MoD, Parliament, UN). Web search is relegated to a gap-filling mechanism, not the primary corpus.
+
+## 47.4 LLM as Database Transaction Proposers
+Instead of asking AI to "summarize a document", it is prompted to extract atomic claims with specific evidence locators:
+```json
+{
+  "subject": "unit:4-sikh",
+  "predicate": "PARTICIPATED_IN",
+  "object": "event:xyz",
+  "date": "1965-09-10",
+  "evidence": { "source": "source:123", "page": 42 }
+}
+```
+The AI essentially proposes database transactions, which are queued for review or auto-linked if deterministic.
+
+## 47.5 Automated Coverage & Gap Agents
+The coverage engine continuously checks progress against the template (e.g., `dataset_type: conflict`). If "Naval context" or "International context" is missing, it triggers a specialized Research Task focusing exclusively on Parliament or UN records, creating a self-healing loop.
+
+## 47.6 Human Review becomes Exception-Based
+The system detects missing entities, source contradictions (e.g., Source A says 120 casualties, Source B says 142), and calculates evidence quality scores. Humans only interact with the **Review Dashboard** to resolve these high-risk exceptions. Low-risk data (e.g., document metadata, award recipients from deterministic tables) can eventually be auto-promoted to Gold.
+
+## 47.7 The Orchestration Separation
+- **Dagster** manages orchestration, control, crawling, parsing, and AI pipelines (assets like sources, parsed_documents, candidate_claims, gold_claims).
+- **dbt** is used strictly downstream on the Postgres database to build, validate, and manage analytics and presentation transformations once the operational data is secure.

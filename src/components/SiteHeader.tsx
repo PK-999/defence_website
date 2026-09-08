@@ -5,18 +5,13 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { GlobalSearch } from "./GlobalSearch";
-
-const NAV_LINKS = [
-  { name: "HISTORY", href: "/history" },
-  { name: "PEOPLE", href: "/people" },
-  { name: "OPERATIONS", href: "/operations" },
-  { name: "ARSENAL", href: "/arsenal" },
-  { name: "FORCES", href: "/forces" },
-  { name: "GRAPH", href: "/graph" },
-  { name: "ARCHIVE", href: "/archive" },
-];
+import { usePathname } from "next/navigation";
+import { primaryNavigation } from "@/lib/navigation";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const active = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center mx-auto px-4">
@@ -27,22 +22,30 @@ export function SiteHeader() {
             </span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium text-muted-foreground">
-            {NAV_LINKS.map((link) => (
+            {primaryNavigation.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 href={link.href}
-                className="transition-colors hover:text-foreground/80"
+                aria-current={active(link.href) ? "page" : undefined}
+                className={`transition-colors hover:text-foreground/80 ${active(link.href) ? "text-foreground" : ""}`}
               >
-                {link.name}
+                {link.label}
               </Link>
             ))}
           </nav>
         </div>
         <div className="flex md:hidden mr-4">
-          <Button variant="ghost" size="icon" className="-ml-2">
-            <Menu className="h-5 w-5" />
-            <span className="sr-only">Toggle menu</span>
-          </Button>
+          <Dialog>
+            <DialogTrigger render={<Button variant="ghost" size="icon" className="-ml-2" aria-label="Open navigation" />}>
+              <Menu className="h-5 w-5" />
+            </DialogTrigger>
+            <DialogContent className="max-w-sm">
+              <DialogHeader><DialogTitle>Site navigation</DialogTitle><DialogDescription>Browse the reviewed archive.</DialogDescription></DialogHeader>
+              <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
+                {primaryNavigation.map((link) => <Link key={link.href} href={link.href} aria-current={active(link.href) ? "page" : undefined} className="rounded px-3 py-2 hover:bg-muted">{link.label}</Link>)}
+              </nav>
+            </DialogContent>
+          </Dialog>
           <Link href="/" className="ml-4 flex items-center space-x-2">
             <span className="font-bold inline-block tracking-wider">SENTINEL</span>
           </Link>

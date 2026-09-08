@@ -1,0 +1,2 @@
+import Link from "next/link";
+export function UnitPreview({ unit }: { unit: { slug: string; title: string; summary: string; unitType: string } }) { return <article className="rounded border border-border bg-card p-5"><p className="text-xs uppercase text-primary">{unit.unitType}</p><h2 className="mt-2 text-xl font-semibold">{unit.title}</h2><p className="mt-2 text-sm text-muted-foreground">{unit.summary}</p><Link className="mt-4 inline-block text-sm text-primary underline" href={`/forces/units/${unit.slug}`}>Open unit profile</Link></article>; }

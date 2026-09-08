@@ -1,0 +1,2 @@
+import Link from "next/link";
+export function OnThisPage({ items }: { items: Array<{ id: string; label: string }> }) { if (!items.length) return null; return <nav aria-label="On this page" className="rounded border border-border bg-card p-4"><p className="text-xs uppercase tracking-wider text-muted-foreground">On this page</p><ul className="mt-2 space-y-1 text-sm">{items.map((item) => <li key={item.id}><Link href={`#${item.id}`} className="text-primary underline underline-offset-2">{item.label}</Link></li>)}</ul></nav>; }

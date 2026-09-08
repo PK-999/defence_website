@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Loader2 } from "lucide-react";
 import Link from "next/link";
@@ -21,7 +20,12 @@ export function GlobalSearch() {
   const [query, setQuery] = React.useState("");
   const [results, setResults] = React.useState<SearchResult[]>([]);
   const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(false);
+  const [retryNonce, setRetryNonce] = React.useState(0);
+  const [activeIndex, setActiveIndex] = React.useState(0);
   const router = useRouter();
+  const requestId = React.useRef(0);
+  const controller = React.useRef<AbortController | null>(null);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -36,22 +40,42 @@ export function GlobalSearch() {
 
   React.useEffect(() => {
     if (query.length < 2) {
+      // The query state is the source of truth; clear stale results immediately when it becomes too short.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setResults([]);
+      setError(false);
+      controller.current?.abort();
       return;
     }
     const timeoutId = setTimeout(() => {
+      controller.current?.abort();
+      const id = ++requestId.current;
+      const nextController = new AbortController(); controller.current = nextController;
       setLoading(true);
+      setError(false);
       fetch(`/api/search?q=${encodeURIComponent(query)}`)
-        .then((res) => res.json())
+        .then((res) => { if (!res.ok) throw new Error("SEARCH_FAILED"); return res.json(); })
         .then((data) => {
+          if (id !== requestId.current) return;
           setResults(data.results || []);
-          setLoading(false);
         })
-        .catch(() => setLoading(false));
-    }, 300); // 300ms debounce
+        .catch((reason: unknown) => {
+          if (id !== requestId.current || (reason instanceof DOMException && reason.name === "AbortError")) return;
+          setResults([]); setError(true);
+        })
+        .finally(() => {
+          if (id === requestId.current) setLoading(false);
+        })
+    }, 300);
 
-    return () => clearTimeout(timeoutId);
-  }, [query]);
+    return () => { clearTimeout(timeoutId); controller.current?.abort(); };
+  }, [query, retryNonce]);
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => Math.min(index + 1, Math.max(0, results.length - 1))); }
+    if (event.key === "ArrowUp") { event.preventDefault(); setActiveIndex((index) => Math.max(0, index - 1)); }
+    if (event.key === "Enter" && results[activeIndex]) { event.preventDefault(); handleSelect(results[activeIndex].href); }
+  };
 
   const handleSelect = (href: string) => {
     setOpen(false);
@@ -76,21 +100,28 @@ export function GlobalSearch() {
           <Input 
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={onKeyDown}
+            role="combobox"
+            aria-expanded={results.length > 0}
+            aria-controls="global-search-results"
+            aria-autocomplete="list"
             className="flex-1 border-0 shadow-none focus-visible:ring-0 text-base h-auto p-0 bg-transparent"
             placeholder="Type a command or search..."
             autoFocus
           />
           {loading && <Loader2 className="w-4 h-4 animate-spin text-muted-foreground ml-2" />}
         </div>
-        <div className="max-h-[60vh] overflow-y-auto p-2">
+        <div id="global-search-results" role="listbox" aria-label="Search results" className="max-h-[60vh] overflow-y-auto p-2">
           {results.length === 0 && query.length >= 2 && !loading && (
-            <p className="p-4 text-center text-sm text-muted-foreground">No results found for "{query}".</p>
+            <div className="p-4 text-center text-sm text-muted-foreground">{error ? <><p>Search is temporarily unavailable.</p><button type="button" className="mt-2 text-primary underline" onClick={() => setRetryNonce((value) => value + 1)}>Retry</button></> : `No results found for "${query}".`}</div>
           )}
           {results.length > 0 && (
             <div className="flex flex-col gap-1">
               {results.map((r) => (
                 <button
                   key={`${r.type}-${r.id}`}
+                  role="option"
+                  aria-selected={results[activeIndex]?.id === r.id}
                   onClick={() => handleSelect(r.href)}
                   className="flex flex-col text-left px-3 py-2 rounded-md hover:bg-muted/50 transition-colors"
                 >

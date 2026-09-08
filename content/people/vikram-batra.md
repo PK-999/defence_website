@@ -1,5 +1,6 @@
 ---
 id: p-vikram-batra
+slug: vikram-batra
 title: Vikram Batra
 fullName: Captain Vikram Batra
 summary: An officer of the Indian Army, awarded with the Param Vir Chakra, India's highest and most prestigious award for valour, for his actions during the 1999 Kargil War.

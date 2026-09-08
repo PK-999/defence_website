@@ -1,0 +1,3 @@
+import { expect, test } from "@playwright/test";
+test("editorial destinations and canonical collection links resolve", async ({ page }) => { await page.goto("/about"); await expect(page.getByRole("heading", { name: "About the archive" })).toBeVisible(); await page.goto("/heroes"); await expect(page.getByRole("heading", { name: "People" })).toBeVisible(); });
+test("mobile navigation exposes a labeled trigger", async ({ page }) => { await page.setViewportSize({ width: 375, height: 800 }); await page.goto("/"); await expect(page.getByRole("button", { name: "Open navigation" })).toBeVisible(); });

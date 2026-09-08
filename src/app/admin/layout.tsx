@@ -1,7 +1,23 @@
 import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
+import { requireAnyEditorRole, UnauthorizedError } from "@/lib/auth/editor";
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+  try {
+    await requireAnyEditorRole(["REVIEWER", "PUBLISHER"]);
+  } catch (error) {
+    if (error instanceof UnauthorizedError) {
+      return (
+        <main className="mx-auto flex min-h-[50vh] max-w-2xl flex-col items-center justify-center px-6 py-20 text-center">
+          <ShieldAlert className="mb-4 h-10 w-10 text-muted-foreground" aria-hidden="true" />
+          <h1 className="text-2xl font-semibold">Editor access is unavailable</h1>
+          <p className="mt-3 text-muted-foreground">This review area is closed until an editor identity provider is configured.</p>
+        </main>
+      );
+    }
+    throw error;
+  }
+
   return (
     <div className="flex h-full min-h-[80vh] bg-muted/10">
       {/* Sidebar */}

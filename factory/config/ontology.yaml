@@ -1,0 +1,41 @@
+# SENTINEL Ontology Definition
+# Used by Dagster / AI Extraction to ensure only valid predicates and properties are extracted.
+
+predicates:
+  person_to_operation:
+    - PARTICIPATED_IN
+    - COMMANDED
+    - DIED_DURING
+    - WOUNDED_IN
+
+  equipment_to_operation:
+    - DEPLOYED_IN
+    - DESTROYED_DURING
+
+  conflict_to_operation:
+    - INCLUDES_OPERATION
+
+properties:
+  equipment:
+    - topSpeed
+    - range
+    - armament
+    - crewSize
+    - inductionYear
+    - retirementYear
+    - designer
+    - role
+
+  conflict:
+    - startDate
+    - endDate
+    - location
+    - outcome
+    - casualties
+
+  person:
+    - birthDate
+    - deathDate
+    - highestRank
+    - placeOfBirth
+    - medals

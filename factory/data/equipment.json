@@ -1,0 +1,222 @@
+[
+  {
+    "title": "Arjun MBT",
+    "slug": "arjun-mbt",
+    "domain": "Land",
+    "category": "Main Battle Tank",
+    "summary": "Third generation main battle tank developed by DRDO.",
+    "status": "Published",
+    "developmentModel": "Indigenous",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"India\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe Arjun MBT is a highly capable main battle tank originally developed in India. It serves as a critical component in the Indian Armed Forces' Land operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Land\n* **Category:** Main Battle Tank\n* **Status:** Active Deployment\n",
+    "conflicts": {
+      "connect": []
+    }
+  },
+  {
+    "title": "T-90S Bhishma",
+    "slug": "t-90s-bhishma",
+    "domain": "Land",
+    "category": "Main Battle Tank",
+    "summary": "Third generation Russian-origin MBT.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"Russia\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe T-90S Bhishma is a highly capable main battle tank originally developed in Russia. It serves as a critical component in the Indian Armed Forces' Land operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Land\n* **Category:** Main Battle Tank\n* **Status:** Active Deployment\n",
+    "conflicts": {
+      "connect": []
+    }
+  },
+  {
+    "title": "T-72 Ajeya",
+    "slug": "t-72-ajeya",
+    "domain": "Land",
+    "category": "Main Battle Tank",
+    "summary": "Second generation MBT.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"Soviet Union\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe T-72 Ajeya is a highly capable main battle tank originally developed in Soviet Union. It serves as a critical component in the Indian Armed Forces' Land operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Land\n* **Category:** Main Battle Tank\n* **Status:** Active Deployment\n",
+    "conflicts": {
+      "connect": []
+    }
+  },
+  {
+    "title": "Centurion Tank",
+    "slug": "centurion-tank",
+    "domain": "Land",
+    "category": "Main Battle Tank",
+    "summary": "British-made MBT crucial in the 1965 war.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"United Kingdom\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe Centurion Tank is a highly capable main battle tank originally developed in United Kingdom. It serves as a critical component in the Indian Armed Forces' Land operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Land\n* **Category:** Main Battle Tank\n* **Status:** Active Deployment\n",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1965"
+        },
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Bofors FH-77B",
+    "slug": "bofors-fh-77b",
+    "domain": "Land",
+    "category": "Towed Artillery",
+    "summary": "155mm howitzer famously used in the Kargil War.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"Sweden\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe Bofors FH-77B is a highly capable towed artillery originally developed in Sweden. It serves as a critical component in the Indian Armed Forces' Land operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Land\n* **Category:** Towed Artillery\n* **Status:** Active Deployment\n\n**Kargil War Performance:** The Bofors howitzer became a household name during the Kargil War, where its shoot-and-scoot capability and devastating high-altitude accuracy shattered enemy bunkers on steep cliffs, providing essential cover for advancing infantry.",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "kargil-1999"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Mirage 2000",
+    "slug": "mirage-2000",
+    "domain": "Air",
+    "category": "Fighter Aircraft",
+    "summary": "Delta wing multirole fighter, crucial during Kargil.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"France\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe Mirage 2000 is a highly capable fighter aircraft originally developed in France. It serves as a critical component in the Indian Armed Forces' Air operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Air\n* **Category:** Fighter Aircraft\n* **Status:** Active Deployment\n\n**Kargil War Performance:** The Mirage 2000s were instrumental in Operation Safed Sagar, utilizing laser-guided bombs to destroy heavily fortified Pakistani logistical bases like Muntho Dhalo, changing the course of the war.",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "kargil-1999"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Hawker Hunter",
+    "slug": "hawker-hunter",
+    "domain": "Air",
+    "category": "Fighter Aircraft",
+    "summary": "Transonic British jet fighter.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"United Kingdom\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe Hawker Hunter is a highly capable fighter aircraft originally developed in United Kingdom. It serves as a critical component in the Indian Armed Forces' Air operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Air\n* **Category:** Fighter Aircraft\n* **Status:** Active Deployment\n",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1965"
+        },
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Folland Gnat",
+    "slug": "folland-gnat",
+    "domain": "Air",
+    "category": "Fighter Aircraft",
+    "summary": "Compact swept-wing fighter, nicknamed 'Sabre Slayer'.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"United Kingdom\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe Folland Gnat is a highly capable fighter aircraft originally developed in United Kingdom. It serves as a critical component in the Indian Armed Forces' Air operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Air\n* **Category:** Fighter Aircraft\n* **Status:** Active Deployment\n\n**Sabre Slayer:** During the 1965 war, the tiny Folland Gnat consistently outmaneuvered the technically superior Pakistani F-86 Sabres, earning the legendary moniker 'Sabre Slayer'.",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1965"
+        },
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Mil Mi-17",
+    "slug": "mil-mi-17",
+    "domain": "Air",
+    "category": "Transport Helicopter",
+    "summary": "Medium twin-turbine transport helicopter.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"Russia\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe Mil Mi-17 is a highly capable transport helicopter originally developed in Russia. It serves as a critical component in the Indian Armed Forces' Air operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Air\n* **Category:** Transport Helicopter\n* **Status:** Active Deployment\n",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "kargil-1999"
+        }
+      ]
+    }
+  },
+  {
+    "title": "INS Vikrant (R11)",
+    "slug": "ins-vikrant-r11",
+    "domain": "Sea",
+    "category": "Aircraft Carrier",
+    "summary": "First aircraft carrier of the Indian Navy.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"United Kingdom\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe INS Vikrant (R11) is a highly capable aircraft carrier originally developed in United Kingdom. It serves as a critical component in the Indian Armed Forces' Sea operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Sea\n* **Category:** Aircraft Carrier\n* **Status:** Active Deployment\n",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "goa-1961"
+        },
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  },
+  {
+    "title": "Vidyut-class Missile Boat",
+    "slug": "vidyut-class-missile-boat",
+    "domain": "Sea",
+    "category": "Missile Boat",
+    "summary": "Fast attack craft used in Operation Trident.",
+    "status": "Published",
+    "developmentModel": "Imported",
+    "serviceStatus": "Deployed",
+    "originCountries": "[\"Soviet Union\"]",
+    "specs": "[]",
+    "content": "## Overview\nThe Vidyut-class Missile Boat is a highly capable missile boat originally developed in Soviet Union. It serves as a critical component in the Indian Armed Forces' Sea operations.\n\n## Operational History\nThis equipment has seen extensive deployment and has proved its mettle in numerous high-stakes operations. Its robust design and firepower have repeatedly turned the tide of battle.\n\n## Technical Specifications\n* **Domain:** Sea\n* **Category:** Missile Boat\n* **Status:** Active Deployment\n\n**Operation Trident:** These boats, armed with Styx missiles, successfully penetrated Karachi harbor defenses in 1971, marking one of the most successful naval operations in modern history.",
+    "conflicts": {
+      "connect": [
+        {
+          "slug": "indo-pak-1971"
+        }
+      ]
+    }
+  }
+]

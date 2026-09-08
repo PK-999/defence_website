@@ -1,7 +1,13 @@
 import { prisma } from "@/lib/content";
 import { Card } from "@/components/ui/card";
+import { requireEditor, UnauthorizedError } from "@/lib/auth/editor";
+import { AdminAccessNotice } from "@/components/AdminAccessNotice";
 
 export default async function AdminDashboard() {
+  try { await requireEditor(); } catch (error) {
+    if (error instanceof UnauthorizedError) return <AdminAccessNotice />;
+    throw error;
+  }
   const [conflictCount, personCount, equipmentCount, sourceCount] = await Promise.all([
     prisma.conflict.count(),
     prisma.person.count(),

@@ -1,7 +1,17 @@
-import { prisma } from "@/lib/content";
+import { searchArchive } from "@/lib/search/service";
+import { prisma } from "@/lib/db";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+
+type SearchPageResult = {
+  id: string;
+  title: string;
+  slug: string;
+  summary: string;
+  type: string;
+  href: string;
+};
 
 export default async function AdvancedSearchPage(
   props: { searchParams: Promise<{ q?: string; type?: string }> }
@@ -10,33 +20,13 @@ export default async function AdvancedSearchPage(
   const q = searchParams.q || "";
   const typeFilter = searchParams.type || "all";
 
-  // Reusable search clause for Prisma
-  const searchClause = q.length >= 2 ? {
-    OR: [
-      { title: { contains: q } },
-      { summary: { contains: q } },
-    ]
-  } : undefined;
-
-  let results: any[] = [];
+  let results: SearchPageResult[] = [];
+  let total = 0;
 
   if (q.length >= 2) {
-    const fetchPromises = [];
-    if (typeFilter === "all" || typeFilter === "conflict") {
-      fetchPromises.push(prisma.conflict.findMany({ where: searchClause, select: { id: true, title: true, slug: true, summary: true } }).then(res => res.map(r => ({ ...r, type: 'Conflict', href: `/history/${r.slug}` }))));
-    }
-    if (typeFilter === "all" || typeFilter === "person") {
-      fetchPromises.push(prisma.person.findMany({ where: searchClause, select: { id: true, title: true, slug: true, summary: true } }).then(res => res.map(r => ({ ...r, type: 'Person', href: `/people/${r.slug}` }))));
-    }
-    if (typeFilter === "all" || typeFilter === "operation") {
-      fetchPromises.push(prisma.operation.findMany({ where: searchClause, select: { id: true, title: true, slug: true, summary: true } }).then(res => res.map(r => ({ ...r, type: 'Operation', href: `/operations/${r.slug}` }))));
-    }
-    if (typeFilter === "all" || typeFilter === "equipment") {
-      fetchPromises.push(prisma.equipment.findMany({ where: searchClause, select: { id: true, title: true, slug: true, summary: true } }).then(res => res.map(r => ({ ...r, type: 'Equipment', href: `/arsenal/${r.slug}` }))));
-    }
-
-    const fetched = await Promise.all(fetchPromises);
-    results = fetched.flat();
+    const response = await searchArchive({ q, type: typeFilter, mode: "full" }, prisma);
+    results = response.results;
+    total = response.total;
   }
 
   return (
@@ -57,6 +47,8 @@ export default async function AdvancedSearchPage(
           <option value="person">Personnel</option>
           <option value="operation">Operations</option>
           <option value="equipment">Equipment</option>
+          <option value="unit">Units</option>
+          <option value="source">Sources</option>
         </select>
         <Button type="submit">SEARCH</Button>
       </form>
@@ -66,12 +58,12 @@ export default async function AdvancedSearchPage(
       )}
 
       {q.length >= 2 && results.length === 0 && (
-        <p className="text-muted-foreground">No results found for "{q}".</p>
+        <p className="text-muted-foreground">No results found for &quot;{q}&quot;.</p>
       )}
 
       {results.length > 0 && (
         <div className="space-y-4">
-          <p className="text-sm text-muted-foreground mb-4 font-mono">Found {results.length} result(s) for "{q}"</p>
+          <p className="text-sm text-muted-foreground mb-4 font-mono">Found {total} result(s) for &quot;{q}&quot;</p>
           {results.map((result) => (
             <Link key={`${result.type}-${result.id}`} href={result.href} className="block group">
               <div className="border border-border/40 rounded-lg p-6 bg-card hover:border-primary/50 transition-colors">

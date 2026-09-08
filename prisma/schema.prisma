@@ -2,14 +2,20 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator client_python {
+  provider             = "prisma-client-py"
+  interface            = "asyncio"
+  recursive_type_depth = 5
+}
+
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 model Conflict {
-  id             String      @id @default(uuid())
-  slug           String      @unique
+  id             String   @id @default(uuid())
+  slug           String   @unique
   title          String
   shortTitle     String?
   summary        String
@@ -17,58 +23,93 @@ model Conflict {
   status         String
   dateStart      String
   dateEnd        String?
-  theatres       String      // Stored as JSON string
+  theatres       String // Stored as JSON string
+  coordinates    String? // JSON string: [lat, lng]
+  referenceUrl   String?
   outcomeSummary String?
   contextSummary String?
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
-  
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  publicationStatus String @default("DRAFT")
+  contentKind      String @default("EDITORIAL")
+  reviewedAt       DateTime?
+  reviewedBy       String?
+  revision         Int @default(0)
+  dateStartPrecision String @default("unknown")
+  dateEndPrecision   String @default("unknown")
+
   // Relations
-  operations     Operation[]
-  people         Person[]
-  equipment      Equipment[]
+  operations Operation[]
+  people     Person[]
+  equipment  Equipment[]
+
+  @@index([publicationStatus, contentKind, title, id])
 }
 
 model Person {
-  id          String      @id @default(uuid())
-  slug        String      @unique
-  title       String
-  fullName    String
-  summary     String
-  content     String?
-  status      String
-  rank        String?
-  birthDate   String?
-  deathDate   String?
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  id            String      @id @default(uuid())
+  slug          String      @unique
+  title         String
+  fullName      String
+  summary       String
+  content       String?
+  status        String
+  rank          String?
+  birthDate     String?
+  deathDate     String?
+  serviceBranch String?
+  decorations   String?
+  conflict      String?
+  year          String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  publicationStatus String @default("DRAFT")
+  contentKind      String @default("EDITORIAL")
+  reviewedAt       DateTime?
+  reviewedBy       String?
+  revision         Int @default(0)
+  birthDatePrecision String @default("unknown")
+  deathDatePrecision String @default("unknown")
   
   // Relations
-  conflicts   Conflict[]
-  operations  Operation[]
+  conflicts     Conflict[]
+  operations    Operation[]
+
+  @@index([publicationStatus, contentKind, title, id])
 }
 
 model Operation {
-  id          String      @id @default(uuid())
-  slug        String      @unique
-  title       String
-  category    String
-  summary     String
-  content     String?
-  status      String
-  dateStart   String
+  id        String   @id @default(uuid())
+  slug      String   @unique
+  title     String
+  category  String
+  summary   String
+  content   String?
+  status    String
+  dateStart String
   dateEnd     String?
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  coordinates String? // JSON string: [lat, lng]
+  referenceUrl String?
+  createdAt   DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  publicationStatus String @default("DRAFT")
+  contentKind      String @default("EDITORIAL")
+  reviewedAt       DateTime?
+  reviewedBy       String?
+  revision         Int @default(0)
+  dateStartPrecision String @default("unknown")
+  dateEndPrecision   String @default("unknown")
 
   // Relations
-  conflicts   Conflict[]
-  people      Person[]
+  conflicts Conflict[]
+  people    Person[]
+
+  @@index([publicationStatus, contentKind, title, id])
 }
 
 model Equipment {
-  id               String      @id @default(uuid())
-  slug             String      @unique
+  id               String   @id @default(uuid())
+  slug             String   @unique
   title            String
   domain           String
   category         String
@@ -79,18 +120,27 @@ model Equipment {
   serviceStatus    String
   inductedYear     Int?
   retiredYear      Int?
-  originCountries  String      // JSON string
-  specs            String      // JSON string
-  createdAt        DateTime    @default(now())
-  updatedAt        DateTime    @updatedAt
+  originCountries  String // JSON string
+  specs            String // JSON string
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  publicationStatus String @default("DRAFT")
+  contentKind      String @default("EDITORIAL")
+  reviewedAt       DateTime?
+  reviewedBy       String?
+  revision         Int @default(0)
+  variantLabel     String?
+  statusAsOf       String?
 
   // Relations
-  conflicts        Conflict[]
+  conflicts Conflict[]
+
+  @@index([publicationStatus, contentKind, title, id])
 }
 
 model SourceRecord {
-  id          String      @id @default(uuid())
-  slug        String      @unique
+  id          String   @id @default(uuid())
+  slug        String   @unique
   title       String
   publisher   String
   author      String?
@@ -102,6 +152,318 @@ model SourceRecord {
   tier        String
   summary     String?
   notes       String?
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ==========================================
+// EXHAUSTIVE DATASET PROVENANCE ONTOLOGY
+// ==========================================
+
+model SourceFamily {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  name        String
+  tier        String // "A", "B", "C", "D", "DISCOVERY"
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  sources Source[]
+}
+
+model Source {
+  id              String   @id @default(uuid())
+  sourceFamilyId  String
+  slug            String   @unique
+  title           String
+  summary         String   @default("")
+  author          String?
+  publicationDate String?
+  publisher       String?
+  canonicalUrl    String?
+  sourceType      String?
+  tier            String?
+  language        String   @default("en")
+  rightsNotes     String?
+  publicationStatus String @default("DRAFT")
+  contentKind      String @default("EDITORIAL")
+  reviewedAt       DateTime?
+  reviewedBy       String?
+  revision         Int @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  family   SourceFamily    @relation(fields: [sourceFamilyId], references: [id])
+  versions SourceVersion[]
+
+  @@index([publicationStatus, contentKind, title, id])
+}
+
+model SourceVersion {
+  id         String    @id @default(uuid())
+  sourceId   String
+  versionTag String // e.g. "Original URL", "2018 Print Edition", "Wayback 2021"
+  accessedAt DateTime?
+  url        String?
+  archiveUrl String?
+  format     String?
+  contentHash String?
+  rawStoragePath String?
+  parserVersion String?
+  httpStatus Int?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  source   Source     @relation(fields: [sourceId], references: [id])
+  evidence Evidence[]
+}
+
+model Evidence {
+  id              String   @id @default(uuid())
+  sourceVersionId String
+  locator         String? // e.g. "Page 42, Paragraph 2", "Timestamp 14:03"
+  quote           String? // Actual text quote if legally allowed
+  evidenceType    String   @default("TEXT")
+  rightsSafeToDisplay Boolean @default(false)
+  reviewerNote    String?
+  authorityType   String   @default("unknown")
+  authorityBasis  String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  sourceVersion SourceVersion   @relation(fields: [sourceVersionId], references: [id])
+  claims        ClaimEvidence[]
+  entityEvidence EntityEvidence[]
+  relationshipEvidence RelationshipEvidence[]
+}
+
+model Claim {
+  id                 String   @id @default(uuid())
+  entityType         String // e.g. "Person", "Equipment"
+  entityId           String
+  property           String // e.g. "topSpeed", "birthDate"
+  value              String
+  verificationStatus String // "OFFICIALLY_CONFIRMED", "DISPUTED", "UNVERIFIED"
+  status             String   @default("CANDIDATE") // "CANDIDATE", "GOLD", "REJECTED"
+  editorialNote      String?
+  reviewedAt         DateTime?
+  reviewedBy         String?
+  revision           Int      @default(0)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  evidence ClaimEvidence[]
+}
+
+model ClaimEvidence {
+  claimId    String
+  evidenceId String
+
+  claim    Claim    @relation(fields: [claimId], references: [id], onDelete: Cascade)
+  evidence Evidence @relation(fields: [evidenceId], references: [id], onDelete: Cascade)
+
+  @@id([claimId, evidenceId])
+}
+
+model Relationship {
+  id         String   @id @default(uuid())
+  sourceType String // e.g. "Person"
+  sourceId   String
+  targetType String // e.g. "Operation"
+  targetId   String
+  predicate  String // e.g. "INVOLVED_IN", "OPERATED_BY"
+  validFrom  String?
+  validTo    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  status      String   @default("CANDIDATE")
+  reviewedAt  DateTime?
+  reviewedBy  String?
+  revision    Int      @default(0)
+  fingerprint String?  @unique
+
+  evidence RelationshipEvidence[]
+}
+
+model EntityAlias {
+  id         String   @id @default(uuid())
+  entityType String
+  entityId   String
+  alias      String
+  normalizedAlias String?
+  type       String // e.g. "NatoReportingName", "Colloquial", "LocalDesignation"
+  validFrom  String?
+  validTo    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Media {
+  id         String   @id @default(uuid())
+  entityType String
+  entityId   String
+  src        String
+  alt        String
+  caption    String?
+  credit     String?
+  sourceUrl  String?
+  license    String?
+  isPrimary  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Unit {
+  id                String   @id @default(uuid())
+  slug              String   @unique
+  title             String
+  summary           String   @default("")
+  content           String?
+  serviceId         String?
+  unitType          String
+  parentUnitId      String?
+  motto             String?
+  warCry            String?
+  establishedDate   String?
+  disbandedDate     String?
+  ranksJson         String?
+  awardsJson        String?
+  publicationStatus String   @default("DRAFT")
+  contentKind       String   @default("EDITORIAL")
+  reviewedAt        DateTime?
+  reviewedBy        String?
+  revision          Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  parent   Unit?  @relation("UnitHierarchy", fields: [parentUnitId], references: [id])
+  children Unit[] @relation("UnitHierarchy")
+
+  @@index([publicationStatus, contentKind, title, id])
+  @@index([serviceId, unitType])
+}
+
+model ReviewAudit {
+  id            String   @id @default(uuid())
+  actorId       String
+  action        String
+  entityType    String
+  entityId      String
+  previousValue String
+  nextValue     String
+  reason        String
+  createdAt     DateTime @default(now())
+
+  @@index([entityType, entityId, createdAt])
+}
+
+model EditorialPrincipal {
+  id          String   @id @default(uuid())
+  displayName String
+  email       String   @unique
+  issuer      String?
+  subject     String?
+  rolesJson   String
+  active      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([issuer, subject])
+  @@index([active, email])
+}
+
+model ImportRun {
+  id            String   @id @default(uuid())
+  inputHash     String   @unique
+  schemaVersion Int
+  status        String
+  reportJson    String
+  createdAt     DateTime @default(now())
+  proposals     ImportProposal[]
+}
+
+model ImportIdentity {
+  id           String @id @default(uuid())
+  sourceSystem String
+  externalId   String
+  entityType   String
+  entityId     String
+
+  @@unique([sourceSystem, externalId, entityType])
+  @@index([entityType, entityId])
+}
+
+model ImportProposal {
+  id               String   @id @default(uuid())
+  importRunId      String
+  entityType       String
+  entityId         String
+  expectedRevision Int
+  proposedDataJson String
+  originalDataJson String
+  issuesJson       String
+  status           String   @default("CANDIDATE")
+  createdAt        DateTime @default(now())
+
+  run ImportRun @relation(fields: [importRunId], references: [id])
+
+  @@unique([importRunId, entityType, entityId])
+}
+
+model EntityEvidence {
+  id         String @id @default(uuid())
+  entityType String
+  entityId   String
+  section    String
+  evidenceId String
+  evidence   Evidence @relation(fields: [evidenceId], references: [id])
+
+  @@unique([entityType, entityId, section, evidenceId])
+}
+
+model RelationshipEvidence {
+  relationshipId String
+  evidenceId     String
+  relationship   Relationship @relation(fields: [relationshipId], references: [id])
+  evidence       Evidence @relation(fields: [evidenceId], references: [id])
+
+  @@id([relationshipId, evidenceId])
+}
+
+model SearchDocument {
+  id                String @id
+  entityType        String
+  entityId          String
+  slug              String
+  title             String
+  titleNormalized   String
+  summary           String
+  summaryNormalized String
+  bodyNormalized    String
+  entityRevision    Int
+  aliases           SearchAlias[]
+
+  @@unique([entityType, entityId])
+  @@index([entityType, titleNormalized, id])
+}
+
+model SearchAlias {
+  id              String @id @default(uuid())
+  documentId      String
+  normalizedAlias String
+  document        SearchDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@unique([documentId, normalizedAlias])
+  @@index([normalizedAlias])
+}
+
+model EntityFacet {
+  entityType String
+  entityId   String
+  name       String
+  value      String
+
+  @@id([entityType, entityId, name, value])
+  @@index([entityType, name, value, entityId])
 }

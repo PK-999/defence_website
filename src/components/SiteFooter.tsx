@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Separator } from "./ui/separator";
+import { editorialNavigation } from "@/lib/navigation";
 
 export function SiteFooter() {
   return (
@@ -10,7 +11,7 @@ export function SiteFooter() {
           <div className="md:col-span-2 space-y-4">
             <h3 className="font-bold tracking-wider">SENTINEL</h3>
             <p className="text-sm text-muted-foreground max-w-md">
-              A source-first interactive digital archive of India's military history, connecting conflicts, operations, people, units, and technology through verified public sources.
+              A source-first interactive digital archive of India&apos;s military history, connecting conflicts, operations, heroes, units, and technology through verified public sources.
             </p>
             <div className="pt-2">
               <p className="text-xs font-medium text-primary">
@@ -21,20 +22,7 @@ export function SiteFooter() {
           
           <div className="space-y-4">
             <h4 className="text-sm font-semibold tracking-wider">EDITORIAL</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link href="/about" className="hover:text-foreground transition-colors">About the Archive</Link>
-              </li>
-              <li>
-                <Link href="/methodology" className="hover:text-foreground transition-colors">Methodology</Link>
-              </li>
-              <li>
-                <Link href="/editorial-policy" className="hover:text-foreground transition-colors">Editorial Policy</Link>
-              </li>
-              <li>
-                <Link href="/sources" className="hover:text-foreground transition-colors">Source Classification</Link>
-              </li>
-            </ul>
+            <ul className="space-y-2 text-sm text-muted-foreground">{editorialNavigation.map((link) => <li key={link.href}><Link href={link.href} className="hover:text-foreground transition-colors">{link.label}</Link></li>)}<li><Link href="/methodology#source-classification" className="hover:text-foreground transition-colors">Source classification</Link></li></ul>
           </div>
 
           <div className="space-y-4">
@@ -42,7 +30,7 @@ export function SiteFooter() {
             <div className="p-4 bg-muted/30 rounded-md border border-border/40">
               <p className="text-sm font-medium">Every story should lead back to evidence.</p>
               <p className="text-xs text-muted-foreground mt-2">
-                We rely exclusively on officially declassified records, primary government sources, and reputable historical texts.
+                Source authority and review state are shown with each published record; unavailable evidence remains unpublished.
               </p>
             </div>
           </div>

@@ -22,7 +22,7 @@ export function SiteBreadcrumbs() {
     <Breadcrumb className="mb-6">
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/" />}>HOME</BreadcrumbLink>
+          <Link href="/" className="transition-colors hover:text-foreground text-muted-foreground">HOME</Link>
         </BreadcrumbItem>
         {segments.map((segment, index) => {
           const isLast = index === segments.length - 1;
@@ -36,9 +36,7 @@ export function SiteBreadcrumbs() {
                 {isLast ? (
                   <BreadcrumbPage>{title}</BreadcrumbPage>
                 ) : (
-                  <BreadcrumbLink render={<Link href={href} />}>
-                    {title}
-                  </BreadcrumbLink>
+                  <Link href={href} className="transition-colors hover:text-foreground text-muted-foreground">{title}</Link>
                 )}
               </BreadcrumbItem>
             </React.Fragment>

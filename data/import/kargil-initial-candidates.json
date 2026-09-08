@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "sourceSystem": "sentinel-kargil-source-pass-2026-09-07",
+  "records": [
+    {
+      "entityType": "Conflict",
+      "externalId": "kargil-war-1999",
+      "data": {
+        "slug": "kargil-1999",
+        "title": "Kargil War",
+        "summary": "A high-altitude conflict fought in the Kargil, Dras and Batalik areas along the Line of Control from May to July 1999.",
+        "content": "Indian forces responded to occupied positions on high ridges with a campaign that combined ground operations and air support. The fighting ended in July after Indian forces regained the occupied positions described by the captured official sources. Exact casualty totals are deliberately omitted because the current official and secondary sources use different scopes and totals.",
+        "status": "Candidate",
+        "dateStart": "1999-05",
+        "dateEnd": "1999-07-26",
+        "theatres": ["Kargil", "Dras", "Batalik", "Kaksar", "Mushkoh Valley"]
+      }
+    },
+    {
+      "entityType": "Operation",
+      "externalId": "operation-vijay-kargil-1999",
+      "data": {
+        "slug": "operation-vijay-kargil-1999",
+        "title": "Operation Vijay (Kargil, 1999)",
+        "summary": "The Indian Army campaign to evict intruders from occupied positions in the Kargil sector in 1999.",
+        "content": "Operation Vijay was the ground campaign associated with India's response to the Kargil intrusion. Captured official accounts describe a strategy focused on regaining occupied heights while respecting the Line of Control. The source set does not support one uncontested launch day, so the start is stored with month precision.",
+        "status": "Candidate",
+        "category": "combat",
+        "dateStart": "1999-05",
+        "dateEnd": "1999-07-26"
+      }
+    },
+    {
+      "entityType": "Operation",
+      "externalId": "operation-safed-sagar-1999",
+      "data": {
+        "slug": "operation-safed-sagar-1999",
+        "title": "Operation Safed Sagar",
+        "summary": "The Indian Air Force operation conducted in support of Operation Vijay during the 1999 Kargil conflict.",
+        "content": "The IAF launched Operation Safed Sagar on 25 May 1999 and began offensive air action the following morning. Official accounts identify high altitude and the requirement not to cross the Line of Control as central constraints, and record the use of several combat, transport and helicopter types.",
+        "status": "Candidate",
+        "category": "combat",
+        "dateStart": "1999-05-25",
+        "dateEnd": "1999-07"
+      }
+    },
+    {
+      "entityType": "Operation",
+      "externalId": "battle-tiger-hill-1999",
+      "data": {
+        "slug": "battle-of-tiger-hill-1999",
+        "title": "Battle of Tiger Hill",
+        "summary": "A major battle for the Tiger Hill position in the Dras sector during the Kargil conflict.",
+        "content": "The captured official account documents the role of 18 Grenadiers and Grenadier Yogendra Singh Yadav in the assault. This record is classified as a battle within the operation model so that it is not confused with the wider Operation Vijay campaign.",
+        "status": "Candidate",
+        "category": "battle",
+        "dateStart": "1999-07-03",
+        "dateEnd": "1999-07-04"
+      }
+    },
+    {
+      "entityType": "Person",
+      "externalId": "captain-vikram-batra",
+      "data": {
+        "slug": "vikram-batra",
+        "title": "Captain Vikram Batra",
+        "fullName": "Vikram Batra",
+        "summary": "An Indian Army officer of 13 Jammu and Kashmir Rifles who received the Param Vir Chakra posthumously for actions during the Kargil conflict.",
+        "content": "Captain Vikram Batra led troops during the capture of Point 5140 and took part in fighting at Point 4875 on 7 July 1999, where he was killed. The official source records his unit, battlefield actions and posthumous award; biographical dates remain discovery-grade until a stronger biographical source is captured.",
+        "status": "Candidate",
+        "rank": "Captain",
+        "serviceBranch": "Indian Army",
+        "decorations": ["Param Vir Chakra"],
+        "deathDate": "1999-07-07"
+      }
+    },
+    {
+      "entityType": "Person",
+      "externalId": "grenadier-yogendra-singh-yadav",
+      "data": {
+        "slug": "yogendra-singh-yadav",
+        "title": "Grenadier Yogendra Singh Yadav",
+        "fullName": "Yogendra Singh Yadav",
+        "summary": "An Indian Army soldier of 18 Grenadiers who received the Param Vir Chakra for actions during the assault on Tiger Hill.",
+        "content": "The official account identifies Yadav as part of the 18 Grenadiers platoon assigned to Tiger Hill and describes his continued advance after being wounded. This profile uses his Kargil-era rank and makes no claim about his current rank or service status.",
+        "status": "Candidate",
+        "rank": "Grenadier",
+        "serviceBranch": "Indian Army",
+        "decorations": ["Param Vir Chakra"]
+      }
+    },
+    {
+      "entityType": "Equipment",
+      "externalId": "iaf-mirage-2000h-kargil",
+      "data": {
+        "slug": "mirage-2000h-iaf-kargil",
+        "title": "Mirage 2000H in Operation Safed Sagar",
+        "summary": "The Indian Air Force Mirage 2000 variant used for precision-strike missions during the Kargil conflict.",
+        "content": "A Ministry of Defence release records Mirage 2000 aircraft flying precision-strike missions with laser-guided bombs and laser-designation pods during Operation Safed Sagar. The candidate is limited to that 1999 operational context and does not assert a current fleet count or service status.",
+        "status": "Candidate",
+        "domain": "air",
+        "category": "fighter aircraft",
+        "developmentModel": "imported",
+        "originCountries": ["France"],
+        "specs": []
+      }
+    },
+    {
+      "entityType": "Equipment",
+      "externalId": "indian-army-fh77b02",
+      "data": {
+        "slug": "fh-77b02-indian-army",
+        "title": "FH-77B02 155 mm/39 calibre howitzer",
+        "summary": "The FH-77B02 howitzer variant procured for the Indian Army under an agreement with AB Bofors of Sweden.",
+        "content": "A 2012 Ministry of Defence parliamentary-answer release identifies the Indian Army system as the 155 mm/39 calibre FH-77B02 and records both procurement and an agreement for indigenous manufacture. The current source package does not directly establish use in the Kargil conflict, so no Kargil relationship is asserted.",
+        "status": "Candidate",
+        "domain": "land",
+        "category": "towed howitzer",
+        "developmentModel": "mixed",
+        "originCountries": ["Sweden", "India"],
+        "specs": [
+          { "key": "calibre", "label": "Calibre", "value": 155, "unit": "mm", "source": "PIB-FH77B-2012" },
+          { "key": "barrel-length", "label": "Barrel length", "value": 39, "unit": "calibres", "source": "PIB-FH77B-2012" }
+        ]
+      }
+    }
+  ]
+}

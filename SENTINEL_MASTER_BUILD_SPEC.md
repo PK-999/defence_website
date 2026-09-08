@@ -1,5 +1,15 @@
 # SENTINEL — Master Product, UX, Content & Build Specification
 
+## Current implementation authority — 6 September 2026
+
+This document preserves the long-term product vision. For the existing working codebase, execute [the recovery implementation plan](docs/implementation-plan.md), using [shared contracts](docs/implementation-contracts.md), [test gates](docs/test-plan.md), and [data/editorial procedures](docs/content-operations.md). Current status is in [progress_tracker.md](progress_tracker.md).
+
+The runbook supersedes conflicting implementation details below: Markdown-only runtime assumptions, old route names, version labels, automatic source-tier truth, destructive seeding, or roadmap checkboxes. Keep SQLite/Prisma and the current Next.js app for recovery; do not prematurely migrate to Postgres, add a graph database, or implement automated crawling merely because a later vision section mentions them. Source/claim review and the publication boundary are required now. UI shells are not complete features. Future phases are described separately in T28.
+
+Document precedence: current user/AGENTS instructions → implementation contracts → ordered task plan → test/content runbooks → dated review evidence → compatible long-term guidance here. The documentation update itself implements no application tasks. Begin with T00; do not rerun an old embedded initial-build prompt against the existing workspace.
+
+---
+
 > **Status:** Build-ready master specification  
 > **Purpose:** Single source of truth for an AI coding agent building SENTINEL from a new or early-stage repository.  
 > **Project type:** Public, educational, source-first interactive archive of Indian military history, personnel, operations, formations and publicly documented equipment.  
@@ -4669,3 +4679,18 @@ SENTINEL is an educational/historical archive, not an operational-intelligence p
 - **Tier C (Scholarly/Secondary):** Peer-reviewed research, established historians, major reputable journalism.
 - **Tier D (Specialist):** Established specialist defence publications.
 - **Discovery Only:** Wikipedia, social media, blogs, unattributed infographics. Discovery material cannot establish a material claim by itself.
+
+---
+
+# 30. AUTOMATED GOLDEN DATASET FACTORY (Version 3.0)
+
+## 30.1 Concept
+After establishing the manual provenance foundation (V2.5), the objective is to build a machine-driven pipeline to orchestrate the generation of Exhaustive Datasets with 80-95% automation.
+
+## 30.2 Core Architecture
+- **Dagster Orchestration:** Manages the lineage of data from Source → Document → Claim → Gold.
+- **Agentic Extraction:** LLM agents act as "Database Transaction Proposers," strictly extracting atomic claims linked to evidence locators.
+- **Exception-Based Review:** Humans interact via a Review Dashboard to approve Candidate datasets, resolve ambiguity, and correct source contradictions.
+- **dbt Analytics:** Used strictly downstream of Postgres for presentation and analytics modeling.
+
+The long-term automation vision is appended to `SENTINEL_EXHAUSTIVE_DATASET_BUILD_STRATEGY.md`. For the existing application's current implementation, follow `docs/implementation-plan.md` and its shared contracts/test/content runbooks. Begin at the first unverified task in `progress_tracker.md`; do not execute legacy initial-build prompts or treat the automation vision as a completed feature.

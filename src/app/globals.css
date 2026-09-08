@@ -21,46 +21,81 @@
 }
 
 :root, .dark {
-  /* Radiant Deep Space Background */
-  --background: #02040a; 
+  --background: #07110d;
   --foreground: #e2e8f0;
   
-  /* Radiant Spy Green */
-  --primary: #00ff41; 
+  --primary: #83d65c;
   --primary-foreground: #000000;
   
   /* Secondary / Accents */
-  --secondary: #008f11;
+  --secondary: #244b32;
   --secondary-foreground: #ffffff;
   
-  --muted: #0f172a; 
-  --muted-foreground: #64748b; 
+  --muted: #122218;
+  --muted-foreground: #a6b5aa;
   
   /* Glass slate */
-  --card: rgba(15, 23, 42, 0.4); 
+  --card: #0c1b13;
   --card-foreground: #f8fafc;
   
-  --border: #0a1f10; 
-  --ring: #00ff41;
+  --border: #254532;
+  --ring: #83d65c;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.dark-map-tiles .leaflet-layer {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+.dark-map-tiles .leaflet-control-zoom-in,
+.dark-map-tiles .leaflet-control-zoom-out,
+.dark-map-tiles .leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.hq-popup .leaflet-popup-content-wrapper {
+  background-color: #020817;
+  color: #f8fafc;
+  border: 1px solid #1e293b;
+}
+.hq-popup .leaflet-popup-tip {
+  background-color: #020817;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     position: relative;
-  }
-  .bg-grid-pattern {
-    background-size: 30px 30px;
-    background-image: 
-      linear-gradient(to right, rgba(0, 255, 65, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
+    line-height: 1.65;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;
   }
+}
+
+.skip-link { position: fixed; left: 1rem; top: -4rem; z-index: 100; padding: .65rem 1rem; border-radius: .25rem; background: var(--primary); color: var(--primary-foreground); }
+.skip-link:focus { top: 1rem; }
+:focus-visible { outline: 3px solid var(--ring); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+.article-body { max-width: 70ch; font-size: 1.05rem; }
+.article-body p { margin: 0 0 1.25rem; }
+.article-body h2 { margin: 2rem 0 .75rem; font-size: 1.5rem; font-weight: 700; }
+.article-body ul, .article-body ol { margin: 0 0 1.25rem 1.5rem; }
+.article-body li { margin: .35rem 0; }
+
+@utility bg-grid-pattern {
+  background-size: 30px 30px;
+  background-image:
+    linear-gradient(to right, rgba(0, 255, 65, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 65, 0.05) 1px, transparent 1px);
 }
 
 /* Custom HUD Backgrounds */

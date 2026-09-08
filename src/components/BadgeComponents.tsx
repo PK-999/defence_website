@@ -15,7 +15,7 @@ export type SourceTier = "A" | "B" | "C" | "D" | "DISCOVERY";
 export function VerificationBadge({ status }: { status: VerificationStatus }) {
   let icon = <CheckCircle2 className="w-3 h-3 mr-1" />;
   let variant: "default" | "secondary" | "destructive" | "outline" = "default";
-  let label = status.replace(/_/g, " ");
+  const label = status.replace(/_/g, " ");
 
   switch (status) {
     case "OFFICIALLY_CONFIRMED":

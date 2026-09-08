@@ -12,6 +12,14 @@
 
 # testing
 /coverage
+/.playwright/
+/playwright-report/
+/test-results/
+/.test-data/
+/.next-test/
+
+# local recovery artifacts
+/.local-backups/
 
 # next.js
 /.next/
@@ -29,9 +37,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+__pycache__/
+*.py[cod]
+/factory/.venv/
+/factory/logs/
+/factory/analytics/logs/
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel

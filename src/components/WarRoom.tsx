@@ -3,51 +3,58 @@
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Crosshair, MapPin, ChevronRight, X } from "lucide-react";
+import { Crosshair, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import { WarRoomEvent } from "./WarRoomMap";
 
-type WarRoomEvent = {
-  id: string;
-  title: string;
-  date: string;
-  summary: string;
-  coordinates: { x: number; y: number };
-  details: string;
-};
+// Dynamically import the map to avoid SSR issues with Leaflet
+const DynamicMap = dynamic(() => import("./WarRoomMap"), {
+  ssr: false,
+  loading: () => <div className="w-full h-full flex items-center justify-center bg-[#0a1017] text-primary/50 tracking-widest text-sm">INITIALIZING TACTICAL MAP...</div>
+});
 
-// Placeholder events for Kargil
+// Kargil events with real GPS coordinates
 const EVENTS: WarRoomEvent[] = [
   {
     id: "e1",
     title: "Infiltration Discovered",
     date: "May 3, 1999",
     summary: "Local shepherds report armed men on the heights.",
-    coordinates: { x: 30, y: 40 },
+    coordinates: [34.6186, 76.1558], // Batalik Sector approx
     details: "Local shepherds in Batalik sector noticed unknown armed personnel constructing bunkers on the ridgelines. Initial patrols sent by the Indian Army are ambushed.",
   },
   {
     id: "e2",
-    title: "Operation Safed Sagar",
-    date: "May 26, 1999",
-    summary: "Indian Air Force launches airstrikes.",
-    coordinates: { x: 45, y: 35 },
-    details: "The Indian Air Force begins air strikes against the infiltrated positions. Due to the high altitude, targeting is complex, leading to the adaptation of Mirage 2000s for laser-guided bombing.",
-  },
-  {
-    id: "e3",
     title: "Battle of Tololing",
     date: "June 13, 1999",
     summary: "Crucial victory secures the strategic peak.",
-    coordinates: { x: 35, y: 50 },
+    coordinates: [34.4533, 76.0022], // Tololing Peak approx
     details: "After weeks of bitter fighting, the Rajputana Rifles capture the Tololing peak. This was the turning point of the war, providing a foothold for further assaults.",
+  },
+  {
+    id: "e3",
+    title: "Capture of Point 5140",
+    date: "June 20, 1999",
+    summary: "Capt. Vikram Batra leads the assault.",
+    coordinates: [34.4550, 75.9900], // Near Tololing
+    details: "Captured by 13 JAK RIF. Capt. Vikram Batra gave his famous victory signal 'Yeh Dil Maange More!' after successfully capturing this high-altitude feature.",
   },
   {
     id: "e4",
     title: "Capture of Tiger Hill",
     date: "July 4, 1999",
     summary: "The most prominent peak falls after a grueling assault.",
-    coordinates: { x: 40, y: 55 },
+    coordinates: [34.4633, 75.9861], // Tiger Hill approx
     details: "The 18 Grenadiers, supported by artillery and the 8 Sikh, launch a multi-directional assault on Tiger Hill. The peak is captured after intense close-quarters combat.",
+  },
+  {
+    id: "e5",
+    title: "Operation Safed Sagar",
+    date: "July 11, 1999",
+    summary: "Air force strikes and Pakistani retreat.",
+    coordinates: [34.5200, 75.8100], // Muntho Dhalo
+    details: "Major logistics camps like Muntho Dhalo were destroyed by IAF airstrikes. Faced with overwhelming military pressure, the remaining infiltrators begin to retreat.",
   }
 ];
 
@@ -58,7 +65,7 @@ export function WarRoom() {
   return (
     <div className="w-full h-[800px] bg-bg-2 border border-border/40 rounded-lg overflow-hidden flex flex-col font-mono relative">
       {/* Top Bar */}
-      <div className="h-12 border-b border-border/40 flex items-center justify-between px-4 bg-muted/20">
+      <div className="h-12 border-b border-border/40 flex items-center justify-between px-4 bg-muted/20 z-10">
         <div className="flex items-center gap-2 text-primary">
           <Crosshair className="w-4 h-4" />
           <span className="font-bold tracking-widest text-sm">WAR ROOM / TACTICAL OVERVIEW</span>
@@ -69,46 +76,21 @@ export function WarRoom() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col lg:flex-row relative">
         {/* Map Area */}
-        <div className="flex-1 relative bg-[#0a1017] overflow-hidden">
-          {/* Topographic Background Placeholder */}
-          <div className="absolute inset-0 opacity-20" 
-               style={{ backgroundImage: 'radial-gradient(circle at center, #708773 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
-          </div>
-          
-          {/* Nodes */}
-          {EVENTS.map(event => {
-            const isSelected = event.id === selectedEventId;
-            return (
-              <button
-                key={event.id}
-                onClick={() => setSelectedEventId(event.id)}
-                className={`absolute w-6 h-6 -ml-3 -mt-3 rounded-full flex items-center justify-center transition-all ${
-                  isSelected ? "bg-primary text-primary-foreground z-20 scale-125 shadow-[0_0_15px_rgba(201,154,69,0.5)]" : "bg-muted text-muted-foreground hover:bg-primary/50 z-10"
-                }`}
-                style={{ left: `${event.coordinates.x}%`, top: `${event.coordinates.y}%` }}
-              >
-                <span className="sr-only">{event.title}</span>
-                {isSelected && (
-                  <motion.div
-                    layoutId="pulse"
-                    className="absolute inset-0 border border-primary rounded-full"
-                    animate={{ scale: [1, 1.5, 2], opacity: [1, 0.5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                )}
-                <MapPin className="w-3 h-3" />
-              </button>
-            );
-          })}
+        <div className="flex-1 relative bg-[#0a1017] overflow-hidden z-0">
+          <DynamicMap
+            events={EVENTS}
+            selectedEventId={selectedEventId}
+            onSelectEvent={setSelectedEventId}
+          />
           
           {/* Map Overlay Text */}
-          <div className="absolute bottom-4 left-4 text-xs text-muted-foreground/50 tracking-widest">
-            {selectedEvent.coordinates.x.toFixed(2)}° N / {selectedEvent.coordinates.y.toFixed(2)}° E
+          <div className="absolute bottom-4 left-4 text-xs text-muted-foreground/80 font-bold tracking-widest z-[500] drop-shadow-md">
+            {selectedEvent.coordinates[0].toFixed(4)}° N / {selectedEvent.coordinates[1].toFixed(4)}° E
           </div>
         </div>
 
         {/* Dossier Area */}
-        <div className="w-full lg:w-96 border-l border-border/40 bg-card/50 backdrop-blur flex flex-col">
+        <div className="w-full lg:w-96 border-l border-border/40 bg-card/80 backdrop-blur flex flex-col z-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedEvent.id}
@@ -130,7 +112,7 @@ export function WarRoom() {
                   <div className="text-sm font-bold text-destructive">CRITICAL</div>
                 </div>
                 
-                <Link href="/history/kargil-1999" className="w-full py-2 flex items-center justify-between text-xs font-bold tracking-widest text-primary border border-primary/30 rounded px-4 hover:bg-primary/10 transition-colors">
+                <Link href="/conflicts/kargil-1999" className="w-full py-2 flex items-center justify-between text-xs font-bold tracking-widest text-primary border border-primary/30 rounded px-4 hover:bg-primary/10 transition-colors">
                   VIEW FULL REPORT <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -140,7 +122,7 @@ export function WarRoom() {
       </div>
 
       {/* Timeline Strip */}
-      <div className="h-24 border-t border-border/40 bg-muted/10 flex items-center px-4 overflow-x-auto">
+      <div className="h-24 border-t border-border/40 bg-muted/10 flex items-center px-4 overflow-x-auto z-10">
         <div className="flex gap-2 min-w-max pb-2">
           {EVENTS.map(event => (
             <button

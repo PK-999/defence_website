@@ -1,0 +1,40 @@
+{
+  "id": "collection-kargil-1999",
+  "slug": "kargil-1999",
+  "title": "Kargil 1999 starter collection",
+  "description": "A bounded first release covering the conflict overview, the two principal Indian operations, one documented battle, two people, and two equipment variants.",
+  "inclusionRules": [
+    "The record has a direct documented connection to the 1999 Kargil conflict or is included as explicitly marked variant context.",
+    "Routine factual claims meet the automated source threshold in docs/content-operations.md.",
+    "The record can be represented accurately by the current Conflict, Operation, Person, Equipment, Unit, or Source model."
+  ],
+  "exclusionRules": [
+    "Unresolved casualty totals",
+    "Real-time or non-public operational information",
+    "Wikipedia-only consequential claims",
+    "Media without documented display rights"
+  ],
+  "knownUniverseSource": "docs/verification/2026-09-07/sources/claim-matrix.md",
+  "knownEntityRefs": [
+    "Conflict:kargil-1999",
+    "Operation:operation-vijay-kargil-1999",
+    "Operation:operation-safed-sagar-1999",
+    "Operation:battle-of-tiger-hill-1999",
+    "Person:vikram-batra",
+    "Person:yogendra-singh-yadav",
+    "Equipment:mirage-2000h-iaf-kargil",
+    "Equipment:fh-77b02-indian-army"
+  ],
+  "knownUniverseSize": 8,
+  "owner": "SENTINEL editorial pipeline",
+  "reviewer": "automated-source-pass",
+  "policyVersion": "routine-evidence-v1",
+  "updatedAt": "2026-09-07T00:00:00+05:30",
+  "gaps": [
+    "Capture a direct official source for FH-77B employment during the Kargil conflict before creating that relationship.",
+    "Capture primary or strong biographical support for Vikram Batra's birth date before publishing it.",
+    "Implement source-version, evidence, claim, and relationship import for the candidate database.",
+    "Configure an authenticated batch-publisher identity before any automatic publication action.",
+    "Complete mobile and desktop source-journey acceptance after candidate relationships are attached."
+  ]
+}

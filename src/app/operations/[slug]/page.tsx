@@ -2,6 +2,11 @@ import { notFound } from "next/navigation";
 import { getOperation, getSlugs } from "@/lib/content";
 import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
 import { Badge } from "@/components/ui/badge";
+import { Timeline, TimelineEvent } from "@/components/ui/Timeline";
+import { InteractiveMapLayout, ScrollSpySection } from "@/components/InteractiveMapLayout";
+import { ConnectionExplorer } from "@/components/ConnectionExplorer";
+
+type RelatedEntity = { id: string; title: string; slug: string };
 
 export async function generateStaticParams() {
   const slugs = await getSlugs('operations');
@@ -15,6 +20,36 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
   if (!operation) {
     notFound();
   }
+
+  // Show only dates stored on the record; an end date is not evidence of an outcome.
+  const timelineEvents: TimelineEvent[] = [];
+  if (operation.dateStart) {
+    timelineEvents.push({
+      id: "start",
+      date: operation.dateStart,
+      title: "Recorded start date",
+      description: "The source-linked record includes this start date; event detail is not inferred."
+    });
+  }
+  if (operation.dateEnd) {
+    timelineEvents.push({
+      id: "end",
+      date: operation.dateEnd,
+      title: "Recorded end date",
+      description: "The source-linked record includes this end date; outcome information is not available here."
+    });
+  }
+
+  const markers: { id: string; title: string; coordinates: [number, number] }[] = [];
+  if (operation.coordinates) {
+    markers.push({
+      id: operation.id,
+      title: operation.title,
+      coordinates: JSON.parse(operation.coordinates)
+    });
+  }
+
+  const defaultCenter: [number, number] = operation.coordinates ? JSON.parse(operation.coordinates) : [20.5937, 78.9629];
 
   return (
     <div className="container mx-auto px-4 max-w-screen-xl py-12">
@@ -35,8 +70,24 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2 space-y-12">
+      <InteractiveMapLayout
+        markers={markers}
+        defaultCenter={defaultCenter}
+        extraSidebarContent={
+          <ConnectionExplorer
+            centerNode={{ id: operation.id, title: operation.title, type: 'operation', slug: operation.slug }}
+            connections={[
+              ...((operation.people || []) as RelatedEntity[]).map((p) => ({
+                id: p.id, title: p.title, type: 'person' as const, slug: p.slug
+              })),
+              ...((operation.conflicts || []) as RelatedEntity[]).map((c) => ({
+                id: c.id, title: c.title, type: 'conflict' as const, slug: c.slug
+              }))
+            ]}
+          />
+        }
+      >
+        <ScrollSpySection id={operation.id} className="space-y-12">
           {operation.content && (
             <section>
               <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Narrative</h2>
@@ -45,8 +96,14 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
               </div>
             </section>
           )}
-        </div>
-      </div>
+        </ScrollSpySection>
+
+        {timelineEvents.length > 0 && (
+          <section className="mt-12">
+            <Timeline events={timelineEvents} />
+          </section>
+        )}
+      </InteractiveMapLayout>
     </div>
   );
 }

@@ -1,0 +1,13 @@
+{
+  "assets": [
+    {
+      "path": "/india-states.geojson",
+      "provider": "DataMeet India / Natural Earth derivative",
+      "attribution": "Administrative boundaries are shown for orientation; no operational jurisdiction is inferred.",
+      "source": "https://github.com/datameet/maps",
+      "license": "ODbL / source repository terms",
+      "byteBudget": 1000000,
+      "simplificationCommand": "python3 scripts/simplify-map-asset.py public/india-states.geojson 0.01; preserve source attribution and feature properties."
+    }
+  ]
+}

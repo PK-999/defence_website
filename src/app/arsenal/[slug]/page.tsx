@@ -1,68 +1,48 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getEquipment, getSlugs } from "@/lib/content";
 import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
-import { Badge } from "@/components/ui/badge";
+import { ArticleLayout } from "@/components/ArticleLayout";
+import { ProvenanceViewer } from "@/components/ProvenanceViewer";
+import { getPublicClaims } from "@/lib/repositories/evidence";
+import { getPublicEquipment, getPublicSlugs } from "@/lib/repositories/entities";
+import { getPublicRelationships } from "@/lib/repositories/relationships";
 
-export async function generateStaticParams() {
-  const slugs = await getSlugs('equipment');
-  return slugs.map((slug) => ({ slug }));
+type EquipmentSpec = { label: string; value: string };
+const documented = (value: string | null | undefined) => value?.trim() || "Not documented";
+const labelize = (value: string) => value.replace(/[-_]/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+function specs(value: unknown): EquipmentSpec[] {
+  if (Array.isArray(value)) return value.flatMap((entry) => typeof entry === "object" && entry !== null ? [{ label: typeof (entry as { label?: unknown }).label === "string" ? (entry as { label: string }).label : "Specification", value: String((entry as { value?: unknown }).value ?? "Not documented") }] : []);
+  if (value && typeof value === "object") return Object.entries(value).map(([label, entry]) => ({ label: labelize(label), value: typeof entry === "string" || typeof entry === "number" ? String(entry) : "Not documented" }));
+  return [];
 }
+
+export const dynamic = "force-dynamic";
+export async function generateStaticParams() { return (await getPublicSlugs("Equipment")).map((slug) => ({ slug })); }
 
 export default async function EquipmentPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const equipment = await getEquipment(slug);
+  const equipment = await getPublicEquipment(slug);
+  if (!equipment) notFound();
+  const ref = { type: "Equipment" as const, id: equipment.id };
+  const [claims, relationships] = await Promise.all([getPublicClaims(ref), getPublicRelationships(ref)]);
+  const evidenceFor = (property: string) => claims.find((claim) => claim.property === property)?.evidence;
+  const rows = specs(equipment.specs);
+  const related = relationships.map((relationship) => relationship.source.id === equipment.id && relationship.source.type === "Equipment" ? { title: relationship.targetTitle, href: relationship.targetHref, type: relationship.target.type } : { title: relationship.sourceTitle, href: relationship.sourceHref, type: relationship.source.type });
+  const facts = [
+    { label: "Domain", value: documented(equipment.domain), evidence: evidenceFor("domain") },
+    { label: "Category", value: documented(equipment.category), evidence: evidenceFor("category") },
+    { label: "Variant", value: documented(equipment.variantLabel), evidence: evidenceFor("variantLabel") },
+    { label: "Service status", value: documented(equipment.serviceStatus), asOf: equipment.statusAsOf ?? undefined, evidence: evidenceFor("serviceStatus") },
+    { label: "Development", value: documented(equipment.developmentModel), evidence: evidenceFor("developmentModel") },
+    { label: "Origin", value: equipment.originCountries.length > 0 ? equipment.originCountries.join(", ") : "Not documented", evidence: evidenceFor("originCountries") },
+  ];
 
-  if (!equipment) {
-    notFound();
-  }
-
-  return (
-    <div className="container mx-auto px-4 max-w-screen-xl py-12">
-      <SiteBreadcrumbs />
-      
-      <div className="mb-12 border-b border-border/40 pb-8 flex flex-col md:flex-row gap-8 items-start">
-        <div className="flex-1 space-y-4">
-          <Badge variant="outline" className="mb-4 bg-muted/50 uppercase tracking-wider">{equipment.domain} / {equipment.category}</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-widest uppercase">
-            {equipment.title}
-          </h1>
-          <p className="text-xl text-foreground/90 max-w-2xl leading-relaxed mt-4">
-            {equipment.summary}
-          </p>
-          <div className="flex gap-2 flex-wrap mt-4">
-            <Badge variant="secondary" className="uppercase tracking-wider">{equipment.serviceStatus.replace(/-/g, ' ')}</Badge>
-            <Badge variant="outline" className="uppercase tracking-wider">{equipment.developmentModel.replace(/-/g, ' ')}</Badge>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2 space-y-12">
-          {equipment.content && (
-            <section>
-              <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Role & History</h2>
-              <div className="prose prose-invert max-w-none text-muted-foreground">
-                {equipment.content}
-              </div>
-            </section>
-          )}
-        </div>
-        <div className="space-y-8">
-          {equipment.specs && equipment.specs.length > 0 && (
-            <div className="p-6 border border-border/40 bg-card rounded-lg">
-              <h3 className="text-sm font-bold tracking-wider mb-4 uppercase text-muted-foreground">Specifications</h3>
-              <ul className="space-y-4">
-                {equipment.specs.map((spec: any, i: number) => (
-                  <li key={i} className="flex flex-col border-b border-border/40 pb-2 last:border-0">
-                    <span className="text-xs uppercase text-muted-foreground tracking-wider">{spec.label}</span>
-                    <span className="font-mono text-sm">{spec.value} {spec.unit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+  return <>
+    <SiteBreadcrumbs />
+    <ArticleLayout title={equipment.title} summary={equipment.summary || "Not documented"} content={equipment.content} facts={facts}>
+      {rows.length > 0 && <section className="mt-12"><h2 className="border-l-2 border-primary pl-4 text-xl font-bold uppercase tracking-wider">Specifications</h2><dl className="mt-5 divide-y divide-border rounded border border-border/60 bg-card/40 px-5">{rows.map((row) => <div key={row.label} className="grid gap-1 py-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]"><dt className="text-xs uppercase tracking-wider text-muted-foreground">{row.label}</dt><dd>{row.value}</dd></div>)}</dl></section>}
+      {related.length > 0 && <section className="mt-12"><h2 className="border-l-2 border-primary pl-4 text-xl font-bold uppercase tracking-wider">Related records</h2><ul className="mt-5 grid gap-3 sm:grid-cols-2">{related.map((item) => <li key={`${item.type}:${item.href}`}><Link href={item.href} className="block rounded border border-border/60 p-4 hover:border-primary"><span className="text-xs uppercase tracking-wider text-primary">{item.type}</span><span className="mt-1 block font-medium">{item.title}</span></Link></li>)}</ul></section>}
+      <ProvenanceViewer claims={claims} />
+    </ArticleLayout>
+  </>;
 }

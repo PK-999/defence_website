@@ -1,0 +1,8 @@
+import Link from "next/link";
+import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
+import { Pagination } from "@/components/Pagination";
+import { parseCollectionQuery } from "@/lib/domain/query";
+import { listPublicEntities } from "@/lib/repositories/collections";
+import { prisma } from "@/lib/db";
+export const dynamic = "force-dynamic";
+export default async function ConflictsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) { const raw = await searchParams; const result = await listPublicEntities("Conflict", parseCollectionQuery(raw), prisma); const params = new URLSearchParams(Object.entries(raw).flatMap(([key, value]) => value ? [[key, Array.isArray(value) ? value[0] : value]] : [])); return <div className="mx-auto max-w-5xl px-4 py-10"><SiteBreadcrumbs /><h1 className="text-4xl font-bold">Conflicts</h1><p className="mt-2 text-muted-foreground">Reviewed conflicts with sourced dates and context.</p><p className="my-6 text-sm text-muted-foreground">{result.total} reviewed records</p><div className="space-y-3">{result.items.map((conflict) => <Link key={conflict.id} href={conflict.href} className="block rounded border border-border bg-card p-5 hover:border-primary"><h2 className="text-xl font-semibold">{conflict.title}</h2><p className="mt-2 text-sm text-muted-foreground">{conflict.summary}</p></Link>)}</div>{result.items.length === 0 && <p className="mt-6 rounded border border-dashed p-8 text-center text-muted-foreground">No reviewed conflicts are available.</p>}<div className="mt-8"><Pagination page={result.page} pageCount={result.pageCount} params={params} /></div></div>; }

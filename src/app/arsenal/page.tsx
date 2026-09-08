@@ -1,58 +1,15 @@
-import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
-import { prisma } from "@/lib/content";
-import { ScrambleText } from "@/components/ScrambleText";
-
+import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
+import { CollectionToolbar } from "@/components/CollectionToolbar";
+import { Pagination } from "@/components/Pagination";
+import { parseCollectionQuery } from "@/lib/domain/query";
+import { listPublicEntities } from "@/lib/repositories/collections";
+import { prisma } from "@/lib/db";
+import { CompareTray } from "@/components/CompareTray";
 export const dynamic = "force-dynamic";
-
-export default async function ArsenalPage() {
-  const equipmentList = await prisma.equipment.findMany({
-    orderBy: { title: 'asc' }
-  });
-
-  const domains = ['Air', 'Naval', 'Land', 'Missiles'];
-
-  return (
-    <div className="container mx-auto px-4 max-w-screen-xl py-12">
-      <SiteBreadcrumbs items={[{ label: "Arsenal", href: "/arsenal" }]} />
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold tracking-widest text-primary mb-4 uppercase">
-          <ScrambleText text="ARSENAL" />
-        </h1>
-        <p className="text-xl text-muted-foreground">Weapons, platforms, and military technology.</p>
-      </div>
-
-      <div className="space-y-12">
-        {domains.map(domain => {
-          const domainEquip = equipmentList.filter(e => e.domain.toLowerCase() === domain.toLowerCase());
-          if (domainEquip.length === 0) return null;
-
-          return (
-            <div key={domain}>
-              <h2 className="text-2xl font-bold tracking-wider mb-6 text-primary border-b border-primary/20 pb-2 uppercase">{domain}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {domainEquip.map(equip => (
-                  <Link 
-                    key={equip.id} 
-                    href={`/arsenal/${equip.slug}`}
-                    className="p-6 border border-border/50 rounded-lg bg-card hover:border-primary/50 cursor-pointer block group"
-                  >
-                    <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">
-                      {equip.category}
-                    </div>
-                    <h3 className="text-xl font-bold tracking-wider mb-2 group-hover:text-primary transition-colors">
-                      {equip.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm line-clamp-2">
-                      {equip.summary}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+export default async function ArsenalPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const raw = await searchParams; const query = parseCollectionQuery(raw); const result = await listPublicEntities("Equipment", query, prisma);
+  const [domains, categories, statuses] = await Promise.all([prisma.equipment.findMany({ where: { publicationStatus: "PUBLISHED", contentKind: "EDITORIAL", reviewedAt: { not: null }, reviewedBy: { not: null } }, distinct: ["domain"], select: { domain: true }, orderBy: { domain: "asc" } }), prisma.equipment.findMany({ where: { publicationStatus: "PUBLISHED", contentKind: "EDITORIAL", reviewedAt: { not: null }, reviewedBy: { not: null } }, distinct: ["category"], select: { category: true }, orderBy: { category: "asc" } }), prisma.equipment.findMany({ where: { publicationStatus: "PUBLISHED", contentKind: "EDITORIAL", reviewedAt: { not: null }, reviewedBy: { not: null } }, distinct: ["serviceStatus"], select: { serviceStatus: true }, orderBy: { serviceStatus: "asc" } })]);
+  const params = new URLSearchParams(Object.entries(raw).flatMap(([key, value]) => value ? [[key, Array.isArray(value) ? value[0] : value]] : []));
+  return <div className="mx-auto max-w-6xl px-4 py-10"><SiteBreadcrumbs /><h1 className="text-4xl font-bold">Equipment</h1><p className="mt-2 text-muted-foreground">Reviewed platforms, weapons, and military technology.</p><div className="my-8"><CollectionToolbar fields={[{ key: "domain", label: "Domain", options: domains.map((row) => row.domain) }, { key: "category", label: "Category", options: categories.map((row) => row.category) }, { key: "status", label: "Service status", options: statuses.map((row) => row.serviceStatus) }]} /></div><p className="mb-4 text-sm text-muted-foreground">{result.total} reviewed records · showing {result.items.length}</p><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{result.items.map((equipment) => <Link key={equipment.id} href={equipment.href} className="rounded border border-border bg-card p-5 hover:border-primary"><p className="text-xs uppercase text-primary">{equipment.facts[0]?.value}</p><h2 className="mt-2 text-xl font-semibold">{equipment.title}</h2><p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{equipment.summary}</p></Link>)}</div>{result.items.length === 0 && <p className="rounded border border-dashed p-8 text-center text-muted-foreground">No reviewed equipment matches these filters.</p>}<div className="mt-8"><CompareTray options={result.items.map((item) => ({ slug: item.slug, title: item.title }))} /><div className="mt-8"><Pagination page={result.page} pageCount={result.pageCount} params={params} /></div></div></div>;
 }

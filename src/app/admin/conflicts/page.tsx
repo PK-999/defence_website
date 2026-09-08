@@ -1,7 +1,13 @@
 import { prisma } from "@/lib/content";
 import { Button } from "@/components/ui/button";
+import { requireEditor, UnauthorizedError } from "@/lib/auth/editor";
+import { AdminAccessNotice } from "@/components/AdminAccessNotice";
 
 export default async function AdminConflicts() {
+  try { await requireEditor(); } catch (error) {
+    if (error instanceof UnauthorizedError) return <AdminAccessNotice />;
+    throw error;
+  }
   const conflicts = await prisma.conflict.findMany({
     orderBy: { dateStart: 'desc' }
   });

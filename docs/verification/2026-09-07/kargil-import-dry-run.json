@@ -1,0 +1,55 @@
+{
+  "inputHash": "49f83dc48a1cafd99d3574f78a886c9ace53099968e6e82e9a25a91673e91d09",
+  "schemaVersion": 1,
+  "sourceSystem": "sentinel-kargil-source-pass-2026-09-07",
+  "mode": "dry-run",
+  "status": "DRY_RUN",
+  "proposedCreates": 8,
+  "proposedUpdates": 0,
+  "unchanged": 0,
+  "conflicts": 0,
+  "warnings": [],
+  "errors": [],
+  "records": [
+    {
+      "entityType": "Conflict",
+      "externalId": "kargil-war-1999",
+      "action": "create"
+    },
+    {
+      "entityType": "Operation",
+      "externalId": "operation-vijay-kargil-1999",
+      "action": "create"
+    },
+    {
+      "entityType": "Operation",
+      "externalId": "operation-safed-sagar-1999",
+      "action": "create"
+    },
+    {
+      "entityType": "Operation",
+      "externalId": "battle-tiger-hill-1999",
+      "action": "create"
+    },
+    {
+      "entityType": "Person",
+      "externalId": "captain-vikram-batra",
+      "action": "create"
+    },
+    {
+      "entityType": "Person",
+      "externalId": "grenadier-yogendra-singh-yadav",
+      "action": "create"
+    },
+    {
+      "entityType": "Equipment",
+      "externalId": "iaf-mirage-2000h-kargil",
+      "action": "create"
+    },
+    {
+      "entityType": "Equipment",
+      "externalId": "indian-army-fh77b02",
+      "action": "create"
+    }
+  ]
+}

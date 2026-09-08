@@ -1,26 +1,18 @@
 import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
+import { CompareTray } from "@/components/CompareTray";
+import { ComparisonTable } from "@/components/ComparisonTable";
+import { buildComparisonHref, getPublicComparison, normalizeComparisonSlugs } from "@/lib/domain/compare";
 
-export default function ComparePage({ searchParams }: { searchParams: { items?: string } }) {
-  // In a real implementation, this would parse `items` from URL query parameters (e.g. ?items=mirage-2000,mig-29)
-  // and fetch the corresponding equipment data.
-  
-  return (
-    <div className="container mx-auto px-4 max-w-screen-xl py-12">
-      <SiteBreadcrumbs />
-      
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold tracking-widest text-primary mb-4">COMPARE SYSTEMS</h1>
-        <p className="text-xl text-muted-foreground">Side-by-side technical and operational analysis.</p>
-      </div>
+export const dynamic = "force-dynamic";
 
-      <div className="p-8 border border-border/50 rounded-lg bg-card text-center">
-        <p className="text-muted-foreground">Select up to 3 systems from the Arsenal to compare them.</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          <div className="h-64 border border-dashed border-border/50 rounded flex items-center justify-center opacity-50">Slot 1 Empty</div>
-          <div className="h-64 border border-dashed border-border/50 rounded flex items-center justify-center opacity-50">Slot 2 Empty</div>
-          <div className="h-64 border border-dashed border-border/50 rounded flex items-center justify-center opacity-50">Slot 3 Empty</div>
-        </div>
-      </div>
-    </div>
-  );
+export default async function ComparePage({ searchParams }: { searchParams: Promise<{ items?: string | string[]; systems?: string | string[] }> }) {
+  const raw = await searchParams;
+  const encodedItems = Array.isArray(raw.items) ? raw.items[0] : raw.items;
+  const encodedLegacySystems = Array.isArray(raw.systems) ? raw.systems[0] : raw.systems;
+  const encoded = encodedItems ?? encodedLegacySystems;
+  const requested = encoded ? encoded.split(",").map((slug) => decodeURIComponent(slug)) : [];
+  const normalized = normalizeComparisonSlugs(requested);
+  const result = await getPublicComparison(normalized);
+  const options = result.systems.map((system) => ({ slug: system.slug, title: system.title }));
+  return <div className="mx-auto max-w-6xl px-4 py-10"><SiteBreadcrumbs /><div className="mb-10"><h1 className="text-4xl font-bold tracking-tight text-primary">Compare systems</h1><p className="mt-3 max-w-2xl text-muted-foreground">Compare documented fields and compatible units side by side. The archive does not calculate an overall winner.</p></div>{requested.length > 3 && <p className="mb-5 rounded border border-dashed border-primary/50 p-4 text-sm text-muted-foreground">Only the first three unique systems are compared. <a href={buildComparisonHref(normalized)} className="text-primary underline">Use the capped comparison URL</a>.</p>}{result.missing.length > 0 && <p className="mb-5 rounded border border-dashed border-border p-4 text-sm text-muted-foreground">Unavailable or private systems: {result.missing.join(", ")}</p>}<CompareTray options={options} initialSlugs={result.systems.map((system) => system.slug)} /><div className="mt-8"><ComparisonTable result={result} /></div></div>;
 }

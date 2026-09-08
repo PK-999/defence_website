@@ -1,0 +1,5 @@
+# T08 verification — editor identity
+
+Installed `next-auth@4.24.15` and added generic OIDC configuration in `src/auth.ts`, the `/api/auth/[...nextauth]` handler, a noindex sign-in page, exact issuer+subject allow-list parsing, and fail-closed `requireEditor` checks. Added the `EditorialPrincipal` table and seeded Puneeth Kakarla (`puneethkakarla@gmail.com`) as an inactive principal with `REVIEWER` and `PUBLISHER` roles. Review and publication services now enforce their respective roles before opening a mutation transaction; a single-role principal cannot cross that boundary. `scripts/link-editorial-principal.ts` provides the explicit post-provider activation step.
+
+Unit/integration coverage verifies malformed configuration, exact issuer+subject matching, active-principal checks, and reviewer/publisher separation. The real OIDC lifecycle gate is **blocked** until an issuer, client credentials, and a provisioned test subject are supplied; no local bypass was enabled. The owner record remains inactive until the documented linking command is run against the configured deployment database.

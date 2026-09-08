@@ -1,50 +1,65 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from "@/lib/db";
+import {
+  getPublicConflict,
+  getPublicEquipment,
+  getPublicOperation,
+  getPublicOperationById,
+  getPublicPerson,
+  getPublicSlugs,
+  getPublicSource,
+} from "@/lib/repositories/entities";
+import { getPublicClaims } from "@/lib/repositories/evidence";
+import { getPublicRelationships } from "@/lib/repositories/relationships";
+import type { EntityType } from "@/lib/domain/entities";
 
-// In Next.js, we should reuse the Prisma Client in development to prevent connection exhaustion
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
-export const prisma = globalForPrisma.prisma || new PrismaClient();
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+export { prisma };
 
-export async function getSlugs(directory: string): Promise<string[]> {
-  // directory mapping to prisma model
-  switch(directory) {
-    case 'conflicts': return (await prisma.conflict.findMany({ select: { slug: true } })).map(c => c.slug);
-    case 'people': return (await prisma.person.findMany({ select: { slug: true } })).map(c => c.slug);
-    case 'operations': return (await prisma.operation.findMany({ select: { slug: true } })).map(c => c.slug);
-    case 'equipment': return (await prisma.equipment.findMany({ select: { slug: true } })).map(c => c.slug);
-    case 'sources': return (await prisma.sourceRecord.findMany({ select: { slug: true } })).map(c => c.slug);
-    default: return [];
-  }
+const directoryTypes = {
+  conflicts: "Conflict",
+  people: "Person",
+  operations: "Operation",
+  equipment: "Equipment",
+  sources: "Source",
+} as const;
+
+export async function getSlugs(directory: keyof typeof directoryTypes): Promise<string[]> {
+  return getPublicSlugs(directoryTypes[directory], prisma);
+}
+
+function slugFromHref(href: string): string {
+  return decodeURIComponent(href.split("/").pop() ?? "");
+}
+
+function relatedEndpoint(relationship: Awaited<ReturnType<typeof getPublicRelationships>>[number], center: { type: EntityType; id: string }) {
+  return relationship.source.type === center.type && relationship.source.id === center.id
+    ? { type: relationship.target.type, id: relationship.target.id, title: relationship.targetTitle, href: relationship.targetHref }
+    : { type: relationship.source.type, id: relationship.source.id, title: relationship.sourceTitle, href: relationship.sourceHref };
 }
 
 export async function getConflict(slug: string) {
-  const entity = await prisma.conflict.findUnique({ where: { slug } });
-  if (!entity) return null;
-  // Parse JSON fields
-  return { ...entity, theatres: JSON.parse(entity.theatres) };
+  const conflict = await getPublicConflict(slug, prisma);
+  if (!conflict) return null;
+  const center = { type: "Conflict" as const, id: conflict.id };
+  const relationships = await getPublicRelationships(center, prisma);
+  const operations = (await Promise.all(relationships.map(async (relationship) => {
+    const endpoint = relatedEndpoint(relationship, center);
+    if (endpoint.type !== "Operation") return null;
+    return getPublicOperationById(endpoint.id, prisma);
+  }))).filter((operation): operation is NonNullable<typeof operation> => operation !== null);
+  const people = relationships.map((relationship) => relatedEndpoint(relationship, center)).filter((endpoint) => endpoint.type === "Person").map((endpoint) => ({ id: endpoint.id, title: endpoint.title, slug: slugFromHref(endpoint.href) }));
+  const equipment = relationships.map((relationship) => relatedEndpoint(relationship, center)).filter((endpoint) => endpoint.type === "Equipment").map((endpoint) => ({ id: endpoint.id, title: endpoint.title, slug: slugFromHref(endpoint.href) }));
+  const claims = await getPublicClaims(center, prisma);
+  return { ...conflict, operations, people, equipment, claims };
 }
-
-export async function getPerson(slug: string) {
-  const entity = await prisma.person.findUnique({ where: { slug } });
-  return entity;
-}
-
+export const getPerson = (slug: string) => getPublicPerson(slug, prisma);
 export async function getOperation(slug: string) {
-  const entity = await prisma.operation.findUnique({ where: { slug } });
-  return entity;
+  const operation = await getPublicOperation(slug, prisma);
+  if (!operation) return null;
+  const center = { type: "Operation" as const, id: operation.id };
+  const relationships = await getPublicRelationships(center, prisma);
+  const conflicts = relationships.map((relationship) => relatedEndpoint(relationship, center)).filter((endpoint) => endpoint.type === "Conflict").map((endpoint) => ({ id: endpoint.id, title: endpoint.title, slug: slugFromHref(endpoint.href) }));
+  const people = relationships.map((relationship) => relatedEndpoint(relationship, center)).filter((endpoint) => endpoint.type === "Person").map((endpoint) => ({ id: endpoint.id, title: endpoint.title, slug: slugFromHref(endpoint.href) }));
+  return { ...operation, conflicts, people };
 }
-
-export async function getEquipment(slug: string) {
-  const entity = await prisma.equipment.findUnique({ where: { slug } });
-  if (!entity) return null;
-  return { 
-    ...entity, 
-    originCountries: JSON.parse(entity.originCountries), 
-    specs: JSON.parse(entity.specs) 
-  };
-}
-
-export async function getSource(slug: string) {
-  const entity = await prisma.sourceRecord.findUnique({ where: { slug } });
-  return entity;
-}
+export const getEquipment = (slug: string) => getPublicEquipment(slug, prisma);
+export const getSource = (slug: string) => getPublicSource(slug, prisma);

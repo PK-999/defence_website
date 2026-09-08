@@ -1,0 +1,12 @@
+name: "Ministry of Defence (MoD)"
+tier: "A"
+description: "Official releases, annual reports, and press statements from the Government of India."
+reliability_score: 95
+extraction_rules:
+  - rule: "Take casualty figures as absolute Gold truth."
+  - rule: "Dates of operations must override any Tier B sources."
+sub_sources:
+  - name: "PIB (Press Information Bureau)"
+    url_pattern: "pib.gov.in/*"
+  - name: "MoD Annual Reports"
+    url_pattern: "mod.gov.in/documents/annual-report/*"

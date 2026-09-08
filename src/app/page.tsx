@@ -1,95 +1,75 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ScrambleText } from "@/components/ScrambleText";
+import { ArrowRight, BookOpen, Crosshair, Shield } from "lucide-react";
+import { FeaturedCollection } from "@/components/FeaturedCollection";
+import { HomeSearch } from "@/components/HomeSearch";
+import { getFeaturedCollection } from "@/lib/repositories/collections";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+const subjects = [
+  { title: "CONFLICTS", description: "Chronological timelines of major conflicts.", href: "/conflicts", icon: Shield },
+  { title: "PEOPLE", description: "Sourced profiles of service members and leaders.", href: "/heroes", icon: Crosshair },
+  { title: "ARSENAL", description: "Equipment, variants, and published specifications.", href: "/arsenal", icon: BookOpen },
+] as const;
+
+export default async function Home() {
+  const featured = await getFeaturedCollection();
+
   return (
     <div className="flex-1">
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center border-b border-border/40 overflow-hidden">
-        {/* Abstract topographic/radar background placeholder */}
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background opacity-80" />
-        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
-        
-        <div className="container px-4 z-10 flex flex-col items-center text-center space-y-8 max-w-4xl">
-          <div className="space-y-4">
-            <ScrambleText 
-              text="SENTINEL" 
-              className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-widest text-primary"
-            />
-            <p className="text-xl md:text-2xl font-mono tracking-widest text-muted-foreground uppercase">
-              <ScrambleText text="INDIAN DEFENCE ARCHIVE" />
-            </p>
+      <section className="border-b border-border/40 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-primary/[0.09] via-background to-background px-4 py-16 sm:py-24">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="font-mono text-xs font-semibold tracking-[0.35em] text-primary sm:text-sm">SENTINEL · INDIAN DEFENCE ARCHIVE</p>
+          <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Start with a question.</h1>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">Explore India&apos;s military history through reviewed records, clear chronology, and sources you can follow.</p>
+          <div className="mt-9"><HomeSearch /></div>
+          <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+            <span>Reviewed public records</span><span aria-hidden="true">·</span><span>Source-linked claims</span><span aria-hidden="true">·</span><span>Historical context</span>
           </div>
-          
-          <p className="text-lg md:text-xl max-w-2xl text-foreground/80 font-medium">
-            A source-first interactive archive of India's military history.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 mt-12 w-full justify-center">
-            <Button nativeButton={false} render={<Link href="/history" />} size="lg" className="px-8 bg-primary text-primary-foreground hover:bg-primary/90 font-bold tracking-wider">
-              ENTER THE ARCHIVE
-            </Button>
-            <Button nativeButton={false} render={<Link href="/history" />} size="lg" variant="outline" className="px-8 tracking-wider font-semibold border-primary/50 text-primary hover:bg-primary/10">
-              EXPLORE HISTORY
-            </Button>
-          </div>
+        </div>
+      </section>
 
-          <div className="mt-16 pt-8 border-t border-border/40 w-full max-w-3xl hidden md:block">
-            <div className="flex justify-between items-center text-sm font-mono text-muted-foreground">
-              <span>1947</span>
-              <div className="flex-1 h-px bg-border/40 mx-4"></div>
-              <span>1962</span>
-              <div className="flex-1 h-px bg-border/40 mx-4"></div>
-              <span>1965</span>
-              <div className="flex-1 h-px bg-border/40 mx-4"></div>
-              <span>1971</span>
-              <div className="flex-1 h-px bg-border/40 mx-4"></div>
-              <span>1999</span>
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:py-20">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight">EXPLORE THE ARCHIVE</h2>
+            <p className="mt-2 text-sm text-muted-foreground">Choose a subject, then follow the evidence.</p>
+          </div>
+          <Link href="/archive" className="hidden items-center gap-1 text-sm font-semibold text-primary hover:underline sm:inline-flex">Browse sources <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+        </div>
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
+          {subjects.map(({ title, description, href, icon: Icon }) => (
+            <Link key={title} href={href} className="group rounded-xl border border-border/60 bg-card p-6 transition-colors hover:border-primary/60 hover:bg-primary/[0.04]">
+              <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+              <h3 className="mt-5 text-lg font-bold tracking-[0.16em] group-hover:text-primary">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary">Open <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" /></span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-border/40 bg-muted/10 px-4 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl">
+          {featured ? <FeaturedCollection collection={featured} /> : (
+            <div className="rounded-xl border border-dashed border-border/80 bg-card/40 p-7 text-center sm:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">First release in progress</p>
+              <h2 className="mt-3 text-2xl font-semibold">The archive is being built</h2>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground">Reviewed collections will appear here as they are published. You can still browse the current public records and their source library.</p>
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                <Link href="/conflicts" className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90">Browse the archive</Link>
+                <Link href="/archive" className="rounded-md border border-border px-4 py-2 text-sm font-semibold hover:border-primary hover:text-primary">View sources</Link>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
-      {/* Explore Section */}
-      <section className="py-20 bg-muted/20">
-        <div className="container mx-auto px-4 max-w-screen-xl">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold tracking-wider mb-2">EXPLORE THE ARCHIVE</h2>
-            <div className="w-12 h-1 bg-primary mx-auto"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "HISTORY", desc: "Chronological timelines of major conflicts.", href: "/history" },
-              { name: "PEOPLE", desc: "Hall of Valour and individual profiles.", href: "/people" },
-              { name: "OPERATIONS", desc: "Detailed accounts of military operations.", href: "/operations" },
-              { name: "ARSENAL", desc: "Weapons, platforms, and equipment.", href: "/arsenal" },
-              { name: "FORCES", desc: "Organizational structure and units.", href: "/forces" },
-              { name: "ARCHIVE", desc: "Search through primary and secondary sources.", href: "/archive" },
-            ].map((portal) => (
-              <Link key={portal.name} href={portal.href} className="group block h-full">
-                <div className="h-full p-8 rounded-lg border border-border/50 bg-card hover:border-primary/50 transition-colors flex flex-col justify-center items-center text-center space-y-4">
-                  <h3 className="text-xl font-bold tracking-widest group-hover:text-primary transition-colors">{portal.name}</h3>
-                  <p className="text-sm text-muted-foreground">{portal.desc}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Block */}
-      <section className="py-20 border-t border-border/40">
-        <div className="container mx-auto px-4 max-w-3xl text-center space-y-6">
-          <h2 className="text-3xl font-bold text-primary">Every story should lead back to evidence.</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            SENTINEL relies exclusively on officially declassified records, primary government sources, and reputable historical texts. We verify claims, cite our sources, and let the facts speak for themselves.
-          </p>
-          <div className="pt-4">
-            <Button nativeButton={false} variant="link" render={<Link href="/history" />} className="text-primary hover:text-primary/80">
-              Explore History &rarr;
-            </Button>
-          </div>
+      <section className="px-4 py-14 sm:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Every story should lead back to evidence.</h2>
+          <p className="mt-4 text-base leading-7 text-muted-foreground">SENTINEL keeps the record, the source, and the limits of what is documented together so readers can make informed connections.</p>
+          <Link href="/methodology" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">Read the methodology <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
         </div>
       </section>
     </div>

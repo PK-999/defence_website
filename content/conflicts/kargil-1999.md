@@ -1,5 +1,6 @@
 ---
 id: kargil-1999
+slug: kargil-1999
 title: Kargil War
 shortTitle: Kargil
 summary: An armed conflict between India and Pakistan that took place between May and July 1999 in the Kargil district of Kashmir and elsewhere along the Line of Control (LoC).

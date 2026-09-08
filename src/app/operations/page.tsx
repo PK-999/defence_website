@@ -1,49 +1,9 @@
-import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
-import { prisma } from "@/lib/content";
-import { ScrambleText } from "@/components/ScrambleText";
-
+import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
+import { CollectionToolbar } from "@/components/CollectionToolbar";
+import { Pagination } from "@/components/Pagination";
+import { parseCollectionQuery } from "@/lib/domain/query";
+import { listPublicEntities } from "@/lib/repositories/collections";
+import { prisma } from "@/lib/db";
 export const dynamic = "force-dynamic";
-
-export default async function OperationsPage() {
-  const operations = await prisma.operation.findMany({
-    orderBy: { dateStart: 'desc' }
-  });
-
-  return (
-    <div className="container mx-auto px-4 max-w-screen-xl py-12">
-      <SiteBreadcrumbs items={[{ label: "Operations", href: "/operations" }]} />
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold tracking-widest text-primary mb-4 uppercase">
-          <ScrambleText text="OPERATIONS" />
-        </h1>
-        <p className="text-xl text-muted-foreground">Combat, rescue, and humanitarian missions.</p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {operations.map(op => (
-          <Link 
-            key={op.id} 
-            href={`/operations/${op.slug}`}
-            className="p-8 border border-border/50 rounded-lg bg-card hover:border-primary/50 cursor-pointer block group"
-          >
-            <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">
-              {new Date(op.dateStart).getFullYear()}
-            </div>
-            <h2 className="text-2xl font-bold tracking-wider mb-3 group-hover:text-primary transition-colors">
-              {op.title}
-            </h2>
-            <p className="text-muted-foreground text-sm line-clamp-3">
-              {op.summary}
-            </p>
-          </Link>
-        ))}
-        {operations.length === 0 && (
-           <div className="p-8 border border-border/50 rounded-lg bg-card">
-             <p className="text-muted-foreground">No operations indexed yet.</p>
-           </div>
-        )}
-      </div>
-    </div>
-  );
-}
+export default async function OperationsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) { const raw = await searchParams; const query = parseCollectionQuery(raw); const result = await listPublicEntities("Operation", query, prisma); const params = new URLSearchParams(Object.entries(raw).flatMap(([key, value]) => value ? [[key, Array.isArray(value) ? value[0] : value]] : [])); const categories = ["combat", "evacuation", "humanitarian", "peacekeeping", "maritime-security", "rescue", "battle", "event", "other"]; return <div className="mx-auto max-w-5xl px-4 py-10"><SiteBreadcrumbs /><h1 className="text-4xl font-bold">Operations</h1><p className="mt-2 text-muted-foreground">Reviewed combat, rescue, and humanitarian records.</p><div className="my-8"><CollectionToolbar fields={[{ key: "category", label: "Category", options: categories }]} /></div><p className="mb-4 text-sm text-muted-foreground">{result.total} reviewed records</p><div className="space-y-3">{result.items.map((operation) => <Link key={operation.id} href={operation.href} className="block rounded border border-border bg-card p-5 hover:border-primary"><p className="text-xs uppercase text-primary">{operation.facts[0]?.value}</p><h2 className="mt-2 text-xl font-semibold">{operation.title}</h2><p className="mt-2 text-sm text-muted-foreground">{operation.summary}</p></Link>)}</div>{result.items.length === 0 && <p className="mt-6 rounded border border-dashed p-8 text-center text-muted-foreground">No reviewed operations are available.</p>}<div className="mt-8"><Pagination page={result.page} pageCount={result.pageCount} params={params} /></div></div>; }

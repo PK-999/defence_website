@@ -11,7 +11,13 @@ import {
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
-const schemas: Record<string, any> = {
+type ValidationSchema = {
+  safeParse(input: unknown):
+    | { success: true; data: unknown }
+    | { success: false; error: { issues: Array<{ path: PropertyKey[]; message: string }> } };
+};
+
+const schemas: Record<string, ValidationSchema> = {
   conflicts: ConflictSchema,
   people: PersonSchema,
   operations: OperationSchema,
@@ -36,19 +42,11 @@ function validateDirectory(dirName: string) {
     const content = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(content);
     
-    // Default values if missing in seed
-    if (!data.slug) data.slug = file.replace(/\.mdx?$/, '');
-    if (!data.status) data.status = 'published';
-    if (!data.tags) data.tags = [];
-    if (!data.sourceIds) data.sourceIds = [];
-    if (!data.createdAt) data.createdAt = new Date().toISOString();
-    if (!data.updatedAt) data.updatedAt = new Date().toISOString();
-
     const result = schema.safeParse(data);
     
     if (!result.success) {
       console.error(`\n❌ Validation failed for ${dirName}/${file}:`);
-      result.error.issues.forEach((issue: any) => {
+      result.error.issues.forEach((issue) => {
         console.error(`  - [${issue.path.join('.')}] ${issue.message}`);
       });
       errors++;
@@ -68,8 +66,7 @@ function main() {
   
   if (totalErrors > 0) {
     console.error(`\nValidation failed with ${totalErrors} errors.`);
-    // Don't process.exit(1) for this V1 seed, just warn, since we forcefully generated seed data
-    console.log("For V1, allowing build to proceed with seed data warnings.");
+    process.exitCode = 1;
   } else {
     console.log("\n✅ All content valid!");
   }
