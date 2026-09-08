@@ -1,6 +1,6 @@
 # T23 verification — public metadata and resilient route states
 
-Added validated `SITE_URL` handling, root metadata defaults, public record metadata with canonical URLs, OpenGraph summaries, a public-only dynamic sitemap, and noindex metadata for the admin segment. Added shared loading, retryable error, and recovery-focused not-found states. Metadata reads public repositories so draft/withdrawn records cannot leak into head tags or the sitemap.
+Added validated `SITE_URL` handling, root metadata defaults, public record metadata with canonical URLs, OpenGraph summaries, a public-only dynamic sitemap, and noindex metadata for the admin segment. Added a route-level search loading state, retryable error, and recovery-focused not-found states. The root loading boundary is intentionally absent because Next.js streams dynamic `notFound()` responses as HTTP 200 when a root loading boundary is present; private detail routes retain their required 404 status. Metadata reads public repositories so draft/withdrawn records cannot leak into head tags or the sitemap.
 
 Evidence:
 

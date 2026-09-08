@@ -31,7 +31,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const conflict = await getPublicConflict(slug);
-  return conflict ? publicMetadata({ title: conflict.title, description: conflict.summary, pathname: `/conflicts/${encodeURIComponent(conflict.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
+  if (!conflict) notFound();
+  return publicMetadata({ title: conflict.title, description: conflict.summary, pathname: `/conflicts/${encodeURIComponent(conflict.slug)}` });
 }
 
 export default async function ConflictPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -18,7 +18,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const source = await getPublicSourceBySlug(slug);
-  return source ? publicMetadata({ title: source.title, description: source.summary, pathname: `/archive/${encodeURIComponent(source.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
+  if (!source) notFound();
+  return publicMetadata({ title: source.title, description: source.summary, pathname: `/archive/${encodeURIComponent(source.slug)}` });
 }
 
 export default async function SourcePage({ params }: { params: Promise<{ slug: string }> }) {

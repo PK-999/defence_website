@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const operation = await getPublicOperation(slug);
-  return operation ? publicMetadata({ title: operation.title, description: operation.summary, pathname: `/operations/${encodeURIComponent(operation.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
+  if (!operation) notFound();
+  return publicMetadata({ title: operation.title, description: operation.summary, pathname: `/operations/${encodeURIComponent(operation.slug)}` });
 }
 
 export default async function OperationPage({ params }: { params: Promise<{ slug: string }> }) {

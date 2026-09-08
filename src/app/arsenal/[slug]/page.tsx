@@ -24,7 +24,8 @@ export async function generateStaticParams() { return (await getPublicSlugs("Equ
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const equipment = await getPublicEquipment(slug);
-  return equipment ? publicMetadata({ title: equipment.title, description: equipment.summary, pathname: `/arsenal/${encodeURIComponent(equipment.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
+  if (!equipment) notFound();
+  return publicMetadata({ title: equipment.title, description: equipment.summary, pathname: `/arsenal/${encodeURIComponent(equipment.slug)}` });
 }
 
 export default async function EquipmentPage({ params }: { params: Promise<{ slug: string }> }) {
