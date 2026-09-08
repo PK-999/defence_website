@@ -58,6 +58,14 @@ npm run test:e2e
 npm run validate:content
 npm run validate:database
 npm run validate:assets
+uv run --directory factory pytest tests/test_extraction.py
+```
+
+To verify the local production build after these checks:
+
+```bash
+SITE_URL=http://localhost:3000 npm run build
+SITE_URL=http://localhost:3000 npm run start
 ```
 
 The isolated unit, component, integration, browser, content, and database checks are implemented. The progress tracker records the latest known results and remaining manual release gates. The Markdown validator checks legacy file structure, while the database validator checks runtime publication invariants; neither alone proves historical truth.
