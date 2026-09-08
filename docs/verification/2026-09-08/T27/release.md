@@ -13,4 +13,6 @@ For this handoff, the production server is running at `http://localhost:3001` ag
 
 The current release candidate remains draft-only for the Kargil and 1971 candidate collections. The OIDC lifecycle, accountable publication, production database/backup rehearsal, accepted screenshots, zoom/screen-reader inspection, and final deployment configuration remain open gates. Those require owner-managed provider/hosting inputs documented in `docs/MANUAL_WORK_AND_REQUIRED_INPUTS.md`.
 
+Automated render artifacts for the live local deployment are recorded in [T27 screenshot evidence](screenshots.md). They support the route/viewport smoke check but do not close the manual accessibility or owner-acceptance gate.
+
 The rollback rule is to restore the database backup and redeploy the previous Git revision, then rerun `validate:database`; never reset or reseed the production database as a rollback mechanism.
