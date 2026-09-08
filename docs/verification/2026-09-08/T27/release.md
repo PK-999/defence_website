@@ -15,4 +15,6 @@ The current release candidate remains draft-only for the Kargil and 1971 candida
 
 Automated render artifacts for the live local deployment are recorded in [T27 screenshot evidence](screenshots.md). They support the route/viewport smoke check but do not close the manual accessibility or owner-acceptance gate.
 
+Three-run local lab measurements are recorded in [T27 performance evidence](performance.md); they pass the current HTML-size and console-error checks but are not field performance certification.
+
 The rollback rule is to restore the database backup and redeploy the previous Git revision, then rerun `validate:database`; never reset or reseed the production database as a rollback mechanism.
