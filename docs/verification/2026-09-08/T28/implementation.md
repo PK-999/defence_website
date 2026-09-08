@@ -8,7 +8,7 @@ This tranche uses the default next-collection order from `docs/MANUAL_WORK_AND_R
 - Six captured source versions: three official PIB/Ministry of Defence releases, one Indian Express explainer, and two Wikipedia discovery pages.
 - Nine locator-based evidence rows, eight candidate claims, and three candidate relationships.
 - Raw captures are SHA-256 checked before the importer opens a write transaction.
-- Wikipedia is used for discovery/cross-checking only. The official PIB source supports the missile-boat context; exact Vidyut/Osa boat-level identity remains explicitly unverified.
+- Wikipedia is used for discovery/cross-checking only. The official PIB source supports the Osa I class and Operation Trident context; vessel-level specifications remain explicitly unverified.
 
 ## Reproducible commands
 

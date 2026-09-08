@@ -1,12 +1,12 @@
 {
-  "inputHash": "5ea7fd7e929849fc11be106ff5a5caf3abbc7e77d242e33616371c17cf611486",
+  "inputHash": "113effa2fe9b967e53c2ab6dbaa8055d7ce2c2e25d3ee77c17c94a56d2cdbdc5",
   "schemaVersion": 1,
   "sourceSystem": "sentinel-1971-source-pass-2026-09-08",
   "mode": "apply",
   "status": "APPLIED",
-  "proposedCreates": 0,
+  "proposedCreates": 5,
   "proposedUpdates": 0,
-  "unchanged": 5,
+  "unchanged": 0,
   "conflicts": 0,
   "warnings": [],
   "errors": [],
@@ -14,27 +14,27 @@
     {
       "entityType": "Conflict",
       "externalId": "indo-pakistani-war-1971",
-      "action": "unchanged"
+      "action": "create"
     },
     {
       "entityType": "Operation",
       "externalId": "operation-trident-1971",
-      "action": "unchanged"
+      "action": "create"
     },
     {
       "entityType": "Operation",
       "externalId": "battle-longewala-1971",
-      "action": "unchanged"
+      "action": "create"
     },
     {
       "entityType": "Person",
       "externalId": "jagjit-singh-aurora",
-      "action": "unchanged"
+      "action": "create"
     },
     {
       "entityType": "Equipment",
-      "externalId": "vidyut-class-missile-boat-1971",
-      "action": "unchanged"
+      "externalId": "osa-i-class-missile-boats-1971",
+      "action": "create"
     }
   ]
 }

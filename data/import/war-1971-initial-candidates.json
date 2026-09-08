@@ -67,12 +67,12 @@
     },
     {
       "entityType": "Equipment",
-      "externalId": "vidyut-class-missile-boat-1971",
+      "externalId": "osa-i-class-missile-boats-1971",
       "data": {
-        "slug": "vidyut-class-missile-boat-1971",
-        "title": "Vidyut-class missile boat in Operation Trident",
-        "summary": "A candidate equipment record for the Indian Navy missile boats associated with Operation Trident in 1971.",
-        "content": "The official source confirms Osa I class missile boats in the 1971 operations and the discovery source associates Vidyut-class boats with Operation Trident. Exact boat-level variant mapping, specifications, and service dates remain unverified and are not asserted here.",
+        "slug": "osa-i-class-missile-boats-1971",
+        "title": "Osa I class missile boats in Operation Trident (1971)",
+        "summary": "The Osa I class missile boats that the Indian Navy used in the 1971 Operation Trident context.",
+        "content": "The official Ministry of Defence source identifies Osa I class missile boats as newly inducted into the Indian Navy and records their participation in Operation Trident. Exact vessel-level specifications, pennants, and service dates remain outside this bounded candidate record.",
         "status": "Candidate",
         "domain": "sea",
         "category": "missile boat",

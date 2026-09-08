@@ -13,7 +13,7 @@ describe("1971 starter collection package", () => {
       "Operation:operation-trident-1971",
       "Operation:battle-of-longewala-1971",
       "Person:jagjit-singh-aurora",
-      "Equipment:vidyut-class-missile-boat-1971",
+      "Equipment:osa-i-class-missile-boats-1971",
     ]));
   });
 
