@@ -3,12 +3,14 @@ import { prisma } from '@/lib/content';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { requireEditor, UnauthorizedError } from "@/lib/auth/editor";
 import { AdminAccessNotice } from "@/components/AdminAccessNotice";
+import { getCollectionCoverage } from "@/lib/coverage";
 
 export default async function CoverageDashboard() {
   try { await requireEditor(); } catch (error) {
     if (error instanceof UnauthorizedError) return <AdminAccessNotice />;
     throw error;
   }
+  const coverage = await getCollectionCoverage("kargil-1999", prisma);
   const sourceCount = await prisma.source.count();
   const claimsCount = await prisma.claim.count();
   const evidenceCount = await prisma.evidence.count();
@@ -78,19 +80,12 @@ export default async function CoverageDashboard() {
 
         <Card className="bg-[var(--surface-glass)] border-[var(--border-subtle)]">
           <CardHeader>
-            <CardTitle className="text-xl text-[var(--text-primary)]">Review coverage</CardTitle>
-            <CardDescription className="text-[var(--text-secondary)]">Coverage calculations are not available until reviewed source mappings are complete.</CardDescription>
+            <CardTitle className="text-xl text-[var(--text-primary)]">{coverage.manifest.title}</CardTitle>
+            <CardDescription className="text-[var(--text-secondary)]">Known-universe coverage is calculated from the collection manifest and current evidence state.</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4 font-mono">
-              <div className="flex justify-between items-center p-3 border border-[var(--border-subtle)] rounded bg-[var(--bg-1)]">
-                <span className="text-[var(--text-secondary)]">Aircraft in Indian Service</span>
-                <span className="text-yellow-500">REVIEW NOT CALCULATED</span>
-              </div>
-              <div className="flex justify-between items-center p-3 border border-[var(--border-subtle)] rounded bg-[var(--bg-1)]">
-                <span className="text-[var(--text-secondary)]">Kargil War (1999)</span>
-                <span className="text-yellow-500">REVIEW NOT CALCULATED</span>
-              </div>
+              {(["known", "indexed", "sourced", "reviewed"] as const).map((key) => { const metric = coverage.metrics[key]; return <div key={key} className="flex justify-between items-center p-3 border border-[var(--border-subtle)] rounded bg-[var(--bg-1)]"><span className="capitalize text-[var(--text-secondary)]">{key} records</span><span className="text-[var(--text-primary)]">{metric.count}{metric.percentage === null ? " · Coverage not yet defined" : ` · ${metric.percentage}%`}</span></div>; })}
             </div>
           </CardContent>
         </Card>
