@@ -6,11 +6,19 @@ import { ProvenanceViewer } from "@/components/ProvenanceViewer";
 import { getPublicClaims } from "@/lib/repositories/evidence";
 import { getPublicPerson, getPublicSlugs } from "@/lib/repositories/entities";
 import { getPublicRelationships } from "@/lib/repositories/relationships";
+import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/metadata";
 
 const documented = (value: string | null | undefined) => value?.trim() || "Not documented";
 
 export const dynamic = "force-dynamic";
 export async function generateStaticParams() { return (await getPublicSlugs("Person")).map((slug) => ({ slug })); }
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const person = await getPublicPerson(slug);
+  return person ? publicMetadata({ title: person.fullName, description: person.summary, pathname: `/heroes/${encodeURIComponent(person.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
+}
 
 export default async function PersonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

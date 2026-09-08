@@ -1,6 +1,6 @@
 # SENTINEL implementation and verification tracker
 
-**Reconciled:** 7 September 2026. **Current state:** execution has completed implementation through T22. T00–T07 and T09–T22 are functional on automated checks; T08 remains functional with the real OIDC lifecycle gate blocked pending provider credentials. Playwright Chromium is installed and the current desktop/mobile browser suite passes.
+**Reconciled:** 8 September 2026. **Current state:** execution has completed implementation through T23. T00–T07 and T09–T23 are functional on automated checks; T08 remains functional with the real OIDC lifecycle gate blocked pending provider credentials. Playwright Chromium is installed and the current desktop/mobile browser suite passes.
 
 Final automated pass for this tranche: `npm test` (52 unit tests), `npm run test:components` (1 component test), `npm run test:integration` (14 files/33 tests), `npm run typecheck`, `npm run lint -- --quiet`, `npm run build`, `npm run validate:content`, `npm run validate:database`, and `npm run validate:assets` all passed. `npm run test:e2e` passed all 42 Chromium checks across desktop and mobile projects after installing Playwright's managed Chromium build. The final audit also enforces the canonical comparison `items=` URL, the 100-node/200-edge graph cap, and the 1 MB map-asset budget.
 
@@ -51,7 +51,7 @@ Never infer verified from a file's existence, a code comment, a green badge, or 
 | T20 | Lazy, attributed, bounded maps | T12,T19 | MAP-01–03 | functional | [Implementation evidence](docs/verification/2026-09-07/T20/implementation.md); asset validator and pre-activation request/browser checks pass. |
 | T21 | Scoped graph + text equivalent | T06,T13,T15 | GRAPH-01/02 | functional | [Implementation evidence](docs/verification/2026-09-07/T21/implementation.md); capped public graph integration and text-equivalent/browser checks pass. |
 | T22 | Real equipment comparison | T11,T18 | COMP-01/02 | functional | [Implementation evidence](docs/verification/2026-09-07/T22/implementation.md); deterministic state unit/integration and desktop/mobile comparison checks pass. |
-| T23 | Error handling, metadata, freshness | T05,T13,T15,T17 | META-01 + production withdrawal | planned | Not run under this plan. |
+| T23 | Error handling, metadata, freshness | T05,T13,T15,T17 | META-01 + production withdrawal | functional | [Implementation evidence](docs/verification/2026-09-08/T23/implementation.md); public canonical metadata, sitemap privacy, admin noindex, custom not-found, and browser route-state checks pass. |
 | T24 | Computed coverage | T07,T09,T17 | COV-01/02 | planned | Not run under this plan. |
 | T25 | Fail-closed extraction factory | T04,T06,T07 | PIPE-01–03 | planned | Not run under this plan. |
 | T26 | First reviewed connected collection | T09,T17–20,T24 | Sourcing + complete reader journey | in-progress | [Candidate-package evidence](docs/verification/2026-09-07/T26/source-package.md); nine sources captured and hashed, eight draft entities validate/dry-run/apply cleanly in an isolated database. Evidence/relationship import, accountable publication, and the complete reader journey remain. |

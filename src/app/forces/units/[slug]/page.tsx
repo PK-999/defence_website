@@ -1,5 +1,8 @@
 import { notFound } from "next/navigation";
 import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
 import { getPublicUnit } from "@/lib/repositories/entities";
+import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/metadata";
 export const dynamic = "force-dynamic";
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const unit = await getPublicUnit((await params).slug); return unit ? publicMetadata({ title: unit.title, description: unit.summary, pathname: `/forces/units/${encodeURIComponent(unit.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } }; }
 export default async function UnitPage({ params }: { params: Promise<{ slug: string }> }) { const unit = await getPublicUnit((await params).slug); if (!unit) notFound(); return <div className="mx-auto max-w-3xl px-4 py-10"><SiteBreadcrumbs /><p className="text-xs uppercase tracking-wider text-primary">{unit.unitType}</p><h1 className="mt-3 text-4xl font-bold">{unit.title}</h1><p className="mt-4 text-lg text-muted-foreground">{unit.summary}</p>{unit.content && <div className="mt-10 whitespace-pre-wrap leading-7">{unit.content}</div>}<dl className="mt-10 grid gap-4 border-t border-border pt-6 sm:grid-cols-2">{unit.serviceId && <div><dt className="text-xs uppercase text-muted-foreground">Service</dt><dd>{unit.serviceId}</dd></div>}{unit.establishedDate && <div><dt className="text-xs uppercase text-muted-foreground">Established</dt><dd>{unit.establishedDate}</dd></div>}{unit.disbandedDate && <div><dt className="text-xs uppercase text-muted-foreground">Disbanded</dt><dd>{unit.disbandedDate}</dd></div>}</dl></div>; }

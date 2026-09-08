@@ -5,6 +5,9 @@ import { ConnectionExplorer } from "@/components/ConnectionExplorer";
 import { ScrambleText } from "@/components/ScrambleText";
 import { ProvenanceViewer } from "@/components/ProvenanceViewer";
 import { InteractiveConflictViewer, EventDetail } from "@/components/InteractiveConflictViewer";
+import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/metadata";
+import { getPublicConflict } from "@/lib/repositories/entities";
 
 export const dynamic = "force-dynamic";
 
@@ -23,6 +26,12 @@ type RelatedCard = { id: string; title: string; slug: string };
 export async function generateStaticParams() {
   const slugs = await getSlugs('conflicts');
   return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const conflict = await getPublicConflict(slug);
+  return conflict ? publicMetadata({ title: conflict.title, description: conflict.summary, pathname: `/conflicts/${encodeURIComponent(conflict.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
 }
 
 export default async function ConflictPage({ params }: { params: Promise<{ slug: string }> }) {

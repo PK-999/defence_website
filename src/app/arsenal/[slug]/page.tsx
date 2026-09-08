@@ -6,6 +6,8 @@ import { ProvenanceViewer } from "@/components/ProvenanceViewer";
 import { getPublicClaims } from "@/lib/repositories/evidence";
 import { getPublicEquipment, getPublicSlugs } from "@/lib/repositories/entities";
 import { getPublicRelationships } from "@/lib/repositories/relationships";
+import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/metadata";
 
 type EquipmentSpec = { label: string; value: string };
 const documented = (value: string | null | undefined) => value?.trim() || "Not documented";
@@ -18,6 +20,12 @@ function specs(value: unknown): EquipmentSpec[] {
 
 export const dynamic = "force-dynamic";
 export async function generateStaticParams() { return (await getPublicSlugs("Equipment")).map((slug) => ({ slug })); }
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const equipment = await getPublicEquipment(slug);
+  return equipment ? publicMetadata({ title: equipment.title, description: equipment.summary, pathname: `/arsenal/${encodeURIComponent(equipment.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
+}
 
 export default async function EquipmentPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

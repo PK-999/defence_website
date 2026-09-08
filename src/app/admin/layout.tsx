@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
 import { requireAnyEditorRole, UnauthorizedError } from "@/lib/auth/editor";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Editor area | SENTINEL", robots: { index: false, follow: false } };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   try {

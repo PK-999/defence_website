@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { parseSiteUrl } from "@/lib/config";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,6 +23,8 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "SENTINEL | Indian Defence Archive",
   description: "A source-first interactive digital archive of India's military history.",
+  metadataBase: parseSiteUrl(process.env.SITE_URL),
+  openGraph: { title: "SENTINEL Indian Defence Archive", description: "A source-first interactive digital archive of India's military history.", siteName: "SENTINEL Indian Defence Archive", type: "website" },
 };
 
 export default function RootLayout({

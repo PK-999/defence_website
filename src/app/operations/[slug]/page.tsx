@@ -5,12 +5,21 @@ import { Badge } from "@/components/ui/badge";
 import { Timeline, TimelineEvent } from "@/components/ui/Timeline";
 import { InteractiveMapLayout, ScrollSpySection } from "@/components/InteractiveMapLayout";
 import { ConnectionExplorer } from "@/components/ConnectionExplorer";
+import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/metadata";
+import { getPublicOperation } from "@/lib/repositories/entities";
 
 type RelatedEntity = { id: string; title: string; slug: string };
 
 export async function generateStaticParams() {
   const slugs = await getSlugs('operations');
   return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const operation = await getPublicOperation(slug);
+  return operation ? publicMetadata({ title: operation.title, description: operation.summary, pathname: `/operations/${encodeURIComponent(operation.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
 }
 
 export default async function OperationPage({ params }: { params: Promise<{ slug: string }> }) {

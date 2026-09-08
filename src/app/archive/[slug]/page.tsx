@@ -6,11 +6,19 @@ import { SourceBadge, type SourceTier } from "@/components/BadgeComponents";
 import { SourceEvidenceList } from "@/components/ProvenanceViewer";
 import { getPublicSlugs } from "@/lib/repositories/entities";
 import { getPublicSourceBySlug } from "@/lib/repositories/sources";
+import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   return (await getPublicSlugs("Source")).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const source = await getPublicSourceBySlug(slug);
+  return source ? publicMetadata({ title: source.title, description: source.summary, pathname: `/archive/${encodeURIComponent(source.slug)}` }) : { title: "Page not found | SENTINEL", robots: { index: false, follow: false } };
 }
 
 export default async function SourcePage({ params }: { params: Promise<{ slug: string }> }) {
