@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleLayout } from "@/components/ArticleLayout";
 import { ProvenanceViewer } from "@/components/ProvenanceViewer";
 import { getPublicClaims } from "@/lib/repositories/evidence";
-import { getPublicPerson, getPublicSlugs } from "@/lib/repositories/entities";
+import { getPublicPerson } from "@/lib/repositories/entities";
 import { getPublicRelationships } from "@/lib/repositories/relationships";
 import type { Metadata } from "next";
 import { publicMetadata } from "@/lib/metadata";
@@ -12,7 +11,6 @@ import { publicMetadata } from "@/lib/metadata";
 const documented = (value: string | null | undefined) => value?.trim() || "Not documented";
 
 export const dynamic = "force-dynamic";
-export async function generateStaticParams() { return (await getPublicSlugs("Person")).map((slug) => ({ slug })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -32,7 +30,6 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
   const dates = person.birthDate || person.deathDate ? `${person.birthDate ? person.birthDate : "Not documented"} — ${person.deathDate ? person.deathDate : "Not documented"}` : "Not documented";
 
   return <>
-    <SiteBreadcrumbs />
     <ArticleLayout title={person.fullName} summary={person.summary || "Not documented"} content={person.content} facts={[
       { label: "Rank", value: documented(person.rank), evidence: evidenceFor("rank") },
       { label: "Service", value: documented(person.serviceBranch), evidence: evidenceFor("serviceBranch") },
@@ -40,7 +37,7 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
       { label: "Decorations", value: documented(person.decorations), evidence: evidenceFor("decorations") },
       { label: "Conflict context", value: documented(person.conflict), evidence: evidenceFor("conflict") },
     ]}>
-      {related.length > 0 && <section className="mt-12"><h2 className="border-l-2 border-primary pl-4 text-xl font-bold uppercase tracking-wider">Related records</h2><ul className="mt-5 grid gap-3 sm:grid-cols-2">{related.map((item) => <li key={`${item.type}:${item.href}`}><Link href={item.href} className="block rounded border border-border/60 p-4 hover:border-primary"><span className="text-xs uppercase tracking-wider text-primary">{item.type}</span><span className="mt-1 block font-medium">{item.title}</span></Link></li>)}</ul></section>}
+      {related.length > 0 && <section className="mt-12"><h2 className="border-l-2 border-primary pl-4 text-xl font-bold uppercase tracking-wider">Related records</h2><ul className="mt-5 grid gap-3 sm:grid-cols-2">{related.map((item) => <li key={`${item.type}:${item.href}`}><Link href={item.href} className="block rounded border border-border/60 p-4 hover:border-primary"><span className="text-xs uppercase tracking-wider text-primary">{item.type === "Person" ? "Heroes" : item.type === "Equipment" ? "Arsenal" : item.type}</span><span className="mt-1 block font-medium">{item.title}</span></Link></li>)}</ul></section>}
       <ProvenanceViewer claims={claims} />
     </ArticleLayout>
   </>;

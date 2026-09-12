@@ -3,7 +3,6 @@ import {
   getPublicConflict,
   getPublicEquipment,
   getPublicOperation,
-  getPublicOperationById,
   getPublicPerson,
   getPublicSlugs,
   getPublicSource,
@@ -41,11 +40,7 @@ export async function getConflict(slug: string) {
   if (!conflict) return null;
   const center = { type: "Conflict" as const, id: conflict.id };
   const relationships = await getPublicRelationships(center, prisma);
-  const operations = (await Promise.all(relationships.map(async (relationship) => {
-    const endpoint = relatedEndpoint(relationship, center);
-    if (endpoint.type !== "Operation") return null;
-    return getPublicOperationById(endpoint.id, prisma);
-  }))).filter((operation): operation is NonNullable<typeof operation> => operation !== null);
+  const operations = conflict.operations;
   const people = relationships.map((relationship) => relatedEndpoint(relationship, center)).filter((endpoint) => endpoint.type === "Person").map((endpoint) => ({ id: endpoint.id, title: endpoint.title, slug: slugFromHref(endpoint.href) }));
   const equipment = relationships.map((relationship) => relatedEndpoint(relationship, center)).filter((endpoint) => endpoint.type === "Equipment").map((endpoint) => ({ id: endpoint.id, title: endpoint.title, slug: slugFromHref(endpoint.href) }));
   const claims = await getPublicClaims(center, prisma);

@@ -13,9 +13,11 @@ export type TimelineEvent = {
 
 interface TimelineProps {
   events: TimelineEvent[];
+  activeEventId?: string | null;
+  onSelect?: (event: TimelineEvent) => void;
 }
 
-export function Timeline({ events }: TimelineProps) {
+export function Timeline({ events, activeEventId, onSelect }: TimelineProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -64,7 +66,9 @@ export function Timeline({ events }: TimelineProps) {
               viewport={{ amount: 0.5, margin: "0px -20px" }}
               transition={{ delay: i * 0.1 }}
               onViewportEnter={() => {
-                window.dispatchEvent(new CustomEvent('scroll-spy-active', { detail: ev.id }));
+                // Interactive timelines use an explicit click to focus the map.
+                // Keep the legacy scroll-spy behavior for read-only timelines.
+                if (!onSelect) window.dispatchEvent(new CustomEvent('scroll-spy-active', { detail: ev.id }));
               }}
             >
               {/* Timeline Node */}
@@ -74,7 +78,14 @@ export function Timeline({ events }: TimelineProps) {
               </div>
               
               {/* Event Content Box */}
-              <div className="bg-card border border-border/50 p-5 rounded-lg hover:border-primary/50 transition-colors h-full flex flex-col">
+              <button
+                type="button"
+                onClick={() => onSelect?.(ev)}
+                aria-current={activeEventId === ev.id ? "step" : undefined}
+                className={`text-left bg-card border p-5 rounded-lg transition-colors h-full flex flex-col ${
+                  activeEventId === ev.id ? "border-primary ring-1 ring-primary/40" : "border-border/50 hover:border-primary/50"
+                }`}
+              >
                 <div className="text-xs font-bold tracking-widest text-muted-foreground mb-2 font-mono">
                   {ev.date}
                 </div>
@@ -86,7 +97,8 @@ export function Timeline({ events }: TimelineProps) {
                     {ev.description}
                   </p>
                 )}
-              </div>
+                {onSelect && <span className="mt-4 text-[10px] font-mono uppercase tracking-[0.2em] text-primary">Focus map</span>}
+              </button>
             </motion.div>
           ))}
         </div>

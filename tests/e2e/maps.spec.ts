@@ -11,4 +11,19 @@ test.describe("deliberate maps", () => {
     await expect(page.getByRole("button", { name: "Retry map" })).toBeVisible();
     await expect(page.getByText(/OpenTopoMap/i)).toBeVisible();
   });
+
+  test("battle chronology moves the tactical map and renders the field report", async ({ page }) => {
+    await page.goto("/operations/battle-of-badgam-1947");
+    await expect(page.getByRole("heading", { name: "Full report" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Stories & field notes" })).toBeVisible();
+    await expect(page.getByText("Documented locations")).toHaveCount(0);
+    await expect(page.getByRole("button", { name: /D Company holds Badgam/ })).toBeVisible();
+
+    const map = page.locator("[data-map-active-marker]");
+    await expect(map).toHaveAttribute("data-map-active-marker", "badgam-approach");
+    await page.getByRole("button", { name: /D Company holds Badgam/ }).click();
+    await expect(map).toHaveAttribute("data-map-active-marker", "badgam-hold");
+    await page.getByRole("button", { name: /Airfield approach secured/ }).click();
+    await expect(map).toHaveAttribute("data-map-active-marker", "badgam-airfield");
+  });
 });

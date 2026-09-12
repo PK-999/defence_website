@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { PageHeader, PageShell } from "@/components/PageShell";
 
 type SearchPageResult = {
   id: string;
@@ -12,6 +13,8 @@ type SearchPageResult = {
   type: string;
   href: string;
 };
+
+const displayType = (type: string) => ({ Person: "Heroes", Equipment: "Arsenal" } as Record<string, string>)[type] ?? type;
 
 export default async function AdvancedSearchPage(
   props: { searchParams: Promise<{ q?: string; type?: string }> }
@@ -30,8 +33,8 @@ export default async function AdvancedSearchPage(
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-5xl">
-      <h1 className="text-4xl font-bold tracking-widest uppercase mb-8">Advanced Search</h1>
+    <PageShell>
+      <PageHeader title="Advanced Search" description="Search reviewed heroes, arsenal systems, conflicts, operations, forces, and sources." />
       
       <form className="flex gap-4 mb-8" action="/search" method="GET">
         <Input 
@@ -44,9 +47,9 @@ export default async function AdvancedSearchPage(
         <select name="type" defaultValue={typeFilter} className="bg-background border border-border/40 rounded-md px-3">
           <option value="all">All Domains</option>
           <option value="conflict">Conflicts</option>
-          <option value="person">Personnel</option>
+          <option value="person">Heroes</option>
           <option value="operation">Operations</option>
-          <option value="equipment">Equipment</option>
+          <option value="equipment">Arsenal</option>
           <option value="unit">Units</option>
           <option value="source">Sources</option>
         </select>
@@ -70,7 +73,7 @@ export default async function AdvancedSearchPage(
                 <div className="flex items-center gap-3 mb-2">
                   <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{result.title}</h3>
                   <span className="text-[10px] uppercase tracking-wider text-muted-foreground px-2 py-0.5 bg-muted rounded-full">
-                    {result.type}
+                    {displayType(result.type)}
                   </span>
                 </div>
                 {result.summary && (
@@ -81,6 +84,6 @@ export default async function AdvancedSearchPage(
           ))}
         </div>
       )}
-    </div>
+    </PageShell>
   );
 }

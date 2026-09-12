@@ -1,11 +1,12 @@
 export const primaryNavigation = [
   { label: "Conflicts", href: "/conflicts" },
   { label: "Operations", href: "/operations" },
-  { label: "People", href: "/heroes" },
-  { label: "Equipment", href: "/arsenal" },
+  { label: "Heroes", href: "/heroes" },
+  { label: "Arsenal", href: "/arsenal" },
   { label: "Forces", href: "/forces" },
   { label: "Graph", href: "/graph" },
   { label: "Sources", href: "/archive" },
+  { label: "Intel Ledger", href: "/intel" },
 ] as const;
 
 export const editorialNavigation = [

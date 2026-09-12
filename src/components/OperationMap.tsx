@@ -45,15 +45,16 @@ interface OperationMapProps {
   markers: MapMarker[];
   activeMarkerId?: string | null;
   defaultCenter?: [number, number];
+  showActiveCoordinates?: boolean;
 }
 
-export default function OperationMap({ markers, activeMarkerId, defaultCenter }: OperationMapProps) {
+export default function OperationMap({ markers, activeMarkerId, defaultCenter, showActiveCoordinates = true }: OperationMapProps) {
   const activeMarker = markers.find(m => m.id === activeMarkerId) || markers[0];
   const center = activeMarker ? activeMarker.coordinates : (defaultCenter || [20.5937, 78.9629] as [number, number]);
   const currentZoom = activeMarkerId ? 12 : 11;
 
   return (
-    <div className="w-full h-full min-h-[400px] bg-[#0a1017] border border-border/40 rounded-lg overflow-hidden relative">
+    <div data-map-active-marker={activeMarker?.id ?? ""} className="w-full h-full min-h-[400px] bg-[#0a1017] border border-border/40 rounded-lg overflow-hidden relative">
       <MapContainer 
         center={center} 
         zoom={currentZoom} 
@@ -88,7 +89,7 @@ export default function OperationMap({ markers, activeMarkerId, defaultCenter }:
         })}
       </MapContainer>
       
-      {activeMarker && (
+      {activeMarker && showActiveCoordinates && (
         <div className="absolute bottom-4 left-4 text-xs text-muted-foreground/80 font-bold tracking-widest z-[500] drop-shadow-md bg-black/50 p-2 rounded pointer-events-none">
           COORD: {activeMarker.coordinates[0].toFixed(4)}° N / {activeMarker.coordinates[1].toFixed(4)}° E
         </div>

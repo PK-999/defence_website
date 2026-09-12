@@ -23,6 +23,15 @@ export async function getPublicConflict(slug: string, db: Database = defaultPris
       id: true, slug: true, title: true, summary: true, content: true, status: true,
       dateStart: true, dateEnd: true, dateStartPrecision: true, dateEndPrecision: true,
       theatres: true, coordinates: true, referenceUrl: true, contextSummary: true, outcomeSummary: true,
+      operations: {
+        where: publicRelationWhere,
+        orderBy: [{ dateStart: "asc" }, { title: "asc" }],
+        select: {
+          id: true, slug: true, title: true, category: true, summary: true, content: true, status: true,
+          dateStart: true, dateEnd: true, dateStartPrecision: true, dateEndPrecision: true,
+          coordinates: true, referenceUrl: true,
+        },
+      },
     },
   });
   if (!entity) return null;

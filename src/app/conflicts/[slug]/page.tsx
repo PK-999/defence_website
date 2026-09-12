@@ -1,13 +1,12 @@
 import { notFound } from "next/navigation";
-import { getConflict, getSlugs } from "@/lib/content";
-import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
+import { getConflict } from "@/lib/content";
 import { ConnectionExplorer } from "@/components/ConnectionExplorer";
-import { ScrambleText } from "@/components/ScrambleText";
 import { ProvenanceViewer } from "@/components/ProvenanceViewer";
 import { InteractiveConflictViewer, EventDetail } from "@/components/InteractiveConflictViewer";
 import type { Metadata } from "next";
 import { publicMetadata } from "@/lib/metadata";
 import { getPublicConflict } from "@/lib/repositories/entities";
+import { PageHeader, PageShell } from "@/components/PageShell";
 
 export const dynamic = "force-dynamic";
 
@@ -16,6 +15,7 @@ type RelatedEvent = {
   title: string;
   slug: string;
   dateStart: string;
+  dateEnd: string | null;
   summary: string;
   content: string | null;
   coordinates: string | null;
@@ -23,9 +23,17 @@ type RelatedEvent = {
 };
 type RelatedCard = { id: string; title: string; slug: string };
 
-export async function generateStaticParams() {
-  const slugs = await getSlugs('conflicts');
-  return slugs.map((slug) => ({ slug }));
+function dateRange(start: string, end?: string | null): string {
+  return end && end !== start ? `${start} — ${end}` : start;
+}
+
+function timelineDate(value: string): number {
+  const iso = value.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return Date.UTC(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3]));
+  const dayFirst = value.match(/^(\d{2})-(\d{2})-(\d{4})/);
+  if (dayFirst) return Date.UTC(Number(dayFirst[3]), Number(dayFirst[2]) - 1, Number(dayFirst[1]));
+  const year = value.match(/\d{4}/)?.[0];
+  return year ? Date.UTC(Number(year), 0, 1) : Number.MAX_SAFE_INTEGER;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -47,7 +55,7 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
   const conflictDetail: EventDetail = {
     id: conflict.id,
     title: conflict.title,
-    date: conflict.dateStart,
+    date: dateRange(conflict.dateStart, conflict.dateEnd),
     summary: conflict.summary || "",
     content: conflict.content || conflict.summary || "",
     coordinates: conflict.coordinates ? JSON.parse(conflict.coordinates) : undefined,
@@ -57,42 +65,24 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
   };
 
   const operationsEvents: EventDetail[] = (conflict.operations || [])
+    .slice()
+    .sort((a: RelatedEvent, b: RelatedEvent) => timelineDate(a.dateStart) - timelineDate(b.dateStart))
     .map((op: RelatedEvent) => ({
       id: op.id,
       title: op.title,
-      date: op.dateStart,
+      date: dateRange(op.dateStart, op.dateEnd),
       summary: op.summary || "",
       content: op.content || op.summary || "",
       coordinates: op.coordinates ? JSON.parse(op.coordinates) : undefined,
       referenceUrl: op.referenceUrl || undefined,
       slug: op.slug,
       type: 'operation' as const
-    }))
-    .sort((a, b) => {
-      const aParts = a.date.split('-');
-      const bParts = b.date.split('-');
-      if (aParts.length === 3 && bParts.length === 3) {
-        const aDate = new Date(`${aParts[2]}-${aParts[1]}-${aParts[0]}`);
-        const bDate = new Date(`${bParts[2]}-${bParts[1]}-${bParts[0]}`);
-        return aDate.getTime() - bDate.getTime();
-      }
-      return 0;
-    });
+    }));
 
   return (
-    <div className="container mx-auto px-4 max-w-screen-2xl py-12">
-      <SiteBreadcrumbs />
-      
-      <div className="mb-12 border-b border-border/40 pb-8">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-widest uppercase mb-4 text-primary">
-          <ScrambleText text={conflict.title} />
-        </h1>
-        {conflict.dateStart && (
-          <div className="font-mono text-muted-foreground text-sm tracking-wider mb-6">
-            {conflict.dateStart} {conflict.dateEnd ? `— ${conflict.dateEnd}` : ""}
-          </div>
-        )}
-      </div>
+    <PageShell width="wide">
+      <PageHeader eyebrow="THEATRE RECORD" title={conflict.title} description={conflict.summary || undefined} />
+      {conflict.dateStart && <p className="-mt-4 mb-8 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{conflict.dateStart} {conflict.dateEnd ? `— ${conflict.dateEnd}` : ""}</p>}
 
       {/* 3-Column Interactive Viewer */}
       <div className="mb-16">
@@ -154,6 +144,6 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
         </div>
 
       <ProvenanceViewer claims={conflict.claims} />
-    </div>
+    </PageShell>
   );
 }

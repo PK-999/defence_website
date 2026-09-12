@@ -33,7 +33,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <nav className="flex flex-col gap-2 text-sm tracking-wider font-semibold">
           <Link href="/admin" className="px-4 py-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground">DASHBOARD</Link>
           <Link href="/admin/conflicts" className="px-4 py-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground">CONFLICTS</Link>
-          <Link href="/admin/equipment" className="px-4 py-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground">EQUIPMENT</Link>
+          <Link href="/admin/equipment" className="px-4 py-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground">ARSENAL</Link>
         </nav>
       </aside>
       

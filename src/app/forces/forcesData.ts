@@ -663,6 +663,10 @@ export const FORCES_DATA: Force[] = [
   }
 ];
 
+export function getForcesForService(service: ServiceLevel): Force[] {
+  return service === 'All' ? FORCES_DATA : FORCES_DATA.filter((force) => force.name === service);
+}
+
 export const UNITS_DATA: UnitDetail[] = [
     {
         "name": "Parachute Regiment",

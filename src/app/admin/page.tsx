@@ -29,7 +29,7 @@ export default async function AdminDashboard() {
           <div className="text-4xl font-bold text-primary">{personCount}</div>
         </Card>
         <Card className="p-6 bg-card">
-          <div className="text-sm tracking-wider text-muted-foreground mb-2 uppercase">Total Equipment</div>
+          <div className="text-sm tracking-wider text-muted-foreground mb-2 uppercase">Total Arsenal</div>
           <div className="text-4xl font-bold text-primary">{equipmentCount}</div>
         </Card>
         <Card className="p-6 bg-card">

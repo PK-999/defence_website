@@ -1,19 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink } from "lucide-react";
-import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
-import { SourceBadge, type SourceTier } from "@/components/BadgeComponents";
 import { SourceEvidenceList } from "@/components/ProvenanceViewer";
-import { getPublicSlugs } from "@/lib/repositories/entities";
 import { getPublicSourceBySlug } from "@/lib/repositories/sources";
+import { PageHeader, PageShell } from "@/components/PageShell";
 import type { Metadata } from "next";
 import { publicMetadata } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
-
-export async function generateStaticParams() {
-  return (await getPublicSlugs("Source")).map((slug) => ({ slug }));
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -28,16 +22,9 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
   if (!source) notFound();
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
-      <SiteBreadcrumbs />
-      <div className="mb-10 flex flex-col gap-6 border-b border-border/40 pb-8 md:flex-row md:items-start md:justify-between">
-        <div className="space-y-4">
-          <div className="flex flex-wrap gap-2"><SourceBadge tier={source.tier as SourceTier} label={source.sourceType.replace(/-/g, " ").toUpperCase()} /></div>
-          <h1 className="max-w-4xl text-3xl font-bold tracking-tight md:text-4xl">{source.title}</h1>
-          <p className="text-sm text-muted-foreground">Published by <span className="text-foreground">{source.publisher}</span>{source.publicationDate ? ` · ${source.publicationDate}` : ""}{source.author ? ` · ${source.author}` : ""}</p>
-        </div>
-        <div className="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">{source.canonicalUrl && <a href={source.canonicalUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded border border-primary/50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">View original <ExternalLink className="h-3 w-3" aria-hidden="true" /></a>}<Link href="/archive" className="rounded border border-border px-4 py-2 text-center text-xs font-semibold text-muted-foreground hover:text-foreground">Back to sources</Link></div>
-      </div>
+    <PageShell width="wide">
+      <PageHeader eyebrow={source.sourceType.replace(/-/g, " ").toUpperCase()} title={source.title} description={source.summary || undefined} actions={<div className="flex shrink-0 flex-wrap gap-2">{source.canonicalUrl && <a href={source.canonicalUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded border border-primary/50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary hover:text-primary-foreground">View original <ExternalLink className="h-3 w-3" aria-hidden="true" /></a>}<Link href="/archive" className="rounded border border-border px-4 py-2 text-center text-xs font-semibold text-muted-foreground hover:text-foreground">Back to sources</Link></div>} />
+      <p className="-mt-4 mb-8 text-sm text-muted-foreground">Published by <span className="text-foreground">{source.publisher}</span>{source.publicationDate ? ` · ${source.publicationDate}` : ""}{source.author ? ` · ${source.author}` : ""}</p>
 
       <div className="grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(240px,1fr)]">
         <div className="space-y-10">
@@ -51,6 +38,6 @@ export default async function SourcePage({ params }: { params: Promise<{ slug: s
           <section className="rounded border border-border/60 bg-card/40 p-4"><h2 className="text-sm font-bold">Found an issue?</h2><p className="mt-2 text-xs leading-5 text-muted-foreground">Copy page ID <code className="text-foreground">{source.id}</code> and send the correction through the configured editorial contact.</p></section>
         </aside>
       </div>
-    </div>
+    </PageShell>
   );
 }

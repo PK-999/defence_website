@@ -1,20 +1,16 @@
 import { notFound } from "next/navigation";
-import { getOperation, getSlugs } from "@/lib/content";
-import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
-import { Badge } from "@/components/ui/badge";
-import { Timeline, TimelineEvent } from "@/components/ui/Timeline";
+import { getOperation } from "@/lib/content";
 import { InteractiveMapLayout, ScrollSpySection } from "@/components/InteractiveMapLayout";
 import { ConnectionExplorer } from "@/components/ConnectionExplorer";
+import { PageHeader, PageShell } from "@/components/PageShell";
 import type { Metadata } from "next";
 import { publicMetadata } from "@/lib/metadata";
 import { getPublicOperation } from "@/lib/repositories/entities";
+import { getOperationDossier, type OperationDossierEvent } from "@/lib/operation-dossiers";
 
 type RelatedEntity = { id: string; title: string; slug: string };
 
-export async function generateStaticParams() {
-  const slugs = await getSlugs('operations');
-  return slugs.map((slug) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -31,58 +27,58 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
     notFound();
   }
 
-  // Show only dates stored on the record; an end date is not evidence of an outcome.
-  const timelineEvents: TimelineEvent[] = [];
-  if (operation.dateStart) {
-    timelineEvents.push({
+  const dossier = getOperationDossier(operation.slug);
+  // A dossier can add dated, source-linked field notes. When no such notes
+  // exist, retain the database dates without inferring an outcome or narrative.
+  const timelineEvents: OperationDossierEvent[] = dossier?.events.length ? dossier.events : [
+    ...(operation.dateStart ? [{
       id: "start",
       date: operation.dateStart,
       title: "Recorded start date",
       description: "The source-linked record includes this start date; event detail is not inferred."
-    });
-  }
-  if (operation.dateEnd) {
-    timelineEvents.push({
+    }] : []),
+    ...(operation.dateEnd ? [{
       id: "end",
       date: operation.dateEnd,
       title: "Recorded end date",
       description: "The source-linked record includes this end date; outcome information is not available here."
-    });
-  }
+    }] : []),
+  ];
 
+  const operationCoordinates: [number, number] | undefined = operation.coordinates
+    ? (() => {
+      try {
+        const parsed = JSON.parse(operation.coordinates) as unknown;
+        return Array.isArray(parsed) && parsed.length === 2 && parsed.every((value) => typeof value === "number")
+          ? [parsed[0], parsed[1]] as [number, number]
+          : undefined;
+      } catch { return undefined; }
+    })()
+    : undefined;
+
+  const defaultCenter: [number, number] = operationCoordinates ?? [20.5937, 78.9629];
+  const isBattle = operation.category.toLowerCase().includes("battle");
   const markers: { id: string; title: string; coordinates: [number, number] }[] = [];
-  if (operation.coordinates) {
-    markers.push({
-      id: operation.id,
-      title: operation.title,
-      coordinates: JSON.parse(operation.coordinates)
-    });
+  if (isBattle) {
+    for (const event of timelineEvents) {
+      const coordinates = event.coordinates ?? operationCoordinates;
+      if (coordinates) markers.push({ id: event.id, title: event.title, coordinates });
+    }
+  } else if (operationCoordinates) {
+    markers.push({ id: operation.id, title: operation.title, coordinates: operationCoordinates });
   }
-
-  const defaultCenter: [number, number] = operation.coordinates ? JSON.parse(operation.coordinates) : [20.5937, 78.9629];
 
   return (
-    <div className="container mx-auto px-4 max-w-screen-xl py-12">
-      <SiteBreadcrumbs />
-      
-      <div className="mb-12 border-b border-border/40 pb-8">
-        <Badge variant="outline" className="mb-4 bg-muted/50 uppercase tracking-wider">{operation.category}</Badge>
-        <h1 className="text-4xl md:text-5xl font-bold tracking-widest uppercase mb-2">
-          {operation.title}
-        </h1>
-        {operation.dateStart && (
-          <div className="font-mono text-muted-foreground text-sm tracking-wider mb-6">
-            {operation.dateStart} {operation.dateEnd ? `— ${operation.dateEnd}` : ""}
-          </div>
-        )}
-        <p className="text-xl text-foreground/90 max-w-3xl leading-relaxed">
-          {operation.summary}
-        </p>
-      </div>
+    <PageShell width="wide">
+      <PageHeader eyebrow={`FIELD OPERATION · ${operation.category}`} title={operation.title} description={operation.summary || undefined} />
+      {operation.dateStart && <p className="-mt-4 mb-8 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{operation.dateStart} {operation.dateEnd ? `— ${operation.dateEnd}` : ""}</p>}
 
       <InteractiveMapLayout
         markers={markers}
         defaultCenter={defaultCenter}
+        timelineEvents={timelineEvents}
+        mapCompact={isBattle}
+        showActiveCoordinates={!isBattle}
         extraSidebarContent={
           <ConnectionExplorer
             centerNode={{ id: operation.id, title: operation.title, type: 'operation', slug: operation.slug }}
@@ -98,22 +94,40 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
         }
       >
         <ScrollSpySection id={operation.id} className="space-y-12">
+          {dossier?.context && (
+            <section>
+              <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Dossier</h2>
+              <p className="text-lg leading-relaxed text-muted-foreground">{dossier.context}</p>
+            </section>
+          )}
+
           {operation.content && (
             <section>
-              <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Narrative</h2>
-              <div className="prose prose-invert max-w-none text-muted-foreground">
-                {operation.content}
+              <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Full report</h2>
+              <div className="prose prose-invert max-w-none text-muted-foreground space-y-4">
+                {operation.content.split(/\n{2,}/).map((paragraph, index) => <p key={`${operation.id}-paragraph-${index}`}>{paragraph}</p>)}
               </div>
             </section>
           )}
-        </ScrollSpySection>
 
-        {timelineEvents.length > 0 && (
-          <section className="mt-12">
-            <Timeline events={timelineEvents} />
-          </section>
-        )}
+          {dossier?.stories.length ? (
+            <section>
+              <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Stories &amp; field notes</h2>
+              <div className="grid gap-4 md:grid-cols-2">
+                {dossier.stories.map((story) => (
+                  <article key={story.title} className="rounded-lg border border-border/50 bg-card/60 p-5">
+                    <h3 className="text-lg font-semibold tracking-wide text-foreground">{story.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{story.body}</p>
+                    <a href={story.sourceUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-[10px] font-mono uppercase tracking-[0.18em] text-primary hover:underline">
+                      Source: {story.sourceLabel}
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+        </ScrollSpySection>
       </InteractiveMapLayout>
-    </div>
+    </PageShell>
   );
 }

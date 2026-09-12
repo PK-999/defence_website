@@ -141,13 +141,10 @@ export function InteractiveConflictViewer({ conflict, events }: InteractiveConfl
         <ClientOperationMap 
           markers={markers} 
           activeMarkerId={selectedEventId === 'overview' ? (selectedEvent.coordinates ? selectedEvent.id : undefined) : selectedEventId} 
-          defaultCenter={defaultCenter} 
+          defaultCenter={defaultCenter}
+          compact
+          showActiveCoordinates={false}
         />
-        {selectedEvent.coordinates && (
-          <div className="absolute bottom-4 left-4 text-xs text-muted-foreground/80 font-bold tracking-widest z-[500] drop-shadow-md bg-black/50 px-2 py-1 rounded">
-            {selectedEvent.coordinates[0].toFixed(4)}° N / {selectedEvent.coordinates[1].toFixed(4)}° E
-          </div>
-        )}
       </div>
 
     </div>

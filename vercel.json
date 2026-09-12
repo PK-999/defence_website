@@ -1,0 +1,23 @@
+{
+  "framework": "nextjs",
+  "env": {
+    "DATABASE_URL": "file:./dev.db",
+    "SITE_URL": "https://defence-website-zeta.vercel.app"
+  },
+  "buildCommand": "gzip -dc prisma/dev.db.gz > prisma/dev.db && npm run prisma:generate:node && next build",
+  "headers": [
+    {
+      "source": "/research/ledger.json",
+      "headers": [
+        {
+          "key": "Content-Encoding",
+          "value": "gzip"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    }
+  ]
+}

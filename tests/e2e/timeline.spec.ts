@@ -17,4 +17,17 @@ test.describe("chronology surfaces", () => {
     await expect(page).toHaveURL(/view=explorer&event=overview/);
     await expect(overview).toHaveAttribute("aria-pressed", "true");
   });
+
+  test("conflict chronology lists dated operations and keeps the map panel focused", async ({ page }) => {
+    await page.goto("/conflicts/fixture-conflict");
+    await expect(page.getByRole("button", { name: "Open Fixture Operation" })).toBeVisible();
+    await expect(page.getByText("1999-01-02")).toBeVisible();
+    await expect(page.getByText("Documented locations")).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Retry map" })).toBeVisible();
+    const map = page.locator("[data-map-active-marker]");
+    const overviewMarker = await map.getAttribute("data-map-active-marker");
+    await page.getByRole("button", { name: "Open Fixture Operation" }).click();
+    await expect(page).toHaveURL(/event=/);
+    await expect.poll(() => map.getAttribute("data-map-active-marker")).not.toBe(overviewMarker);
+  });
 });

@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   distDir: process.env.SENTINEL_TEST_RUN === "1" ? ".next-test" : ".next",
+  outputFileTracingIncludes: {
+    "/*": ["./prisma/dev.db", "./prisma/dev.db.gz"],
+  },
   async redirects() {
     return [
       {

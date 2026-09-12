@@ -17,6 +17,15 @@ export type ConnectionExplorerProps = {
   connections: ConnectionNode[];
 };
 
+const displayType: Record<ConnectionNode["type"], string> = {
+  conflict: "Conflicts",
+  person: "Heroes",
+  operation: "Operations",
+  equipment: "Arsenal",
+  unit: "Forces",
+  source: "Sources",
+};
+
 export function ConnectionExplorer({ centerNode, connections }: ConnectionExplorerProps) {
   const grouped = connections.reduce((acc, curr) => {
     if (!acc[curr.type]) acc[curr.type] = [];
@@ -51,7 +60,7 @@ export function ConnectionExplorer({ centerNode, connections }: ConnectionExplor
             <h3 className="text-sm font-bold tracking-widest uppercase text-muted-foreground">Connected Node</h3>
           </div>
           <div className="p-8 border border-primary/50 bg-background rounded-lg text-center shadow-[0_0_30px_rgba(201,154,69,0.15)] w-full max-w-[18rem]">
-            <Badge className="mb-4 uppercase tracking-wider">{centerNode.type}</Badge>
+            <Badge className="mb-4 uppercase tracking-wider">{displayType[centerNode.type]}</Badge>
             <h4 className="text-2xl font-bold tracking-wider">{centerNode.title}</h4>
           </div>
         </div>
@@ -74,7 +83,7 @@ export function ConnectionExplorer({ centerNode, connections }: ConnectionExplor
                         : "bg-muted/30 text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                     }`}
                   >
-                    {type} ({grouped[type].length})
+                    {displayType[type as ConnectionNode["type"]] ?? type} ({grouped[type].length})
                   </button>
                 ))}
               </div>

@@ -1,7 +1,14 @@
 export type SiteEnvironment = "development" | "test" | "production";
 
+function deploymentUrl(raw: string | undefined): string | undefined {
+  const explicit = raw?.trim();
+  if (explicit) return explicit;
+  const vercelUrl = process.env.VERCEL_URL?.trim();
+  return vercelUrl ? `https://${vercelUrl}` : undefined;
+}
+
 export function parseSiteUrl(raw: string | undefined, environment: SiteEnvironment = (process.env.NODE_ENV as SiteEnvironment) || "development"): URL {
-  const value = raw?.trim();
+  const value = deploymentUrl(raw);
   if (!value) {
     if (environment === "production") throw new Error("SITE_URL is required in production.");
     return new URL("http://localhost:3000/");

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SiteBreadcrumbs } from "@/components/Breadcrumbs";
+import { PageHeader, PageShell } from "@/components/PageShell";
 import { Pagination } from "@/components/Pagination";
 import { listPublicSources } from "@/lib/repositories/sources";
 import { prisma } from "@/lib/db";
@@ -17,12 +17,8 @@ export default async function ArchivePage({ searchParams }: { searchParams: Prom
   const params = new URLSearchParams(Object.entries(raw).flatMap(([key, value]) => value ? [[key, Array.isArray(value) ? value[0] : value]] : []));
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10">
-      <SiteBreadcrumbs />
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold tracking-tight text-primary">Sources</h1>
-        <p className="mt-2 max-w-2xl text-muted-foreground">Browse the reviewed documents behind published records. Each source keeps its version, locator, and display rights visible.</p>
-      </div>
+    <PageShell>
+      <PageHeader title="Sources" description="Browse the reviewed documents behind published records. Each source keeps its version, locator, and display rights visible." />
 
       <form method="get" className="mb-8 grid gap-3 rounded-lg border border-border/60 bg-card/40 p-4 sm:grid-cols-4">
         <label className="sm:col-span-2"><span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Search</span><input name="q" defaultValue={typeof raw.q === "string" ? raw.q : ""} placeholder="Title or topic" className="h-10 w-full rounded border border-input bg-background px-3 text-sm" /></label>
@@ -38,6 +34,6 @@ export default async function ArchivePage({ searchParams }: { searchParams: Prom
         <div className="grid gap-4 md:grid-cols-2">{result.items.map((source) => <Link key={source.id} href={source.href} className="rounded-lg border border-border/60 bg-card p-6 transition-colors hover:border-primary/60"><div className="mb-2 text-xs uppercase tracking-widest text-primary">{source.tier} · {source.sourceType}</div><h2 className="text-xl font-semibold tracking-tight">{source.title}</h2><p className="mt-2 text-sm text-muted-foreground">{source.summary}</p><div className="mt-4 text-xs text-muted-foreground">{source.publisher}{source.publicationDate ? ` · ${source.publicationDate}` : ""}</div></Link>)}</div>
       )}
       <div className="mt-8"><Pagination page={result.page} pageCount={result.pageCount} params={params} /></div>
-    </div>
+    </PageShell>
   );
 }

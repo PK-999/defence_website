@@ -40,7 +40,7 @@ export async function seedLegacyFixtures(db: PrismaClient): Promise<void> {
         slug: "fixture-conflict", title: "Fixture Conflict",
         summary: "Synthetic test conflict; never publish as historical content.", content: syntheticText,
         status: "Published", dateStart: "1999-01-01", dateEnd: "1999-01-03",
-        dateStartPrecision: "day", dateEndPrecision: "day", theatres: JSON.stringify(["Test range"]),
+        dateStartPrecision: "day", dateEndPrecision: "day", theatres: JSON.stringify(["Test range"]), coordinates: JSON.stringify([10, 20]),
         publicationStatus: "PUBLISHED", contentKind: "EDITORIAL", reviewedAt, reviewedBy: "fixture-reviewer", revision: 1,
       },
     });
@@ -63,8 +63,19 @@ export async function seedLegacyFixtures(db: PrismaClient): Promise<void> {
         slug: "fixture-operation", title: "Fixture Operation", category: "event",
         summary: "Synthetic test operation; never publish as historical content.", content: syntheticText,
         status: "Published", dateStart: "1999-01-02", dateEnd: "1999-01-02", dateStartPrecision: "day", dateEndPrecision: "day",
+        coordinates: JSON.stringify([30, 40]),
         publicationStatus: "PUBLISHED", contentKind: "EDITORIAL", reviewedAt, reviewedBy: "fixture-reviewer", revision: 1,
         conflicts: { connect: { id: conflict.id } },
+      },
+    });
+    await tx.operation.create({
+      data: {
+        slug: "battle-of-badgam-1947", title: "Battle of Badgam", category: "Battle",
+        summary: "Synthetic battle fixture for chronology and map interaction tests.",
+        content: "A source-linked battle fixture used to verify the selected field event and tactical map stay synchronized.",
+        status: "Published", dateStart: "03-11-1947", dateStartPrecision: "day",
+        coordinates: JSON.stringify([34.0133, 74.7214]),
+        publicationStatus: "PUBLISHED", contentKind: "EDITORIAL", reviewedAt, reviewedBy: "fixture-reviewer", revision: 1,
       },
     });
     await tx.operation.create({

@@ -1,19 +1,31 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Crosshair, Shield } from "lucide-react";
+import { ArrowRight, BookOpen, Crosshair, Radar, Shield } from "lucide-react";
 import { FeaturedCollection } from "@/components/FeaturedCollection";
 import { HomeSearch } from "@/components/HomeSearch";
+import { prisma } from "@/lib/db";
+import { publicWhere } from "@/lib/repositories/publication";
 import { getFeaturedCollection } from "@/lib/repositories/collections";
 
 export const dynamic = "force-dynamic";
 
 const subjects = [
   { title: "CONFLICTS", description: "Chronological timelines of major conflicts.", href: "/conflicts", icon: Shield },
-  { title: "PEOPLE", description: "Sourced profiles of service members and leaders.", href: "/heroes", icon: Crosshair },
-  { title: "ARSENAL", description: "Equipment, variants, and published specifications.", href: "/arsenal", icon: BookOpen },
+  { title: "HEROES", description: "Sourced profiles of service members and leaders.", href: "/heroes", icon: Crosshair },
+  { title: "ARSENAL", description: "Platforms, weapons, variants, and published specifications.", href: "/arsenal", icon: BookOpen },
+  { title: "INTEL LEDGER", description: "Every collected lead, award row, source, and relationship.", href: "/intel", icon: Radar },
 ] as const;
 
 export default async function Home() {
-  const featured = await getFeaturedCollection();
+  const [featured, published] = await Promise.all([
+    getFeaturedCollection(),
+    Promise.all([
+      prisma.person.count({ where: publicWhere() }),
+      prisma.operation.count({ where: publicWhere() }),
+      prisma.equipment.count({ where: publicWhere() }),
+      prisma.source.count({ where: publicWhere() }),
+    ]),
+  ]);
+  const [people, operations, equipment, sources] = published;
 
   return (
     <div className="flex-1">
@@ -53,9 +65,12 @@ export default async function Home() {
         <div className="mx-auto max-w-5xl">
           {featured ? <FeaturedCollection collection={featured} /> : (
             <div className="rounded-xl border border-dashed border-border/80 bg-card/40 p-7 text-center sm:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">First release in progress</p>
-              <h2 className="mt-3 text-2xl font-semibold">The archive is being built</h2>
-              <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground">Reviewed collections will appear here as they are published. You can still browse the current public records and their source library.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Field archive online</p>
+              <h2 className="mt-3 text-2xl font-semibold">Reviewed dossiers are live</h2>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground">Follow source-linked records across heroes, operations, the arsenal, and the documents behind them. New material enters review before it reaches the public archive.</p>
+              <div className="mx-auto mt-6 grid max-w-2xl grid-cols-2 gap-3 text-left sm:grid-cols-4">
+                {[{ label: "Heroes", value: people }, { label: "Operations", value: operations }, { label: "Arsenal", value: equipment }, { label: "Sources", value: sources }].map((item) => <div key={item.label} className="rounded-lg border border-border/70 bg-background/60 p-3"><p className="font-mono text-lg font-semibold text-primary">{item.value}</p><p className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{item.label}</p></div>)}
+              </div>
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <Link href="/conflicts" className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90">Browse the archive</Link>
                 <Link href="/archive" className="rounded-md border border-border px-4 py-2 text-sm font-semibold hover:border-primary hover:text-primary">View sources</Link>

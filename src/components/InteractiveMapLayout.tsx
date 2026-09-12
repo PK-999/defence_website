@@ -2,24 +2,28 @@
 
 import React, { useState, useEffect } from "react";
 import { ClientOperationMap, MapMarker } from "./ClientOperationMap";
+import { Timeline, TimelineEvent } from "./ui/Timeline";
 
 interface InteractiveMapLayoutProps {
   children: React.ReactNode;
   markers: MapMarker[];
   defaultCenter?: [number, number];
   extraSidebarContent?: React.ReactNode;
+  timelineEvents?: TimelineEvent[];
+  mapCompact?: boolean;
+  showActiveCoordinates?: boolean;
 }
 
-export function InteractiveMapLayout({ children, markers, defaultCenter, extraSidebarContent }: InteractiveMapLayoutProps) {
-  const [activeMarkerId, setActiveMarkerId] = useState<string | null>(null);
+export function InteractiveMapLayout({ children, markers, defaultCenter, extraSidebarContent, timelineEvents = [], mapCompact = false, showActiveCoordinates = true }: InteractiveMapLayoutProps) {
+  const [activeMarkerId, setActiveMarkerId] = useState<string | null>(timelineEvents[0]?.id ?? null);
 
   useEffect(() => {
     const handleScrollSpy = (e: CustomEvent) => {
-      setActiveMarkerId(e.detail);
+      if (markers.some((marker) => marker.id === e.detail)) setActiveMarkerId(e.detail);
     };
     window.addEventListener('scroll-spy-active', handleScrollSpy as EventListener);
     return () => window.removeEventListener('scroll-spy-active', handleScrollSpy as EventListener);
-  }, []);
+  }, [markers]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
@@ -36,6 +40,8 @@ export function InteractiveMapLayout({ children, markers, defaultCenter, extraSi
                 markers={markers} 
                 activeMarkerId={activeMarkerId} 
                 defaultCenter={defaultCenter} 
+                compact={mapCompact}
+                showActiveCoordinates={showActiveCoordinates}
               />
             </div>
           </section>
@@ -43,6 +49,16 @@ export function InteractiveMapLayout({ children, markers, defaultCenter, extraSi
           {extraSidebarContent}
         </div>
       </div>
+
+      {timelineEvents.length > 0 && (
+        <div className="lg:col-span-2">
+          <Timeline
+            events={timelineEvents}
+            activeEventId={activeMarkerId}
+            onSelect={(event) => setActiveMarkerId(event.id)}
+          />
+        </div>
+      )}
     </div>
   );
 }

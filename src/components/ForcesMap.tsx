@@ -194,6 +194,11 @@ export default function ForcesMap({ forcesData, activeService }: ForcesMapProps)
                           </ul>
                         </div>
                       )}
+                      <div className="mt-2 border-t border-gray-700 pt-2">
+                        <strong className="text-xs text-gray-400 uppercase tracking-wider block mb-1">Coverage</strong>
+                        <p className="text-xs text-gray-200">{cmd.coverage}</p>
+                        <p className="text-[10px] text-gray-400 mt-1">{cmd.coverageStates.length > 0 ? cmd.coverageStates.join(', ') : 'Theatre or training responsibility'}</p>
+                      </div>
                     </div>
                   </Popup>
                 </Marker>

@@ -15,7 +15,7 @@ export default async function AdminEquipment() {
   return (
     <div>
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold tracking-widest uppercase">Manage Equipment</h1>
+        <h1 className="text-3xl font-bold tracking-widest uppercase">Manage Arsenal</h1>
         <Button>+ NEW EQUIPMENT</Button>
       </div>
 
