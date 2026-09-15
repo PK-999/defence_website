@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { formatHistoricalDate, parseHistoricalDate } from "../../src/lib/domain/dates";
+import { formatHistoricalDate, historicalDateSortKey, parseHistoricalDate } from "../../src/lib/domain/dates";
 
 describe("parseHistoricalDate", () => {
   test.each([
@@ -25,4 +25,11 @@ test("formats partial dates and documents unknown dates", () => {
   expect(formatHistoricalDate(parseHistoricalDate("1999-07"))).toBe("1999-07");
   expect(formatHistoricalDate(parseHistoricalDate("1999"))).toBe("1999");
   expect(formatHistoricalDate(parseHistoricalDate(null))).toBe("Date not documented");
+});
+
+test("sorts mixed historical date formats by their actual calendar position", () => {
+  expect(historicalDateSortKey("03-11-1947")).toBeLessThan(historicalDateSortKey("1984-04-13"));
+  expect(historicalDateSortKey("1984-04-13")).toBeLessThan(historicalDateSortKey("1999"));
+  expect(historicalDateSortKey("1999-07-26T23:30:00.000Z")).toBeLessThan(historicalDateSortKey("2000"));
+  expect(historicalDateSortKey("Date classified")).toBe(Number.POSITIVE_INFINITY);
 });

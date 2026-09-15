@@ -1,11 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { ClientOperationMap, MapMarker } from "./ClientOperationMap";
 import { ChevronRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { TacticalSoundToggle } from "./TacticalSoundToggle";
+import { playTacticalClick } from "@/lib/tactical-audio";
+import { formatDisplayDate } from "@/lib/domain/dates";
 
 export type EventDetail = {
   id: string;
@@ -37,12 +40,25 @@ export function InteractiveConflictViewer({ conflict, events }: InteractiveConfl
   const requestedEvent = searchParams.get("event");
   const selectedEventId = allEvents.some((event) => event.id === requestedEvent) ? requestedEvent! : "overview";
   const selectedEvent = allEvents.find(e => e.id === selectedEventId) || allEvents[0];
+  const [proximityIndex, setProximityIndex] = useState<number | null>(null);
+  const chronologyScrollTop = useRef(0);
+  const chronologyScrollSoundTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const reducedMotion = useReducedMotion();
   const selectEvent = (id: string) => {
     const next = new URLSearchParams(searchParams.toString());
     next.set("view", "explorer");
     next.set("event", id);
     router.push(`${pathname}?${next.toString()}`, { scroll: false });
   };
+  const handleChronologyScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    const top = event.currentTarget.scrollTop;
+    if (Math.abs(top - chronologyScrollTop.current) < 28 || chronologyScrollSoundTimer.current) return;
+    chronologyScrollTop.current = top;
+    playTacticalClick();
+    chronologyScrollSoundTimer.current = setTimeout(() => { chronologyScrollSoundTimer.current = null; }, 85);
+  };
+  const activeIndex = Math.max(0, allEvents.findIndex((event) => event.id === selectedEventId));
+  const focusIndex = proximityIndex ?? activeIndex;
 
   // Map markers for all events
   const markers: MapMarker[] = allEvents
@@ -60,17 +76,24 @@ export function InteractiveConflictViewer({ conflict, events }: InteractiveConfl
       
       {/* LEFT COLUMN: Vertical Timeline */}
       <div className="w-full lg:w-72 bg-card border-b lg:border-b-0 lg:border-r border-border/40 flex flex-col z-10 overflow-hidden shrink-0">
-        <div className="h-12 border-b border-border/40 flex items-center px-4 bg-muted/20 shrink-0">
+        <div className="h-12 border-b border-border/40 flex items-center justify-between px-4 bg-muted/20 shrink-0">
           <span className="font-bold tracking-widest text-sm text-primary">TIMELINE</span>
+          <TacticalSoundToggle />
         </div>
-        <div className="flex-1 overflow-y-auto p-4 space-y-2">
+        <div onScroll={handleChronologyScroll} className="flex-1 overflow-y-auto p-4 space-y-2" aria-label="Scrollable conflict timeline" tabIndex={0}>
           {allEvents.map((event, index) => (
-            <button
+            <motion.button
               key={event.id}
               type="button"
               aria-pressed={event.id === selectedEventId}
               aria-label={`Open ${event.title}`}
               onClick={() => selectEvent(event.id)}
+              onMouseEnter={() => setProximityIndex(index)}
+              onMouseLeave={() => setProximityIndex(null)}
+              onFocus={() => setProximityIndex(index)}
+              onBlur={() => setProximityIndex(null)}
+              animate={{ scale: reducedMotion ? 1 : Math.abs(index - focusIndex) === 0 ? 1.12 : Math.abs(index - focusIndex) === 1 ? 1.05 : Math.abs(index - focusIndex) === 2 ? 1.015 : 1 }}
+              transition={{ type: reducedMotion ? "tween" : "spring", stiffness: 420, damping: 26, duration: reducedMotion ? 0 : undefined }}
               className={`w-full flex flex-col text-left px-4 py-3 rounded border transition-colors relative ${
                 event.id === selectedEventId 
                   ? "border-primary bg-primary/10" 
@@ -81,9 +104,9 @@ export function InteractiveConflictViewer({ conflict, events }: InteractiveConfl
               {index !== allEvents.length - 1 && (
                 <div className="absolute left-6 top-full w-px h-2 bg-border/50" />
               )}
-              <span className="text-[10px] text-muted-foreground tracking-widest mb-1 uppercase font-mono">{event.date}</span>
+              <span className="text-[10px] text-muted-foreground tracking-widest mb-1 uppercase font-mono">{formatDisplayDate(event.date)}</span>
               <span className="text-sm font-bold">{event.title}</span>
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>
@@ -103,11 +126,11 @@ export function InteractiveConflictViewer({ conflict, events }: InteractiveConfl
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="text-xs text-primary mb-2 tracking-widest font-mono">{selectedEvent.date}</div>
+              <div className="text-xs text-primary mb-2 tracking-widest font-mono">{formatDisplayDate(selectedEvent.date)}</div>
               <h3 className="text-2xl font-bold tracking-wider mb-2 uppercase">{selectedEvent.title}</h3>
               
               <div className="prose prose-invert max-w-none text-muted-foreground mt-6 text-sm leading-relaxed mb-8">
-                {selectedEvent.content || selectedEvent.summary}
+                {(selectedEvent.content || selectedEvent.summary).split(/\n{2,}/).filter(Boolean).map((paragraph, index) => <p key={`${selectedEvent.id}-paragraph-${index}`}>{paragraph}</p>)}
               </div>
               
               <div className="space-y-4 mt-auto">

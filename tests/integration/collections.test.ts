@@ -17,5 +17,12 @@ describe("bounded public collections", () => {
     const alias = await listPublicEntities("Equipment", parseCollectionQuery({ force: "air" }), db);
     expect(alias.items.every((item) => item.facts.some((fact) => fact.value === "air"))).toBe(true);
   });
+  it("orders conflict and operation collections by historical start date", async () => {
+    const conflicts = await listPublicEntities("Conflict", { page: 1, pageSize: 24, sort: "date" }, db);
+    const operations = await listPublicEntities("Operation", { page: 1, pageSize: 24, sort: "date" }, db);
+
+    expect(conflicts.items.map((item) => item.slug)).toEqual(["fixture-conflict-other", "fixture-conflict"]);
+    expect(operations.items.map((item) => item.slug)).toEqual(["battle-of-badgam-1947", "fixture-operation-other", "fixture-operation"]);
+  });
 });
 afterAll(async () => { await db.$disconnect(); });

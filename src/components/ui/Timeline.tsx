@@ -1,108 +1,153 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { TacticalSoundToggle } from "@/components/TacticalSoundToggle";
+import { playTacticalClick } from "@/lib/tactical-audio";
+import { formatDisplayDate } from "@/lib/domain/dates";
 
 export type TimelineEvent = {
   id: string;
   date: string;
   title: string;
   description?: string;
+  href?: string;
 };
 
 interface TimelineProps {
   events: TimelineEvent[];
   activeEventId?: string | null;
   onSelect?: (event: TimelineEvent) => void;
+  onActiveChange?: (event: TimelineEvent) => void;
+  actionLabel?: string;
 }
 
-export function Timeline({ events, activeEventId, onSelect }: TimelineProps) {
+export function Timeline({ events, activeEventId, onSelect, onActiveChange, actionLabel = "Focus map" }: TimelineProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const animationFrame = useRef<number | null>(null);
+  const scrollSoundTop = useRef(0);
+  const scrollSoundTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const initialIndex = Math.max(0, events.findIndex((event) => event.id === activeEventId));
+  const [wheelIndex, setWheelIndex] = useState(initialIndex);
+  const [proximityIndex, setProximityIndex] = useState<number | null>(null);
+  const reducedMotion = useReducedMotion();
 
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+  const scrollToIndex = (index: number) => {
+    const bounded = Math.max(0, Math.min(events.length - 1, index));
+    const container = scrollRef.current;
+    const item = itemRefs.current[bounded];
+    if (!container || !item) return;
+    container.scrollTo({
+      top: item.offsetTop - (container.clientHeight - item.offsetHeight) / 2,
+      behavior: reducedMotion ? "auto" : "smooth",
+    });
+  };
+
+  const commitCenteredItem = () => {
+    animationFrame.current = null;
+    const container = scrollRef.current;
+    if (!container) return;
+    const center = container.getBoundingClientRect().top + container.clientHeight / 2;
+    let nearest = wheelIndex;
+    let nearestDistance = Number.POSITIVE_INFINITY;
+    itemRefs.current.forEach((item, index) => {
+      if (!item) return;
+      const rect = item.getBoundingClientRect();
+      const distance = Math.abs(rect.top + rect.height / 2 - center);
+      if (distance < nearestDistance) {
+        nearest = index;
+        nearestDistance = distance;
+      }
+    });
+    if (nearest !== wheelIndex) {
+      setWheelIndex(nearest);
+      onActiveChange?.(events[nearest]);
     }
   };
 
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-    }
+  const handleScroll = () => {
+    if (animationFrame.current !== null) cancelAnimationFrame(animationFrame.current);
+    animationFrame.current = requestAnimationFrame(commitCenteredItem);
   };
+  const handleTimelineScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    const top = event.currentTarget.scrollTop;
+    if (Math.abs(top - scrollSoundTop.current) >= 28 && !scrollSoundTimer.current) {
+      scrollSoundTop.current = top;
+      playTacticalClick();
+      scrollSoundTimer.current = setTimeout(() => { scrollSoundTimer.current = null; }, 85);
+    }
+    handleScroll();
+  };
+  const focusIndex = proximityIndex ?? wheelIndex;
+
+  useEffect(() => () => {
+    if (animationFrame.current !== null) cancelAnimationFrame(animationFrame.current);
+    if (scrollSoundTimer.current !== null) clearTimeout(scrollSoundTimer.current);
+  }, []);
 
   if (!events || events.length === 0) return null;
 
   return (
-    <div className="relative w-full py-8">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold tracking-widest text-primary uppercase border-l-2 border-primary pl-4">Chronology</h3>
-        <div className="flex gap-2">
-          <button onClick={scrollLeft} className="p-2 border border-border/40 hover:bg-primary/10 hover:text-primary transition-colors rounded">
-            <ChevronLeft className="w-4 h-4" />
+    <section className="relative w-full py-8" aria-label="Timeline">
+      <div className="mb-6 flex items-center justify-between gap-4">
+        <h3 className="border-l-2 border-primary pl-4 text-xl font-bold uppercase tracking-widest text-primary">Timeline</h3>
+        <div className="flex items-center gap-2">
+          <TacticalSoundToggle />
+          <button type="button" onClick={() => scrollToIndex(wheelIndex - 1)} aria-label="Previous timeline entry" className="rounded border border-border/40 p-2 transition-colors hover:bg-primary/10 hover:text-primary">
+            <ChevronUp className="h-4 w-4" />
           </button>
-          <button onClick={scrollRight} className="p-2 border border-border/40 hover:bg-primary/10 hover:text-primary transition-colors rounded">
-            <ChevronRight className="w-4 h-4" />
+          <button type="button" onClick={() => scrollToIndex(wheelIndex + 1)} aria-label="Next timeline entry" className="rounded border border-border/40 p-2 transition-colors hover:bg-primary/10 hover:text-primary">
+            <ChevronDown className="h-4 w-4" />
           </button>
         </div>
       </div>
-      
-      <div className="relative flex items-center">
-        {/* Horizontal Line connecting nodes */}
-        <div className="absolute left-0 right-0 h-0.5 bg-border/40 top-[1.375rem] -z-10" />
 
-        <div 
-          ref={scrollRef}
-          className="flex gap-8 overflow-x-auto pb-8 pt-2 px-2 scrollbar-hide snap-x"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {events.map((ev, i) => (
-            <motion.div 
-              key={ev.id} 
-              className="flex flex-col min-w-[280px] max-w-[320px] snap-start"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.5, margin: "0px -20px" }}
-              transition={{ delay: i * 0.1 }}
-              onViewportEnter={() => {
-                // Interactive timelines use an explicit click to focus the map.
-                // Keep the legacy scroll-spy behavior for read-only timelines.
-                if (!onSelect) window.dispatchEvent(new CustomEvent('scroll-spy-active', { detail: ev.id }));
-              }}
-            >
-              {/* Timeline Node */}
-              <div className="w-4 h-4 rounded-full bg-primary/20 border-2 border-primary shadow-[0_0_10px_rgba(201,154,69,0.5)] mb-6 mx-auto relative">
-                {/* Connector line to the box */}
-                <div className="absolute w-px h-6 bg-border/40 left-1/2 -bottom-6 -translate-x-1/2" />
-              </div>
-              
-              {/* Event Content Box */}
-              <button
-                type="button"
-                onClick={() => onSelect?.(ev)}
-                aria-current={activeEventId === ev.id ? "step" : undefined}
-                className={`text-left bg-card border p-5 rounded-lg transition-colors h-full flex flex-col ${
-                  activeEventId === ev.id ? "border-primary ring-1 ring-primary/40" : "border-border/50 hover:border-primary/50"
-                }`}
+      <div ref={scrollRef} onScroll={handleTimelineScroll} className="relative h-[34rem] snap-y snap-mandatory overflow-y-auto overscroll-contain pl-12 pr-28 [perspective:900px] [scrollbar-color:theme(colors.primary/40)_transparent] sm:pr-40" tabIndex={0} aria-label="Scrollable timeline">
+        <div className="absolute bottom-0 left-[1.55rem] top-0 w-px bg-border/50" aria-hidden="true" />
+        <div className="space-y-3 py-[13rem]">
+          {events.map((event, index) => {
+            const signedDistance = index - focusIndex;
+            const distance = Math.abs(signedDistance);
+            const active = index === wheelIndex;
+            const scale = reducedMotion ? 1 : distance === 0 ? 1.18 : distance === 1 ? 0.96 : distance === 2 ? 0.9 : 0.86;
+            const opacity = active ? 1 : distance === 1 ? 0.52 : distance === 2 ? 0.28 : 0.14;
+            return (
+              <motion.div
+                key={event.id}
+                ref={(node) => { itemRefs.current[index] = node; }}
+                data-timeline-event={event.id}
+                initial={false}
+                animate={{ opacity, scale, x: reducedMotion ? 0 : active ? 24 : distance === 1 ? 8 : 0, rotateX: reducedMotion ? 0 : Math.max(-14, Math.min(14, signedDistance * -7)) }}
+                transition={{ type: reducedMotion ? "tween" : "spring", stiffness: 360, damping: 24, mass: 0.7, duration: reducedMotion ? 0 : undefined }}
+                className="relative min-h-28 snap-center origin-left pl-8 will-change-transform"
               >
-                <div className="text-xs font-bold tracking-widest text-muted-foreground mb-2 font-mono">
-                  {ev.date}
-                </div>
-                <h4 className="text-lg font-bold tracking-wider text-foreground mb-3">
-                  {ev.title}
-                </h4>
-                {ev.description && (
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
-                    {ev.description}
-                  </p>
-                )}
-                {onSelect && <span className="mt-4 text-[10px] font-mono uppercase tracking-[0.2em] text-primary">Focus map</span>}
-              </button>
-            </motion.div>
-          ))}
+                <span className={`absolute left-[-1.95rem] top-1/2 h-3 w-3 -translate-y-1/2 rounded-full border-2 transition-all ${active ? "border-primary bg-primary shadow-[0_0_18px_rgba(132,204,22,0.95)]" : "border-primary/50 bg-background"}`} aria-hidden="true" />
+                <button
+                  type="button"
+                  onMouseEnter={() => setProximityIndex(index)}
+                  onMouseLeave={() => setProximityIndex(null)}
+                  onFocus={() => setProximityIndex(index)}
+                  onBlur={() => setProximityIndex(null)}
+                  onClick={() => {
+                    scrollToIndex(index);
+                    onActiveChange?.(event);
+                    onSelect?.(event);
+                  }}
+                  aria-current={active ? "step" : undefined}
+                  className={`w-full rounded-lg border px-6 py-5 text-left transition-colors ${active ? "border-primary/90 bg-primary/12 ring-1 ring-primary/40 shadow-[0_0_34px_rgba(132,204,22,0.08)]" : "border-border/35 bg-card/70 hover:border-primary/60"}`}
+                >
+                  <div className="mb-2 font-mono text-[11px] font-bold tracking-[0.18em] text-muted-foreground">{formatDisplayDate(event.date)}</div>
+                  <h4 className="text-lg font-bold tracking-wide text-foreground sm:text-xl">{event.title}</h4>
+                  {active && event.description && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{event.description}</p>}
+                  {active && onSelect && <span className="mt-4 block text-[10px] font-mono uppercase tracking-[0.24em] text-primary">{actionLabel}</span>}
+                </button>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

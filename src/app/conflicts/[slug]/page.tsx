@@ -7,6 +7,10 @@ import type { Metadata } from "next";
 import { publicMetadata } from "@/lib/metadata";
 import { getPublicConflict } from "@/lib/repositories/entities";
 import { PageHeader, PageShell } from "@/components/PageShell";
+import { ResearchDossier } from "@/components/ResearchDossier";
+import { getConflictDossier, getHistoryOperationDossier } from "@/lib/history-dossiers";
+import { researchedText } from "@/lib/history-display";
+import { formatDisplayDate } from "@/lib/domain/dates";
 
 export const dynamic = "force-dynamic";
 
@@ -24,7 +28,7 @@ type RelatedEvent = {
 type RelatedCard = { id: string; title: string; slug: string };
 
 function dateRange(start: string, end?: string | null): string {
-  return end && end !== start ? `${start} — ${end}` : start;
+  return end && end !== start ? `${formatDisplayDate(start)} — ${formatDisplayDate(end)}` : formatDisplayDate(start);
 }
 
 function timelineDate(value: string): number {
@@ -50,14 +54,15 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
   if (!conflict) {
     notFound();
   }
+  const dossier = getConflictDossier(conflict.slug);
 
   // Map the conflict and its operations to the EventDetail format
   const conflictDetail: EventDetail = {
     id: conflict.id,
     title: conflict.title,
     date: dateRange(conflict.dateStart, conflict.dateEnd),
-    summary: conflict.summary || "",
-    content: conflict.content || conflict.summary || "",
+    summary: dossier?.overview ?? conflict.summary,
+    content: researchedText(conflict.content || conflict.summary, dossier),
     coordinates: conflict.coordinates ? JSON.parse(conflict.coordinates) : undefined,
     referenceUrl: conflict.referenceUrl || undefined,
     slug: conflict.slug,
@@ -67,22 +72,25 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
   const operationsEvents: EventDetail[] = (conflict.operations || [])
     .slice()
     .sort((a: RelatedEvent, b: RelatedEvent) => timelineDate(a.dateStart) - timelineDate(b.dateStart))
-    .map((op: RelatedEvent) => ({
-      id: op.id,
-      title: op.title,
-      date: dateRange(op.dateStart, op.dateEnd),
-      summary: op.summary || "",
-      content: op.content || op.summary || "",
-      coordinates: op.coordinates ? JSON.parse(op.coordinates) : undefined,
-      referenceUrl: op.referenceUrl || undefined,
-      slug: op.slug,
-      type: 'operation' as const
-    }));
+    .map((op: RelatedEvent) => {
+      const operationDossier = getHistoryOperationDossier(op.slug);
+      return {
+        id: op.id,
+        title: op.title,
+        date: dateRange(op.dateStart, op.dateEnd),
+        summary: researchedText(op.summary, operationDossier),
+        content: researchedText(op.content || op.summary, operationDossier),
+        coordinates: op.coordinates ? JSON.parse(op.coordinates) : undefined,
+        referenceUrl: op.referenceUrl || undefined,
+        slug: op.slug,
+        type: 'operation' as const
+      };
+    });
 
   return (
     <PageShell width="wide">
-      <PageHeader eyebrow="THEATRE RECORD" title={conflict.title} description={conflict.summary || undefined} />
-      {conflict.dateStart && <p className="-mt-4 mb-8 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{conflict.dateStart} {conflict.dateEnd ? `— ${conflict.dateEnd}` : ""}</p>}
+      <PageHeader eyebrow="THEATRE RECORD" title={conflict.title} description={(dossier?.overview ?? conflict.summary) || undefined} />
+      {conflict.dateStart && <p className="-mt-4 mb-8 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{dateRange(conflict.dateStart, conflict.dateEnd)}</p>}
 
       {/* 3-Column Interactive Viewer */}
       <div className="mb-16">
@@ -94,7 +102,8 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
         <div className="lg:col-span-2 space-y-12">
-          {conflict.contextSummary && (
+          {dossier && <ResearchDossier dossier={dossier} />}
+          {!dossier && conflict.contextSummary && (
             <section>
               <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Context & Prelude</h2>
               <div className="prose prose-invert max-w-none text-muted-foreground">
@@ -102,7 +111,7 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
               </div>
             </section>
           )}
-          {conflict.outcomeSummary && (
+          {!dossier && conflict.outcomeSummary && (
             <section>
               <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Outcome</h2>
               <div className="prose prose-invert max-w-none text-muted-foreground">

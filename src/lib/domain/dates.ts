@@ -61,10 +61,41 @@ export function formatHistoricalDate(value: HistoricalDate | string | null, prec
   return parsed.iso ?? "Date not documented";
 }
 
+/** Format a stored historical date for readers without applying local timezone conversion. */
+export function formatDisplayDate(value: string | null | undefined): string {
+  const input = value?.trim();
+  if (!input || /^(?:date )?not documented$/i.test(input)) return "Not documented";
+  const day = /^(\d{4})-(\d{2})-(\d{2})(?:T.*)?$/.exec(input);
+  if (day) return `${day[3]}-${day[2]}-${day[1]}`;
+  const month = /^(\d{4})-(\d{2})$/.exec(input);
+  if (month) return `${month[2]}-${month[1]}`;
+  const monthNames: Record<string, string> = { january: "01", february: "02", march: "03", april: "04", may: "05", june: "06", july: "07", august: "08", september: "09", october: "10", november: "11", december: "12" };
+  const named = /^(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(\d{4})$/i.exec(input);
+  if (named) return `${named[2].padStart(2, "0")}-${monthNames[named[1].toLowerCase()]}-${named[3]}`;
+  const namedDayFirst = /^(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December),?\s+(\d{4})$/i.exec(input);
+  if (namedDayFirst) return `${namedDayFirst[1].padStart(2, "0")}-${monthNames[namedDayFirst[2].toLowerCase()]}-${namedDayFirst[3]}`;
+  if (/^\d{2}-\d{2}-\d{4}$/.test(input) || /^\d{4}$/.test(input)) return input;
+  return input;
+}
+
 export function historicalOrderKey(value: string | null, precision: HistoricalDatePrecision = "unknown"): number {
   if (!value) return Number.POSITIVE_INFINITY;
   const parsed = parseHistoricalDate(value);
   if (parsed.precision === "unknown" || precision === "unknown") return Number.POSITIVE_INFINITY;
   const [year, month = "01", day = "01"] = parsed.iso?.split("-") ?? [];
   return Date.UTC(Number(year), Number(month) - 1, Number(day));
+}
+
+/** Return a stable ascending sort key for legacy and normalized stored dates. */
+export function historicalDateSortKey(value: string | null | undefined): number {
+  const input = value?.trim().replace(/T.*$/, "");
+  if (!input || /^(?:date )?(?:classified|not documented)$/i.test(input)) return Number.POSITIVE_INFINITY;
+  try {
+    const parsed = parseHistoricalDate(input);
+    if (!parsed.iso) return Number.POSITIVE_INFINITY;
+    const [year, month = "01", day = "01"] = parsed.iso.split("-");
+    return Date.UTC(Number(year), Number(month) - 1, Number(day));
+  } catch {
+    return Number.POSITIVE_INFINITY;
+  }
 }
