@@ -1,0 +1,2478 @@
+[
+  {
+    "id": "conflict-67ff06420a4ac46a",
+    "name": "Second Opium War (1856 – 1860)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 2",
+    "linkedEntities": [
+      {
+        "text": "Second Opium War",
+        "url": "https://en.wikipedia.org/wiki/Second_Opium_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-4ee4d25f7540316d",
+    "name": "Ambela Campaign (1863 – 1864)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 3",
+    "linkedEntities": [
+      {
+        "text": "Ambela Campaign",
+        "url": "https://en.wikipedia.org/wiki/Ambela_Campaign"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-79fbb74e227afb41",
+    "name": "Bhutan War (1864 – 1865)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 4",
+    "linkedEntities": [
+      {
+        "text": "Bhutan War",
+        "url": "https://en.wikipedia.org/wiki/Bhutan_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-47dd9cf9553a2bfa",
+    "name": "British Expedition to Abyssinia (1867 – 1868)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 5",
+    "linkedEntities": [
+      {
+        "text": "British Expedition to Abyssinia",
+        "url": "https://en.wikipedia.org/wiki/British_Expedition_to_Abyssinia"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-402816fa9168b170",
+    "name": "Second Anglo-Afghan War (1878 – 1880)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 6",
+    "linkedEntities": [
+      {
+        "text": "Second Anglo-Afghan War",
+        "url": "https://en.wikipedia.org/wiki/Second_Anglo-Afghan_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-1a54d217d541fccf",
+    "name": "Mahdist War (1881 – 1899)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 7",
+    "linkedEntities": [
+      {
+        "text": "Mahdist War",
+        "url": "https://en.wikipedia.org/wiki/Mahdist_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-540ee03727e19229",
+    "name": "Anglo-Egyptian War (1882)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 8",
+    "linkedEntities": [
+      {
+        "text": "Anglo-Egyptian War",
+        "url": "https://en.wikipedia.org/wiki/Anglo-Egyptian_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-f1019c28aab9c98a",
+    "name": "Third Anglo-Burmese War (1885)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 9",
+    "linkedEntities": [
+      {
+        "text": "Third Anglo-Burmese War",
+        "url": "https://en.wikipedia.org/wiki/Third_Anglo-Burmese_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-85ec015b373f4434",
+    "name": "Third Black Mountain Expedition (1888)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 10",
+    "linkedEntities": [
+      {
+        "text": "Third Black Mountain Expedition",
+        "url": "https://en.wikipedia.org/wiki/Third_Black_Mountain_Expedition"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-7f8b3242e545f1f9",
+    "name": "Sikkim Expedition (1888)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 11",
+    "linkedEntities": [
+      {
+        "text": "Sikkim Expedition",
+        "url": "https://en.wikipedia.org/wiki/Sikkim_Expedition"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-bc06634702cd3ccf",
+    "name": "Hunza-Nagar Campaign (1891)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 12",
+    "linkedEntities": [
+      {
+        "text": "Hunza-Nagar Campaign",
+        "url": "https://en.wikipedia.org/wiki/Hunza-Nagar_Campaign"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-4bd13a6cef37f9ab",
+    "name": "Chitral Expedition (1895)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 13",
+    "linkedEntities": [
+      {
+        "text": "Chitral Expedition",
+        "url": "https://en.wikipedia.org/wiki/Chitral_Expedition"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-bbfc159a3f0121ed",
+    "name": "Anglo-Zanzibar War (1896)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 14",
+    "linkedEntities": [
+      {
+        "text": "Anglo-Zanzibar War",
+        "url": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-d5b2140798d0db82",
+    "name": "Tochi Expedition (1896)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 15",
+    "linkedEntities": [
+      {
+        "text": "Tochi Expedition",
+        "url": "https://en.wikipedia.org/wiki/Tochi_Expedition"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-97eb85fcaef004aa",
+    "name": "Siege of Malakand (1897)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 16",
+    "linkedEntities": [
+      {
+        "text": "Siege of Malakand",
+        "url": "https://en.wikipedia.org/wiki/Siege_of_Malakand"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-6a7f03c613f4289e",
+    "name": "First Mohmand Campaign (1897 – 1898)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 17",
+    "linkedEntities": [
+      {
+        "text": "First Mohmand Campaign",
+        "url": "https://en.wikipedia.org/wiki/First_Mohmand_Campaign"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-45788fc753912018",
+    "name": "Tirah Campaign (1897 – 1898)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 18",
+    "linkedEntities": [
+      {
+        "text": "Tirah Campaign",
+        "url": "https://en.wikipedia.org/wiki/Tirah_Campaign"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-8b04a48db0769969",
+    "name": "Boxer Rebellion (1899 – 1901)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 19",
+    "linkedEntities": [
+      {
+        "text": "Boxer Rebellion",
+        "url": "https://en.wikipedia.org/wiki/Boxer_Rebellion"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-8a18e5aad7a39c52",
+    "name": "Second Boer War (1899 – 1902)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 20",
+    "linkedEntities": [
+      {
+        "text": "Second Boer War",
+        "url": "https://en.wikipedia.org/wiki/Second_Boer_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-05e495567d85e647",
+    "name": "British expedition to Tibet (1903 – 1904)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 21",
+    "linkedEntities": [
+      {
+        "text": "British expedition to Tibet",
+        "url": "https://en.wikipedia.org/wiki/British_expedition_to_Tibet"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-3cb0e544dcda9516",
+    "name": "Bambatha Rebellion (1906)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 22",
+    "linkedEntities": [
+      {
+        "text": "Bambatha Rebellion",
+        "url": "https://en.wikipedia.org/wiki/Bambatha_Rebellion"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-c432412deadca341",
+    "name": "Bazar Valley Campaign (1908)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 23",
+    "linkedEntities": [
+      {
+        "text": "Bazar Valley Campaign",
+        "url": "https://en.wikipedia.org/wiki/Bazar_Valley_Campaign"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-386baa8256bbb40c",
+    "name": "World War I (1914 – 1918)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 24",
+    "linkedEntities": [
+      {
+        "text": "World War I",
+        "url": "https://en.wikipedia.org/wiki/World_War_I"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-a731e7a1b5555333",
+    "name": "Allied intervention in the Russian Civil War (1918 – 1920)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 25",
+    "linkedEntities": [
+      {
+        "text": "Allied intervention in the Russian Civil War",
+        "url": "https://en.wikipedia.org/wiki/Allied_intervention_in_the_Russian_Civil_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-713cf6f121f2bfdb",
+    "name": "Turkish War of Independence (1919 – 1923)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 26",
+    "linkedEntities": [
+      {
+        "text": "Turkish War of Independence",
+        "url": "https://en.wikipedia.org/wiki/Turkish_War_of_Independence"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-307bc4178b47eb31",
+    "name": "Third Anglo-Afghan War (1919)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 27",
+    "linkedEntities": [
+      {
+        "text": "Third Anglo-Afghan War",
+        "url": "https://en.wikipedia.org/wiki/Third_Anglo-Afghan_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-c0b97ca47ac601db",
+    "name": "First Waziristan Campaign (1919)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 28",
+    "linkedEntities": [
+      {
+        "text": "First Waziristan Campaign",
+        "url": "https://en.wikipedia.org/wiki/Waziristan_campaign_(1919–20)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-6e44024baae6fc2e",
+    "name": "Kuwait–Najd War (1919 – 1920)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 29",
+    "linkedEntities": [
+      {
+        "text": "Kuwait–Najd War",
+        "url": "https://en.wikipedia.org/wiki/Kuwait–Najd_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-bd8da13318282d62",
+    "name": "Iraqi revolt (1920)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 30",
+    "linkedEntities": [
+      {
+        "text": "Iraqi revolt",
+        "url": "https://en.wikipedia.org/wiki/Iraqi_revolt_against_the_British"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-f8d0f125f220a088",
+    "name": "Malabar rebellion (1921)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 31",
+    "linkedEntities": [
+      {
+        "text": "Malabar rebellion",
+        "url": "https://en.wikipedia.org/wiki/Malabar_rebellion"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-bfe9e3d1407d3bb7",
+    "name": "Pink's War (1925)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 32",
+    "linkedEntities": [
+      {
+        "text": "Pink's War",
+        "url": "https://en.wikipedia.org/wiki/Pink's_War"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-1a9031b56c69831a",
+    "name": "Second Mohmand Campaign (1935)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 33",
+    "linkedEntities": [
+      {
+        "text": "Second Mohmand Campaign",
+        "url": "https://en.wikipedia.org/wiki/Second_Mohmand_Campaign"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-1ae8318219e6c665",
+    "name": "Second Waziristan Campaign (1936 – 1939)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 34",
+    "linkedEntities": [
+      {
+        "text": "Second Waziristan Campaign",
+        "url": "https://en.wikipedia.org/wiki/Waziristan_campaign_(1936–39)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-367a01024dde37df",
+    "name": "World War II (1939 – 1945) Including Anglo-Soviet invasion of Iran (1941)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 35",
+    "linkedEntities": [
+      {
+        "text": "World War II",
+        "url": "https://en.wikipedia.org/wiki/World_War_II"
+      },
+      {
+        "text": "Anglo-Soviet invasion of Iran",
+        "url": "https://en.wikipedia.org/wiki/Anglo-Soviet_invasion_of_Iran"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-d07ffd3dbd811f67",
+    "name": "Indonesian National Revolution (1945 – 1947)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 36",
+    "linkedEntities": [
+      {
+        "text": "Indonesian National Revolution",
+        "url": "https://en.wikipedia.org/wiki/Indonesian_National_Revolution"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-65b5143cacff68d4",
+    "name": "Operation Masterdom (1945 – 1946)",
+    "type": "conflict_discovery",
+    "scope": "pre_1947_context",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 1, row 37",
+    "linkedEntities": [
+      {
+        "text": "Operation Masterdom",
+        "url": "https://en.wikipedia.org/wiki/War_in_Vietnam_(1945–46)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-df503754e6984329",
+    "name": "Indonesian National Revolution (1947-1949) Location: Dutch East Indies",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 2",
+    "linkedEntities": [
+      {
+        "text": "Indonesian National Revolution",
+        "url": "https://en.wikipedia.org/wiki/Indonesian_National_Revolution"
+      },
+      {
+        "text": "Dutch East Indies",
+        "url": "https://en.wikipedia.org/wiki/Dutch_East_Indies"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-2fb4707ffd9923b1",
+    "name": "Indo-Pakistani War (1947–1948) Location: Kashmir",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 3",
+    "linkedEntities": [
+      {
+        "text": "Indo-Pakistani War",
+        "url": "https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1947"
+      },
+      {
+        "text": "Kashmir",
+        "url": "https://en.wikipedia.org/wiki/Kashmir"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-2fadbe5536c5cfaf",
+    "name": "Annexation of Junagadh (1948) Location: Junagadh",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 4",
+    "linkedEntities": [
+      {
+        "text": "Annexation of Junagadh",
+        "url": "https://en.wikipedia.org/wiki/Annexation_of_Junagadh"
+      },
+      {
+        "text": "Junagadh",
+        "url": "https://en.wikipedia.org/wiki/Junagadh_State"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-0b3aa9cb38d5e61b",
+    "name": "Annexation of Hyderabad (1948) Location: Hyderabad",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 5",
+    "linkedEntities": [
+      {
+        "text": "Annexation of Hyderabad",
+        "url": "https://en.wikipedia.org/wiki/Annexation_of_Hyderabad"
+      },
+      {
+        "text": "Hyderabad",
+        "url": "https://en.wikipedia.org/wiki/State_of_Hyderabad"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-534023c32adb6a74",
+    "name": "Insurgency in Northeast India (1954-Present) Location(s): Nagaland , Assam , Manipur , Mizoram , Tripura",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 6",
+    "linkedEntities": [
+      {
+        "text": "Insurgency in Northeast India",
+        "url": "https://en.wikipedia.org/wiki/Insurgency_in_Northeast_India"
+      },
+      {
+        "text": "Nagaland",
+        "url": "https://en.wikipedia.org/wiki/Nagaland"
+      },
+      {
+        "text": "Assam",
+        "url": "https://en.wikipedia.org/wiki/Assam"
+      },
+      {
+        "text": "Manipur",
+        "url": "https://en.wikipedia.org/wiki/Manipur"
+      },
+      {
+        "text": "Mizoram",
+        "url": "https://en.wikipedia.org/wiki/Mizoram"
+      },
+      {
+        "text": "Tripura",
+        "url": "https://en.wikipedia.org/wiki/Tripura"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-ca1b448035ecaa1f",
+    "name": "Congo Crisis (1960-65) Location: Congo",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 7",
+    "linkedEntities": [
+      {
+        "text": "Congo Crisis",
+        "url": "https://en.wikipedia.org/wiki/Congo_Crisis"
+      },
+      {
+        "text": "Congo",
+        "url": "https://en.wikipedia.org/wiki/Republic_of_the_Congo_(Léopoldville)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-07ea95058f3e1fd7",
+    "name": "Annexation of Goa (1961) Location(s): Portuguese India (Goa, Daman and Diu) Arabian Sea",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 8",
+    "linkedEntities": [
+      {
+        "text": "Annexation of Goa",
+        "url": "https://en.wikipedia.org/wiki/Annexation_of_Goa"
+      },
+      {
+        "text": "Portuguese India",
+        "url": "https://en.wikipedia.org/wiki/Portuguese_India"
+      },
+      {
+        "text": "Arabian Sea",
+        "url": "https://en.wikipedia.org/wiki/Arabian_Sea"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-c48159055bd1e676",
+    "name": "China-India War (1962) Location(s): Aksai Chin North-East Frontier Agency Assam",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 9",
+    "linkedEntities": [
+      {
+        "text": "China-India War",
+        "url": "https://en.wikipedia.org/wiki/Sino-Indian_War_of_1962"
+      },
+      {
+        "text": "Aksai Chin",
+        "url": "https://en.wikipedia.org/wiki/Aksai_Chin"
+      },
+      {
+        "text": "North-East Frontier Agency",
+        "url": "https://en.wikipedia.org/wiki/North-East_Frontier_Agency"
+      },
+      {
+        "text": "Assam",
+        "url": "https://en.wikipedia.org/wiki/Assam"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-f37ff1b6cb76a2a5",
+    "name": "Indo-Pakistani War (1965) Location(s): Kashmir , Punjab , Rajasthan , Bengal , Arabian Sea",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 10",
+    "linkedEntities": [
+      {
+        "text": "Indo-Pakistani War",
+        "url": "https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1965"
+      },
+      {
+        "text": "Kashmir",
+        "url": "https://en.wikipedia.org/wiki/Kashmir"
+      },
+      {
+        "text": "Punjab",
+        "url": "https://en.wikipedia.org/wiki/Punjab"
+      },
+      {
+        "text": "Rajasthan",
+        "url": "https://en.wikipedia.org/wiki/Rajasthan"
+      },
+      {
+        "text": "Bengal",
+        "url": "https://en.wikipedia.org/wiki/Bengal"
+      },
+      {
+        "text": "Arabian Sea",
+        "url": "https://en.wikipedia.org/wiki/Arabian_Sea"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-6e797ea646f78438",
+    "name": "Naxalite–Maoist insurgency (1967-2026) Location: India",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 11",
+    "linkedEntities": [
+      {
+        "text": "Naxalite–Maoist insurgency",
+        "url": "https://en.wikipedia.org/wiki/Naxalite–Maoist_insurgency"
+      },
+      {
+        "text": "India",
+        "url": "https://en.wikipedia.org/wiki/India"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-1f18dce60def5595",
+    "name": "Nathu La and Cho La Conflict (1967) Location: Sikkim",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 12",
+    "linkedEntities": [
+      {
+        "text": "Nathu La and Cho La Conflict",
+        "url": "https://en.wikipedia.org/wiki/Nathu_La_and_Cho_La_clashes"
+      },
+      {
+        "text": "Sikkim",
+        "url": "https://en.wikipedia.org/wiki/Kingdom_of_Sikkim"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-bcb3ca40f9dfcc19",
+    "name": "1971 JVP insurrection (1971) Location: Ceylon",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 13",
+    "linkedEntities": [
+      {
+        "text": "1971 JVP insurrection",
+        "url": "https://en.wikipedia.org/wiki/1971_JVP_insurrection"
+      },
+      {
+        "text": "Ceylon",
+        "url": "https://en.wikipedia.org/wiki/Dominion_of_Ceylon"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-1c173b457b4a8fd3",
+    "name": "Indo-Pakistani War (1971) part of the Bangladesh Liberation War Location(s): East Pakistan , Bay of Bangal Jammu and Kashmir , Punjab , Rajasthan , Gujrat , Arabian Sea",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 14",
+    "linkedEntities": [
+      {
+        "text": "Indo-Pakistani War",
+        "url": "https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1971"
+      },
+      {
+        "text": "Bangladesh Liberation War",
+        "url": "https://en.wikipedia.org/wiki/Bangladesh_Liberation_War"
+      },
+      {
+        "text": "East Pakistan",
+        "url": "https://en.wikipedia.org/wiki/East_Pakistan"
+      },
+      {
+        "text": "Bay of Bangal",
+        "url": "https://en.wikipedia.org/wiki/Bay_of_Bangal"
+      },
+      {
+        "text": "Jammu and Kashmir",
+        "url": "https://en.wikipedia.org/wiki/Jammu_and_Kashmir_(state)"
+      },
+      {
+        "text": "Punjab",
+        "url": "https://en.wikipedia.org/wiki/Punjab_(India)"
+      },
+      {
+        "text": "Rajasthan",
+        "url": "https://en.wikipedia.org/wiki/Rajasthan"
+      },
+      {
+        "text": "Gujrat",
+        "url": "https://en.wikipedia.org/wiki/Gujarat"
+      },
+      {
+        "text": "Arabian Sea",
+        "url": "https://en.wikipedia.org/wiki/Arabian_Sea"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-a985c4167b4c3065",
+    "name": "Siachen conflict (1984-2003) Location: Siachen Glacier",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 15",
+    "linkedEntities": [
+      {
+        "text": "Siachen conflict",
+        "url": "https://en.wikipedia.org/wiki/Siachen_conflict"
+      },
+      {
+        "text": "Siachen Glacier",
+        "url": "https://en.wikipedia.org/wiki/Siachen_Glacier"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-1a3ba67b5a48c38e",
+    "name": "Insurgency in Punjab (1984-1995) Location: Punjab",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 16",
+    "linkedEntities": [
+      {
+        "text": "Insurgency in Punjab",
+        "url": "https://en.wikipedia.org/wiki/Insurgency_in_Punjab"
+      },
+      {
+        "text": "Punjab",
+        "url": "https://en.wikipedia.org/wiki/Punjab_(India)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-6e57509b7dc466de",
+    "name": "The Second JVP insurrection (1987-89) Location: Sri Lanka",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 17",
+    "linkedEntities": [
+      {
+        "text": "The Second JVP insurrection",
+        "url": "https://en.wikipedia.org/wiki/1987–1989_JVP_insurrection"
+      },
+      {
+        "text": "Sri Lanka",
+        "url": "https://en.wikipedia.org/wiki/Sri_Lanka"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-7962ef64e24f346b",
+    "name": "Indian intervention in the Sri Lankan Civil War (1987-1990) Location: Sri Lanka",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 18",
+    "linkedEntities": [
+      {
+        "text": "Indian intervention in the Sri Lankan Civil War",
+        "url": "https://en.wikipedia.org/wiki/Indian_intervention_in_the_Sri_Lankan_Civil_War"
+      },
+      {
+        "text": "Sri Lanka",
+        "url": "https://en.wikipedia.org/wiki/Sri_Lanka"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-eacd615b15c077d8",
+    "name": "Maldivian Anti-Coup Mission (1988) Location: Maldives",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 19",
+    "linkedEntities": [
+      {
+        "text": "Maldivian Anti-Coup Mission",
+        "url": "https://en.wikipedia.org/wiki/1988_Maldives_coup_attempt"
+      },
+      {
+        "text": "Maldives",
+        "url": "https://en.wikipedia.org/wiki/Maldives"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-85b7d9ffac1de678",
+    "name": "Insurgency in Jammu and Kashmir (1989-Present) Location: Jammu and Kashmir",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 20",
+    "linkedEntities": [
+      {
+        "text": "Insurgency in Jammu and Kashmir",
+        "url": "https://en.wikipedia.org/wiki/Insurgency_in_Jammu_and_Kashmir"
+      },
+      {
+        "text": "Jammu and Kashmir",
+        "url": "https://en.wikipedia.org/wiki/Jammu_and_Kashmir_(union_territory)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-fec0b58517778eeb",
+    "name": "United Nations Operation in Somalia II (1993–1995) The part of Somali Civil War Location: Somalia",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 21",
+    "linkedEntities": [
+      {
+        "text": "United Nations Operation in Somalia II",
+        "url": "https://en.wikipedia.org/wiki/United_Nations_Operation_in_Somalia_II"
+      },
+      {
+        "text": "Somali Civil War",
+        "url": "https://en.wikipedia.org/wiki/Somali_Civil_War"
+      },
+      {
+        "text": "Somalia",
+        "url": "https://en.wikipedia.org/wiki/Somalia"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-f465cb0354ffc6a6",
+    "name": "Kargil War (1999) Location(s): Ladakh , Jammu and Kashmir",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 22",
+    "linkedEntities": [
+      {
+        "text": "Kargil War",
+        "url": "https://en.wikipedia.org/wiki/Kargil_War"
+      },
+      {
+        "text": "Ladakh",
+        "url": "https://en.wikipedia.org/wiki/Ladakh"
+      },
+      {
+        "text": "Jammu and Kashmir",
+        "url": "https://en.wikipedia.org/wiki/Jammu_and_Kashmir_(state)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-fc95920c3ea0cb50",
+    "name": "Operation Ocean Shield (2009-2016) Location(s): Indian Ocean , Gulf of Aden , Guardafui Channel , Arabian Sea , Red Sea",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 23",
+    "linkedEntities": [
+      {
+        "text": "Operation Ocean Shield",
+        "url": "https://en.wikipedia.org/wiki/Operation_Ocean_Shield"
+      },
+      {
+        "text": "Indian Ocean",
+        "url": "https://en.wikipedia.org/wiki/Indian_Ocean"
+      },
+      {
+        "text": "Gulf of Aden",
+        "url": "https://en.wikipedia.org/wiki/Gulf_of_Aden"
+      },
+      {
+        "text": "Guardafui Channel",
+        "url": "https://en.wikipedia.org/wiki/Guardafui_Channel"
+      },
+      {
+        "text": "Arabian Sea",
+        "url": "https://en.wikipedia.org/wiki/Arabian_Sea"
+      },
+      {
+        "text": "Red Sea",
+        "url": "https://en.wikipedia.org/wiki/Red_Sea"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-6faf8474fadc7894",
+    "name": "China–India skirmishes (2020-21) Location: Ladakh",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 24",
+    "linkedEntities": [
+      {
+        "text": "China–India skirmishes",
+        "url": "https://en.wikipedia.org/wiki/2020–2021_China–India_skirmishes"
+      },
+      {
+        "text": "Ladakh",
+        "url": "https://en.wikipedia.org/wiki/Ladakh"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-a4a4c4cbac80f38b",
+    "name": "India-Pakistan conflict (2025) Location(s): India , Pakistan",
+    "type": "conflict_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": null,
+    "locationRaw": null,
+    "sourceId": "wiki-7",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "locator": "table 2, row 25",
+    "linkedEntities": [
+      {
+        "text": "India-Pakistan conflict",
+        "url": "https://en.wikipedia.org/wiki/2025_India-Pakistan_conflict"
+      },
+      {
+        "text": "India",
+        "url": "https://en.wikipedia.org/wiki/India"
+      },
+      {
+        "text": "Pakistan",
+        "url": "https://en.wikipedia.org/wiki/Pakistan"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-23020a486dee76b1",
+    "name": "Operation Bison",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1948",
+    "locationRaw": "Ladakh",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 2",
+    "linkedEntities": [
+      {
+        "text": "Operation Bison",
+        "url": "https://en.wikipedia.org/wiki/Operation_Bison_(Jammu_&_Kashmir_1948)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-2a9f5612f6637317",
+    "name": "Operation Peace",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1948",
+    "locationRaw": "Junagadh State",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 3",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-6b0be42a3b53794b",
+    "name": "Operation Polo",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1948",
+    "locationRaw": "Hyderabad State",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 4",
+    "linkedEntities": [
+      {
+        "text": "Operation Polo",
+        "url": "https://en.wikipedia.org/wiki/Operation_Polo"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-6f45c60a6e338148",
+    "name": "Golden Temple Raid I",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1955",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 5",
+    "linkedEntities": [
+      {
+        "text": "Golden Temple Raid I",
+        "url": "https://en.wikipedia.org/wiki/Punjabi_Suba_movement"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-46a8e11ab56e88d7",
+    "name": "Operation Vijay",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1961",
+    "locationRaw": "Goa , Daman & Diu",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 6",
+    "linkedEntities": [
+      {
+        "text": "Operation Vijay",
+        "url": "https://en.wikipedia.org/wiki/Operation_Vijay_(1961)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-f9509e81224d2d43",
+    "name": "Operation Ablaze",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1965",
+    "locationRaw": "Indo-Pak Border (Western sector)",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 7",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-2a3839ba79ac1af0",
+    "name": "Operation Riddle",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1965",
+    "locationRaw": "Punjab sector",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 8",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-4412fabb5b3ce0d1",
+    "name": "Operation Nepal",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1965",
+    "locationRaw": "Sialkot sector",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 9",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-336fc97d35ceccb8",
+    "name": "Operation Steeplechase",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1971",
+    "locationRaw": "Red Corridor",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 10",
+    "linkedEntities": [
+      {
+        "text": "Operation Steeplechase",
+        "url": "https://en.wikipedia.org/wiki/Operation_Steeplechase"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-211bdcdae315bd50",
+    "name": "Operation Cactus Lily",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1971",
+    "locationRaw": "Indo-Pak Border",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 11",
+    "linkedEntities": [
+      {
+        "text": "Operation Cactus Lily",
+        "url": "https://en.wikipedia.org/wiki/Operation_Cactus_Lily"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-17bef6f7817f0e04",
+    "name": "Amalgamation of Sikkim",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1975",
+    "locationRaw": "Sikkim",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 12",
+    "linkedEntities": [
+      {
+        "text": "Amalgamation of Sikkim",
+        "url": "https://en.wikipedia.org/wiki/History_of_Sikkim"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-5e81e20db37e18a0",
+    "name": "Operation Blue Star",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1984",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 13",
+    "linkedEntities": [
+      {
+        "text": "Operation Blue Star",
+        "url": "https://en.wikipedia.org/wiki/Operation_Blue_Star"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-ec4c6b65cff939c1",
+    "name": "Operation Woodrose",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1984",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 14",
+    "linkedEntities": [
+      {
+        "text": "Operation Woodrose",
+        "url": "https://en.wikipedia.org/wiki/Operation_Woodrose"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-d1882d2d72e2bc3f",
+    "name": "Operation Meghdoot",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1984",
+    "locationRaw": "Siachen Glacier , India",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 15",
+    "linkedEntities": [
+      {
+        "text": "Operation Meghdoot",
+        "url": "https://en.wikipedia.org/wiki/Operation_Meghdoot"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-0929d17a34e0c817",
+    "name": "Operation Shivalik",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1985",
+    "locationRaw": "Karnataka, Madhya Pradesh, Maharashtra, Himachal Pradesh, Haryana and Uttar Pradesh (mainly Terai Regions)",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 16",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-9752c356aff01fce",
+    "name": "Operation Black Thunder I",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1986",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 17",
+    "linkedEntities": [
+      {
+        "text": "Operation Black Thunder I",
+        "url": "https://en.wikipedia.org/wiki/Operation_Black_Thunder"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-0ac5af0aa5ea242a",
+    "name": "Operation Pacification",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1986",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 18",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-73d23cfd4f0d1d19",
+    "name": "Operation Mand",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1986",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 19",
+    "linkedEntities": [
+      {
+        "text": "Operation Mand",
+        "url": "https://en.wikipedia.org/wiki/Operation_Mand"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-5a5326db3cbabbfd",
+    "name": "Operation Bluebird",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1987",
+    "locationRaw": "Manipur",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 20",
+    "linkedEntities": [
+      {
+        "text": "Operation Bluebird",
+        "url": "https://en.wikipedia.org/wiki/Operation_Bluebird"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-ba5ba897cc4b23de",
+    "name": "Golden Temple Raid II",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1987",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 21",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-23f226090943f335",
+    "name": "Operation Pawan",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1987",
+    "locationRaw": "Sri Lanka",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 22",
+    "linkedEntities": [
+      {
+        "text": "Operation Pawan",
+        "url": "https://en.wikipedia.org/wiki/Operation_Pawan"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-4e106a69e8842ec7",
+    "name": "Operation Black Thunder II",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1988",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 23",
+    "linkedEntities": [
+      {
+        "text": "Operation Black Thunder II",
+        "url": "https://en.wikipedia.org/wiki/Operation_Black_Thunder_II"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-da0ca60c4bb1ee77",
+    "name": "Operation Night Dominance",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1990-1994",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 24",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-bb72e9d2e9cf3f7b",
+    "name": "Operation Rakshak I",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1990",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 25",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-e2acf74f262405de",
+    "name": "Operation Vadhi Pahar",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1991",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 26",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-b34db4ecf2dbb39d",
+    "name": "Operation Election",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1992",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 27",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-38a9f9122a937fb4",
+    "name": "Golden Temple Raid III",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1992",
+    "locationRaw": "Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 28",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-0fda24cca5e5feb1",
+    "name": "Operation Sarp Vinash",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2003",
+    "locationRaw": "Jammu and Kashmir",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 29",
+    "linkedEntities": [
+      {
+        "text": "Operation Sarp Vinash",
+        "url": "https://en.wikipedia.org/wiki/Operation_Sarp_Vinash"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-671a1a8f5c84bcd7",
+    "name": "Operation Black Tornado",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2008",
+    "locationRaw": "Mumbai , Maharashtra",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 30",
+    "linkedEntities": [
+      {
+        "text": "Operation Black Tornado",
+        "url": "https://en.wikipedia.org/wiki/Operation_Black_Tornado"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-5341020c853aac80",
+    "name": "Operation All Out",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2017",
+    "locationRaw": "",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 31",
+    "linkedEntities": [
+      {
+        "text": "Operation All Out",
+        "url": "https://en.wikipedia.org/wiki/Operation_All_Out"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-b3677a39e0bc9958",
+    "name": "2015 Indian counter-insurgency operation in Myanmar",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2015",
+    "locationRaw": "Myanmar",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 32",
+    "linkedEntities": [
+      {
+        "text": "2015 Indian counter-insurgency operation in Myanmar",
+        "url": "https://en.wikipedia.org/wiki/2015_Indian_counter-insurgency_operation_in_Myanmar"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-1e1805675c1e0a87",
+    "name": "Operation Calm Down",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2016",
+    "locationRaw": "Jammu and Kashmir",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 33",
+    "linkedEntities": [
+      {
+        "text": "Operation Calm Down",
+        "url": "https://en.wikipedia.org/wiki/Operation_Calm_Down"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-420c6f888707c146",
+    "name": "Operation Randori Behak",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2020",
+    "locationRaw": "Jammu and Kashmir",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 34",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-dc7b28a6c1c5349f",
+    "name": "Operation Devi Shakti",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2021",
+    "locationRaw": "Punjab, Haryana, Delhi, Afghanistan",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 35",
+    "linkedEntities": [
+      {
+        "text": "Operation Devi Shakti",
+        "url": "https://en.wikipedia.org/wiki/Operation_Devi_Shakti"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-7b283c6d07a45884",
+    "name": "Operation Ganga",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2022",
+    "locationRaw": "Ukraine",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 36",
+    "linkedEntities": [
+      {
+        "text": "Operation Ganga",
+        "url": "https://en.wikipedia.org/wiki/Operation_Ganga"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-3a1789b84c71c5e8",
+    "name": "Operation Sindoor",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2025",
+    "locationRaw": "POK / Pakistan",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 37",
+    "linkedEntities": [
+      {
+        "text": "Operation Sindoor",
+        "url": "https://en.wikipedia.org/wiki/Operation_Sindoor"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-55c854c9ddc50ee7",
+    "name": "Operation Sindhu",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2025",
+    "locationRaw": "Iran",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 1, row 38",
+    "linkedEntities": [
+      {
+        "text": "Operation Sindhu",
+        "url": "https://en.wikipedia.org/wiki/Operation_Sindhu"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-80fa1d609c867431",
+    "name": "Operation Rakshak II",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1991–Present",
+    "locationRaw": "Jammu and Kashmir , Punjab",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 2, row 2",
+    "linkedEntities": [
+      {
+        "text": "Operation Rakshak II",
+        "url": "https://en.wikipedia.org/wiki/Indian_Army_operations_in_Jammu_and_Kashmir"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-44efb75b206a6962",
+    "name": "Operation Goodwill",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "1998–present",
+    "locationRaw": "Jammu and Kashmir",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 2, row 3",
+    "linkedEntities": [
+      {
+        "text": "Operation Goodwill",
+        "url": "https://en.wikipedia.org/wiki/Operation_Sadbhavana_(Goodwill)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-ecc9ee65afe54f5b",
+    "name": "Operation Good Samaritan",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "",
+    "locationRaw": "Manipur / Nagaland",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 2, row 4",
+    "linkedEntities": [],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-b13209ee43852324",
+    "name": "Operation All Out Kashmir",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2017",
+    "locationRaw": "Jammu and Kashmir",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 2, row 5",
+    "linkedEntities": [
+      {
+        "text": "Operation All Out Kashmir",
+        "url": "https://en.wikipedia.org/wiki/Operation_All_Out_(Kashmir)"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  },
+  {
+    "id": "conflict-837c0c5685ec7423",
+    "name": "Operation Snow Leopard",
+    "type": "operation_discovery",
+    "scope": "independent_India_candidate",
+    "dateRaw": "2020",
+    "locationRaw": "Ladakh",
+    "sourceId": "wiki-8",
+    "sourceUrl": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "locator": "table 2, row 6",
+    "linkedEntities": [
+      {
+        "text": "Operation Snow Leopard",
+        "url": "https://en.wikipedia.org/wiki/Operation_Snow_Leopard"
+      }
+    ],
+    "verification": "secondary_unverified",
+    "classificationNote": "Confirm direct Indian military involvement; diplomatic support is not a war.",
+    "commanders": null,
+    "outcome": null,
+    "casualties": null,
+    "publicationStatus": "research_only"
+  }
+]

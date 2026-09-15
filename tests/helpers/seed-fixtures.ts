@@ -93,6 +93,7 @@ export async function seedLegacyFixtures(db: PrismaClient): Promise<void> {
     });
 
     const personIds: string[] = [];
+    const fixtureAwards = ["Param Vir Chakra", "Maha Vir Chakra", "Vir Chakra", "Ashoka Chakra", "Kirti Chakra", "Shaurya Chakra"];
     for (let index = 1; index <= 55; index += 1) {
       const person = await tx.person.create({
         data: {
@@ -100,7 +101,7 @@ export async function seedLegacyFixtures(db: PrismaClient): Promise<void> {
           title: `Fixture Person ${String(index).padStart(3, "0")}`,
           fullName: `Fixture Person ${String(index).padStart(3, "0")}`,
           summary: "Synthetic test person; never publish as a historical profile.", content: syntheticText,
-          status: "Published", serviceBranch: "Test service", year: "1999", birthDatePrecision: "unknown", deathDatePrecision: "unknown",
+          status: "Published", serviceBranch: "Test service", year: index <= fixtureAwards.length ? String(2000 + index) : "", decorations: JSON.stringify(index <= fixtureAwards.length ? [fixtureAwards[index - 1]] : []), birthDatePrecision: "unknown", deathDatePrecision: "unknown",
           publicationStatus: "PUBLISHED", contentKind: "EDITORIAL", reviewedAt, reviewedBy: "fixture-reviewer", revision: 1,
           conflicts: index <= 2 ? { connect: { id: conflict.id } } : undefined,
           operations: index === 1 ? { connect: { id: operation.id } } : undefined,

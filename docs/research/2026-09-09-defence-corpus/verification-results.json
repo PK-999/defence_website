@@ -1,0 +1,1648 @@
+{
+  "checksPassed": 410,
+  "sourceHashesChecked": 346,
+  "completeCorpus": false,
+  "scope": "Offline extraction and evidence integrity only; not independent verification of every fact.",
+  "checks": [
+    {
+      "check": "award-observations: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "award-observations: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "award-observations: source URL present",
+      "passed": true
+    },
+    {
+      "check": "award-observations: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "historical-award-roster: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "historical-award-roster: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "historical-award-roster: source URL present",
+      "passed": true
+    },
+    {
+      "check": "historical-award-roster: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "official-award-announcements: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "official-award-announcements: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "official-award-announcements: source URL present",
+      "passed": true
+    },
+    {
+      "check": "official-award-announcements: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "biographical-facts: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "biographical-facts: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "biographical-facts: source URL present",
+      "passed": true
+    },
+    {
+      "check": "biographical-facts: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "person-conflict-links: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "person-conflict-links: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "person-conflict-links: source URL present",
+      "passed": true
+    },
+    {
+      "check": "person-conflict-links: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "equipment-discovery: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "equipment-discovery: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "equipment-discovery: source URL present",
+      "passed": true
+    },
+    {
+      "check": "equipment-discovery: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "conflict-operation-discovery: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "conflict-operation-discovery: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "conflict-operation-discovery: source URL present",
+      "passed": true
+    },
+    {
+      "check": "conflict-operation-discovery: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "equipment-primary-facts: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "equipment-primary-facts: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "equipment-primary-facts: source URL present",
+      "passed": true
+    },
+    {
+      "check": "equipment-primary-facts: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "equipment-operation-links: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "equipment-operation-links: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "equipment-operation-links: source URL present",
+      "passed": true
+    },
+    {
+      "check": "equipment-operation-links: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "operation-primary-facts: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "operation-primary-facts: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "operation-primary-facts: source URL present",
+      "passed": true
+    },
+    {
+      "check": "operation-primary-facts: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "citation-briefs: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "citation-briefs: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "citation-briefs: source URL present",
+      "passed": true
+    },
+    {
+      "check": "citation-briefs: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "pvc-recipient-profiles: unique observation IDs",
+      "passed": true
+    },
+    {
+      "check": "pvc-recipient-profiles: source IDs resolve",
+      "passed": true
+    },
+    {
+      "check": "pvc-recipient-profiles: source URL present",
+      "passed": true
+    },
+    {
+      "check": "pvc-recipient-profiles: no automatic publication",
+      "passed": true
+    },
+    {
+      "check": "Historical source-file counts",
+      "passed": true
+    },
+    {
+      "check": "Teja Singh medal conflict retained",
+      "passed": true
+    },
+    {
+      "check": "18 announcement tables: expected extracted event totals",
+      "passed": true
+    },
+    {
+      "check": "Civilian and other services retained",
+      "passed": true
+    },
+    {
+      "check": "Repeat award preserved",
+      "passed": true
+    },
+    {
+      "check": "Action and ceremony dates not fabricated",
+      "passed": true
+    },
+    {
+      "check": "15 citations match award events",
+      "passed": true
+    },
+    {
+      "check": "21 PVC profiles, 14 posthumous",
+      "passed": true
+    },
+    {
+      "check": "21 PVC primary story briefs and separately sourced life facts",
+      "passed": true
+    },
+    {
+      "check": "Abdul Hamid conflicting dates retained",
+      "passed": true
+    },
+    {
+      "check": "Three-service equipment scope",
+      "passed": true
+    },
+    {
+      "check": "Discovery quantities remain unreconciled",
+      "passed": true
+    },
+    {
+      "check": "Missing technical details not invented",
+      "passed": true
+    },
+    {
+      "check": "Arjun order classified as order",
+      "passed": true
+    },
+    {
+      "check": "Chinook Block II excluded from Indian specification transfer",
+      "passed": true
+    },
+    {
+      "check": "Full biographies not misrepresented",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2022",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-id2020",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2020",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-id2018",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2019",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest k9-contract",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest arjun-order",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2024",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-id2024",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2023",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-id2023",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-id2022",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2021",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-id2021",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-id2019",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-190",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-191",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-192",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-193",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-194",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-195",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-196",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-197",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-198",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-199",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-200",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-201",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-202",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-203",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-204",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-205",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-206",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-207",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-208",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-209",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-210",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-211",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-212",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-213",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-214",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-215",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-216",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-217",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-218",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-219",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-220",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-221",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-222",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-223",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-224",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-225",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-226",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-227",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-228",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-229",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-230",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-231",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-232",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-233",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-234",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-235",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-236",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-237",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-238",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-239",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-240",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-241",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-242",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-243",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-244",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-245",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-246",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-247",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-248",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-249",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-250",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-251",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-252",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-253",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-254",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-255",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-256",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-ac-257",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-1",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-2",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-3",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-4",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-5",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-6",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-7",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-8",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-9",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-10",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-11",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-12",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-13",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-14",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-15",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-16",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-17",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-18",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-19",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-20",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-21",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-22",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-23",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-24",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-25",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-26",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-27",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-28",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-29",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-30",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-31",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-32",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-33",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-34",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-35",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-36",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-37",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-38",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-39",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-40",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-41",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-42",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-43",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-44",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-45",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-46",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-47",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-48",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-49",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-50",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-51",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-52",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-53",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-54",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-55",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-56",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-57",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-58",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-59",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-60",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-61",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-62",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-63",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-64",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-65",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-66",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-67",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-68",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-69",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-70",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-71",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-72",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-73",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-74",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-75",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-76",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-77",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-78",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-79",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-80",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-81",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-82",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-83",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-84",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-85",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-86",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-87",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-88",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-89",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-90",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-91",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-92",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-93",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-94",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-95",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-96",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-97",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-98",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-99",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-100",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-101",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-102",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-103",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-104",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-105",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-106",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-107",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-108",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-109",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-110",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-111",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-112",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-113",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-114",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-115",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-116",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-117",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-118",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-119",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-120",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-121",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-122",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-123",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-124",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-125",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-126",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-127",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-128",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-129",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-130",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-131",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-132",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-133",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-134",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-135",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-136",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-137",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-138",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-139",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-140",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-141",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-142",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-143",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-144",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-145",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-146",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-147",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-148",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-149",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-150",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-151",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-152",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-153",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-154",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-155",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-156",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-157",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-158",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-159",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-160",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-161",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-162",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-163",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-164",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-165",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-166",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-167",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-168",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-169",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-170",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-171",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-172",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-173",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-174",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-175",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-176",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-177",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-178",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-179",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-180",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-181",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-182",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-183",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-184",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-185",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-186",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-187",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-188",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bio-189",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-1",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-2",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-3",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-4",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-5",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-6",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-7",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-8",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-9",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-11",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-12",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest historical-param-vir-chakra",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest historical-maha-vir-chakra",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest historical-vir-chakra",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest historical-ashoka-chakra",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest historical-kirti-chakra",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest historical-shaurya-chakra",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest br-PVC",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest br-MVC",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest br-VrC",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest br-AC",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest br-KC",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest br-SC",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-2026-aug",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest army-2026-citations",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest president-2026-citations",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest mod-review2025",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest atags-contract",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest lch-contract",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest boeing-india",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest chinook-specs",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest p8-specs",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest kargil2026",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest safed-sagar2009",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest bison-president",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pvc-gallery",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest followup-wiki-2",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest followup-wiki-3",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest followup-wiki-4",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest followup-wiki-5",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-1",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-5",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-6",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-7",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-8",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-9",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-10",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-11",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-12",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-13",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-14",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-15",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-16",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-17",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-18",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-19",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-20",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-21",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-22",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-23",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-profile-24",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest rafale-specs",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest history-official-bibliography",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest meghdoot-2024",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest vikrant-2022",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest nwm-pvc",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pvc-islands",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2018",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest wiki-ac",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2026",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-army-rd2026",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-rd2025",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest pib-id2025",
+      "passed": true
+    },
+    {
+      "check": "Cached source digest crpf-honours",
+      "passed": true
+    }
+  ]
+}

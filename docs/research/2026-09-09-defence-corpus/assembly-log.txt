@@ -1,0 +1,269 @@
+{
+  "scope": "1947\u20132026-09-09; earlier context separately marked",
+  "complete": false,
+  "counts": {
+    "awardObservations": 8092,
+    "historicalRosterRows": 4191,
+    "officialAnnouncementEvents": 329,
+    "biographicalFactProfiles": 257,
+    "personConflictLinks": 361,
+    "equipmentDiscoveryRows": 892,
+    "conflictOperationCandidates": 102,
+    "retrievedSources": 346
+  },
+  "warning": "Counts are evidence records, not unique people, current inventory or completeness denominators."
+}
+[
+  {
+    "sourceId": "pib-rd2022",
+    "announcementDate": "2022-01-25",
+    "extractedEvents": 12,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 0,
+      "Shaurya Chakra": 12
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-id2020",
+    "announcementDate": "2020-08-14",
+    "extractedEvents": 10,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 1,
+      "Shaurya Chakra": 9
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-rd2020",
+    "announcementDate": "2020-01-25",
+    "extractedEvents": 9,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 0,
+      "Shaurya Chakra": 9
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-id2018",
+    "announcementDate": "2018-08-14",
+    "extractedEvents": 21,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 1,
+      "Shaurya Chakra": 20
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-rd2019",
+    "announcementDate": "2019-01-25",
+    "extractedEvents": 16,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 1,
+      "Kirti Chakra": 4,
+      "Shaurya Chakra": 11
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-rd2024",
+    "announcementDate": "2024-01-25",
+    "extractedEvents": 22,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 6,
+      "Shaurya Chakra": 16
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-id2024",
+    "announcementDate": "2024-08-14",
+    "extractedEvents": 22,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 4,
+      "Shaurya Chakra": 18
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-rd2023",
+    "announcementDate": "2023-01-25",
+    "extractedEvents": 21,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 6,
+      "Shaurya Chakra": 15
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-id2023",
+    "announcementDate": "2023-08-14",
+    "extractedEvents": 15,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 4,
+      "Shaurya Chakra": 11
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-id2022",
+    "announcementDate": "2022-08-14",
+    "extractedEvents": 16,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 3,
+      "Shaurya Chakra": 13
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-rd2021",
+    "announcementDate": "2021-01-25",
+    "extractedEvents": 18,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 1,
+      "Vir Chakra": 5,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 5,
+      "Shaurya Chakra": 7
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-id2021",
+    "announcementDate": "2021-08-14",
+    "extractedEvents": 17,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 1,
+      "Kirti Chakra": 1,
+      "Shaurya Chakra": 15
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-id2019",
+    "announcementDate": "2019-08-14",
+    "extractedEvents": 17,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 1,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 2,
+      "Shaurya Chakra": 14
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-2026-aug",
+    "announcementDate": "2026-08-14",
+    "extractedEvents": 29,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 9,
+      "Shaurya Chakra": 20
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-rd2018",
+    "announcementDate": "2018-01-25",
+    "extractedEvents": 16,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 1,
+      "Kirti Chakra": 1,
+      "Shaurya Chakra": 14
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-rd2026",
+    "announcementDate": "2026-01-25",
+    "extractedEvents": 17,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 1,
+      "Kirti Chakra": 3,
+      "Shaurya Chakra": 13
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-rd2025",
+    "announcementDate": "2025-01-25",
+    "extractedEvents": 16,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 0,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 2,
+      "Shaurya Chakra": 14
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  },
+  {
+    "sourceId": "pib-id2025",
+    "announcementDate": "2025-08-14",
+    "extractedEvents": 35,
+    "counts": {
+      "Param Vir Chakra": 0,
+      "Maha Vir Chakra": 0,
+      "Vir Chakra": 15,
+      "Ashoka Chakra": 0,
+      "Kirti Chakra": 4,
+      "Shaurya Chakra": 16
+    },
+    "coverage": "HTML rows only; reconcile against headline and attachments"
+  }
+]

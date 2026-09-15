@@ -1,0 +1,250 @@
+[
+  {
+    "id": "wiki-1",
+    "url": "https://en.wikipedia.org/wiki/Param_Vir_Chakra",
+    "title": "Param Vir Chakra",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-2",
+    "url": "https://en.wikipedia.org/wiki/Maha_Vir_Chakra",
+    "title": "Maha Vir Chakra",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-3",
+    "url": "https://en.wikipedia.org/wiki/Vir_Chakra",
+    "title": "Vir Chakra",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-4",
+    "url": "https://en.wikipedia.org/wiki/Ashoka_Chakra",
+    "title": "Ashoka Chakra",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-5",
+    "url": "https://en.wikipedia.org/wiki/List_of_Kirti_Chakra_award_recipients",
+    "title": "List of Kirti Chakra award recipients",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-6",
+    "url": "https://en.wikipedia.org/wiki/List_of_Shaurya_Chakra_award_recipients",
+    "title": "List of Shaurya Chakra award recipients",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-7",
+    "url": "https://en.wikipedia.org/wiki/List_of_wars_involving_India",
+    "title": "List of wars involving India",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-8",
+    "url": "https://en.wikipedia.org/wiki/List_of_military_operations_of_India",
+    "title": "List of military operations of India",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-9",
+    "url": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army",
+    "title": "List of equipment of the Indian Army",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-10",
+    "url": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Air_Force",
+    "title": "List of equipment of the Indian Air Force",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-11",
+    "url": "https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft",
+    "title": "List of active Indian military aircraft",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-12",
+    "url": "https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships",
+    "title": "List of active Indian Navy ships",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-13",
+    "url": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Navy",
+    "title": "List of equipment of the Indian Navy",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-14",
+    "url": "https://en.wikipedia.org/wiki/List_of_historical_Indian_Air_Force_aircraft",
+    "title": "List of historical Indian Air Force aircraft",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-15",
+    "url": "https://en.wikipedia.org/wiki/List_of_weapons_of_the_Indian_Navy",
+    "title": "List of weapons of the Indian Navy",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "wiki-16",
+    "url": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army_(small_arms)",
+    "title": "List of equipment of the Indian Army (small arms)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null
+  },
+  {
+    "id": "historical-param-vir-chakra",
+    "url": "https://raw.githubusercontent.com/Rishav159/mine_india_gallantry_awards/master/param-vir-chakra.csv",
+    "title": "param-vir-chakra historical transcription",
+    "publisher": "Rishav159 on GitHub",
+    "tier": "unverified_historical_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "historical-maha-vir-chakra",
+    "url": "https://raw.githubusercontent.com/Rishav159/mine_india_gallantry_awards/master/maha-vir-chakra.csv",
+    "title": "maha-vir-chakra historical transcription",
+    "publisher": "Rishav159 on GitHub",
+    "tier": "unverified_historical_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "historical-vir-chakra",
+    "url": "https://raw.githubusercontent.com/Rishav159/mine_india_gallantry_awards/master/vir-chakra.csv",
+    "title": "vir-chakra historical transcription",
+    "publisher": "Rishav159 on GitHub",
+    "tier": "unverified_historical_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "historical-ashoka-chakra",
+    "url": "https://raw.githubusercontent.com/Rishav159/mine_india_gallantry_awards/master/ashoka-chakra.csv",
+    "title": "ashoka-chakra historical transcription",
+    "publisher": "Rishav159 on GitHub",
+    "tier": "unverified_historical_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "historical-kirti-chakra",
+    "url": "https://raw.githubusercontent.com/Rishav159/mine_india_gallantry_awards/master/kirti-chakra.csv",
+    "title": "kirti-chakra historical transcription",
+    "publisher": "Rishav159 on GitHub",
+    "tier": "unverified_historical_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "historical-shaurya-chakra",
+    "url": "https://raw.githubusercontent.com/Rishav159/mine_india_gallantry_awards/master/shaurya-chakra.csv",
+    "title": "shaurya-chakra historical transcription",
+    "publisher": "Rishav159 on GitHub",
+    "tier": "unverified_historical_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "br-PVC",
+    "url": "https://www.bharat-rakshak.com/indianairforce/database/awards/awards.php?qaward=PVC",
+    "title": "IAF PVC award register",
+    "publisher": "Bharat Rakshak",
+    "tier": "specialist_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "br-MVC",
+    "url": "https://www.bharat-rakshak.com/indianairforce/database/awards/awards.php?qaward=MVC",
+    "title": "IAF MVC award register",
+    "publisher": "Bharat Rakshak",
+    "tier": "specialist_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "br-VrC",
+    "url": "https://www.bharat-rakshak.com/indianairforce/database/awards/awards.php?qaward=VrC",
+    "title": "IAF VrC award register",
+    "publisher": "Bharat Rakshak",
+    "tier": "specialist_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "br-AC",
+    "url": "https://www.bharat-rakshak.com/indianairforce/database/awards/awards.php?qaward=AC",
+    "title": "IAF AC award register",
+    "publisher": "Bharat Rakshak",
+    "tier": "specialist_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "br-KC",
+    "url": "https://www.bharat-rakshak.com/indianairforce/database/awards/awards.php?qaward=KC",
+    "title": "IAF KC award register",
+    "publisher": "Bharat Rakshak",
+    "tier": "specialist_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "br-SC",
+    "url": "https://www.bharat-rakshak.com/indianairforce/database/awards/awards.php?qaward=SC",
+    "title": "IAF SC award register",
+    "publisher": "Bharat Rakshak",
+    "tier": "specialist_transcription",
+    "publicationDate": null
+  },
+  {
+    "id": "pib-2026-aug",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2299540&lang=1",
+    "title": "President approves gallantry awards Independence Day 2026",
+    "publisher": "PIB Ministry of Defence",
+    "tier": "primary",
+    "publicationDate": "2026-08-14"
+  },
+  {
+    "id": "army-2026-citations",
+    "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/aug/doc2026814957801.pdf",
+    "title": "Army citations Independence Day 2026",
+    "publisher": "Indian Army via PIB",
+    "tier": "primary",
+    "publicationDate": "2026-08-14"
+  },
+  {
+    "id": "president-2026-citations",
+    "url": "https://www.presidentofindia.gov.in/sites/default/files/2023-06/gallantry_awards_8_june_2026.pdf",
+    "title": "Defence Investiture Ceremony Phase I 8 June 2026",
+    "publisher": "President of India / Ministry of Defence",
+    "tier": "primary",
+    "publicationDate": "2026-06-08"
+  }
+]

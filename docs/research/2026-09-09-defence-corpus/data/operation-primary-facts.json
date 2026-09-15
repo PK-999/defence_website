@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Operation Bison",
+    "type": "operation",
+    "parentConflict": "India–Pakistan war 1947–1948",
+    "date": "1948-11-01",
+    "keyFigure": "K. S. Thimayya",
+    "figureRole": "Commander leading armour-supported assault; rank at action requires separate source",
+    "summary": "Armour and infantry attacked Zoji La after earlier attempts failed.",
+    "sourceId": "bison-president",
+    "id": "operation-fact-1",
+    "sourceUrl": "https://presidentofindia.nic.in/dr-apj-abdul-kalam/speeches/address-birth-centenary-celebrations-general-ks-thimayya-madikeri",
+    "verification": "official_retrospective; scope_limited",
+    "publicationStatus": "editorial_review_required"
+  },
+  {
+    "name": "Operation Meghdoot",
+    "type": "operation",
+    "parentConflict": "Siachen conflict",
+    "date": "1984-04-13",
+    "keyFigure": null,
+    "figureRole": null,
+    "summary": "Operation to secure strategically important positions in the Siachen region, supported by IAF airlift.",
+    "sourceId": "meghdoot-2024",
+    "id": "operation-fact-2",
+    "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "verification": "official_retrospective; scope_limited",
+    "publicationStatus": "editorial_review_required"
+  },
+  {
+    "name": "Operation Safed Sagar",
+    "type": "air operation",
+    "parentConflict": "Kargil conflict",
+    "date": "1999-05-26",
+    "keyFigure": null,
+    "figureRole": null,
+    "summary": "IAF campaign supporting the Army’s Operation Vijay.",
+    "sourceId": "kargil2026",
+    "id": "operation-fact-3",
+    "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2288840&lang=1",
+    "verification": "official_retrospective; scope_limited",
+    "publicationStatus": "editorial_review_required"
+  },
+  {
+    "name": "Tololing",
+    "type": "battle",
+    "parentConflict": "Kargil conflict",
+    "date": "1999-06-13",
+    "keyFigure": null,
+    "figureRole": null,
+    "summary": "Recapture reported by the official retrospective. Date describes recapture, not the entire battle.",
+    "sourceId": "kargil2026",
+    "id": "operation-fact-4",
+    "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2288840&lang=1",
+    "verification": "official_retrospective; scope_limited",
+    "publicationStatus": "editorial_review_required"
+  },
+  {
+    "name": "Tiger Hill",
+    "type": "battle",
+    "parentConflict": "Kargil conflict",
+    "date": "1999-07-04",
+    "keyFigure": null,
+    "figureRole": null,
+    "summary": "Peak recapture reported by the official retrospective; follow-on fighting requires separate chronology.",
+    "sourceId": "kargil2026",
+    "id": "operation-fact-5",
+    "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2288840&lang=1",
+    "verification": "official_retrospective; scope_limited",
+    "publicationStatus": "editorial_review_required"
+  }
+]

@@ -7,6 +7,8 @@ import { getPublicPerson } from "@/lib/repositories/entities";
 import { getPublicRelationships } from "@/lib/repositories/relationships";
 import type { Metadata } from "next";
 import { publicMetadata } from "@/lib/metadata";
+import { displayAwardeeName, findAwardeeByName } from "@/lib/heroes/gallantry-research";
+import { formatDisplayDate } from "@/lib/domain/dates";
 
 const documented = (value: string | null | undefined) => value?.trim() || "Not documented";
 
@@ -27,7 +29,8 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
   const [claims, relationships] = await Promise.all([getPublicClaims(ref), getPublicRelationships(ref)]);
   const evidenceFor = (property: string) => claims.find((claim) => claim.property === property)?.evidence;
   const related = relationships.map((relationship) => relationship.source.id === person.id && relationship.source.type === "Person" ? { title: relationship.targetTitle, href: relationship.targetHref, type: relationship.target.type } : { title: relationship.sourceTitle, href: relationship.sourceHref, type: relationship.source.type });
-  const dates = person.birthDate || person.deathDate ? `${person.birthDate ? person.birthDate : "Not documented"} — ${person.deathDate ? person.deathDate : "Not documented"}` : "Not documented";
+  const dates = person.birthDate || person.deathDate ? `${formatDisplayDate(person.birthDate)} — ${formatDisplayDate(person.deathDate)}` : "Not documented";
+  const officialAwardee = findAwardeeByName(person.fullName);
 
   return <>
     <ArticleLayout title={person.fullName} summary={person.summary || "Not documented"} content={person.content} facts={[
@@ -37,6 +40,12 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
       { label: "Decorations", value: documented(person.decorations), evidence: evidenceFor("decorations") },
       { label: "Conflict context", value: documented(person.conflict), evidence: evidenceFor("conflict") },
     ]}>
+      {officialAwardee && <section className="mt-12 rounded-lg border border-primary/40 bg-primary/5 p-5">
+        <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">Ministry of Defence record</p>
+        <h2 className="mt-2 text-xl font-semibold">Official {officialAwardee.award} dossier</h2>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">Read the canonical award/action record for {displayAwardeeName(officialAwardee.name)}, including unit, service details, medal story, profile documents, citation files and the official bibliography where available.</p>
+        <Link href={`/heroes/awardees/${officialAwardee.officialId}`} className="mt-4 inline-flex text-sm font-semibold text-primary hover:underline">Open official-source dossier →</Link>
+      </section>}
       {related.length > 0 && <section className="mt-12"><h2 className="border-l-2 border-primary pl-4 text-xl font-bold uppercase tracking-wider">Related records</h2><ul className="mt-5 grid gap-3 sm:grid-cols-2">{related.map((item) => <li key={`${item.type}:${item.href}`}><Link href={item.href} className="block rounded border border-border/60 p-4 hover:border-primary"><span className="text-xs uppercase tracking-wider text-primary">{item.type === "Person" ? "Heroes" : item.type === "Equipment" ? "Arsenal" : item.type}</span><span className="mt-1 block font-medium">{item.title}</span></Link></li>)}</ul></section>}
       <ProvenanceViewer claims={claims} />
     </ArticleLayout>

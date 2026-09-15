@@ -42,6 +42,7 @@ __pycache__/
 /factory/.venv/
 /factory/logs/
 /factory/analytics/logs/
+/indian_military_data/.cache/
 
 # env files (can opt-in for committing if needed)
 .env*

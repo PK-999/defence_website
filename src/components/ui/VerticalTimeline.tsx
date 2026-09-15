@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { ChevronRight, ChevronDown } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { formatDisplayDate } from "@/lib/domain/dates";
 
 export type VerticalTimelineEvent = {
   id: string;
@@ -27,7 +28,7 @@ export function VerticalTimeline({ events }: VerticalTimelineProps) {
 
   return (
     <div className="relative border-l border-border/40 ml-4 pl-8 py-4 space-y-12">
-      {events.map((event, i) => {
+      {events.map((event) => {
         const isExpanded = expandedId === event.id;
         
         return (
@@ -44,7 +45,7 @@ export function VerticalTimeline({ events }: VerticalTimelineProps) {
             
             <div className="cursor-pointer" onClick={() => toggleExpand(event.id)}>
               <div className="text-sm font-bold tracking-widest text-muted-foreground font-mono mb-2">
-                {event.dateStr}
+                {formatDisplayDate(event.dateStr)}
               </div>
               <h3 className={`text-2xl font-bold tracking-wider uppercase transition-colors ${isExpanded ? "text-primary" : "group-hover:text-primary/80"}`}>
                 {event.title}

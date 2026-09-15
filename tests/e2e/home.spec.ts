@@ -5,6 +5,8 @@ test.describe("focused discovery home", () => {
     await page.goto("/");
     await expect(page.getByRole("heading", { name: "Start with a question" })).toBeVisible();
     await expect(page.getByRole("button", { name: /Search/i }).first()).toBeVisible();
+    await expect(page.locator("main button").filter({ hasText: /Search/i })).toHaveCount(0);
+    await expect(page.getByRole("link", { name: /Advanced search/i })).toHaveCount(0);
     await expect(page.getByRole("link", { name: /CONFLICTS/i }).first()).toHaveAttribute("href", "/conflicts");
     await expect(page.getByRole("link", { name: /HEROES/i }).first()).toHaveAttribute("href", "/heroes");
     await expect(page.getByRole("link", { name: /ARSENAL/i }).first()).toHaveAttribute("href", "/arsenal");

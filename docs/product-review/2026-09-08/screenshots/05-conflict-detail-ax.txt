@@ -1,0 +1,119 @@
+Window: "Fixture Conflict | SENTINEL", App: Google Chrome.
+0 standard window Fixture Conflict | SENTINEL - Google Chrome, URL: localhost:3001/conflicts/fixture-conflict, Secondary Actions: Raise
+	1 container Fixture Conflict | SENTINEL - Google Chrome, URL: localhost:3001/conflicts/fixture-conflict
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop-up button View site information
+					9 text field (settable) Description: Address and search bar, Value: localhost:3001/conflicts/fixture-conflict, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop-up button ChatGPT
+Has access to this site
+					13 pop-up button Extensions
+				14 button You
+				15 pop-up button Chrome
+			16 container
+				17 HTML content Fixture Conflict | SENTINEL, URL: localhost:3001/conflicts/fixture-conflict
+					18 container
+						19 link Description: Skip to content, Value: localhost:3001/#main-content
+						20 link Description: SENTINEL, Value: localhost:3001/
+						21 container
+							22 link Description: Conflicts, Value: localhost:3001/conflicts
+							23 link Description: Operations, Value: localhost:3001/operations
+							24 link Description: People, Value: localhost:3001/heroes
+							25 link Description: Equipment, Value: localhost:3001/arsenal
+							26 link Description: Forces, Value: localhost:3001/forces
+							27 link Description: Graph, Value: localhost:3001/graph
+							28 link Description: Sources, Value: localhost:3001/archive
+						29 pop-up button Search archive... ⌘ K
+							30 text Search archive...
+							31 container
+								32 text ⌘ K
+						33 container breadcrumb
+							34 content list
+								35 link Description: HOME, Value: localhost:3001/
+								36 link Description: CONFLICTS, Value: localhost:3001/conflicts
+								37 link (disabled) FIXTURE CONFLICT
+									38 text FIXTURE CONFLICT
+						39 heading FIXTURE CONFLICT, Value: 1
+							40 text FIXTURE CONFLICT
+						41 container
+							42 text 1999-01-01 — 1999-01-03
+						43 container
+							44 text TIMELINE
+							45 toggle button Description: Open Conflict Overview, Value: 1
+							46 text DOSSIER
+							47 text 1999-01-01
+							48 heading CONFLICT OVERVIEW, Value: 3
+								49 text CONFLICT OVERVIEW
+							50 text This record exists only in an isolated automated test database.
+							51 text Documented locations
+							52 text Coordinates are shown only when a reviewed record provides them.
+							53 button Show map
+							54 text No documented coordinates are available.
+						55 container
+							56 heading THEATRE, Value: 3
+								57 text THEATRE
+							58 content list
+								59 text Test range
+						60 container
+							61 heading CONNECTED NODE, Value: 3
+								62 text CONNECTED NODE
+							63 text CONFLICT
+							64 heading Fixture Conflict, Value: 4
+								65 text Fixture Conflict
+							66 text NO DIRECT CONNECTIONS FOUND
+						67 heading SENTINEL, Value: 3
+							68 text SENTINEL
+						69 text A source-first interactive digital archive of India's military history, connecting conflicts, operations, heroes, units, and technology through verified public sources.
+						70 text Independent educational archive. Not an official Government of India or Armed Forces website.
+						71 heading EDITORIAL, Value: 4
+							72 text EDITORIAL
+						73 content list
+							74 link Description: About, Value: localhost:3001/about
+							75 link Description: Methodology, Value: localhost:3001/methodology
+							76 link Description: Editorial policy, Value: localhost:3001/editorial-policy
+							77 link Description: Privacy, Value: localhost:3001/privacy
+							78 link Description: Terms, Value: localhost:3001/terms
+							79 link Description: Source classification, Value: localhost:3001/methodology#source-classification
+						80 heading TRUST, Value: 4
+							81 text TRUST
+						82 text Every story should lead back to evidence.
+						83 text Source authority and review state are shown with each published record; unavailable evidence remains unpublished.
+						84 container
+							85 text ©  2026  SENTINEL Indian Defence Archive. All content is for educational purposes.
+						86 link Description: Privacy, Value: localhost:3001/privacy
+						87 link Description: Terms, Value: localhost:3001/terms
+						88 text Fixture Conflict | SENTINEL
+			89 container Infobar Container
+				90 container Infobar
+					91 container
+						92 text Google Chrome isn't your default browser
+						93 button Set as default
+					94 button Close
+			95 pop-up button Tab search
+			96 container
+				97 tab group
+					98 tab (selected, settable, boolean) Description: Fixture Conflict | SENTINEL - Memory usage - 79.7 MB, Value: on
+						99 button Close
+			100 button New tab
+	101 close button
+	102 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	103 minimise button
+104 menu bar
+	105 Chrome
+	106 File
+	107 Edit
+	108 View
+	109 History
+	110 Bookmarks
+	111 Profiles
+	112 Tab
+	113 Window
+	114 Help
+
+The focused UI element is 17 HTML content Fixture Conflict | SENTINEL, URL: localhost:3001/conflicts/fixture-conflict

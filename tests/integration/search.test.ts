@@ -17,5 +17,15 @@ describe("ranked public search", () => {
     await expect(searchArchive({ q: "%_" }, db)).resolves.toMatchObject({ total: 0 });
     await expect(searchArchive({ q: "x" }, db)).rejects.toThrow("INVALID_QUERY");
   });
+
+  it("prioritises the active section while retaining archive-wide matches", async () => {
+    const operationsFirst = await searchArchive({ q: "fixture", scope: "operations", mode: "quick" }, db);
+    expect(operationsFirst.results[0]?.type).toBe("Operation");
+    expect(operationsFirst.total).toBeGreaterThan(operationsFirst.results.length);
+
+    const heroesFirst = await searchArchive({ q: "fixture", scope: "heroes", mode: "quick" }, db);
+    expect(heroesFirst.results[0]?.type).toBe("Person");
+    expect(heroesFirst.total).toBe(operationsFirst.total);
+  });
 });
 afterAll(async () => { await db.$disconnect(); });

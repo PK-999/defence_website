@@ -1,0 +1,20 @@
+[
+  {
+    "file": "screenshots/rejected/01-home.jpg",
+    "sha256": "57c35b3d763ad4bea84b21b8a85a87846238286a895e31092c0cbff04ebf3afb",
+    "accepted": false,
+    "reason": "Blank application content area"
+  },
+  {
+    "file": "screenshots/rejected/02-search.jpg",
+    "sha256": "57c35b3d763ad4bea84b21b8a85a87846238286a895e31092c0cbff04ebf3afb",
+    "accepted": false,
+    "reason": "Blank application content area"
+  },
+  {
+    "file": "screenshots/rejected/03-capture-retry.jpg",
+    "sha256": "57c35b3d763ad4bea84b21b8a85a87846238286a895e31092c0cbff04ebf3afb",
+    "accepted": false,
+    "reason": "Blank application content area"
+  }
+]

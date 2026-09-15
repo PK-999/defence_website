@@ -1,0 +1,233 @@
+[
+  {
+    "id": "use-1",
+    "equipment": "MiG-21",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-2",
+    "equipment": "MiG-23",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-3",
+    "equipment": "MiG-27",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-4",
+    "equipment": "Jaguar",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-5",
+    "equipment": "Mirage 2000",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-6",
+    "equipment": "MiG-29",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-7",
+    "equipment": "Canberra",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-8",
+    "equipment": "Avro",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-9",
+    "equipment": "Mi-17",
+    "event": "Operation Safed Sagar",
+    "role": "Used in air campaign; specific combat/support task not established for each type",
+    "periodRaw": "1999",
+    "sourceId": "safed-sagar2009",
+    "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-10",
+    "equipment": "An-12",
+    "event": "Operation Meghdoot",
+    "role": "Air transport/helicopter support",
+    "periodRaw": "1984 onward; platform-specific dates require follow-up",
+    "sourceId": "meghdoot-2024",
+    "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-11",
+    "equipment": "An-32",
+    "event": "Operation Meghdoot",
+    "role": "Air transport/helicopter support",
+    "periodRaw": "1984 onward; platform-specific dates require follow-up",
+    "sourceId": "meghdoot-2024",
+    "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-12",
+    "equipment": "Il-76",
+    "event": "Operation Meghdoot",
+    "role": "Air transport/helicopter support",
+    "periodRaw": "1984 onward; platform-specific dates require follow-up",
+    "sourceId": "meghdoot-2024",
+    "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-13",
+    "equipment": "Mi-8",
+    "event": "Operation Meghdoot",
+    "role": "Air transport/helicopter support",
+    "periodRaw": "1984 onward; platform-specific dates require follow-up",
+    "sourceId": "meghdoot-2024",
+    "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-14",
+    "equipment": "Mi-17",
+    "event": "Operation Meghdoot",
+    "role": "Air transport/helicopter support",
+    "periodRaw": "1984 onward; platform-specific dates require follow-up",
+    "sourceId": "meghdoot-2024",
+    "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-15",
+    "equipment": "Chetak",
+    "event": "Operation Meghdoot",
+    "role": "Air transport/helicopter support",
+    "periodRaw": "1984 onward; platform-specific dates require follow-up",
+    "sourceId": "meghdoot-2024",
+    "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-16",
+    "equipment": "Cheetah",
+    "event": "Operation Meghdoot",
+    "role": "Air transport/helicopter support",
+    "periodRaw": "1984 onward; platform-specific dates require follow-up",
+    "sourceId": "meghdoot-2024",
+    "sourceUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "note": "",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-17",
+    "equipment": "INS Satpura",
+    "event": "Operation Brahma",
+    "role": "Humanitarian assistance and disaster relief",
+    "periodRaw": "2025",
+    "sourceId": "mod-review2025",
+    "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2210154&lang=1",
+    "note": "Deployment is not combat use.",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-18",
+    "equipment": "INS Savitri",
+    "event": "Operation Brahma",
+    "role": "Humanitarian assistance and disaster relief",
+    "periodRaw": "2025",
+    "sourceId": "mod-review2025",
+    "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2210154&lang=1",
+    "note": "Deployment is not combat use.",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-19",
+    "equipment": "INS Karmuk",
+    "event": "Operation Brahma",
+    "role": "Humanitarian assistance and disaster relief",
+    "periodRaw": "2025",
+    "sourceId": "mod-review2025",
+    "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2210154&lang=1",
+    "note": "Deployment is not combat use.",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-20",
+    "equipment": "LCU 52",
+    "event": "Operation Brahma",
+    "role": "Humanitarian assistance and disaster relief",
+    "periodRaw": "2025",
+    "sourceId": "mod-review2025",
+    "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2210154&lang=1",
+    "note": "Deployment is not combat use.",
+    "verification": "official_report; role_limited_to_source"
+  },
+  {
+    "id": "use-21",
+    "equipment": "INS Gharial",
+    "event": "Operation Brahma",
+    "role": "Humanitarian assistance and disaster relief",
+    "periodRaw": "2025",
+    "sourceId": "mod-review2025",
+    "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2210154&lang=1",
+    "note": "Deployment is not combat use.",
+    "verification": "official_report; role_limited_to_source"
+  }
+]

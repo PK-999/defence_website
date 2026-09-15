@@ -1,0 +1,79 @@
+[
+  {
+    "id": "mod-review2025",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2210154&lang=1",
+    "title": "Ministry of Defence year end review 2025",
+    "publicationDate": "2025-12-31",
+    "tier": "primary"
+  },
+  {
+    "id": "atags-contract",
+    "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2115365&lang=1",
+    "title": "ATAGS and towing vehicle contracts",
+    "publicationDate": "2025-03-26",
+    "tier": "primary"
+  },
+  {
+    "id": "lch-contract",
+    "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2116411&lang=1",
+    "title": "156 LCH Prachand contract",
+    "publicationDate": "2025-03-28",
+    "tier": "primary"
+  },
+  {
+    "id": "boeing-india",
+    "url": "https://www.boeing.co.in/",
+    "title": "Boeing India platform overview",
+    "publicationDate": null,
+    "tier": "primary"
+  },
+  {
+    "id": "c295-brochure",
+    "url": "https://www.airbus.com/sites/g/files/jlcbta136/files/2022-10/3-TMMP0010_01_2021_C295%20Transport%20Brochure%20NA_ENG_Low.pdf",
+    "title": "C295 transport brochure",
+    "publicationDate": "2021",
+    "tier": "primary"
+  },
+  {
+    "id": "chinook-specs",
+    "url": "https://www.boeing.com/defense/military-rotorcraft/h-47-chinook",
+    "title": "H-47 Chinook",
+    "publicationDate": null,
+    "tier": "primary"
+  },
+  {
+    "id": "p8-specs",
+    "url": "https://www.boeing.com/content/dam/boeing/v2/products/p-8-poseidon/pdf/P-8-Product-Card-one-sheet.pdf",
+    "title": "P-8 product card",
+    "publicationDate": null,
+    "tier": "primary"
+  },
+  {
+    "id": "kargil2026",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2288840&lang=1",
+    "title": "Kargil Vijay Diwas 2026",
+    "publicationDate": "2026-07-24",
+    "tier": "primary"
+  },
+  {
+    "id": "safed-sagar2009",
+    "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=50974",
+    "title": "Operation Safed Sagar retrospective",
+    "publicationDate": "2009",
+    "tier": "primary"
+  },
+  {
+    "id": "bison-president",
+    "url": "https://presidentofindia.nic.in/dr-apj-abdul-kalam/speeches/address-birth-centenary-celebrations-general-ks-thimayya-madikeri",
+    "title": "Thimayya birth centenary address",
+    "publicationDate": null,
+    "tier": "primary"
+  },
+  {
+    "id": "pvc-gallery",
+    "url": "https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=2&NoteId=156609&lang=1&reg=3",
+    "title": "Param Vir Dirgha",
+    "publicationDate": "2025-12-21",
+    "tier": "primary"
+  }
+]

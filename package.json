@@ -22,6 +22,7 @@
     "research:publish": "tsx scripts/build-research-ledger.ts",
     "publish:all": "tsx scripts/publish-all-editorial.ts",
     "import:collection:evidence": "tsx scripts/import-collection-evidence.ts",
+    "research:gallantry": "tsx scripts/research-gallantry-awardees.ts",
     "reconcile:search": "tsx scripts/reconcile-search-index.ts",
     "link:editorial-principal": "tsx scripts/link-editorial-principal.ts",
     "postinstall": "prisma skills sync || exit 0"

@@ -2,8 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   distDir: process.env.SENTINEL_TEST_RUN === "1" ? ".next-test" : ".next",
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "gallantryawards.gov.in", pathname: "/assets/uploads/**" },
+    ],
+  },
   outputFileTracingIncludes: {
-    "/*": ["./prisma/dev.db", "./prisma/dev.db.gz"],
+    "/*": ["./prisma/dev.db", "./prisma/dev.db.gz", "./data/research/*.json"],
   },
   async redirects() {
     return [

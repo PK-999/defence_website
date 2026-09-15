@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { TacticalClickProvider } from "@/components/TacticalClickProvider";
 import { parseSiteUrl } from "@/lib/config";
 
 const inter = Inter({
@@ -36,11 +37,13 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} min-h-screen flex flex-col font-sans selection:bg-primary/30`}>
         <a href="#main-content" className="skip-link">Skip to content</a>
-        <SiteHeader />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        <TacticalClickProvider>
+          <SiteHeader />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </TacticalClickProvider>
       </body>
     </html>
   );

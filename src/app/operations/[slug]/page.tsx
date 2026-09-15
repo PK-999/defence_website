@@ -7,6 +7,10 @@ import type { Metadata } from "next";
 import { publicMetadata } from "@/lib/metadata";
 import { getPublicOperation } from "@/lib/repositories/entities";
 import { getOperationDossier, type OperationDossierEvent } from "@/lib/operation-dossiers";
+import { ResearchDossier } from "@/components/ResearchDossier";
+import { getHistoryOperationDossier } from "@/lib/history-dossiers";
+import { researchedText } from "@/lib/history-display";
+import { formatDisplayDate } from "@/lib/domain/dates";
 
 type RelatedEntity = { id: string; title: string; slug: string };
 
@@ -28,6 +32,7 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
   }
 
   const dossier = getOperationDossier(operation.slug);
+  const researchDossier = getHistoryOperationDossier(operation.slug);
   // A dossier can add dated, source-linked field notes. When no such notes
   // exist, retain the database dates without inferring an outcome or narrative.
   const timelineEvents: OperationDossierEvent[] = dossier?.events.length ? dossier.events : [
@@ -70,15 +75,15 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
 
   return (
     <PageShell width="wide">
-      <PageHeader eyebrow={`FIELD OPERATION · ${operation.category}`} title={operation.title} description={operation.summary || undefined} />
-      {operation.dateStart && <p className="-mt-4 mb-8 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{operation.dateStart} {operation.dateEnd ? `— ${operation.dateEnd}` : ""}</p>}
+      <PageHeader eyebrow={`FIELD OPERATION · ${operation.category}`} title={operation.title} description={researchedText(operation.summary, researchDossier) || undefined} />
+      {operation.dateStart && <p className="-mt-4 mb-8 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{formatDisplayDate(operation.dateStart)} {operation.dateEnd ? `— ${formatDisplayDate(operation.dateEnd)}` : ""}</p>}
 
       <InteractiveMapLayout
         markers={markers}
         defaultCenter={defaultCenter}
         timelineEvents={timelineEvents}
-        mapCompact={isBattle}
-        showActiveCoordinates={!isBattle}
+        mapCompact
+        showActiveCoordinates={false}
         extraSidebarContent={
           <ConnectionExplorer
             centerNode={{ id: operation.id, title: operation.title, type: 'operation', slug: operation.slug }}
@@ -94,14 +99,15 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
         }
       >
         <ScrollSpySection id={operation.id} className="space-y-12">
-          {dossier?.context && (
+          {researchDossier && <ResearchDossier dossier={researchDossier} hideOverview />}
+          {!researchDossier && dossier?.context && (
             <section>
               <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Dossier</h2>
               <p className="text-lg leading-relaxed text-muted-foreground">{dossier.context}</p>
             </section>
           )}
 
-          {operation.content && (
+          {!researchDossier && operation.content && (
             <section>
               <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Full report</h2>
               <div className="prose prose-invert max-w-none text-muted-foreground space-y-4">

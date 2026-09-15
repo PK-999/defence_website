@@ -33,9 +33,8 @@ export function InteractiveMapLayout({ children, markers, defaultCenter, extraSi
       
       <div className="lg:col-span-1 border-l border-border/40 pl-8">
         <div className="sticky top-24 space-y-12">
-          <section>
-            <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Tactical Map</h2>
-            <div className="h-[400px] w-full border border-border/40 rounded overflow-hidden">
+          <section aria-label="Map" className="overflow-hidden rounded-lg border border-border/40 bg-[#0a1017]">
+            <div className="h-[460px] w-full">
               <ClientOperationMap 
                 markers={markers} 
                 activeMarkerId={activeMarkerId} 
@@ -55,7 +54,7 @@ export function InteractiveMapLayout({ children, markers, defaultCenter, extraSi
           <Timeline
             events={timelineEvents}
             activeEventId={activeMarkerId}
-            onSelect={(event) => setActiveMarkerId(event.id)}
+            onActiveChange={(event) => setActiveMarkerId(event.id)}
           />
         </div>
       )}

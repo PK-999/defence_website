@@ -8,6 +8,7 @@ import { GlobalSearch } from "./GlobalSearch";
 import { usePathname } from "next/navigation";
 import { primaryNavigation } from "@/lib/navigation";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { TacticalSoundToggle } from "./TacticalSoundToggle";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -54,6 +55,7 @@ export function SiteHeader() {
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <GlobalSearch />
           </div>
+          <TacticalSoundToggle />
         </div>
       </div>
     </header>

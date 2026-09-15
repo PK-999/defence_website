@@ -1,0 +1,15 @@
+node_modules
+.next
+.vercel
+factory
+outputs
+docs
+.github
+coverage
+test-results
+playwright-report
+*.log
+.next-test
+.test-data
+.local-backups
+*.db-journal

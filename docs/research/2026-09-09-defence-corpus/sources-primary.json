@@ -1,0 +1,50 @@
+[
+  {
+    "id": "drdo-export-2025",
+    "url": "https://drdo.gov.in/drdo/sites/default/files/schemes_services/CompendiumProductforExport2025.pdf",
+    "title": "DRDO Products for Export 2025",
+    "publisher": "DRDO",
+    "publicationDate": "2025",
+    "tier": "primary"
+  },
+  {
+    "id": "ncert-pvc",
+    "url": "https://n20.ncert.org.in/pdf/publication/otherpublications/veergatha.pdf",
+    "title": "Veergatha Param Vir Chakra",
+    "publisher": "NCERT",
+    "publicationDate": null,
+    "tier": "primary"
+  },
+  {
+    "id": "rafale-specs",
+    "url": "https://www.dassault-aviation.com/en/defense/rafale/specifications-and-performance-data/",
+    "title": "Rafale specifications and performance data",
+    "publisher": "Dassault Aviation",
+    "publicationDate": null,
+    "tier": "primary"
+  },
+  {
+    "id": "history-official-bibliography",
+    "url": "https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&reg=48&relid=177064",
+    "title": "Official History of Indian Armed Forces",
+    "publisher": "PIB Ministry of Defence",
+    "publicationDate": "2018-03-07",
+    "tier": "primary"
+  },
+  {
+    "id": "meghdoot-2024",
+    "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "title": "IAF in Operation Meghdoot",
+    "publisher": "PIB Ministry of Defence",
+    "publicationDate": "2024-04-13",
+    "tier": "primary"
+  },
+  {
+    "id": "vikrant-2022",
+    "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1854457&lang=2&reg=48",
+    "title": "Curtain raiser commissioning of indigenous aircraft carrier",
+    "publisher": "PIB Ministry of Defence",
+    "publicationDate": "2022-08-25",
+    "tier": "primary"
+  }
+]

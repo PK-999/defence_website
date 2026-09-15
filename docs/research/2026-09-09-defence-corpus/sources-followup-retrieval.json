@@ -1,0 +1,138 @@
+[
+  {
+    "id": "followup-wiki-1",
+    "url": "https://en.wikipedia.org/wiki/List_of_Ashoka_Chakra_award_recipients",
+    "title": "List of Ashoka Chakra award recipients",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/List_of_Ashoka_Chakra_award_recipients"
+  },
+  {
+    "id": "followup-wiki-2",
+    "url": "https://en.wikipedia.org/wiki/List_of_infantry_equipment_of_the_Indian_Army",
+    "title": "List of infantry equipment of the Indian Army",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "retrieved",
+    "finalUrl": "https://en.wikipedia.org/wiki/List_of_infantry_equipment_of_the_Indian_Army",
+    "accessedAt": "2026-09-09T01:44:09.630727+00:00",
+    "sha256": "2b197a3f90ff5b224cae7a304bdf76ee6188b4232c134b6909f37f911fa2bd33",
+    "rawPath": "raw/followup-wiki-2.bin.gz",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "id": "followup-wiki-3",
+    "url": "https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force",
+    "title": "List of historical aircraft of the Indian Air Force",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "retrieved",
+    "finalUrl": "https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force",
+    "accessedAt": "2026-09-09T01:44:10.653547+00:00",
+    "sha256": "975c181b679ecfc67f9c0cd9b32537a600114479b46cef5ab069c5ba57bf587c",
+    "rawPath": "raw/followup-wiki-3.bin.gz",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "id": "followup-wiki-4",
+    "url": "https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy",
+    "title": "List of ships of the Indian Navy",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "retrieved",
+    "finalUrl": "https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy",
+    "accessedAt": "2026-09-09T01:44:10.403755+00:00",
+    "sha256": "9763100a4f141c88e6ba466eea8f65b74f2136577bb538d772da0d764c67ad0f",
+    "rawPath": "raw/followup-wiki-4.bin.gz",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "id": "followup-wiki-5",
+    "url": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(2020–2029)",
+    "title": "List of Vir Chakra award recipients (2020–2029)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "retrieved",
+    "finalUrl": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(2020%E2%80%932029)",
+    "accessedAt": "2026-09-09T01:44:11.144923+00:00",
+    "sha256": "e417f2cdc9036d5687c6959588d90fd7cf75dea9ecc6bff2fc1881213a23e969",
+    "rawPath": "raw/followup-wiki-5.bin.gz",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "id": "followup-wiki-6",
+    "url": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(2010–2019)",
+    "title": "List of Vir Chakra award recipients (2010–2019)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(2010%E2%80%932019)"
+  },
+  {
+    "id": "followup-wiki-7",
+    "url": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(2000–2009)",
+    "title": "List of Vir Chakra award recipients (2000–2009)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(2000%E2%80%932009)"
+  },
+  {
+    "id": "followup-wiki-8",
+    "url": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1990–1999)",
+    "title": "List of Vir Chakra award recipients (1990–1999)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1990%E2%80%931999)"
+  },
+  {
+    "id": "followup-wiki-9",
+    "url": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1980–1989)",
+    "title": "List of Vir Chakra award recipients (1980–1989)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1980%E2%80%931989)"
+  },
+  {
+    "id": "followup-wiki-10",
+    "url": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1970–1979)",
+    "title": "List of Vir Chakra award recipients (1970–1979)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1970%E2%80%931979)"
+  },
+  {
+    "id": "followup-wiki-11",
+    "url": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1960–1969)",
+    "title": "List of Vir Chakra award recipients (1960–1969)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1960%E2%80%931969)"
+  },
+  {
+    "id": "followup-wiki-12",
+    "url": "https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1950–1959)",
+    "title": "List of Vir Chakra award recipients (1950–1959)",
+    "publisher": "Wikipedia contributors",
+    "tier": "secondary_discovery",
+    "publicationDate": null,
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://en.wikipedia.org/wiki/List_of_Vir_Chakra_award_recipients_(1950%E2%80%931959)"
+  }
+]

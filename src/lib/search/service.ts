@@ -2,10 +2,11 @@ import type { Prisma, PrismaClient } from "@prisma/client";
 import { entityRoutes, isEntityType, type EntityRef, type EntityType } from "@/lib/domain/entities";
 import type { CollectionItem } from "@/lib/domain/types";
 import { publicWhere } from "@/lib/repositories/publication";
+import { isSearchScope, searchScopeBoost, type SearchScope } from "@/lib/search/context";
 
 type Database = PrismaClient | Prisma.TransactionClient;
 export type SearchMode = "quick" | "full";
-export type SearchInput = { q: string; type?: string; page?: number; pageSize?: number; mode?: SearchMode };
+export type SearchInput = { q: string; type?: string; scope?: SearchScope; page?: number; pageSize?: number; mode?: SearchMode };
 export type SearchResult = CollectionItem & { type: EntityType; score: number };
 export type SearchResponse = { results: SearchResult[]; total: number; page: number; pageSize: number; pageCount: number };
 const types = new Set<EntityType>(["Conflict", "Operation", "Person", "Equipment", "Unit", "Source"]);
@@ -65,7 +66,8 @@ export async function searchArchive(input: SearchInput, db: PrismaClient): Promi
   const where: Prisma.SearchDocumentWhereInput = { ...(type ? { entityType: type } : {}), OR: [{ titleNormalized: { contains: q } }, { summaryNormalized: { contains: q } }, { bodyNormalized: { contains: q } }, { aliases: { some: { normalizedAlias: { contains: q } } } }] };
   const rows = await db.searchDocument.findMany({ where, include: { aliases: { select: { normalizedAlias: true } } }, orderBy: [{ titleNormalized: "asc" }, { id: "asc" }], take: 500 });
   const matching = rows.filter((row) => row.titleNormalized.includes(q) || row.summaryNormalized.includes(q) || row.bodyNormalized.includes(q) || row.aliases.some((alias) => alias.normalizedAlias.includes(q)));
-  const ranked = matching.map((row) => ({ row, score: rank(row, q) })).sort((a, b) => b.score - a.score || a.row.title.localeCompare(b.row.title) || a.row.id.localeCompare(b.row.id));
+  const scope = isSearchScope(input.scope) ? input.scope : undefined;
+  const ranked = matching.map((row) => ({ row, score: rank(row, q) + searchScopeBoost(row.entityType as EntityType, scope) })).sort((a, b) => b.score - a.score || a.row.title.localeCompare(b.row.title) || a.row.id.localeCompare(b.row.id));
   const pageCount = Math.max(1, Math.ceil(ranked.length / pageSize)); const currentPage = Math.min(page, pageCount); const start = (currentPage - 1) * pageSize;
   return { results: ranked.slice(start, start + pageSize).map(({ row, score }) => ({ type: row.entityType as EntityType, id: row.entityId, slug: row.slug, title: row.title, summary: row.summary, href: href(row.entityType as EntityType, row.slug), facts: [], score })), total: ranked.length, page: currentPage, pageSize, pageCount };
 }

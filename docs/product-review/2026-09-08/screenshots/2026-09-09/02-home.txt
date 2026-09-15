@@ -1,0 +1,111 @@
+Window: "SENTINEL | Indian Defence Archive", App: Google Chrome.
+0 standard window SENTINEL | Indian Defence Archive - Google Chrome, URL: localhost:3001/, Secondary Actions: Raise
+	1 container SENTINEL | Indian Defence Archive - Google Chrome, URL: localhost:3001/
+		2 container
+			3 container
+				4 HTML content SENTINEL | Indian Defence Archive, URL: localhost:3001/
+					5 container
+						6 link Description: Skip to content, Value: localhost:3001/#main-content
+						7 link Description: SENTINEL, Value: localhost:3001/
+						8 container
+							9 link Description: Conflicts, Value: localhost:3001/conflicts
+							10 link Description: Operations, Value: localhost:3001/operations
+							11 link Description: People, Value: localhost:3001/heroes
+							12 link Description: Equipment, Value: localhost:3001/arsenal
+							13 link Description: Forces, Value: localhost:3001/forces
+							14 link Description: Graph, Value: localhost:3001/graph
+							15 link Description: Sources, Value: localhost:3001/archive
+						16 pop-up button Search archive... ⌘ K
+							17 text Search archive...
+							18 container
+								19 text ⌘ K
+						20 container
+							21 text SENTINEL · INDIAN DEFENCE ARCHIVE
+							22 heading Start with a question., Value: 1
+								23 text Start with a question.
+							24 text Explore India's military history through reviewed records, clear chronology, and sources you can follow.
+							25 pop-up button Search archive... ⌘ K
+								26 text Search archive...
+								27 container
+									28 text ⌘ K
+							29 link Description: Advanced search, Value: localhost:3001/search
+							30 text Reviewed public records Source-linked claims Historical context
+						31 container
+							32 heading EXPLORE THE ARCHIVE, Value: 2
+								33 text EXPLORE THE ARCHIVE
+							34 text Choose a subject, then follow the evidence.
+							35 link Description: Browse sources, Value: localhost:3001/archive
+							36 link Description: CONFLICTS Chronological timelines of major conflicts. Open, Value: localhost:3001/conflicts
+							37 link Description: PEOPLE Sourced profiles of service members and leaders. Open, Value: localhost:3001/heroes
+							38 link Description: ARSENAL Equipment, variants, and published specifications. Open, Value: localhost:3001/arsenal
+						39 container
+							40 text FIRST RELEASE IN PROGRESS
+							41 heading The archive is being built, Value: 2
+								42 text The archive is being built
+							43 text Reviewed collections will appear here as they are published. You can still browse the current public records and their source library.
+							44 link Description: Browse the archive, Value: localhost:3001/conflicts
+							45 link Description: View sources, Value: localhost:3001/archive
+						46 container
+							47 heading Every story should lead back to evidence., Value: 2
+								48 text Every story should lead back to evidence.
+							49 text SENTINEL keeps the record, the source, and the limits of what is documented together so readers can make informed connections.
+							50 link Description: Read the methodology, Value: localhost:3001/methodology
+						51 heading SENTINEL, Value: 3
+							52 text SENTINEL
+						53 text A source-first interactive digital archive of India's military history, connecting conflicts, operations, heroes, units, and technology through verified public sources.
+						54 text Independent educational archive. Not an official Government of India or Armed Forces website.
+						55 heading EDITORIAL, Value: 4
+							56 text EDITORIAL
+						57 content list
+							58 link Description: About, Value: localhost:3001/about
+							59 link Description: Methodology, Value: localhost:3001/methodology
+							60 link Description: Editorial policy, Value: localhost:3001/editorial-policy
+							61 link Description: Privacy, Value: localhost:3001/privacy
+							62 link Description: Terms, Value: localhost:3001/terms
+							63 link Description: Source classification, Value: localhost:3001/methodology#source-classification
+						64 heading TRUST, Value: 4
+							65 text TRUST
+						66 text Every story should lead back to evidence.
+						67 text Source authority and review state are shown with each published record; unavailable evidence remains unpublished.
+						68 container
+							69 text ©  2026  SENTINEL Indian Defence Archive. All content is for educational purposes.
+						70 link Description: Privacy, Value: localhost:3001/privacy
+						71 link Description: Terms, Value: localhost:3001/terms
+		72 container
+			73 container
+				74 toolbar
+					75 button Back
+					76 button (disabled) Forward
+					77 button Reload
+					78 container
+						79 pop-up button View site information
+						80 text field (settable) Description: Address and search bar, Value: localhost:3001, Placeholder: Ask Google or type a URL
+						81 button Bookmark this tab
+					82 container
+						83 pop-up button ChatGPT
+Has access to this site
+						84 pop-up button Extensions
+					85 button You
+					86 pop-up button Chrome
+			87 container
+				88 pop-up button Tab search
+				89 tab group
+					90 tab (selected, settable, boolean) Description: SENTINEL | Indian Defence Archive - Memory usage - 46.4 MB, Value: on
+						91 button Close
+				92 button New tab
+	93 container
+		94 close button
+		95 zoom button
+96 menu bar
+	97 Chrome
+	98 File
+	99 Edit
+	100 View
+	101 History
+	102 Bookmarks
+	103 Profiles
+	104 Tab
+	105 Window
+	106 Help
+
+The focused UI element is 1 container SENTINEL | Indian Defence Archive - Google Chrome, URL: localhost:3001/

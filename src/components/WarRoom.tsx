@@ -7,6 +7,7 @@ import { Crosshair, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { WarRoomEvent } from "./WarRoomMap";
+import { formatDisplayDate } from "@/lib/domain/dates";
 
 // Dynamically import the map to avoid SSR issues with Leaflet
 const DynamicMap = dynamic(() => import("./WarRoomMap"), {
@@ -100,7 +101,7 @@ export function WarRoom() {
               transition={{ duration: 0.2 }}
               className="p-6 flex-1 overflow-y-auto"
             >
-              <div className="text-xs text-primary mb-2 tracking-widest">{selectedEvent.date}</div>
+              <div className="text-xs text-primary mb-2 tracking-widest">{formatDisplayDate(selectedEvent.date)}</div>
               <h3 className="text-xl font-bold tracking-wider mb-4 uppercase">{selectedEvent.title}</h3>
               <p className="text-sm text-foreground/80 leading-relaxed mb-6">
                 {selectedEvent.details}
@@ -134,7 +135,7 @@ export function WarRoom() {
                   : "border-border/30 hover:border-primary/50 bg-card"
               }`}
             >
-              <span className="text-[10px] text-muted-foreground tracking-widest mb-1">{event.date}</span>
+              <span className="text-[10px] text-muted-foreground tracking-widest mb-1">{formatDisplayDate(event.date)}</span>
               <span className="text-xs font-bold truncate w-40">{event.title}</span>
             </button>
           ))}

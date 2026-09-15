@@ -5,7 +5,7 @@ import React from "react";
 
 const DynamicMap = dynamic(() => import("./OperationMap"), {
   ssr: false,
-  loading: () => <div className="w-full h-full min-h-[400px] flex items-center justify-center bg-[#0a1017] text-primary/50 tracking-widest text-sm border border-border/40 rounded-lg">INITIALIZING TACTICAL MAP...</div>
+  loading: () => <div className="w-full h-full min-h-[400px] flex items-center justify-center bg-[#0a1017] text-primary/50 tracking-widest text-sm border border-border/40 rounded-lg">INITIALIZING MAP...</div>
 });
 
 export interface MapMarker {

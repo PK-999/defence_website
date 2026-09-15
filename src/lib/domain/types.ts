@@ -65,6 +65,8 @@ export type CollectionItem = EntityRef & {
   summary: string;
   href: string;
   facts: Array<{ label: string; value: string }>;
+  awards?: string[];
+  year?: string;
 };
 
 export type CollectionQuery = {

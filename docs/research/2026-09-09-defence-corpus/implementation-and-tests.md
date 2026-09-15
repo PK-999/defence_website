@@ -1,0 +1,32 @@
+# Defence corpus completion and integration sequence
+
+This is a research and content implementation plan. It does not mark website features as implemented. Preserve the existing application and SQLite database. The repository recovery contracts remain authoritative for any later app changes.
+
+| Step | Work and reason | Deliverable | Verification and acceptance |
+|---|---|---|---|
+| 1 | Freeze the current research package and retain source hashes. Reproducible evidence prevents later source edits from silently changing conclusions. | Versioned JSON package, source inventory, checksum manifest and coverage file | All source IDs resolve; cached hashes match; raw downloads excluded from the public package; no database writes |
+| 2 | Define the entity hierarchy: person, service affiliation, award event, conflict, campaign, operation, battle, platform family, variant and individual hull. | Schema aligned with existing implementation contracts | A person can receive more than one decoration; two ships named Vikrant remain distinct; repeated Operation Vijay names remain distinct |
+| 3 | Create a medal/year/announcement/gazette coverage grid from 1947 onward. Include MHA, civilian and foreign recipients and historical Ashoka Chakra classes. | Reconciled coverage register with known universe or explicit unknown | Totals reconcile to cited source definitions; file-row counts never stand in for unique recipients; bars counted separately |
+| 4 | Resolve identity candidates using service number, affiliation, name variants and dates. Keep ambiguous matches pending. | Canonical people plus provenance-backed aliases and award-event links | Same-name different-service records remain separate; ranks do not become names; missing service numbers never merge all blank-ID rows |
+| 5 | Retrieve original gazettes and citations and reconcile action, announcement, effective, gazette and ceremony dates. | Claim-level award records with source pages | Regression cases: Abdul Hamid, Manoj Pandey, Sanjay Kumar, Albert Ekka; no ceremony-date-to-award-year substitution |
+| 6 | Complete recipient biographies in reviewed batches, starting with the 21 PVC profiles and all recent official awards, then MVC/AC and KC/VrC/SC. | Original biographies with career, action story, rank intervals and cited unknowns | Every factual sentence supported; no generic filler; parent arm and operational unit separate; portrait reuse recorded; absent facts remain unknown |
+| 7 | Split equipment discovery rows into families, variants and hulls. Expand missing categories using service and manufacturer catalogues. | Three-service equipment coverage matrix | Arjun variants distinct; aircraft trainers distinct from combat variants; ships distinct from class totals; Coast Guard scope explicit and separate |
+| 8 | Collect specifications for the Indian configuration, retaining measurement and performance conditions. | Dimensions, masses, propulsion, crew, sensors, armament, role and capabilities with claim sources | Unit conversions reversible; folded/operating dimensions distinct; displacement condition specified; CH-47F Block II cannot populate Indian variant fields |
+| 9 | Build dated procurement and service timelines rather than one mutable count. | Orders, deliveries, commissioning, induction, retirement and loss events | Arjun 118 remains an order; LCH 90/66 remain separate service orders; leased KC-135 not counted as owned; unknown inventory not zero |
+| 10 | Expand campaign histories to individual battles and command relationships. Read the official histories identified by the bibliography. | Chronology, commanders, units, outcomes and attributed losses | Diplomatic support is not combat; participant is not automatically commander; pre-1947 context is marked; contradictory outcomes retained with attribution |
+| 11 | Link equipment and award actions to specific events with a defined role and evidence. | Reviewable relationship graph | HADR is not combat; platform existence is not deployment; decisive-role claim needs explicit source support; no automatic importance ranking from mention frequency |
+| 12 | Integrate approved claims through the existing content pipeline using a disposable database first. | Idempotent importer and editorial review screens, implemented only in a subsequent app task | Duplicate import is harmless; rejected/unknown claims stay unpublished; foreign keys and search aliases resolve; legacy destructive seeds never run |
+| 13 | Verify the public reading journey once data is approved. Keep spy-themed navigation understandable and facts literal. | Tested search, filters, timelines, cross-links, citations and completeness labels | Search each medal/acronym; keyboard and mobile journeys; source links reachable; unknown values visible; reduced-motion support; no fake classified/source-verification claims |
+| 14 | Publish only collections whose claimed coverage is demonstrated, then schedule targeted refreshes. | Dated coverage statement and update queue | No exhaustive label without a reconciled denominator; stale inventory fields identified; retractions and corrections preserve history |
+
+## Checks already implemented
+
+`verify_corpus.py` runs offline against the saved collection. It checks unique observation IDs, source references, source hashes, six historical file counts, 18 announcement table counts, preserved medal conflict, civilian-service retention, repeat bars, citation-event links, all 21 PVC profiles and 14 posthumous flags, missing values, and equipment scope.
+
+The workbook uses native tables and filters, frozen headings, row-wise source URLs and formula-linked overview counts. Formula-error scans and visual samples across all tabs verify the artifact. These checks are evidence-integrity tests, not proof of historical completeness.
+
+## Research resume point
+
+The highest-value next research work is original gazette reconciliation and complete biography/citation coverage beyond PVC, followed by Indian-variant equipment specifications. The source inventory records failed DRDO and NCERT retrievals so those failures are not mistaken for read evidence. The 95-page President ceremony PDF has been retained and text-extracted, but has not been fully converted into reviewed stories.
+
+Do not rerun the disabled portal harvester. Use permitted alternatives or document the necessary source permission before restoring systematic access. Work sequentially in the current agent as requested.

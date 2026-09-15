@@ -1,0 +1,78 @@
+[
+  {
+    "id": "drdo-export-2025",
+    "url": "https://drdo.gov.in/drdo/sites/default/files/schemes_services/CompendiumProductforExport2025.pdf",
+    "title": "DRDO Products for Export 2025",
+    "publisher": "DRDO",
+    "publicationDate": "2025",
+    "tier": "primary",
+    "status": "access_failed",
+    "error": "404 Client Error: Not Found for url: https://drdo.gov.in/drdo/sites/default/files/schemes_services/CompendiumProductforExport2025.pdf"
+  },
+  {
+    "id": "ncert-pvc",
+    "url": "https://n20.ncert.org.in/pdf/publication/otherpublications/veergatha.pdf",
+    "title": "Veergatha Param Vir Chakra",
+    "publisher": "NCERT",
+    "publicationDate": null,
+    "tier": "primary",
+    "status": "access_failed",
+    "error": "HTTPSConnectionPool(host='n20.ncert.org.in', port=443): Max retries exceeded with url: /pdf/publication/otherpublications/veergatha.pdf (Caused by NameResolutionError(\"HTTPSConnection(host='n20.ncert.org.in', port=443): Failed to resolve 'n20.ncert.org.in' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  },
+  {
+    "id": "rafale-specs",
+    "url": "https://www.dassault-aviation.com/en/defense/rafale/specifications-and-performance-data/",
+    "title": "Rafale specifications and performance data",
+    "publisher": "Dassault Aviation",
+    "publicationDate": null,
+    "tier": "primary",
+    "status": "retrieved",
+    "finalUrl": "https://www.dassault-aviation.com/en/defense/rafale/specifications-and-performance-data/",
+    "accessedAt": "2026-09-09T06:28:53.285507+00:00",
+    "sha256": "d480826c8ea48df9edb69d72f9d6f041c4b299e6b90689337d5b93fb6dc8542b",
+    "rawPath": "raw/rafale-specs.bin.gz",
+    "contentType": "text/html; charset=UTF-8"
+  },
+  {
+    "id": "history-official-bibliography",
+    "url": "https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&reg=48&relid=177064",
+    "title": "Official History of Indian Armed Forces",
+    "publisher": "PIB Ministry of Defence",
+    "publicationDate": "2018-03-07",
+    "tier": "primary",
+    "status": "retrieved",
+    "finalUrl": "https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&reg=48&relid=177064",
+    "accessedAt": "2026-09-09T06:28:54.093329+00:00",
+    "sha256": "c38e39c367f3f07e1ddc2e8450dbdb4a8ef4b302e816c1fd12e7d4e5874323f0",
+    "rawPath": "raw/history-official-bibliography.bin.gz",
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "id": "meghdoot-2024",
+    "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=1",
+    "title": "IAF in Operation Meghdoot",
+    "publisher": "PIB Ministry of Defence",
+    "publicationDate": "2024-04-13",
+    "tier": "primary",
+    "status": "retrieved",
+    "finalUrl": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2017834&lang=2&reg=48",
+    "accessedAt": "2026-09-09T06:28:54.386430+00:00",
+    "sha256": "c0571530e428cd5b26654bc38d5424a5d369d243242c4461863df5dffade9968",
+    "rawPath": "raw/meghdoot-2024.bin.gz",
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "id": "vikrant-2022",
+    "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1854457&lang=2&reg=48",
+    "title": "Curtain raiser commissioning of indigenous aircraft carrier",
+    "publisher": "PIB Ministry of Defence",
+    "publicationDate": "2022-08-25",
+    "tier": "primary",
+    "status": "retrieved",
+    "finalUrl": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=1854457&lang=2&reg=48",
+    "accessedAt": "2026-09-09T06:28:55.074806+00:00",
+    "sha256": "699317843fbb55a9f5e655db540f3c7274ab295d543efcb3b89180cf65a8ebdf",
+    "rawPath": "raw/vikrant-2022.bin.gz",
+    "contentType": "text/html; charset=utf-8"
+  }
+]

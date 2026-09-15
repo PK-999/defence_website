@@ -127,16 +127,6 @@ export default function ForcesMap({ forcesData, activeService }: ForcesMapProps)
     });
   };
 
-  const createBaseIcon = (color: string) => {
-    return L.divIcon({
-      className: 'custom-neon-base-marker',
-      html: `<div style="width: 10px; height: 10px; background-color: transparent; border-radius: 50%; box-shadow: 0 0 5px 1px ${color}; border: 2px solid ${color};"></div>`,
-      iconSize: [10, 10],
-      iconAnchor: [5, 5],
-      popupAnchor: [0, -8]
-    });
-  };
-
   return (
     <div className="relative z-0 dark-map-tiles">
       <MapContainer center={[22.5937, 78.9629]} zoom={4.5} style={{ height: '600px', width: '100%', borderRadius: '0.5rem', backgroundColor: '#0a0a0a' }}>
@@ -152,7 +142,6 @@ export default function ForcesMap({ forcesData, activeService }: ForcesMapProps)
         {displayedForces.map(force => {
           const markerColor = getServiceColor(force.name);
           const hqIcon = createNeonIcon(markerColor);
-          const baseIcon = createBaseIcon(markerColor);
           
           return force.commands.map(cmd => {
             const isSelected = selectedHQ?.name === cmd.name;
@@ -179,21 +168,8 @@ export default function ForcesMap({ forcesData, activeService }: ForcesMapProps)
                           Coords: {cmd.hqCoordinates[0].toFixed(4)}, {cmd.hqCoordinates[1].toFixed(4)}
                         </span>
                         <span className="text-xs font-bold mt-1 block uppercase tracking-wide" style={{ color: markerColor }}>{force.name}</span>
+                        <span className="text-xs text-gray-300 mt-1 block">Top rank: {force.organization.officers[0] ?? 'Not documented'}</span>
                       </div>
-                      
-                      {cmd.bases && cmd.bases.length > 0 && (
-                        <div className="mt-2 max-h-32 overflow-y-auto pr-1">
-                          <strong className="text-xs text-gray-400 uppercase tracking-wider block mb-1">Major Bases ({cmd.bases.length})</strong>
-                          <ul className="space-y-1">
-                            {cmd.bases.map((base, idx) => (
-                              <li key={idx} className="text-xs text-gray-200 flex items-center gap-1">
-                                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: markerColor }}></span>
-                                {base.name}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
                       <div className="mt-2 border-t border-gray-700 pt-2">
                         <strong className="text-xs text-gray-400 uppercase tracking-wider block mb-1">Coverage</strong>
                         <p className="text-xs text-gray-200">{cmd.coverage}</p>
@@ -202,21 +178,6 @@ export default function ForcesMap({ forcesData, activeService }: ForcesMapProps)
                     </div>
                   </Popup>
                 </Marker>
-                
-                {/* Only show bases if this HQ is selected */}
-                {isSelected && cmd.bases?.map(base => (
-                  <Marker key={base.name} position={base.coordinates} icon={baseIcon} zIndexOffset={90}>
-                    <Popup className="hq-popup">
-                      <div className="p-1">
-                        <strong className="text-sm text-white block">{base.name}</strong>
-                        <span className="text-xs text-gray-300">Strategic Base - {cmd.name}</span>
-                        <span className="text-[10px] text-gray-400 font-mono mt-1 block">
-                          {base.coordinates[0].toFixed(4)}, {base.coordinates[1].toFixed(4)}
-                        </span>
-                      </div>
-                    </Popup>
-                  </Marker>
-                ))}
               </React.Fragment>
             );
           });

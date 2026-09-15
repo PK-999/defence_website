@@ -1,10 +1,10 @@
 # SENTINEL implementation and verification tracker
 
-**Reconciled:** 8 September 2026. **Current state:** implementation is complete through the candidate-evidence stage of T28, with T27 release documentation and CI in place. T00–T07 and T09–T28 candidate ingest are functional on automated checks; T08, T26, and T28 public publication remain blocked pending provider/accountable-editor inputs, while T28’s finite candidate scope is documented. Playwright Chromium is installed and the current desktop/mobile browser suite passes.
+**Reconciled:** 13 September 2026. **Current state:** implementation is complete through the candidate-evidence stage of T28, with T27 release documentation and CI in place. T00–T07 and T09–T28 candidate ingest are functional on automated checks; T08, T26, and T28 public publication remain blocked pending provider/accountable-editor inputs, while T28’s finite candidate scope is documented. Playwright Chromium is installed and the current desktop/mobile browser suite passes.
 
 Final automated pass for this tranche: `npm test` (63 tests across 16 files), `npm run test:components` (1 component test), `npm run test:integration` (14 files/33 tests), `npm run typecheck`, `npm run lint -- --quiet`, `npm run build`, `npm run validate:content`, `npm run validate:database`, and `npm run validate:assets` all passed. `npm run test:e2e` passed all 48 Chromium checks across desktop and mobile projects after installing Playwright's managed Chromium build. The final audit also enforces the canonical comparison `items=` URL, the 100-node/200-edge graph cap, and the 1 MB map-asset budget.
 
-The prior tracker marked scaffolds and unverified behavior complete. Its exact earlier contents are preserved in [the historical tracker](docs/history/2026-09-06-progress-tracker-before-reconciliation.md). Those checkboxes are not evidence of current completion.
+The prior tracker marked scaffolds and unverified behavior complete. The 13 September release adds the verified vertical chronology rail, dock-style event focus, tactical click control, and production smoke evidence. Its exact earlier contents are preserved in [the historical tracker](docs/history/2026-09-06-progress-tracker-before-reconciliation.md). Those checkboxes are not evidence of current completion.
 
 ## Read first
 
@@ -47,7 +47,7 @@ Never infer verified from a file's existence, a code comment, a green badge, or 
 | T16 | Useful homepage | T11,T14,T15 | First-screen task choices | functional | [Implementation evidence](docs/verification/2026-09-07/T16/implementation.md); data-backed featured slot, truthful empty state, and desktop/mobile E2E pass. |
 | T17 | Sources library/provenance UI | T06,T11,T15 | EV-01–03 public journey | functional | [Implementation evidence](docs/verification/2026-09-07/T17/implementation.md); source filtering/privacy/rights integration and desktop/mobile E2E pass. |
 | T18 | People/equipment detail depth | T12,T15,T17 | READ-03 + source-linked fields | functional | [Implementation evidence](docs/verification/2026-09-07/T18/implementation.md); public DTO, unknown-value, evidence-link, and private-slug checks pass. |
-| T19 | Chronology/conflict/operation UX | T06,T15,T17 | Exact dates/outcomes + mobile reading | functional | [Implementation evidence](docs/verification/2026-09-07/T19/implementation.md); date integration and URL-state/mobile chronology checks pass. |
+| T19 | Chronology/conflict/operation UX | T06,T15,T17 | Exact dates/outcomes + mobile reading | verified | [Implementation evidence](docs/verification/2026-09-07/T19/implementation.md); date integration and URL-state/mobile chronology checks pass. |
 | T20 | Lazy, attributed, bounded maps | T12,T19 | MAP-01–03 | functional | [Implementation evidence](docs/verification/2026-09-07/T20/implementation.md); asset validator and pre-activation request/browser checks pass. |
 | T21 | Scoped graph + text equivalent | T06,T13,T15 | GRAPH-01/02 | functional | [Implementation evidence](docs/verification/2026-09-07/T21/implementation.md); capped public graph integration and text-equivalent/browser checks pass. |
 | T22 | Real equipment comparison | T11,T18 | COMP-01/02 | functional | [Implementation evidence](docs/verification/2026-09-07/T22/implementation.md); deterministic state unit/integration and desktop/mobile comparison checks pass. |
@@ -87,7 +87,7 @@ Re-run T00 to establish the execution-time baseline; do not assume those counts/
 | Editor identity integration | Not verified | T08 real login/logout/revocation with configured provider |
 | Browser usability/accessibility | Not verified | T27 accepted screenshots and manual checks |
 | Migration/rollback | Not verified | T03/T27 disposable rehearsal and preserved backup |
-| Production deployment | Not performed | Separate authorized deployment task and environment checks |
+| Production deployment | verified | `dpl_BiwqtoJ5oRfTCZMk1cH62QGtVb1W` Ready; live operation/conflict smoke and screenshots in `docs/verification/2026-09-13/vertical-timeline.md` |
 
 ## Documentation handoff
 

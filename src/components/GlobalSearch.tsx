@@ -5,7 +5,8 @@ import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/
 import { Input } from "@/components/ui/input";
 import { Search, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { searchScopeForPathname, searchScopeLabel } from "@/lib/search/context";
 
 type SearchResult = {
   id: string;
@@ -24,6 +25,9 @@ export function GlobalSearch() {
   const [retryNonce, setRetryNonce] = React.useState(0);
   const [activeIndex, setActiveIndex] = React.useState(0);
   const router = useRouter();
+  const pathname = usePathname();
+  const scope = searchScopeForPathname(pathname);
+  const scopeLabel = searchScopeLabel(scope);
   const requestId = React.useRef(0);
   const controller = React.useRef<AbortController | null>(null);
 
@@ -53,7 +57,9 @@ export function GlobalSearch() {
       const nextController = new AbortController(); controller.current = nextController;
       setLoading(true);
       setError(false);
-      fetch(`/api/search?q=${encodeURIComponent(query)}`)
+      const params = new URLSearchParams({ q: query });
+      if (scope) params.set("scope", scope);
+      fetch(`/api/search?${params.toString()}`)
         .then((res) => { if (!res.ok) throw new Error("SEARCH_FAILED"); return res.json(); })
         .then((data) => {
           if (id !== requestId.current) return;
@@ -69,7 +75,7 @@ export function GlobalSearch() {
     }, 300);
 
     return () => { clearTimeout(timeoutId); controller.current?.abort(); };
-  }, [query, retryNonce]);
+  }, [query, retryNonce, scope]);
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => Math.min(index + 1, Math.max(0, results.length - 1))); }
@@ -139,9 +145,10 @@ export function GlobalSearch() {
             </div>
           )}
         </div>
-        <div className="border-t border-border/40 p-2 px-4 bg-muted/10 flex justify-end">
-          <Link href={`/search?q=${encodeURIComponent(query)}`} onClick={() => setOpen(false)} className="text-xs font-semibold hover:underline text-primary tracking-wider uppercase">
-            Advanced Search &rarr;
+        <div className="flex items-center justify-between gap-3 border-t border-border/40 bg-muted/10 p-2 px-4">
+          <span className="text-[10px] uppercase tracking-wider text-muted-foreground">{scopeLabel ? `Prioritising ${scopeLabel} + related records` : "Searching the full archive"}</span>
+          <Link href={`/search?q=${encodeURIComponent(query)}${scope ? `&scope=${scope}` : ""}`} onClick={() => setOpen(false)} className="text-xs font-semibold uppercase tracking-wider text-primary hover:underline">
+            Full archive search &rarr;
           </Link>
         </div>
       </DialogContent>

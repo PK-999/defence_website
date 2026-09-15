@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ncert-pvc-canonical",
+    "url": "https://ncert.nic.in/pdf/publication/otherpublications/veergatha.pdf",
+    "title": "Veer Gatha",
+    "publisher": "NCERT",
+    "tier": "primary"
+  },
+  {
+    "id": "nwm-pvc",
+    "url": "https://nationalwarmemorial.gov.in/param-yoddhas",
+    "title": "Param Yoddhas",
+    "publisher": "National War Memorial",
+    "tier": "primary"
+  },
+  {
+    "id": "pvc-islands",
+    "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1892959&lang=1",
+    "title": "Islands named for 21 Param Vir Chakra recipients",
+    "publisher": "PIB PMO",
+    "tier": "primary"
+  }
+]

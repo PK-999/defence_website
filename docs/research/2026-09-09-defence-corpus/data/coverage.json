@@ -1,0 +1,15 @@
+{
+  "scope": "1947–2026-09-09; earlier context separately marked",
+  "complete": false,
+  "counts": {
+    "awardObservations": 8092,
+    "historicalRosterRows": 4191,
+    "officialAnnouncementEvents": 329,
+    "biographicalFactProfiles": 257,
+    "personConflictLinks": 361,
+    "equipmentDiscoveryRows": 892,
+    "conflictOperationCandidates": 102,
+    "retrievedSources": 346
+  },
+  "warning": "Counts are evidence records, not unique people, current inventory or completeness denominators."
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "wiki-ac",
+    "url": "https://en.wikipedia.org/wiki/Ashoka_Chakra_(military_decoration)",
+    "title": "Ashoka Chakra military decoration",
+    "tier": "secondary"
+  },
+  {
+    "id": "pib-rd2026",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2218540&lang=1",
+    "title": "Republic Day 2026 gallantry awards",
+    "tier": "primary"
+  },
+  {
+    "id": "pib-army-rd2026",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2218590&lang=1",
+    "title": "Army Republic Day 2026 awards",
+    "tier": "primary"
+  },
+  {
+    "id": "pib-rd2025",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2096200&lang=1&reg=3",
+    "title": "Republic Day 2025 awards",
+    "tier": "primary"
+  },
+  {
+    "id": "pib-id2025",
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2156515&lang=1&reg=48",
+    "title": "Independence Day 2025 awards",
+    "tier": "primary"
+  },
+  {
+    "id": "drdo-export-2021",
+    "url": "https://www.drdo.gov.in/drdo/sites/default/files/schemes_services/DRDO-Product-for-Export-2021_web.pdf",
+    "title": "DRDO export catalogue 2021",
+    "tier": "primary"
+  },
+  {
+    "id": "crpf-honours",
+    "url": "https://crpf.gov.in/About-Us/Pride-and-Honors",
+    "title": "CRPF pride and honors",
+    "tier": "primary"
+  }
+]

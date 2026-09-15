@@ -2,6 +2,7 @@ import { prisma } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 import { requireEditor, UnauthorizedError } from "@/lib/auth/editor";
 import { AdminAccessNotice } from "@/components/AdminAccessNotice";
+import { formatDisplayDate } from "@/lib/domain/dates";
 
 export default async function AdminConflicts() {
   try { await requireEditor(); } catch (error) {
@@ -34,7 +35,7 @@ export default async function AdminConflicts() {
               <tr key={conflict.id} className="border-b border-border/40 last:border-0 hover:bg-muted/20 transition-colors">
                 <td className="p-4 font-medium">{conflict.title}</td>
                 <td className="p-4 font-mono text-muted-foreground">{conflict.slug}</td>
-                <td className="p-4 text-muted-foreground">{conflict.dateStart}</td>
+                <td className="p-4 text-muted-foreground">{formatDisplayDate(conflict.dateStart)}</td>
                 <td className="p-4 text-right">
                   <Button variant="outline" size="sm">EDIT</Button>
                 </td>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, Crosshair, Radar, Shield } from "lucide-react";
 import { FeaturedCollection } from "@/components/FeaturedCollection";
-import { HomeSearch } from "@/components/HomeSearch";
 import { prisma } from "@/lib/db";
 import { publicWhere } from "@/lib/repositories/publication";
 import { getFeaturedCollection } from "@/lib/repositories/collections";
@@ -34,7 +33,7 @@ export default async function Home() {
           <p className="font-mono text-xs font-semibold tracking-[0.35em] text-primary sm:text-sm">SENTINEL · INDIAN DEFENCE ARCHIVE</p>
           <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">Start with a question.</h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg">Explore India&apos;s military history through reviewed records, clear chronology, and sources you can follow.</p>
-          <div className="mt-9"><HomeSearch /></div>
+          <Link href="/search" className="mt-9 inline-flex h-12 items-center justify-center rounded-lg border border-primary/40 bg-card px-6 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">Open archive search</Link>
           <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <span>Reviewed public records</span><span aria-hidden="true">·</span><span>Source-linked claims</span><span aria-hidden="true">·</span><span>Historical context</span>
           </div>

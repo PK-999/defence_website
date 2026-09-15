@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { PageHeader, PageShell } from "@/components/PageShell";
+import { isSearchScope, searchScopeLabel } from "@/lib/search/context";
 
 type SearchPageResult = {
   id: string;
@@ -17,24 +18,25 @@ type SearchPageResult = {
 const displayType = (type: string) => ({ Person: "Heroes", Equipment: "Arsenal" } as Record<string, string>)[type] ?? type;
 
 export default async function AdvancedSearchPage(
-  props: { searchParams: Promise<{ q?: string; type?: string }> }
+  props: { searchParams: Promise<{ q?: string; type?: string; scope?: string }> }
 ) {
   const searchParams = await props.searchParams;
   const q = searchParams.q || "";
   const typeFilter = searchParams.type || "all";
+  const scope = isSearchScope(searchParams.scope) ? searchParams.scope : undefined;
 
   let results: SearchPageResult[] = [];
   let total = 0;
 
   if (q.length >= 2) {
-    const response = await searchArchive({ q, type: typeFilter, mode: "full" }, prisma);
+    const response = await searchArchive({ q, type: typeFilter, scope, mode: "full" }, prisma);
     results = response.results;
     total = response.total;
   }
 
   return (
     <PageShell>
-      <PageHeader title="Advanced Search" description="Search reviewed heroes, arsenal systems, conflicts, operations, forces, and sources." />
+      <PageHeader title="Archive Search" description="Search reviewed heroes, arsenal systems, conflicts, operations, forces, and sources." />
       
       <form className="flex gap-4 mb-8" action="/search" method="GET">
         <Input 
@@ -44,6 +46,7 @@ export default async function AdvancedSearchPage(
           placeholder="Enter search term..." 
           className="max-w-md"
         />
+        {scope && <input type="hidden" name="scope" value={scope} />}
         <select name="type" defaultValue={typeFilter} className="bg-background border border-border/40 rounded-md px-3">
           <option value="all">All Domains</option>
           <option value="conflict">Conflicts</option>
@@ -55,6 +58,8 @@ export default async function AdvancedSearchPage(
         </select>
         <Button type="submit">SEARCH</Button>
       </form>
+
+      {scope && <p className="-mt-4 mb-8 text-xs uppercase tracking-wider text-muted-foreground">Prioritising {searchScopeLabel(scope)} and related records</p>}
 
       {q.length > 0 && q.length < 2 && (
         <p className="text-muted-foreground">Please enter at least 2 characters to search.</p>
