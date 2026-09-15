@@ -97,8 +97,8 @@ export async function validateEntityForPublication(ref: EntityRef, options: { cl
     if (typeof entity.category !== "string" || !["combat", "evacuation", "humanitarian", "peacekeeping", "maritime-security", "rescue", "battle", "event", "other"].includes(entity.category)) issues.push(error("INVALID_OPERATION_CATEGORY", `${ref.type}:${ref.id}.category`, "Operation category is not canonical."));
   }
   if (ref.type === "Equipment") {
-    if (!['air', 'land', 'sea', 'missile', 'space-isr', 'support', 'unknown'].includes(String(entity.domain))) issues.push(error("INVALID_DOMAIN", `${ref.type}:${ref.id}.domain`, "Equipment domain is not canonical."));
-    if (!['active', 'retired', 'under-development', 'planned', 'limited', 'unknown'].includes(String(entity.serviceStatus))) issues.push(error("INVALID_SERVICE_STATUS", `${ref.type}:${ref.id}.serviceStatus`, "Equipment service status is not canonical."));
+    if (!['army', 'navy', 'airforce', 'air', 'land', 'sea', 'missile', 'space-isr', 'support', 'unknown'].includes(String(entity.domain))) issues.push(error("INVALID_DOMAIN", `${ref.type}:${ref.id}.domain`, "Equipment domain is not canonical."));
+    if (!['Deployed', 'Decommissioned', 'Planned', 'active', 'retired', 'under-development', 'planned', 'limited', 'unknown'].includes(String(entity.serviceStatus))) issues.push(error("INVALID_SERVICE_STATUS", `${ref.type}:${ref.id}.serviceStatus`, "Equipment service status is not canonical."));
     if (!['indigenous', 'joint-development', 'license-produced', 'imported', 'mixed', 'unknown'].includes(String(entity.developmentModel))) issues.push(error("INVALID_DEVELOPMENT_MODEL", `${ref.type}:${ref.id}.developmentModel`, "Equipment development model is not canonical."));
     parseJson(typeof entity.originCountries === "string" ? entity.originCountries : null, `${ref.type}:${ref.id}.originCountries`, issues);
     parseJson(typeof entity.specs === "string" ? entity.specs : null, `${ref.type}:${ref.id}.specs`, issues);
