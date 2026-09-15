@@ -6,6 +6,23 @@
     "Indian Navy": 605
   },
   "canonical_rows": 1413,
+  "category_counts": {
+    "air-defence": 11,
+    "aircraft": 194,
+    "armoured-vehicles": 83,
+    "artillery": 45,
+    "electronic-warfare": 2,
+    "helicopters": 11,
+    "infantry-equipment": 134,
+    "missiles": 297,
+    "other": 19,
+    "radar-sensors": 13,
+    "ships": 428,
+    "submarines": 118,
+    "support-equipment": 17,
+    "torpedoes": 17,
+    "unmanned-systems": 24
+  },
   "coverage_notes": [
     {
       "branch": "Indian Army",
@@ -18,7 +35,12 @@
       "state": "official_verification"
     }
   ],
-  "generated_at": "2026-09-15T03:49:19Z",
+  "domain_counts": {
+    "airforce": 172,
+    "army": 636,
+    "navy": 605
+  },
+  "generated_at": "2026-09-15T04:05:32Z",
   "official_evidence_claims": 15,
   "official_supplement_rows": 14,
   "raw_tables": 114,
@@ -36,9 +58,14 @@
     "navy_weapon_systems",
     "indian_military_missiles"
   ],
+  "service_status_counts": {
+    "Decommissioned": 336,
+    "Deployed": 662,
+    "Planned": 415
+  },
   "source_runs": [
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 152,
       "error": null,
       "key": "army_equipment",
@@ -174,7 +201,7 @@
       "url": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 95,
       "error": null,
       "key": "iaf_active_aircraft",
@@ -212,7 +239,7 @@
       "url": "https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 75,
       "error": null,
       "key": "iaf_historical_aircraft",
@@ -229,7 +256,7 @@
       "url": "https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 15,
       "error": null,
       "key": "iaf_future_programmes",
@@ -246,7 +273,7 @@
       "url": "https://en.wikipedia.org/wiki/Future_of_the_Indian_Air_Force"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 24,
       "error": null,
       "key": "iaf_weapon_systems",
@@ -312,7 +339,7 @@
       "url": "https://en.wikipedia.org/wiki/Indian_Air_Force"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 108,
       "error": null,
       "key": "army_infantry_equipment",
@@ -364,7 +391,7 @@
       "url": "https://en.wikipedia.org/wiki/List_of_infantry_equipment_of_the_Indian_Army"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 199,
       "error": null,
       "key": "army_legacy_equipment",
@@ -458,7 +485,7 @@
       "url": "https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 236,
       "error": null,
       "key": "navy_active_ships",
@@ -608,7 +635,7 @@
       "url": "https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 243,
       "error": null,
       "key": "navy_historical_ships",
@@ -695,7 +722,7 @@
       "url": "https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 44,
       "error": null,
       "key": "navy_future_programmes",
@@ -831,7 +858,7 @@
       "url": "https://en.wikipedia.org/wiki/Future_of_the_Indian_Navy"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 55,
       "error": null,
       "key": "navy_weapon_systems",
@@ -869,7 +896,7 @@
       "url": "https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy"
     },
     {
-      "cached": true,
+      "cached": false,
       "canonical_rows": 153,
       "error": null,
       "key": "indian_military_missiles",

@@ -1,78 +1,78 @@
 source_key,source_url,source_table,source_row,retrieved_at,Name | Introduced into service before 1947,Origin | Introduced into service before 1947,Primary role(s) | Introduced into service before 1947,Introduced | Introduced into service before 1947,Retired | Introduced into service before 1947,Count | Introduced into service before 1947,Notes | Introduced into service before 1947
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,1,2026-09-15T03:49:19Z,Westland Wapiti,United Kingdom,Liaison,1933,1942,28,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,2,2026-09-15T03:49:19Z,Armstrong Whitworth Atalanta,United Kingdom,Transport,1941,1944,5,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,3,2026-09-15T03:49:19Z,Avro Anson I,United Kingdom,Basic trainer,1942,1945,7,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,4,2026-09-15T03:49:19Z,Boulton Paul Defiant TT.III,United Kingdom,Target tug,1944,1945,?,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,5,2026-09-15T03:49:19Z,Bristol Blenheim I,United Kingdom,Bomber,1941,1942,5,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,6,2026-09-15T03:49:19Z,de Havilland D.H.86B,United Kingdom,Transport,1940,1942,2,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,7,2026-09-15T03:49:19Z,de Havilland Dragon Rapide,United Kingdom,Transport,1941,1945,4,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,8,2026-09-15T03:49:19Z,de Havilland Tiger Moth,United Kingdom,Basic trainer,1939,1957,192,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,9,2026-09-15T03:49:19Z,Douglas Dakota,United States,Transport,1944,1987,206,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,10,2026-09-15T03:49:19Z,Fairchild PT-19,United States,Basic trainer,1943,1946,40,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,11,2026-09-15T03:49:19Z,Harlow PC-5A,United States,Transport,1941,1942,4,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,12,2026-09-15T03:49:19Z,Hawker Audax,United Kingdom,Liaison,1939,1945,7,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,13,2026-09-15T03:49:19Z,Hawker Hart,United Kingdom,Bomber,1939,1942,7,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,14,2026-09-15T03:49:19Z,Hawker Hind,United Kingdom,Bomber,1939,1941,6,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,15,2026-09-15T03:49:19Z,Hawker Hurricane,United Kingdom,Fighter-bomber,1942,1945,?,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,16,2026-09-15T03:49:19Z,North American Harvard Mk.II and 4,Canada,Basic trainer,1942,1973,?,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,17,2026-09-15T03:49:19Z,Supermarine Spitfire Vc & VIIIc,United Kingdom,Fighter/Reconnaissance,1943,1948,19,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,18,2026-09-15T03:49:19Z,Vickers Valentia,United Kingdom,Transport,1942,1944,1,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,19,2026-09-15T03:49:19Z,Vultee Vengeance,United States,Bomber,1942,1945,35,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,20,2026-09-15T03:49:19Z,Westland Lysander II,United Kingdom,Liaison,1941,1943,25,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,21,2026-09-15T03:49:19Z,Westland Lysander III.T,United Kingdom,Target tug,1941,1942,48,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,22,2026-09-15T03:49:19Z,Airspeed Oxford,United Kingdom,Transport,1946,1949,5,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,23,2026-09-15T03:49:19Z,Auster AOP.6,United Kingdom,Liaison,1946,1970,20,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,24,2026-09-15T03:49:19Z,Hawker Tempest II,United Kingdom,Fighter,1945,1955,235,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,25,2026-09-15T03:49:19Z,Supermarine Spitfire FR.XIVE & FR.XVIII,United Kingdom,Fighter/Reconnaissance,1945,1957,120,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,26,2026-09-15T03:49:19Z,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,27,2026-09-15T03:49:19Z,Aero Ae-45,Czechoslovakia,Transport,1955,1957,1,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,28,2026-09-15T03:49:19Z,Antonov An-12,Soviet Union,Transport,1961,1993,65,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,29,2026-09-15T03:49:19Z,Auster AOP.9,United Kingdom,Liaison,1955,1981,35,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,30,2026-09-15T03:49:19Z,Bell 47G-2,United States,Helicopter,1957,1979,15,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,31,2026-09-15T03:49:19Z,Consolidated B-24J Liberator,United States,Bomber,1948,1967,45,[a]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,32,2026-09-15T03:49:19Z,Dassault MD. 450B Ouragan,France,Fighter-bomber,1953,1967,104,[b]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,33,2026-09-15T03:49:19Z,Dassault Mystère MD.454 IVA,France,Fighter-bomber,1957,1973,104,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,34,2026-09-15T03:49:19Z,de Havilland Canada DHC-3 Otter,Canada,Transport,1956,1998,36,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,35,2026-09-15T03:49:19Z,de Havilland Canada DHC-4 Caribou,Canada,Transport,1963,1991,26,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,36,2026-09-15T03:49:19Z,de Havilland Devon,United Kingdom,Transport,1947,1991,22,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,37,2026-09-15T03:49:19Z,de Havilland Vampire F.3,United Kingdom,Fighter,1948,1955,3,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,38,2026-09-15T03:49:19Z,de Havilland Vampire FB.52,United Kingdom,Fighter-bomber,1950,1974,286,[c]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,39,2026-09-15T03:49:19Z,de Havilland Vampire NF.10,United Kingdom,Fighter,1953,1955,30,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,40,2026-09-15T03:49:19Z,de Havilland Vampire NF.54,United Kingdom,Fighter,1953,1966,30,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,41,2026-09-15T03:49:19Z,de Havilland Vampire PR.55,United Kingdom,Reconnaissance,1954,1965,5,[d]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,42,2026-09-15T03:49:19Z,de Havilland Vampire T.11,United Kingdom,Basic trainer,1963,?,7,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,43,2026-09-15T03:49:19Z,de Havilland Vampire T.55,United Kingdom,Basic trainer,1953,1982,124,[e]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,44,2026-09-15T03:49:19Z,English Electric Canberra B(I).58/B(I).66,United Kingdom,Bomber/Reconnaissance,1957,2007,150,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,45,2026-09-15T03:49:19Z,Fairchild C-119G Flying Boxcar,United States,Transport,1953,1984,89,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,46,2026-09-15T03:49:19Z,Folland Fo.141 Gnat F.1,United Kingdom,Fighter,1958,1978,?,[f]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,47,2026-09-15T03:49:19Z,HAL HF-24 Marut Mk.1,India,Fighter-bomber,1961,1985,147,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,48,2026-09-15T03:49:19Z,HAL HT-2,India,Basic trainer,1953,1998,169,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,49,2026-09-15T03:49:19Z,Hawker Hunter FGA.56A,United Kingdom,Fighter-bomber,1957,1996,167,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,50,2026-09-15T03:49:19Z,Hawker Hunter T.66,United Kingdom,Basic trainer,1959,1992,40,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,51,2026-09-15T03:49:19Z,Ilyushin Il-14,Soviet Union,Transport,1955,1981,29,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,52,2026-09-15T03:49:19Z,Lockheed Super Constellation,United States,Transport,1961,1981,9,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,53,2026-09-15T03:49:19Z,Mikoyan-Gurevich MiG-21F-13/FL/PFM/M/bis/Bison,Soviet Union,Fighter,1964,2025,872,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,54,2026-09-15T03:49:19Z,Mil Mi-4,Soviet Union,Helicopter,1960,1988,121,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,55,2026-09-15T03:49:19Z,North American T-6G Texan,United States,Basic trainer,1973,?,,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,56,2026-09-15T03:49:19Z,Percival Prentice T.3,United Kingdom,Basic trainer,1947,1963,62,[g]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,57,2026-09-15T03:49:19Z,Sikorsky S-55,United States,Helicopter,1954,1966,8,[h]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,58,2026-09-15T03:49:19Z,Sikorsky S-62B,United States,Helicopter,1960,1979,2,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,59,2026-09-15T03:49:19Z,Supermarine Spitfire PR.XI & XIX,United Kingdom,Reconnaissance,1947,1959,15,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,60,2026-09-15T03:49:19Z,Supermarine Spitfire T.IX,United Kingdom,Basic trainer,1947,1955,10,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,61,2026-09-15T03:49:19Z,Vickers Viscount,United Kingdom,Transport,1955,1971,2,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,62,2026-09-15T03:49:19Z,HAL Krishak,India,Liaison,1965,1988,68,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,63,2026-09-15T03:49:19Z,HAL Pushpak,India,Basic trainer,1965,1967,25,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,64,2026-09-15T03:49:19Z,Hawker Hunter F. Mk.56,United Kingdom,Fighter,1966,1992,55,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,65,2026-09-15T03:49:19Z,Sukhoi Su-7BMK/BKL,Soviet Union,Fighter-bomber,1968,1986,140,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,66,2026-09-15T03:49:19Z,Tupolev Tu-124,Soviet Union,Transport,1966,1981,3,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,67,2026-09-15T03:49:19Z,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,68,2026-09-15T03:49:19Z,HAL Ajeet Mk.1,India,Fighter,1977,1991,89,[i]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,69,2026-09-15T03:49:19Z,HAL HPT-32 Deepak,India,Primary trainer,1984,2009,144,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,70,2026-09-15T03:49:19Z,Mikoyan-Gurevich MiG-23UB,Soviet Union,Conversion trainer,1980,2019,15,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,71,2026-09-15T03:49:19Z,Mikoyan-Gurevich MiG-23BN,Soviet Union,Fighter-bomber,1981,2009,95,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,72,2026-09-15T03:49:19Z,Mikoyan-Gurevich MiG-23MF,Soviet Union,Fighter,1982,2007,40,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,73,2026-09-15T03:49:19Z,Mikoyan-Gurevich MiG-25RBK/RU,Soviet Union,Reconnaissance,1981,2006,10,[j]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,74,2026-09-15T03:49:19Z,Mikoyan-Gurevich MiG-27ML,Soviet Union,Fighter,1985,2019,165,
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,75,2026-09-15T03:49:19Z,PZL TS-11 Iskra bis-D,Poland,Basic trainer,1975,2004,76,[k]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,76,2026-09-15T03:49:19Z,SEPECAT Jaguar IS GR.1,United Kingdom/France,Ground attack,1979,1984,16,[l]
-iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,77,2026-09-15T03:49:19Z,Sukhoi Su-30K,Russia,Multirole,1996,2007,18,[m]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,1,2026-09-15T04:05:32Z,Westland Wapiti,United Kingdom,Liaison,1933,1942,28,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,2,2026-09-15T04:05:32Z,Armstrong Whitworth Atalanta,United Kingdom,Transport,1941,1944,5,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,3,2026-09-15T04:05:32Z,Avro Anson I,United Kingdom,Basic trainer,1942,1945,7,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,4,2026-09-15T04:05:32Z,Boulton Paul Defiant TT.III,United Kingdom,Target tug,1944,1945,?,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,5,2026-09-15T04:05:32Z,Bristol Blenheim I,United Kingdom,Bomber,1941,1942,5,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,6,2026-09-15T04:05:32Z,de Havilland D.H.86B,United Kingdom,Transport,1940,1942,2,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,7,2026-09-15T04:05:32Z,de Havilland Dragon Rapide,United Kingdom,Transport,1941,1945,4,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,8,2026-09-15T04:05:32Z,de Havilland Tiger Moth,United Kingdom,Basic trainer,1939,1957,192,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,9,2026-09-15T04:05:32Z,Douglas Dakota,United States,Transport,1944,1987,206,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,10,2026-09-15T04:05:32Z,Fairchild PT-19,United States,Basic trainer,1943,1946,40,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,11,2026-09-15T04:05:32Z,Harlow PC-5A,United States,Transport,1941,1942,4,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,12,2026-09-15T04:05:32Z,Hawker Audax,United Kingdom,Liaison,1939,1945,7,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,13,2026-09-15T04:05:32Z,Hawker Hart,United Kingdom,Bomber,1939,1942,7,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,14,2026-09-15T04:05:32Z,Hawker Hind,United Kingdom,Bomber,1939,1941,6,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,15,2026-09-15T04:05:32Z,Hawker Hurricane,United Kingdom,Fighter-bomber,1942,1945,?,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,16,2026-09-15T04:05:32Z,North American Harvard Mk.II and 4,Canada,Basic trainer,1942,1973,?,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,17,2026-09-15T04:05:32Z,Supermarine Spitfire Vc & VIIIc,United Kingdom,Fighter/Reconnaissance,1943,1948,19,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,18,2026-09-15T04:05:32Z,Vickers Valentia,United Kingdom,Transport,1942,1944,1,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,19,2026-09-15T04:05:32Z,Vultee Vengeance,United States,Bomber,1942,1945,35,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,20,2026-09-15T04:05:32Z,Westland Lysander II,United Kingdom,Liaison,1941,1943,25,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,21,2026-09-15T04:05:32Z,Westland Lysander III.T,United Kingdom,Target tug,1941,1942,48,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,22,2026-09-15T04:05:32Z,Airspeed Oxford,United Kingdom,Transport,1946,1949,5,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,23,2026-09-15T04:05:32Z,Auster AOP.6,United Kingdom,Liaison,1946,1970,20,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,24,2026-09-15T04:05:32Z,Hawker Tempest II,United Kingdom,Fighter,1945,1955,235,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,25,2026-09-15T04:05:32Z,Supermarine Spitfire FR.XIVE & FR.XVIII,United Kingdom,Fighter/Reconnaissance,1945,1957,120,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,26,2026-09-15T04:05:32Z,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970,Introduced into service between 1947 and 1970
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,27,2026-09-15T04:05:32Z,Aero Ae-45,Czechoslovakia,Transport,1955,1957,1,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,28,2026-09-15T04:05:32Z,Antonov An-12,Soviet Union,Transport,1961,1993,65,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,29,2026-09-15T04:05:32Z,Auster AOP.9,United Kingdom,Liaison,1955,1981,35,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,30,2026-09-15T04:05:32Z,Bell 47G-2,United States,Helicopter,1957,1979,15,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,31,2026-09-15T04:05:32Z,Consolidated B-24J Liberator,United States,Bomber,1948,1967,45,[a]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,32,2026-09-15T04:05:32Z,Dassault MD. 450B Ouragan,France,Fighter-bomber,1953,1967,104,[b]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,33,2026-09-15T04:05:32Z,Dassault Mystère MD.454 IVA,France,Fighter-bomber,1957,1973,104,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,34,2026-09-15T04:05:32Z,de Havilland Canada DHC-3 Otter,Canada,Transport,1956,1998,36,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,35,2026-09-15T04:05:32Z,de Havilland Canada DHC-4 Caribou,Canada,Transport,1963,1991,26,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,36,2026-09-15T04:05:32Z,de Havilland Devon,United Kingdom,Transport,1947,1991,22,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,37,2026-09-15T04:05:32Z,de Havilland Vampire F.3,United Kingdom,Fighter,1948,1955,3,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,38,2026-09-15T04:05:32Z,de Havilland Vampire FB.52,United Kingdom,Fighter-bomber,1950,1974,286,[c]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,39,2026-09-15T04:05:32Z,de Havilland Vampire NF.10,United Kingdom,Fighter,1953,1955,30,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,40,2026-09-15T04:05:32Z,de Havilland Vampire NF.54,United Kingdom,Fighter,1953,1966,30,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,41,2026-09-15T04:05:32Z,de Havilland Vampire PR.55,United Kingdom,Reconnaissance,1954,1965,5,[d]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,42,2026-09-15T04:05:32Z,de Havilland Vampire T.11,United Kingdom,Basic trainer,1963,?,7,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,43,2026-09-15T04:05:32Z,de Havilland Vampire T.55,United Kingdom,Basic trainer,1953,1982,124,[e]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,44,2026-09-15T04:05:32Z,English Electric Canberra B(I).58/B(I).66,United Kingdom,Bomber/Reconnaissance,1957,2007,150,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,45,2026-09-15T04:05:32Z,Fairchild C-119G Flying Boxcar,United States,Transport,1953,1984,89,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,46,2026-09-15T04:05:32Z,Folland Fo.141 Gnat F.1,United Kingdom,Fighter,1958,1978,?,[f]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,47,2026-09-15T04:05:32Z,HAL HF-24 Marut Mk.1,India,Fighter-bomber,1961,1985,147,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,48,2026-09-15T04:05:32Z,HAL HT-2,India,Basic trainer,1953,1998,169,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,49,2026-09-15T04:05:32Z,Hawker Hunter FGA.56A,United Kingdom,Fighter-bomber,1957,1996,167,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,50,2026-09-15T04:05:32Z,Hawker Hunter T.66,United Kingdom,Basic trainer,1959,1992,40,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,51,2026-09-15T04:05:32Z,Ilyushin Il-14,Soviet Union,Transport,1955,1981,29,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,52,2026-09-15T04:05:32Z,Lockheed Super Constellation,United States,Transport,1961,1981,9,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,53,2026-09-15T04:05:32Z,Mikoyan-Gurevich MiG-21F-13/FL/PFM/M/bis/Bison,Soviet Union,Fighter,1964,2025,872,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,54,2026-09-15T04:05:32Z,Mil Mi-4,Soviet Union,Helicopter,1960,1988,121,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,55,2026-09-15T04:05:32Z,North American T-6G Texan,United States,Basic trainer,1973,?,,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,56,2026-09-15T04:05:32Z,Percival Prentice T.3,United Kingdom,Basic trainer,1947,1963,62,[g]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,57,2026-09-15T04:05:32Z,Sikorsky S-55,United States,Helicopter,1954,1966,8,[h]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,58,2026-09-15T04:05:32Z,Sikorsky S-62B,United States,Helicopter,1960,1979,2,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,59,2026-09-15T04:05:32Z,Supermarine Spitfire PR.XI & XIX,United Kingdom,Reconnaissance,1947,1959,15,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,60,2026-09-15T04:05:32Z,Supermarine Spitfire T.IX,United Kingdom,Basic trainer,1947,1955,10,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,61,2026-09-15T04:05:32Z,Vickers Viscount,United Kingdom,Transport,1955,1971,2,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,62,2026-09-15T04:05:32Z,HAL Krishak,India,Liaison,1965,1988,68,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,63,2026-09-15T04:05:32Z,HAL Pushpak,India,Basic trainer,1965,1967,25,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,64,2026-09-15T04:05:32Z,Hawker Hunter F. Mk.56,United Kingdom,Fighter,1966,1992,55,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,65,2026-09-15T04:05:32Z,Sukhoi Su-7BMK/BKL,Soviet Union,Fighter-bomber,1968,1986,140,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,66,2026-09-15T04:05:32Z,Tupolev Tu-124,Soviet Union,Transport,1966,1981,3,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,67,2026-09-15T04:05:32Z,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971,Introduced into service after 1971
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,68,2026-09-15T04:05:32Z,HAL Ajeet Mk.1,India,Fighter,1977,1991,89,[i]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,69,2026-09-15T04:05:32Z,HAL HPT-32 Deepak,India,Primary trainer,1984,2009,144,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,70,2026-09-15T04:05:32Z,Mikoyan-Gurevich MiG-23UB,Soviet Union,Conversion trainer,1980,2019,15,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,71,2026-09-15T04:05:32Z,Mikoyan-Gurevich MiG-23BN,Soviet Union,Fighter-bomber,1981,2009,95,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,72,2026-09-15T04:05:32Z,Mikoyan-Gurevich MiG-23MF,Soviet Union,Fighter,1982,2007,40,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,73,2026-09-15T04:05:32Z,Mikoyan-Gurevich MiG-25RBK/RU,Soviet Union,Reconnaissance,1981,2006,10,[j]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,74,2026-09-15T04:05:32Z,Mikoyan-Gurevich MiG-27ML,Soviet Union,Fighter,1985,2019,165,
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,75,2026-09-15T04:05:32Z,PZL TS-11 Iskra bis-D,Poland,Basic trainer,1975,2004,76,[k]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,76,2026-09-15T04:05:32Z,SEPECAT Jaguar IS GR.1,United Kingdom/France,Ground attack,1979,1984,16,[l]
+iaf_historical_aircraft,https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force,1,77,2026-09-15T04:05:32Z,Sukhoi Su-30K,Russia,Multirole,1996,2007,18,[m]

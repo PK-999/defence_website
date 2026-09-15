@@ -16,6 +16,9 @@ from src.equipment_scratch import (
     flatten_columns,
     is_header_like_row,
     normalise_date,
+    normalise_category,
+    normalise_service_domains,
+    normalise_service_status,
     normalise_status,
     parse_quantity,
     parse_quantity_values,
@@ -74,6 +77,22 @@ class EquipmentHelpersTests(unittest.TestCase):
         self.assertEqual(normalise_date("June 2026"), "2026-06")
         self.assertEqual(normalise_date("date unknown"), "Not documented")
 
+    def test_service_taxonomy_uses_canonical_domains_categories_and_statuses(self):
+        self.assertEqual(normalise_service_domains("Indian Army · Indian Navy · Indian Air Force"), ["army", "navy", "airforce"])
+        self.assertEqual(normalise_category("Howitzers and field guns", "155 mm artillery"), "artillery")
+        self.assertEqual(normalise_category("Naval Air Arm", "Fighter aircraft"), "aircraft")
+        self.assertEqual(
+            normalise_category("Ballistic and cruise missiles", "Supersonic cruise missile", "BrahMos", "air force weapon systems"),
+            "missiles",
+        )
+        self.assertEqual(
+            normalise_category("Anti-submarine warfare shallow-water craft", "Sub-surface surveillance", "INS Arnala", "ships and submarines"),
+            "ships",
+        )
+        self.assertEqual(normalise_service_status("in_service"), "Deployed")
+        self.assertEqual(normalise_service_status("decommissioned_or_retired"), "Decommissioned")
+        self.assertEqual(normalise_service_status("under_development"), "Planned")
+
     def test_quantity_keeps_raw_text_and_numeric_bounds(self):
         self.assertEqual(
             parse_quantity("12 in service; 6 on order"),
@@ -85,7 +104,7 @@ class EquipmentHelpersTests(unittest.TestCase):
 
     def test_canonical_record_contains_source_and_raw_fields(self):
         raw = {
-            "Aircraft": "Tejas",
+            "Aircraft": "Test aircraft",
             "Variant": "Mk1A",
             "Units": "141",
             "Status": "On order",
@@ -93,14 +112,14 @@ class EquipmentHelpersTests(unittest.TestCase):
 
         record = build_canonical_record(
             raw,
-            source_key="iaf_future",
+            source_key="iaf_future_programmes",
             source_url="https://example.test",
             table_index=2,
             row_index=3,
             retrieved_at="2026-09-15T00:00:00Z",
         )
 
-        self.assertEqual(record["system_name"], "Tejas")
+        self.assertEqual(record["system_name"], "Test aircraft")
         self.assertEqual(record["status"], "on_order")
         self.assertEqual(record["quantity"], 141)
         self.assertEqual(record["source_table"], 2)
@@ -108,6 +127,25 @@ class EquipmentHelpersTests(unittest.TestCase):
         self.assertEqual(record["raw_record"]["Variant"], "Mk1A")
         self.assertEqual(record["source_status"], "On order")
         self.assertEqual(record["verification_status"], "not_independently_verified")
+        self.assertEqual(record["domain"], "airforce")
+        self.assertEqual(json.loads(record["service_domains"]), ["airforce"])
+        self.assertEqual(record["service_status"], "Planned")
+        self.assertEqual(record["category"], "aircraft")
+        self.assertIn("status-planned", json.loads(record["tags"]))
+
+    def test_joint_records_keep_all_service_domains_and_joint_tag(self):
+        record = build_canonical_record(
+            {"Name": "BrahMos", "Status": "In service", "Type": "Supersonic cruise missile"},
+            source_key="indian_military_missiles",
+            source_url="https://example.test",
+            table_index=1,
+            row_index=1,
+            retrieved_at="2026-09-15T00:00:00Z",
+        )
+        self.assertEqual(record["domain"], "army")
+        self.assertEqual(json.loads(record["service_domains"]), ["army", "navy", "airforce"])
+        self.assertIn("joint-service", json.loads(record["tags"]))
+        self.assertEqual(record["service_status"], "Deployed")
 
     def test_record_id_is_stable_for_the_same_source_row(self):
         self.assertEqual(

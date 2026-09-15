@@ -1,23 +1,23 @@
 source_key,source_url,source_table,source_row,retrieved_at,Ship | Troopship,Pennant | Troopship,Class | Troopship,Commissioned | Troopship,Decommissioned | Troopship,Fate | Troopship,Notes | Troopship
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,1,2026-09-15T03:49:19Z,HMIS Dalhousie,,Unique ship,1886,1945,scrapped in 1945,"Later depot ship at Basra, Bombay and Karachi"
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,2,2026-09-15T03:49:19Z,Tanker,Tanker,Tanker,Tanker,Tanker,Tanker,Tanker
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,3,2026-09-15T03:49:19Z,HMIS Chilka Renamed INS Chilka post republic.,,Unique ship,1948,1976,scrapped in 1977,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,4,2026-09-15T03:49:19Z,INS Shakti,,Unique ship,29 January 1954,31 December 1967,scrapped c.1975,Italian-built tanker purchased new in 1953
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,5,2026-09-15T03:49:19Z,INS Deepak,A50,Deepak class,20 November 1967,30 April 1996,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,6,2026-09-15T03:49:19Z,INS Shakti,A57,Deepak class,31 December 1975,21 July 2007,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,7,2026-09-15T03:49:19Z,Submarine Tender,Submarine Tender,Submarine Tender,Submarine Tender,Submarine Tender,Submarine Tender,Submarine Tender
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,8,2026-09-15T03:49:19Z,INS Amba,A54,Modified Ugra class,28 December 1968,July 2006,scrapped,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,9,2026-09-15T03:49:19Z,Survey Ships,Survey Ships,Survey Ships,Survey Ships,Survey Ships,Survey Ships,Survey Ships
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,10,2026-09-15T03:49:19Z,HMIS Investigator,,Unique ship,1932,1951,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,11,2026-09-15T03:49:19Z,INS Investigator,,Modified River class,1951,30 September 1974,scrapped,former HMS Trent purchased in 1946 and renamed HMIS Kukri. Modified and converted to Survey Ship in 1950.
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,12,2026-09-15T03:49:19Z,INS Darshak,,Unique ship,1964,15 Jan 1990,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,13,2026-09-15T03:49:19Z,INS Makar,J31,Makar Class,31 January 1984,4 April 2005,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,14,2026-09-15T03:49:19Z,INS Mithun,J32,Makar Class,31 March 1984,31 March 2007,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,15,2026-09-15T03:49:19Z,INS Meen,J33,Makar Class,23 June 1984,24 April 2005,expended as a target for BrahMos test.,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,16,2026-09-15T03:49:19Z,INS Mesh,J34,Makar Class,31 October 1984,1 February 1999,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,17,2026-09-15T03:49:19Z,INS Nirdeshak,J19,Sandhayak-class survey ship,4 October 1983,19 December 2014,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,18,2026-09-15T03:49:19Z,INS Sandhayak,J18,Sandhayak-class survey ship,14 March 1981,4 June 2021,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,19,2026-09-15T03:49:19Z,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,20,2026-09-15T03:49:19Z,INS A-71,A71,Astravahini-class,15 September 1982,25 March 2005,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,21,2026-09-15T03:49:19Z,INS A-72,A72,Astravahini-class,23 February 1983,6 Nov 2014,sunk in an accident on 6 Nov 2014,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,22,2026-09-15T03:49:19Z,INS A-73,A73,Astravahini-class,5 November 1984,16 July 2015,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,1,2026-09-15T04:05:32Z,HMIS Dalhousie,,Unique ship,1886,1945,scrapped in 1945,"Later depot ship at Basra, Bombay and Karachi"
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,2,2026-09-15T04:05:32Z,Tanker,Tanker,Tanker,Tanker,Tanker,Tanker,Tanker
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,3,2026-09-15T04:05:32Z,HMIS Chilka Renamed INS Chilka post republic.,,Unique ship,1948,1976,scrapped in 1977,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,4,2026-09-15T04:05:32Z,INS Shakti,,Unique ship,29 January 1954,31 December 1967,scrapped c.1975,Italian-built tanker purchased new in 1953
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,5,2026-09-15T04:05:32Z,INS Deepak,A50,Deepak class,20 November 1967,30 April 1996,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,6,2026-09-15T04:05:32Z,INS Shakti,A57,Deepak class,31 December 1975,21 July 2007,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,7,2026-09-15T04:05:32Z,Submarine Tender,Submarine Tender,Submarine Tender,Submarine Tender,Submarine Tender,Submarine Tender,Submarine Tender
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,8,2026-09-15T04:05:32Z,INS Amba,A54,Modified Ugra class,28 December 1968,July 2006,scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,9,2026-09-15T04:05:32Z,Survey Ships,Survey Ships,Survey Ships,Survey Ships,Survey Ships,Survey Ships,Survey Ships
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,10,2026-09-15T04:05:32Z,HMIS Investigator,,Unique ship,1932,1951,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,11,2026-09-15T04:05:32Z,INS Investigator,,Modified River class,1951,30 September 1974,scrapped,former HMS Trent purchased in 1946 and renamed HMIS Kukri. Modified and converted to Survey Ship in 1950.
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,12,2026-09-15T04:05:32Z,INS Darshak,,Unique ship,1964,15 Jan 1990,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,13,2026-09-15T04:05:32Z,INS Makar,J31,Makar Class,31 January 1984,4 April 2005,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,14,2026-09-15T04:05:32Z,INS Mithun,J32,Makar Class,31 March 1984,31 March 2007,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,15,2026-09-15T04:05:32Z,INS Meen,J33,Makar Class,23 June 1984,24 April 2005,expended as a target for BrahMos test.,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,16,2026-09-15T04:05:32Z,INS Mesh,J34,Makar Class,31 October 1984,1 February 1999,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,17,2026-09-15T04:05:32Z,INS Nirdeshak,J19,Sandhayak-class survey ship,4 October 1983,19 December 2014,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,18,2026-09-15T04:05:32Z,INS Sandhayak,J18,Sandhayak-class survey ship,14 March 1981,4 June 2021,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,19,2026-09-15T04:05:32Z,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel,Torpedo Recovery Vessel
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,20,2026-09-15T04:05:32Z,INS A-71,A71,Astravahini-class,15 September 1982,25 March 2005,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,21,2026-09-15T04:05:32Z,INS A-72,A72,Astravahini-class,23 February 1983,6 Nov 2014,sunk in an accident on 6 Nov 2014,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,11,22,2026-09-15T04:05:32Z,INS A-73,A73,Astravahini-class,5 November 1984,16 July 2015,,

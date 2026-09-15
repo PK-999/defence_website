@@ -18,7 +18,7 @@ The normalized CSV/JSON records contain:
 
 `record_id`, `branch`, `domain`, `category`, `system_name`, `designation`, `variant`, `role_purpose`, `status`, `source_status`, `status_as_of`, `commissioned_or_inducted_date`, `retired_or_decommissioned_date`, `quantity`, `quantity_min`, `quantity_max`, `quantity_raw`, `quantity_values`, `specifications`, `dimensions`, `make_manufacturer`, `country_of_origin`, `operators`, `notes`, `source_key`, `source_url`, `source_table`, `source_row`, `retrieved_at`, `raw_record`.
 
-The audit layer adds `verification_status` and `verification_sources`. These fields identify whether a matching curated official claim exists; they do not imply that every source-table field has been independently confirmed. Official-source additions are emitted as `official_supplement` records so they remain distinguishable from table extraction.
+The audit layer adds `verification_status` and `verification_sources`. The taxonomy layer adds normalized `domain`, `service_domains`, `equipment_domain`, controlled `category`, `source_category`, three-value `service_status`, and JSON `tags`. These fields identify service grouping and display lifecycle without discarding source wording. They do not imply that every source-table field has been independently confirmed. Official-source additions are emitted as `official_supplement` records so they remain distinguishable from table extraction.
 
 Dates use ISO text in the data artifact (`YYYY-MM-DD` or the source precision when only a year/month is stated). The website formatter can localize them later.
 

@@ -168,12 +168,16 @@ CANONICAL_FIELDS = [
     "record_id",
     "branch",
     "domain",
+    "service_domains",
+    "equipment_domain",
     "category",
+    "source_category",
     "system_name",
     "designation",
     "variant",
     "role_purpose",
     "status",
+    "service_status",
     "source_status",
     "verification_status",
     "verification_sources",
@@ -191,6 +195,7 @@ CANONICAL_FIELDS = [
     "country_of_origin",
     "operators",
     "notes",
+    "tags",
     "source_key",
     "source_url",
     "source_table",
@@ -281,6 +286,147 @@ def normalise_status(value: Any) -> str:
     if any(token in lowered for token in ("former", "historical", "legacy")):
         return "historical"
     return "not_documented"
+
+
+SERVICE_DOMAIN_ORDER = ("army", "navy", "airforce")
+SERVICE_STATUS_VALUES = ("Deployed", "Decommissioned", "Planned")
+
+
+def normalise_service_domains(value: Any) -> list[str]:
+    """Map service labels to the stable Army/Navy/Air Force domain vocabulary."""
+
+    text = clean_cell(value).casefold()
+    domains: list[str] = []
+    if "army" in text:
+        domains.append("army")
+    if "navy" in text:
+        domains.append("navy")
+    if "air force" in text or "airforce" in text or re.search(r"\biaf\b", text):
+        domains.append("airforce")
+    return [domain for domain in SERVICE_DOMAIN_ORDER if domain in domains]
+
+
+def normalise_service_status(value: Any) -> str:
+    """Collapse source lifecycle states into the three requested display states."""
+
+    text = clean_cell(value).casefold().replace(" ", "_")
+    if text in {"deployed", "in_service", "in_service_and_on_order", "operational", "active", "reserve"}:
+        return "Deployed"
+    if text in {"decommissioned", "decommissioned_or_retired", "retired", "historical", "former"}:
+        return "Decommissioned"
+    return "Planned"
+
+
+def normalise_category(source_category: Any, role_purpose: Any = "", system_name: Any = "", equipment_domain: Any = "") -> str:
+    """Map source headings and roles to a compact, controlled equipment taxonomy."""
+
+    source_text = clean_cell(source_category).casefold()
+    detail_text = " ".join(
+        clean_cell(value).casefold()
+        for value in (role_purpose, system_name)
+        if clean_cell(value)
+    )
+    text = " ".join(
+        clean_cell(value).casefold()
+        for value in (source_category, role_purpose, system_name, equipment_domain)
+        if clean_cell(value)
+    )
+    if any(token in detail_text for token in ("missile", "rocket", "cruise missile", "ballistic missile")):
+        return "missiles"
+    if "torpedo" in detail_text:
+        return "torpedoes"
+    if any(token in detail_text for token in ("submarine", "ssbn", "ssn", "scorpene")):
+        return "submarines"
+    if any(token in detail_text for token in ("ship", "vessel", "boat", "frigate", "destroyer", "corvette", "patrol craft", "carrier")):
+        return "ships"
+    if any(token in detail_text for token in ("aircraft", "fighter", "trainer", "transport plane")):
+        return "aircraft"
+    if any(token in detail_text for token in ("helicopter", "rotary-wing", "rotary wing")):
+        return "helicopters"
+    if any(token in detail_text for token in ("unmanned", "uav", "ucav", "drone", "loitering munition", "remotely piloted")):
+        return "unmanned-systems"
+    if "anti-submarine" in source_text and any(token in source_text for token in ("craft", "vessel", "ship")):
+        return "ships"
+    if any(token in source_text for token in ("submarine", "ssbn", "ssn", "scorpene")) and "ship" not in source_text:
+        return "submarines"
+    if any(token in source_text for token in ("ship", "vessel", "boat", "frigate", "destroyer", "corvette", "patrol", "watercraft", "carrier")):
+        return "ships"
+    if any(token in source_text for token in ("missile", "rocket", "cruise missile", "ballistic missile")):
+        return "missiles"
+    category_rules = (
+        ("submarines", ("submarine", "ssbn", "ssn", "scorpene")),
+        ("ships", ("ship", "vessel", "boat", "frigate", "destroyer", "corvette", "patrol", "watercraft", "shallow-water craft", "carrier")),
+        ("aircraft", ("aircraft", "fighter", "air force", "naval air arm", "trainer", "transport plane")),
+        ("helicopters", ("helicopter", "rotary-wing", "rotary wing", "attack helicopter")),
+        ("unmanned-systems", ("unmanned", "uav", "ucav", "drone", "loitering munition", "remotely piloted")),
+        ("torpedoes", ("torpedo", "anti-submarine weapon")),
+        ("missiles", ("missile", "rocket", "cruise missile", "ballistic missile")),
+        ("air-defence", ("air defence", "air-defense", "surface-to-air", "anti-aircraft", "sam ", "air defence")),
+        ("artillery", ("artillery", "howitzer", "field gun", "rocket artillery", "mortar")),
+        ("radar-sensors", ("radar", "sensor", "surveillance system", "sonar")),
+        ("electronic-warfare", ("electronic warfare", "jammer", "jamming", "ew system")),
+        ("infantry-equipment", ("infantry", "rifle", "pistol", "small arms", "machine gun", "body armour", "body armor", "grenade")),
+        ("armoured-vehicles", ("armoured", "armored", "tank", "vehicle", "ifv", "apc", "mbt")),
+        ("support-equipment", ("support", "engineering", "bridge layer", "ambulance", "logistics", "truck", "tanker")),
+    )
+    for category, tokens in category_rules:
+        if any(token in text for token in tokens):
+            return category
+    return "other"
+
+
+def _tag_slug(value: Any) -> str:
+    text = clean_cell(value).casefold()
+    text = re.sub(r"[^a-z0-9]+", "-", text).strip("-")
+    return text
+
+
+def build_tags(
+    *,
+    service_domains: list[str],
+    category: str,
+    status: str,
+    service_status: str,
+    role_purpose: str,
+    verification_status: str,
+    source_status: str,
+) -> list[str]:
+    """Build deterministic, controlled tags without discarding source wording."""
+
+    tags = set(service_domains)
+    if len(service_domains) > 1:
+        tags.add("joint-service")
+    tags.add(category)
+    tags.add(f"status-{_tag_slug(service_status)}")
+    if status == "not_documented":
+        tags.add("status-undocumented")
+    elif status not in {"in_service", "in_service_and_on_order", "decommissioned_or_retired", "historical"}:
+        tags.add(f"source-status-{_tag_slug(status)}")
+    if verification_status == "official_supplement":
+        tags.add("official-supplement")
+    elif verification_status == "official_claim_available":
+        tags.add("official-claim-available")
+    else:
+        tags.add("not-independently-verified")
+
+    role_text = clean_cell(role_purpose).casefold()
+    role_rules = {
+        "fighter": "fighter",
+        "transport": "transport",
+        "surveillance": "surveillance",
+        "reconnaissance": "reconnaissance",
+        "anti-tank": "anti-tank",
+        "anti-submarine": "anti-submarine",
+        "asw": "anti-submarine",
+        "radar": "radar",
+        "electronic warfare": "electronic-warfare",
+        "jammer": "electronic-warfare",
+        "trainer": "trainer",
+    }
+    for token, tag in role_rules.items():
+        if token in role_text:
+            tags.add(tag)
+    return sorted(tag for tag in tags if tag)
 
 
 _MONTHS = {
@@ -519,7 +665,9 @@ def build_canonical_record(
     cleaned = {clean_cell(key): clean_cell(value) for key, value in raw_record.items() if clean_cell(key)}
     source = SOURCE_REGISTRY.get(source_key)
     branch = branch_override or _branch_for_context(source, category)
-    domain = domain_override or (source.domain if source else NOT_DOCUMENTED)
+    equipment_domain = domain_override or (source.domain if source else NOT_DOCUMENTED)
+    service_domains = normalise_service_domains(branch)
+    domain = service_domains[0] if service_domains else NOT_DOCUMENTED
     system_name = _first_value(
         cleaned,
         ("boat", "ship", "vessel", "aircraft", "name", "system", "weapon", "missile", "vehicle", "equipment", "class", "programme", "program"),
@@ -527,6 +675,7 @@ def build_canonical_record(
     designation = _first_value(cleaned, ("designation", "model", "mark"))
     variant = _first_value(cleaned, ("variant", "mark", "model"))
     role_purpose = _first_value(cleaned, ("role", "purpose", "mission", "function", "type"))
+    source_category = category or _first_value(cleaned, ("category", "class", "type"))
     status_text = _joined_values(cleaned, ("status", "notes", "note", "remarks", "fate", "disposition"))
     status = normalise_status(status_text)
     if status == "not_documented" and category:
@@ -542,6 +691,18 @@ def build_canonical_record(
         elif status not in {"decommissioned_or_retired", "historical"}:
             status = "in_service"
     official_claims = _official_claims_for(system_name, branch)
+    verification_status = "official_claim_available" if official_claims else "not_independently_verified"
+    category_name = normalise_category(source_category, role_purpose, system_name, equipment_domain)
+    service_status = normalise_service_status(status)
+    tags = build_tags(
+        service_domains=service_domains,
+        category=category_name,
+        status=status,
+        service_status=service_status,
+        role_purpose=role_purpose,
+        verification_status=verification_status,
+        source_status=status_text,
+    )
 
     quantity, quantity_max, quantity_raw = parse_quantity(
         _first_value(cleaned, ("quantity", "units", "in service", "no. of ships", "no. of boats", "no. of airframes", "number"))
@@ -559,14 +720,18 @@ def build_canonical_record(
         "record_id": canonical_record_id(source_key, table_index, row_index),
         "branch": branch,
         "domain": domain,
-        "category": category or _first_value(cleaned, ("category", "class", "type")),
+        "service_domains": json.dumps(service_domains, ensure_ascii=False),
+        "equipment_domain": equipment_domain,
+        "category": category_name,
+        "source_category": source_category,
         "system_name": system_name,
         "designation": designation,
         "variant": variant,
         "role_purpose": role_purpose,
         "status": status,
+        "service_status": service_status,
         "source_status": status_text,
-        "verification_status": "official_claim_available" if official_claims else "not_independently_verified",
+        "verification_status": verification_status,
         "verification_sources": json.dumps(sorted({claim["url"] for claim in official_claims}), ensure_ascii=False),
         "status_as_of": retrieved_at[:10],
         "commissioned_or_inducted_date": _date_value(cleaned, ("comm.", "commissioned", "commissioning", "inducted", "induction", "introduced", "introduction", "intr.", "entered service", "entry into service", "service from")),
@@ -582,6 +747,7 @@ def build_canonical_record(
         "country_of_origin": _first_value(cleaned, ("origin", "country", "country of origin")),
         "operators": _joined_values(cleaned, ("operator", "operators", "used by")),
         "notes": _joined_values(cleaned, ("notes", "note", "remarks", "comment", "fate")),
+        "tags": json.dumps(tags, ensure_ascii=False),
         "source_key": source_key,
         "source_url": source_url,
         "source_table": table_index,
@@ -730,19 +896,42 @@ def _build_official_supplement_records(retrieved_at: str) -> list[dict[str, Any]
         raw_record["source_title"] = claim["title"]
         raw_record["source_publisher"] = claim["publisher"]
         raw_record["source_published_date"] = claim["published_date"]
+        service_domains = normalise_service_domains(supplement["branch"])
+        domain = service_domains[0] if service_domains else NOT_DOCUMENTED
+        category = normalise_category(
+            supplement["category"],
+            supplement["role_purpose"],
+            supplement["system_name"],
+            supplement["domain"],
+        )
+        verification_status = "official_supplement"
+        service_status = normalise_service_status(supplement["status"])
+        tags = build_tags(
+            service_domains=service_domains,
+            category=category,
+            status=supplement["status"],
+            service_status=service_status,
+            role_purpose=supplement["role_purpose"],
+            verification_status=verification_status,
+            source_status=supplement["source_status"],
+        )
         records.append(
             {
                 "record_id": canonical_record_id("official_pib_drdo_updates", 1, row_index),
                 "branch": supplement["branch"],
-                "domain": supplement["domain"],
-                "category": supplement["category"],
+                "domain": domain,
+                "service_domains": json.dumps(service_domains, ensure_ascii=False),
+                "equipment_domain": supplement["domain"],
+                "category": category,
+                "source_category": supplement["category"],
                 "system_name": supplement["system_name"],
                 "designation": "Not documented",
                 "variant": "Not documented",
                 "role_purpose": supplement["role_purpose"],
                 "status": supplement["status"],
+                "service_status": service_status,
                 "source_status": supplement["source_status"],
-                "verification_status": "official_supplement",
+                "verification_status": verification_status,
                 "verification_sources": json.dumps([claim["url"]], ensure_ascii=False),
                 "status_as_of": supplement["status_as_of"],
                 "commissioned_or_inducted_date": supplement["commissioned_or_inducted_date"],
@@ -758,6 +947,7 @@ def _build_official_supplement_records(retrieved_at: str) -> list[dict[str, Any]
                 "country_of_origin": supplement["country_of_origin"],
                 "operators": supplement["operators"],
                 "notes": supplement["notes"],
+                "tags": json.dumps(tags, ensure_ascii=False),
                 "source_key": "official_pib_drdo_updates",
                 "source_url": claim["url"],
                 "source_table": 1,
@@ -950,6 +1140,9 @@ def run_scrape(
         "official_supplement_rows": len(official_records),
         "source_runs": source_runs,
         "status_counts": pd.Series([record["status"] for record in records]).value_counts().to_dict(),
+        "service_status_counts": pd.Series([record["service_status"] for record in records]).value_counts().to_dict(),
+        "domain_counts": pd.Series([record["domain"] for record in records]).value_counts().to_dict(),
+        "category_counts": pd.Series([record["category"] for record in records]).value_counts().to_dict(),
         "branch_counts": pd.Series([record["branch"] for record in records]).value_counts().to_dict(),
         "coverage_notes": [
             {

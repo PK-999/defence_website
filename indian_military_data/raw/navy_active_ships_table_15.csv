@@ -1,7 +1,7 @@
 source_key,source_url,source_table,source_row,retrieved_at,Training ship (6) | Class,Training ship (6) | Image,Training ship (6) | Ship,Training ship (6) | Pennant No.,Training ship (6) | Disp. (t),Training ship (6) | Origin,Training ship (6) | Note
-navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,1,2026-09-15T03:49:19Z,Tir class,,INS Tir,A86,3200,India,Dedicated cadet training ship.
-navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,2,2026-09-15T03:49:19Z,Tarangini class,,INS Tarangini,A75,500,India,Used for sail training.
-navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,3,2026-09-15T03:49:19Z,Tarangini class,,INS Sudarshini,A77,500,India,Used for sail training.
-navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,4,2026-09-15T03:49:19Z,Varuna class,—,INS Varuna,–,110,India,Used for sail training.
-navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,5,2026-09-15T03:49:19Z,Mhadei class,,INSV Mhadei,A76,23,India,"Used for solo, unassisted, non-stop circumnavigation."
-navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,6,2026-09-15T03:49:19Z,Mhadei class,,INSV Tarini,—,23,India,"Used for solo, unassisted, non-stop circumnavigation."
+navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,1,2026-09-15T04:05:32Z,Tir class,,INS Tir,A86,3200,India,Dedicated cadet training ship.
+navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,2,2026-09-15T04:05:32Z,Tarangini class,,INS Tarangini,A75,500,India,Used for sail training.
+navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,3,2026-09-15T04:05:32Z,Tarangini class,,INS Sudarshini,A77,500,India,Used for sail training.
+navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,4,2026-09-15T04:05:32Z,Varuna class,—,INS Varuna,–,110,India,Used for sail training.
+navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,5,2026-09-15T04:05:32Z,Mhadei class,,INSV Mhadei,A76,23,India,"Used for solo, unassisted, non-stop circumnavigation."
+navy_active_ships,https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships,15,6,2026-09-15T04:05:32Z,Mhadei class,,INSV Tarini,—,23,India,"Used for solo, unassisted, non-stop circumnavigation."

@@ -15,10 +15,14 @@ The snapshot contains 1,413 in-scope records from 12 registered source pages and
 
 ## Field conventions
 
-- `status` uses conservative values such as `in_service`, `historical`, `decommissioned_or_retired`, `on_order`, `under_development`, `under_trials`, and `planned_or_proposed`.
+- `domain` is the normalized primary service domain: `army`, `navy`, or `airforce`. Joint records use the first source-listed service as the primary domain, retain every applicable service in `service_domains`, and receive a `joint-service` tag; `service_domains` is authoritative for filtering joint systems.
+- `equipment_domain` preserves the source's broad equipment area, while `category` uses controlled values such as `aircraft`, `ships`, `submarines`, `missiles`, `artillery`, `armoured-vehicles`, `air-defence`, and `support-equipment`.
+- `service_status` is the display vocabulary: `Deployed`, `Decommissioned`, or `Planned`. The original normalized lifecycle state remains in `status`, and the source wording remains in `source_status`.
+- `tags` is a deterministic JSON list containing service, category, lifecycle, role, and verification tags.
 - `quantity_raw` preserves the source wording; `quantity_min` and `quantity_max` are populated only when numeric bounds are explicitly present.
 - `quantity_values` preserves every explicit numeric quantity when a source combines multiple variants or order states in one cell.
-- `source_status` preserves the source wording used to derive the normalized `status`.
+- `source_category` preserves the source heading/type used to derive the controlled `category`.
+- `source_status` preserves the source wording used to derive the normalized `status` and display `service_status`.
 - `verification_status` is `official_claim_available` when a curated official claim matches the system, `official_supplement` for a separately sourced official record, and `not_independently_verified` when no matching primary-source claim was added.
 - `verification_sources` lists the official URLs matched to the row; it is not a claim that every field in the row is independently verified.
 - `specifications`, `dimensions`, and `raw_record` retain source fields that do not fit the canonical columns.

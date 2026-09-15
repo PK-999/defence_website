@@ -17,6 +17,8 @@ The audit therefore uses a two-layer evidence model:
 
 The generated data reports 64 table-derived rows with a matching official claim, 14 official supplement rows, and 1,335 table-derived rows without a matching curated primary-source claim. That last category is an explicit research gap, not a claim that the rows are false. Missing dates, dimensions, quantities, or specifications remain `Not documented`.
 
+The display taxonomy uses only `army`, `navy`, and `airforce` as primary service domains. For cross-service rows, the first source-listed service is retained as the primary `domain`, while all applicable services are authoritative in `service_domains` and marked with `joint-service`. `service_status` is restricted to `Deployed`, `Decommissioned`, and `Planned`; the original normalized lifecycle state remains in `status` and the source wording remains in `source_status`.
+
 ## Source hierarchy and scope
 
 The primary-source checks prioritize official DRDO product pages and PIB/Ministry of Defence releases. These are used for current service status, intended role, procurement quantities, trial outcomes, and recent commissioning dates. The broad inventory remains based on the registered source pages because no public official consolidated inventory was found during this audit.

@@ -1,17 +1,17 @@
 source_key,source_url,source_table,source_row,retrieved_at,Ship | Missile Boat,Pennant | Missile Boat,Class | Missile Boat,Commissioned | Missile Boat,Decommissioned | Missile Boat,Fate | Missile Boat,Notes | Missile Boat
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,1,2026-09-15T03:49:19Z,INS Veer,K82,Vidyut Class,2 April 1971,31 December 1982,,Sunk PNS Muhafiz during Operation Trident (1971).
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,2,2026-09-15T03:49:19Z,INS Nirbhik,K88,Vidyut Class,20 February 1971,31 December 1986,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,3,2026-09-15T03:49:19Z,INS Nipat,K86,Vidyut Class,26 April 1971,29 February 1988,,"Destroyed the ammunition ship MV Venus Challenger, and the destroyer PNS Shah Jahan and the Karachi oil tanks during Operation Trident (1971)."
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,4,2026-09-15T03:49:19Z,INS Nirghat,K89,Vidyut Class,29 January 1971,31 July 1989,,Sunk the PNS Khaibar during Operation Trident (1971).
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,5,2026-09-15T03:49:19Z,INS Vinash,K85,Vidyut Class,20 January 1971,15 January 1990,,"Sunk the merchant MV Gulf Star, MV Harmattan, and badly damaged the Pakistani Fleet Tanker PNS Dacca, which was later scrapped, during Operation Python in 1971."
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,6,2026-09-15T03:49:19Z,INS Nashak,K87,Vidyut Class,19 March 1971,31 December 1990,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,7,2026-09-15T03:49:19Z,INS Vidyut,K83,Vidyut Class,16 February 1971,31 March 1991,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,8,2026-09-15T03:49:19Z,INS Vijeta,K84,Vidyut Class,27 March 1971,30 June 1992,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,9,2026-09-15T03:49:19Z,INS Pratap,K92,Chamak Class,17 February 1976,17 May 1996,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,10,2026-09-15T03:49:19Z,INS Charag,K97,Chamak Class,17 October 1977,17 May 1996,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,11,2026-09-15T03:49:19Z,INS Prachand,K90,Chamak Class,17 February 1976,29 December 1999,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,12,2026-09-15T03:49:19Z,INS Prabal,K93,Chamak Class,17 February 1976,29 December 1999,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,13,2026-09-15T03:49:19Z,INS Pralaya,K91,Chamak Class,17 February 1976,8 June 2001,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,14,2026-09-15T03:49:19Z,INS Chapal,K94,Chamak Class,4 November 1976,5 May 2005,"Preserved at Karwar, Karnataka",
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,15,2026-09-15T03:49:19Z,INS Chamak,K95,Chamak Class,4 November 1976,5 May 2005,,
-navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,16,2026-09-15T03:49:19Z,INS Chatak,K96,Chamak Class,9 February 1977,5 May 2005,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,1,2026-09-15T04:05:32Z,INS Veer,K82,Vidyut Class,2 April 1971,31 December 1982,,Sunk PNS Muhafiz during Operation Trident (1971).
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,2,2026-09-15T04:05:32Z,INS Nirbhik,K88,Vidyut Class,20 February 1971,31 December 1986,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,3,2026-09-15T04:05:32Z,INS Nipat,K86,Vidyut Class,26 April 1971,29 February 1988,,"Destroyed the ammunition ship MV Venus Challenger, and the destroyer PNS Shah Jahan and the Karachi oil tanks during Operation Trident (1971)."
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,4,2026-09-15T04:05:32Z,INS Nirghat,K89,Vidyut Class,29 January 1971,31 July 1989,,Sunk the PNS Khaibar during Operation Trident (1971).
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,5,2026-09-15T04:05:32Z,INS Vinash,K85,Vidyut Class,20 January 1971,15 January 1990,,"Sunk the merchant MV Gulf Star, MV Harmattan, and badly damaged the Pakistani Fleet Tanker PNS Dacca, which was later scrapped, during Operation Python in 1971."
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,6,2026-09-15T04:05:32Z,INS Nashak,K87,Vidyut Class,19 March 1971,31 December 1990,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,7,2026-09-15T04:05:32Z,INS Vidyut,K83,Vidyut Class,16 February 1971,31 March 1991,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,8,2026-09-15T04:05:32Z,INS Vijeta,K84,Vidyut Class,27 March 1971,30 June 1992,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,9,2026-09-15T04:05:32Z,INS Pratap,K92,Chamak Class,17 February 1976,17 May 1996,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,10,2026-09-15T04:05:32Z,INS Charag,K97,Chamak Class,17 October 1977,17 May 1996,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,11,2026-09-15T04:05:32Z,INS Prachand,K90,Chamak Class,17 February 1976,29 December 1999,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,12,2026-09-15T04:05:32Z,INS Prabal,K93,Chamak Class,17 February 1976,29 December 1999,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,13,2026-09-15T04:05:32Z,INS Pralaya,K91,Chamak Class,17 February 1976,8 June 2001,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,14,2026-09-15T04:05:32Z,INS Chapal,K94,Chamak Class,4 November 1976,5 May 2005,"Preserved at Karwar, Karnataka",
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,15,2026-09-15T04:05:32Z,INS Chamak,K95,Chamak Class,4 November 1976,5 May 2005,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,8,16,2026-09-15T04:05:32Z,INS Chatak,K96,Chamak Class,9 February 1977,5 May 2005,,
