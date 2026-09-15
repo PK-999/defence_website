@@ -1,0 +1,10 @@
+source_key,source_url,source_table,source_row,retrieved_at,Family,Name,Type,Designer,Guidance,Warhead,Intr.,Status,Image,Ref.
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,1,2026-09-15T03:49:19Z,Paveway,Paveway-III,Guided bomb,Texas Instruments,Beam riding,907 kg,1994,In service,,
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,2,2026-09-15T03:49:19Z,BGL,BGL,Guided bomb,Matra,Beam riding,,1995,In service,,
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,3,2026-09-15T03:49:19Z,Griffin LGB,Griffin LGB,Guided bomb,IAI,Beam riding,,2006,In service,,
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,4,2026-09-15T03:49:19Z,KAB-500,KAB-500L,Guided bomb,TMC,Beam riding,450 kg,2007,In service,,
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,5,2026-09-15T03:49:19Z,Spice,Spice 2000,Guided bomb,Rafael,Beam riding,113 kg,2009,In service,,
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,6,2026-09-15T03:49:19Z,Sudarshan,Sudarshan,Guided bomb,DRDO,Beam riding,450 kg,2013,In service,,
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,7,2026-09-15T03:49:19Z,CBU,SBU-97,Guided bomb,Textron,Beam riding,450 kg,2017,In service,,
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,8,2026-09-15T03:49:19Z,Krasnopol,Krasnopol,Guided shell,KBP,Beam riding,50 kg,2001,In service,,
+indian_military_missiles,https://en.wikipedia.org/wiki/List_of_Indian_military_missiles,8,9,2026-09-15T03:49:19Z,M982 Excalibur,M982 Excalibur,Guided shell,ARL AARDE,Beam riding,5.4 kg,2020,In service,,

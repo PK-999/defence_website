@@ -1,0 +1,43 @@
+source_key,source_url,source_table,source_row,retrieved_at,Ship | Ocean Going Minesweeper,Pennant | Ocean Going Minesweeper,Class | Ocean Going Minesweeper,Commissioned | Ocean Going Minesweeper,Decommissioned | Ocean Going Minesweeper,Fate | Ocean Going Minesweeper,Notes | Ocean Going Minesweeper
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,1,2026-09-15T03:49:19Z,HMIS Oostcapelle,,unique ship,before 1939,before 1947,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,2,2026-09-15T03:49:19Z,HMIS Irawadi,,unique ship,before 1939,before 1947,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,3,2026-09-15T03:49:19Z,HMIS Kathiawar,J155,Bangor Class,23 December 1942,1948,Transferred to Pakistan as PNS Chittagong.,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,4,2026-09-15T03:49:19Z,HMIS Baluchistan,J182,Bangor Class,28 October 1942,1948,Transferred to Pakistan as PNS Baluchistan.,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,5,2026-09-15T03:49:19Z,HMIS Oudh,J245,Bangor Class,21 October 1943,1948,Transferred to Pakistan as PNS Dacca.,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,6,2026-09-15T03:49:19Z,HMIS Malwa,J55,Bangor Class,1945,1948,Transferred to Pakistan as PNS Peshawar.,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,7,2026-09-15T03:49:19Z,HMIS Deccan,J129,Bangor Class,30 March 1945,1948,Sold in 1949 as the mercantile Kennery.,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,8,2026-09-15T03:49:19Z,HMIS Orissa,J200,Bangor Class,14 March 1942,1949,Scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,9,2026-09-15T03:49:19Z,HMIS Khyber,J190,Bangor Class,12 August 1942,1949,Scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,10,2026-09-15T03:49:19Z,HMIS Carnatic,J199,Bangor Class,27 October 1942,1949,Scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,11,2026-09-15T03:49:19Z,HMIS Kumaon,J164,Bangor Class,30 November 1942,1949,Scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,12,2026-09-15T03:49:19Z,HMIS Bihar,J247,Bangor Class,27 February 1944,1949,Scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,13,2026-09-15T03:49:19Z,HMIS Rajputana,J197,Bangor Class,30 April 1942,1961,Scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,14,2026-09-15T03:49:19Z,HMIS Konkan,J228,Bangor Class,12 June 1942,31 Jul 1972,Scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,15,2026-09-15T03:49:19Z,HMIS Rohilkhand,J180,Bangor Class,5 February 1943,1963,Scrapped,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,16,2026-09-15T03:49:19Z,INS Pondicherry,M61,Pondicherry class,2 February 1978,5 October 2007,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,17,2026-09-15T03:49:19Z,INS Porbandar,M62,Pondicherry class,19 December 1978,2007,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,18,2026-09-15T03:49:19Z,INS Bedi,M63,Pondicherry class,27 April 1979,22 September 2009,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,19,2026-09-15T03:49:19Z,INS Bhavnagar,M64,Pondicherry class,27 April 1979,26 December 2009,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,20,2026-09-15T03:49:19Z,INS Ratnagiri,M66,Pondicherry class,10 June 1980,22 May 2012,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,21,2026-09-15T03:49:19Z,INS Allepey,M65,Pondicherry class,10 June 1980,13 March 2015,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,22,2026-09-15T03:49:19Z,INS Karwar,M67,Pondicherry class,14 July 1986,9 May 2017,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,23,2026-09-15T03:49:19Z,INS Cannonare,M68,Pondicherry class,17 December 1987,23 March 2018,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,24,2026-09-15T03:49:19Z,INS Cuddalore,M69,Pondicherry class,29 October 1987,23 March 2018,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,25,2026-09-15T03:49:19Z,INS Kakinada,M70,Pondicherry class,23 December 1986,9 May 2017,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,26,2026-09-15T03:49:19Z,INS Konkan,M72,Pondicherry class,8 October 1988,23 March 2018,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,27,2026-09-15T03:49:19Z,INS Kozhikode,M71,Pondicherry class,19 December 1988,13 April 2019,,Last ship of this class to be decommissioned.
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,28,2026-09-15T03:49:19Z,Coastal Minesweeper,Coastal Minesweeper,Coastal Minesweeper,Coastal Minesweeper,Coastal Minesweeper,Coastal Minesweeper,Coastal Minesweeper
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,29,2026-09-15T03:49:19Z,INS Cuddalore,M90,Ton class,1956,30 June 1979,,ex-Royal Navy HMS Wennington
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,30,2026-09-15T03:49:19Z,INS Cannanore,M91,Ton class,1956,31 Mar 1981,,ex-Royal Navy HMS Whitton
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,31,2026-09-15T03:49:19Z,INS Karwar,M92,Ton class,1956,31 Mar 1981,,ex-Royal Navy HMS Overton
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,32,2026-09-15T03:49:19Z,INS Kakinada,M93,Ton class,1956,30 June 1979,,ex-Royal Navy HMS Durweston
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,33,2026-09-15T03:49:19Z,INS Mulki,M87,Mahé Class,10 May 1984,16 May 2003,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,34,2026-09-15T03:49:19Z,INS Magdala,M88,Mahé Class,10 May 1984,31 Oct 2001,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,35,2026-09-15T03:49:19Z,INS Malvan,M84,Mahé Class,16 May 1983,3 Jan 2003,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,36,2026-09-15T03:49:19Z,INS Mangrol,M85,Mahé Class,16 May 1983,7 Apr 2004,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,37,2026-09-15T03:49:19Z,INS Mahé,M83,Mahé Class,16 May 1983,15 May 2006,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,38,2026-09-15T03:49:19Z,INS Malpe,M86,Mahé Class,10 May 1984,4 Dec 2006,,
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,39,2026-09-15T03:49:19Z,Inshore Minesweeper,Inshore Minesweeper,Inshore Minesweeper,Inshore Minesweeper,Inshore Minesweeper,Inshore Minesweeper,Inshore Minesweeper
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,40,2026-09-15T03:49:19Z,INS Bassein,M2707,Ham class,14 June 1955,1994,,ex-Royal Navy HMS Littleham
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,41,2026-09-15T03:49:19Z,INS Bimlipatan,M2705,Ham class,14 June 1955,1994,,ex-Royal Navy HMS Hildersham
+navy_historical_ships,https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy,7,42,2026-09-15T03:49:19Z,,,,,,,

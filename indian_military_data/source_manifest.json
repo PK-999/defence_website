@@ -1,0 +1,359 @@
+{
+  "generated_at": "2026-09-15T03:49:19Z",
+  "official_evidence_sources": [
+    {
+      "branch_aliases": [
+        "Indian Army",
+        "Indian Air Force"
+      ],
+      "claim_id": "drdo_akash_operational",
+      "field": "status_and_role",
+      "published_date": "Not stated",
+      "publisher": "DRDO",
+      "system_aliases": [
+        "Akash"
+      ],
+      "title": "Akash",
+      "url": "https://drdo.gov.in/drdo/en/offerings/products/akash",
+      "value": "Inducted and operational with the Indian Army and Indian Air Force; short-range surface-to-air missile system."
+    },
+    {
+      "branch_aliases": [
+        "Indian Army",
+        "Indian Navy"
+      ],
+      "claim_id": "drdo_brahmos_operational",
+      "field": "status_and_role",
+      "published_date": "Not stated",
+      "publisher": "DRDO",
+      "system_aliases": [
+        "BrahMos",
+        "Brahmos"
+      ],
+      "title": "BrahMos",
+      "url": "https://drdo.gov.in/drdo/en/offerings/products/brahmos",
+      "value": "Inducted and operational with the Indian Navy and Indian Army; land-, sea-, and air-launched supersonic cruise-missile system."
+    },
+    {
+      "branch_aliases": [
+        "Indian Army",
+        "Indian Air Force"
+      ],
+      "claim_id": "drdo_mrsam_users",
+      "field": "status_and_users",
+      "published_date": "Not stated",
+      "publisher": "DRDO",
+      "system_aliases": [
+        "MRSAM",
+        "MR-SAM"
+      ],
+      "title": "MRSAM",
+      "url": "https://drdo.gov.in/drdo/en/offerings/products/mrsam",
+      "value": "Jointly developed with IAI for IAF and Army Air Defence; firing units have been delivered to both users."
+    },
+    {
+      "branch_aliases": [
+        "Indian Army"
+      ],
+      "claim_id": "drdo_guided_pinaka_induction_recommendation",
+      "field": "development_status",
+      "published_date": "Not stated",
+      "publisher": "DRDO",
+      "system_aliases": [
+        "Pinaka"
+      ],
+      "title": "Guided Pinaka Rocket System",
+      "url": "https://drdo.gov.in/drdo/en/offerings/products/guided-pinaka-rocket-system",
+      "value": "Guided Pinaka development and qualification activities were reported complete, with the trial team recommending induction; upgraded in-service launchers remained under evaluation."
+    },
+    {
+      "branch_aliases": [
+        "Indian Air Force"
+      ],
+      "claim_id": "pib_tejas_mk1a_contract",
+      "field": "contract_and_delivery",
+      "published_date": "25 September 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "Tejas Mk1A",
+        "HAL Tejas"
+      ],
+      "title": "MoD signs ₹62,370 crore contract with HAL for procurement of 97 LCA Mk1A aircraft for IAF",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2171108&lang=2&reg=3",
+      "value": "MoD signed a contract for 97 LCA Mk1A aircraft on 25 September 2025; deliveries were stated to start in 2027–28 and complete over six years."
+    },
+    {
+      "branch_aliases": [
+        "Indian Army"
+      ],
+      "claim_id": "pib_acada_contract",
+      "field": "contract_and_quantity",
+      "published_date": "26 February 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "ACADA"
+      ],
+      "title": "Indian Army procures critical CBRN defence equipment",
+      "url": "https://www.pib.gov.in/pressreleasepage.aspx?lang=2&prid=2106362&reg=48",
+      "value": "Contract signed on 25 February 2025 for 223 Automatic Chemical Agent Detection and Alarm systems designed by DRDO's Defence Research and Development Establishment and procured from L&T."
+    },
+    {
+      "branch_aliases": [
+        "Indian Army"
+      ],
+      "claim_id": "pib_atags_contract",
+      "field": "contract_and_role",
+      "published_date": "26 March 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "ATAGS",
+        "Advanced Towed Artillery Gun System"
+      ],
+      "title": "MoD inks ₹6,900 crore contracts for ATAGS and HMV 6x6 gun-towing vehicles",
+      "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2115365&lang=2&reg=48",
+      "value": "MoD signed contracts on 26 March 2025 for 155 mm/52 calibre ATAGS and 6x6 gun-towing vehicles; ATAGS is intended to replace vintage smaller-calibre guns."
+    },
+    {
+      "branch_aliases": [
+        "Indian Army"
+      ],
+      "claim_id": "pib_namis_contract",
+      "field": "contract_and_role",
+      "published_date": "27 March 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "NAMIS",
+        "NAMICA"
+      ],
+      "title": "MoD inks contracts for NAMIS Tracked and light vehicles",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2115804&lang=2&reg=48&s=09",
+      "value": "MoD signed a contract on 27 March 2025 for the NAMIS tracked anti-tank weapon platform; the system is intended to modernize mechanized-infantry anti-tank capability."
+    },
+    {
+      "branch_aliases": [
+        "Indian Army"
+      ],
+      "claim_id": "pib_nag_mk2_trials",
+      "field": "trial_status",
+      "published_date": "13 January 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "Nag Mk 2"
+      ],
+      "title": "Successful field evaluation trials of Nag Mk 2",
+      "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2092585&lang=2&reg=48",
+      "value": "Field evaluation trials were reported successful on 13 January 2025 and the weapon system was described as ready for induction."
+    },
+    {
+      "branch_aliases": [
+        "Indian Army"
+      ],
+      "claim_id": "pib_invar_contract",
+      "field": "contract_and_role",
+      "published_date": "13 November 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "INVAR",
+        "3UBK-Invar",
+        "9M119"
+      ],
+      "title": "MoD and BDL sign contract for INVAR anti-tank missiles",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2189725&lang=2&reg=48",
+      "value": "MoD and BDL signed a ₹2,095.70 crore contract on 13 November 2025 for INVAR anti-tank missiles for T-90 tanks."
+    },
+    {
+      "branch_aliases": [
+        "Indian Navy"
+      ],
+      "claim_id": "pib_ins_surat_nilgiri_vaghsheer",
+      "field": "commissioning_date",
+      "published_date": "15 January 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "INS Surat",
+        "INS Nilgiri",
+        "INS Vaghsheer"
+      ],
+      "title": "PM dedicates INS Surat, INS Nilgiri and INS Vaghsheer",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2093018&lang=1&reg=20",
+      "value": "The three platforms were commissioned on 15 January 2025."
+    },
+    {
+      "branch_aliases": [
+        "Indian Navy"
+      ],
+      "claim_id": "pib_ins_arnala",
+      "field": "commissioning_role_dimensions",
+      "published_date": "18 June 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "INS Arnala",
+        "Arnala class"
+      ],
+      "title": "INS Arnala commissioned into the Indian Navy",
+      "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2137263&lang=2&reg=48",
+      "value": "INS Arnala was commissioned on 18 June 2025; it is an ASW shallow-water craft, 77 m long and over 1,490 tonnes, designed for subsurface surveillance/interdiction, search and rescue, and low-intensity maritime operations."
+    },
+    {
+      "branch_aliases": [
+        "Indian Navy"
+      ],
+      "claim_id": "pib_ins_nistar",
+      "field": "commissioning_role",
+      "published_date": "18 July 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "INS Nistar",
+        "Nistar class"
+      ],
+      "title": "INS Nistar commissioned in Vizag",
+      "url": "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2145766",
+      "value": "INS Nistar, the first indigenously designed and constructed diving support vessel, was commissioned on 18 July 2025 for deep-sea diving and rescue operations."
+    },
+    {
+      "branch_aliases": [
+        "Indian Navy"
+      ],
+      "claim_id": "pib_ins_tamal",
+      "field": "commissioning_date",
+      "published_date": "1 July 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "INS Tamal",
+        "Talwar class"
+      ],
+      "title": "INS Tamal commissioned into the Indian Navy",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2141361&lang=2&reg=48",
+      "value": "INS Tamal was commissioned on 1 July 2025; it is the eighth Project 1135.6 multi-role stealth frigate and second additional Tushil-class ship."
+    },
+    {
+      "branch_aliases": [
+        "Indian Navy"
+      ],
+      "claim_id": "pib_ins_udaygiri_himgiri",
+      "field": "commissioning_date",
+      "published_date": "26 August 2025",
+      "publisher": "Ministry of Defence / PIB",
+      "system_aliases": [
+        "INS Udaygiri",
+        "INS Himgiri",
+        "Udaygiri class",
+        "Himgiri class"
+      ],
+      "title": "INS Udaygiri and INS Himgiri commissioned",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2160941&lang=1&reg=37",
+      "value": "INS Udaygiri and INS Himgiri were commissioned on 26 August 2025 as Project 17A stealth frigates."
+    }
+  ],
+  "selected_sources": [
+    {
+      "branch": "Indian Army",
+      "context_status": "in_service",
+      "description": "Army equipment tables, including vehicles, artillery, air defence, missiles, small arms, and support systems.",
+      "domain": "land equipment and weapons",
+      "key": "army_equipment",
+      "scope": "current inventory with historical and future status notes",
+      "url": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army"
+    },
+    {
+      "branch": "Indian Air Force",
+      "context_status": "in_service",
+      "description": "Current aircraft tables grouped by combat, transport, helicopter, trainer, and support roles.",
+      "domain": "aircraft",
+      "key": "iaf_active_aircraft",
+      "scope": "active aircraft inventory",
+      "url": "https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft"
+    },
+    {
+      "branch": "Indian Air Force",
+      "context_status": "historical",
+      "description": "Historical aircraft tables with introduction, retirement, count, origin, role, and notes.",
+      "domain": "historical aircraft",
+      "key": "iaf_historical_aircraft",
+      "scope": "historical and retired Air Force aircraft",
+      "url": "https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force"
+    },
+    {
+      "branch": "Indian Air Force",
+      "context_status": "planned_or_proposed",
+      "description": "Future Air Force procurement and development programme tables.",
+      "domain": "future aircraft and programmes",
+      "key": "iaf_future_programmes",
+      "scope": "ordered, under-development, planned, and proposed systems",
+      "url": "https://en.wikipedia.org/wiki/Future_of_the_Indian_Air_Force"
+    },
+    {
+      "branch": "Indian Air Force",
+      "context_status": null,
+      "description": "Air Force overview tables that include air defence and missile systems.",
+      "domain": "air force weapon systems",
+      "key": "iaf_weapon_systems",
+      "scope": "air defence and missile system tables in the service overview",
+      "url": "https://en.wikipedia.org/wiki/Indian_Air_Force"
+    },
+    {
+      "branch": "Indian Army",
+      "context_status": null,
+      "description": "Army infantry weapons, protective equipment, explosives, anti-tank systems, and future procurements.",
+      "domain": "infantry weapons and individual equipment",
+      "key": "army_infantry_equipment",
+      "scope": "current infantry equipment and future procurements",
+      "url": "https://en.wikipedia.org/wiki/List_of_infantry_equipment_of_the_Indian_Army"
+    },
+    {
+      "branch": "Indian Army",
+      "context_status": null,
+      "description": "Secondary-source Army equipment tables used to supplement historical and legacy coverage not present in the supplied current-inventory page.",
+      "domain": "legacy and historical Army equipment",
+      "key": "army_legacy_equipment",
+      "scope": "supplemental legacy, retired, and historical equipment records",
+      "url": "https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json"
+    },
+    {
+      "branch": "Indian Navy",
+      "context_status": "in_service",
+      "description": "Current Navy fleet tables with classes, vessels, pennant numbers, displacement, commissioning year, origin, and notes.",
+      "domain": "ships and submarines",
+      "key": "navy_active_ships",
+      "scope": "active ships and naval craft",
+      "url": "https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships"
+    },
+    {
+      "branch": "Indian Navy",
+      "context_status": "historical",
+      "description": "Historical Navy vessel tables, including former and decommissioned classes.",
+      "domain": "historical ships and submarines",
+      "key": "navy_historical_ships",
+      "scope": "historical, former, and legacy Navy vessels",
+      "url": "https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy"
+    },
+    {
+      "branch": "Indian Navy",
+      "context_status": "planned_or_proposed",
+      "description": "Future Navy platform and weapon programme tables.",
+      "domain": "future ships, aircraft, and weapons",
+      "key": "navy_future_programmes",
+      "scope": "ordered, under-construction, under-development, planned, and proposed systems",
+      "url": "https://en.wikipedia.org/wiki/Future_of_the_Indian_Navy"
+    },
+    {
+      "branch": "Indian Navy",
+      "context_status": null,
+      "description": "Navy missile, torpedo, gun, anti-submarine, and other weapon-system tables.",
+      "domain": "naval weapon systems",
+      "key": "navy_weapon_systems",
+      "scope": "current and future naval weapons",
+      "url": "https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy"
+    },
+    {
+      "branch": "Indian Army · Indian Navy · Indian Air Force",
+      "context_status": null,
+      "description": "Cross-service missile tables with designers, guidance, range, warhead, service date, and status fields.",
+      "domain": "joint missile systems",
+      "key": "indian_military_missiles",
+      "scope": "historical, current, and development-stage missile systems",
+      "url": "https://en.wikipedia.org/wiki/List_of_Indian_military_missiles"
+    }
+  ],
+  "source_registry_size": 12
+}

@@ -1,0 +1,973 @@
+{
+  "branch_counts": {
+    "Indian Air Force": 172,
+    "Indian Army": 483,
+    "Indian Army · Indian Navy · Indian Air Force": 153,
+    "Indian Navy": 605
+  },
+  "canonical_rows": 1413,
+  "coverage_notes": [
+    {
+      "branch": "Indian Army",
+      "note": "No authoritative standalone historical Army inventory was available in the registered open sources; supplemental legacy records are included, and undocumented status is not inferred.",
+      "state": "historical"
+    },
+    {
+      "branch": "Indian Army · Indian Navy · Indian Air Force",
+      "note": "15 curated DRDO/Ministry of Defence claims were exported; 14 additive official supplement records were included. Unmatched source-table rows remain explicitly not independently verified.",
+      "state": "official_verification"
+    }
+  ],
+  "generated_at": "2026-09-15T03:49:19Z",
+  "official_evidence_claims": 15,
+  "official_supplement_rows": 14,
+  "raw_tables": 114,
+  "selected_sources": [
+    "army_equipment",
+    "iaf_active_aircraft",
+    "iaf_historical_aircraft",
+    "iaf_future_programmes",
+    "iaf_weapon_systems",
+    "army_infantry_equipment",
+    "army_legacy_equipment",
+    "navy_active_ships",
+    "navy_historical_ships",
+    "navy_future_programmes",
+    "navy_weapon_systems",
+    "indian_military_missiles"
+  ],
+  "source_runs": [
+    {
+      "cached": true,
+      "canonical_rows": 152,
+      "error": null,
+      "key": "army_equipment",
+      "raw_tables": 18,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Armoured combat vehicles",
+          "raw_file": "raw/army_equipment_table_01.csv",
+          "rows": 21,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Utility and staff transport",
+          "raw_file": "raw/army_equipment_table_02.csv",
+          "rows": 19,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Field transport vehicles",
+          "raw_file": "raw/army_equipment_table_03.csv",
+          "rows": 10,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Engineering and support vehicles",
+          "raw_file": "raw/army_equipment_table_04.csv",
+          "rows": 15,
+          "table": 4
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Unmanned ground vehicles",
+          "raw_file": "raw/army_equipment_table_05.csv",
+          "rows": 5,
+          "table": 5
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Howitzers and field guns",
+          "raw_file": "raw/army_equipment_table_06.csv",
+          "rows": 15,
+          "table": 6
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Rocket artillery",
+          "raw_file": "raw/army_equipment_table_07.csv",
+          "rows": 4,
+          "table": 7
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Surface-to-air missiles",
+          "raw_file": "raw/army_equipment_table_08.csv",
+          "rows": 7,
+          "table": 8
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Anti-aircraft guns",
+          "raw_file": "raw/army_equipment_table_09.csv",
+          "rows": 8,
+          "table": 9
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Radars",
+          "raw_file": "raw/army_equipment_table_10.csv",
+          "rows": 11,
+          "table": 10
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Sensors and processing systems",
+          "raw_file": "raw/army_equipment_table_11.csv",
+          "rows": 3,
+          "table": 11
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Jammers and electronic warfare systems",
+          "raw_file": "raw/army_equipment_table_12.csv",
+          "rows": 5,
+          "table": 12
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Maximum range of 150 km",
+          "raw_file": "raw/army_equipment_table_13.csv",
+          "rows": 4,
+          "table": 13
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Maximum range of 350 km",
+          "raw_file": "raw/army_equipment_table_14.csv",
+          "rows": 2,
+          "table": 14
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Maximum range of 3,500 km",
+          "raw_file": "raw/army_equipment_table_15.csv",
+          "rows": 6,
+          "table": 15
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Range greater than 3,500 km",
+          "raw_file": "raw/army_equipment_table_16.csv",
+          "rows": 3,
+          "table": 16
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Vessels",
+          "raw_file": "raw/army_equipment_table_17.csv",
+          "rows": 3,
+          "table": 17
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Loitering munition",
+          "raw_file": "raw/army_equipment_table_18.csv",
+          "rows": 11,
+          "table": 18
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 95,
+      "error": null,
+      "key": "iaf_active_aircraft",
+      "raw_tables": 4,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Air Force",
+          "raw_file": "raw/iaf_active_aircraft_table_01.csv",
+          "rows": 57,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Army Aviation Corps",
+          "raw_file": "raw/iaf_active_aircraft_table_02.csv",
+          "rows": 19,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Naval Air Arm",
+          "raw_file": "raw/iaf_active_aircraft_table_03.csv",
+          "rows": 19,
+          "table": 3
+        },
+        {
+          "excluded_rows": 4,
+          "heading": "Coast Guard",
+          "raw_file": "raw/iaf_active_aircraft_table_04.csv",
+          "rows": 0,
+          "table": 4
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 75,
+      "error": null,
+      "key": "iaf_historical_aircraft",
+      "raw_tables": 1,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Aircraft",
+          "raw_file": "raw/iaf_historical_aircraft_table_01.csv",
+          "rows": 75,
+          "table": 1
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/List_of_historical_aircraft_of_the_Indian_Air_Force"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 15,
+      "error": null,
+      "key": "iaf_future_programmes",
+      "raw_tables": 1,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Procurement programmes",
+          "raw_file": "raw/iaf_future_programmes_table_01.csv",
+          "rows": 15,
+          "table": 1
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/Future_of_the_Indian_Air_Force"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 24,
+      "error": null,
+      "key": "iaf_weapon_systems",
+      "raw_tables": 8,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Structure",
+          "raw_file": "raw/iaf_weapon_systems_table_01.csv",
+          "rows": 0,
+          "table": 1
+        },
+        {
+          "excluded_rows": 7,
+          "heading": "Commands",
+          "raw_file": "raw/iaf_weapon_systems_table_02.csv",
+          "rows": 0,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "IAF officer strength on 1 March 2022 by rank (not including Armed Forces Medical Services ) [ 165 ]",
+          "raw_file": "raw/iaf_weapon_systems_table_03.csv",
+          "rows": 0,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "IAF enlisted strength on 1 March 2022 by rank [ 165 ]",
+          "raw_file": "raw/iaf_weapon_systems_table_04.csv",
+          "rows": 0,
+          "table": 4
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Equivalent ranks of Indian military",
+          "raw_file": "raw/iaf_weapon_systems_table_05.csv",
+          "rows": 0,
+          "table": 5
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Anti-tank guided missiles",
+          "raw_file": "raw/iaf_weapon_systems_table_06.csv",
+          "rows": 5,
+          "table": 6
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Ballistic and cruise missiles",
+          "raw_file": "raw/iaf_weapon_systems_table_07.csv",
+          "rows": 6,
+          "table": 7
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Air defence systems",
+          "raw_file": "raw/iaf_weapon_systems_table_08.csv",
+          "rows": 13,
+          "table": 8
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/Indian_Air_Force"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 108,
+      "error": null,
+      "key": "army_infantry_equipment",
+      "raw_tables": 6,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Individual equipment",
+          "raw_file": "raw/army_infantry_equipment_table_01.csv",
+          "rows": 21,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Knives and bayonets",
+          "raw_file": "raw/army_infantry_equipment_table_02.csv",
+          "rows": 5,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Small arms",
+          "raw_file": "raw/army_infantry_equipment_table_03.csv",
+          "rows": 52,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Explosives",
+          "raw_file": "raw/army_infantry_equipment_table_04.csv",
+          "rows": 19,
+          "table": 4
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "MANPADS",
+          "raw_file": "raw/army_infantry_equipment_table_05.csv",
+          "rows": 4,
+          "table": 5
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Anti-tank missiles",
+          "raw_file": "raw/army_infantry_equipment_table_06.csv",
+          "rows": 7,
+          "table": 6
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/List_of_infantry_equipment_of_the_Indian_Army"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 199,
+      "error": null,
+      "key": "army_legacy_equipment",
+      "raw_tables": 12,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Small arms [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_01.csv",
+          "rows": 27,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Explosives, rockets and missile systems [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_02.csv",
+          "rows": 16,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Utility and miscellaneous [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_03.csv",
+          "rows": 24,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Engineering and support [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_04.csv",
+          "rows": 17,
+          "table": 4
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Mine protected, Mine clearing and Mine laying [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_05.csv",
+          "rows": 6,
+          "table": 5
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Combat [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_06.csv",
+          "rows": 25,
+          "table": 6
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Artillery [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_07.csv",
+          "rows": 25,
+          "table": 7
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Anti-tank [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_08.csv",
+          "rows": 15,
+          "table": 8
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Ballistic and cruise [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_09.csv",
+          "rows": 13,
+          "table": 9
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Air defence [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_10.csv",
+          "rows": 21,
+          "table": 10
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Helicopters [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_11.csv",
+          "rows": 7,
+          "table": 11
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "UAVs [ ]",
+          "raw_file": "raw/army_legacy_equipment_table_12.csv",
+          "rows": 3,
+          "table": 12
+        }
+      ],
+      "url": "https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 236,
+      "error": null,
+      "key": "navy_active_ships",
+      "raw_tables": 20,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Heritage fleet",
+          "raw_file": "raw/navy_active_ships_table_01.csv",
+          "rows": 1,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Submarine fleet",
+          "raw_file": "raw/navy_active_ships_table_02.csv",
+          "rows": 19,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Aircraft carriers",
+          "raw_file": "raw/navy_active_ships_table_03.csv",
+          "rows": 2,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Amphibious warfare ships",
+          "raw_file": "raw/navy_active_ships_table_04.csv",
+          "rows": 13,
+          "table": 4
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Destroyers",
+          "raw_file": "raw/navy_active_ships_table_05.csv",
+          "rows": 13,
+          "table": 5
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Frigates",
+          "raw_file": "raw/navy_active_ships_table_06.csv",
+          "rows": 20,
+          "table": 6
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Corvettes",
+          "raw_file": "raw/navy_active_ships_table_07.csv",
+          "rows": 23,
+          "table": 7
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Patrol vessels",
+          "raw_file": "raw/navy_active_ships_table_08.csv",
+          "rows": 49,
+          "table": 8
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Replenishment ships",
+          "raw_file": "raw/navy_active_ships_table_09.csv",
+          "rows": 4,
+          "table": 9
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Instrumentation ships",
+          "raw_file": "raw/navy_active_ships_table_10.csv",
+          "rows": 2,
+          "table": 10
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Research and survey vessels",
+          "raw_file": "raw/navy_active_ships_table_11.csv",
+          "rows": 11,
+          "table": 11
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Research and survey vessels",
+          "raw_file": "raw/navy_active_ships_table_12.csv",
+          "rows": 1,
+          "table": 12
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Diving support vessels",
+          "raw_file": "raw/navy_active_ships_table_13.csv",
+          "rows": 4,
+          "table": 13
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Diving support vessels",
+          "raw_file": "raw/navy_active_ships_table_14.csv",
+          "rows": 2,
+          "table": 14
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Training ships",
+          "raw_file": "raw/navy_active_ships_table_15.csv",
+          "rows": 6,
+          "table": 15
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Tugboats",
+          "raw_file": "raw/navy_active_ships_table_16.csv",
+          "rows": 26,
+          "table": 16
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Miscellaneous vessels",
+          "raw_file": "raw/navy_active_ships_table_17.csv",
+          "rows": 13,
+          "table": 17
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Miscellaneous vessels",
+          "raw_file": "raw/navy_active_ships_table_18.csv",
+          "rows": 2,
+          "table": 18
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Miscellaneous vessels",
+          "raw_file": "raw/navy_active_ships_table_19.csv",
+          "rows": 21,
+          "table": 19
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Miscellaneous vessels",
+          "raw_file": "raw/navy_active_ships_table_20.csv",
+          "rows": 4,
+          "table": 20
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/List_of_active_Indian_Navy_ships"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 243,
+      "error": null,
+      "key": "navy_historical_ships",
+      "raw_tables": 11,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Aircraft carriers",
+          "raw_file": "raw/navy_historical_ships_table_01.csv",
+          "rows": 2,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Submarines",
+          "raw_file": "raw/navy_historical_ships_table_02.csv",
+          "rows": 14,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Cruisers",
+          "raw_file": "raw/navy_historical_ships_table_03.csv",
+          "rows": 2,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Destroyers",
+          "raw_file": "raw/navy_historical_ships_table_04.csv",
+          "rows": 8,
+          "table": 4
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Frigates",
+          "raw_file": "raw/navy_historical_ships_table_05.csv",
+          "rows": 39,
+          "table": 5
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Corvette",
+          "raw_file": "raw/navy_historical_ships_table_06.csv",
+          "rows": 53,
+          "table": 6
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Minesweepers",
+          "raw_file": "raw/navy_historical_ships_table_07.csv",
+          "rows": 39,
+          "table": 7
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Fast Attack Craft",
+          "raw_file": "raw/navy_historical_ships_table_08.csv",
+          "rows": 16,
+          "table": 8
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Amphibious Warfare Ships",
+          "raw_file": "raw/navy_historical_ships_table_09.csv",
+          "rows": 22,
+          "table": 9
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Patrol Ships",
+          "raw_file": "raw/navy_historical_ships_table_10.csv",
+          "rows": 30,
+          "table": 10
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Auxiliaries",
+          "raw_file": "raw/navy_historical_ships_table_11.csv",
+          "rows": 18,
+          "table": 11
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/List_of_ships_of_the_Indian_Navy"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 44,
+      "error": null,
+      "key": "navy_future_programmes",
+      "raw_tables": 18,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Fleet modernisation and expansion",
+          "raw_file": "raw/navy_future_programmes_table_01.csv",
+          "rows": 0,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Nuclear Ballistic Missile Submarines (SSBN)",
+          "raw_file": "raw/navy_future_programmes_table_02.csv",
+          "rows": 2,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Nuclear Attack Submarines (SSN)",
+          "raw_file": "raw/navy_future_programmes_table_03.csv",
+          "rows": 2,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Conventional Submarines (SSK)",
+          "raw_file": "raw/navy_future_programmes_table_04.csv",
+          "rows": 3,
+          "table": 4
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Others",
+          "raw_file": "raw/navy_future_programmes_table_05.csv",
+          "rows": 2,
+          "table": 5
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Aircraft carriers",
+          "raw_file": "raw/navy_future_programmes_table_06.csv",
+          "rows": 2,
+          "table": 6
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Amphibious warfare ships",
+          "raw_file": "raw/navy_future_programmes_table_07.csv",
+          "rows": 2,
+          "table": 7
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Destroyers (DDG)",
+          "raw_file": "raw/navy_future_programmes_table_08.csv",
+          "rows": 2,
+          "table": 8
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Frigates (FFG)",
+          "raw_file": "raw/navy_future_programmes_table_09.csv",
+          "rows": 3,
+          "table": 9
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Corvettes",
+          "raw_file": "raw/navy_future_programmes_table_10.csv",
+          "rows": 3,
+          "table": 10
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Mine countermeasure vessels",
+          "raw_file": "raw/navy_future_programmes_table_11.csv",
+          "rows": 1,
+          "table": 11
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Multi Purpose Vessel",
+          "raw_file": "raw/navy_future_programmes_table_12.csv",
+          "rows": 2,
+          "table": 12
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Patrol vessels",
+          "raw_file": "raw/navy_future_programmes_table_13.csv",
+          "rows": 4,
+          "table": 13
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Replenishment ships",
+          "raw_file": "raw/navy_future_programmes_table_14.csv",
+          "rows": 1,
+          "table": 14
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Survey vessels",
+          "raw_file": "raw/navy_future_programmes_table_15.csv",
+          "rows": 1,
+          "table": 15
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Miscellaneous",
+          "raw_file": "raw/navy_future_programmes_table_16.csv",
+          "rows": 9,
+          "table": 16
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Aircraft",
+          "raw_file": "raw/navy_future_programmes_table_17.csv",
+          "rows": 0,
+          "table": 17
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Missile systems",
+          "raw_file": "raw/navy_future_programmes_table_18.csv",
+          "rows": 5,
+          "table": 18
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/Future_of_the_Indian_Navy"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 55,
+      "error": null,
+      "key": "navy_weapon_systems",
+      "raw_tables": 4,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Guided missiles",
+          "raw_file": "raw/navy_weapon_systems_table_01.csv",
+          "rows": 29,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Torpedoes",
+          "raw_file": "raw/navy_weapon_systems_table_02.csv",
+          "rows": 11,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Naval guns",
+          "raw_file": "raw/navy_weapon_systems_table_03.csv",
+          "rows": 13,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "ASW rocket launchers",
+          "raw_file": "raw/navy_weapon_systems_table_04.csv",
+          "rows": 2,
+          "table": 4
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy"
+    },
+    {
+      "cached": true,
+      "canonical_rows": 153,
+      "error": null,
+      "key": "indian_military_missiles",
+      "raw_tables": 11,
+      "tables": [
+        {
+          "excluded_rows": 0,
+          "heading": "Anti-tank",
+          "raw_file": "raw/indian_military_missiles_table_01.csv",
+          "rows": 16,
+          "table": 1
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Anti-ship",
+          "raw_file": "raw/indian_military_missiles_table_02.csv",
+          "rows": 17,
+          "table": 2
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Air-to-air",
+          "raw_file": "raw/indian_military_missiles_table_03.csv",
+          "rows": 20,
+          "table": 3
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Air-to-surface",
+          "raw_file": "raw/indian_military_missiles_table_04.csv",
+          "rows": 11,
+          "table": 4
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Surface-to-air",
+          "raw_file": "raw/indian_military_missiles_table_05.csv",
+          "rows": 30,
+          "table": 5
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Surface-to-surface",
+          "raw_file": "raw/indian_military_missiles_table_06.csv",
+          "rows": 35,
+          "table": 6
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Anti-satellite",
+          "raw_file": "raw/indian_military_missiles_table_07.csv",
+          "rows": 1,
+          "table": 7
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Guided bombs",
+          "raw_file": "raw/indian_military_missiles_table_08.csv",
+          "rows": 9,
+          "table": 8
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Missile defence",
+          "raw_file": "raw/indian_military_missiles_table_09.csv",
+          "rows": 6,
+          "table": 9
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Multiple rocket",
+          "raw_file": "raw/indian_military_missiles_table_10.csv",
+          "rows": 7,
+          "table": 10
+        },
+        {
+          "excluded_rows": 0,
+          "heading": "Technology demonstrators",
+          "raw_file": "raw/indian_military_missiles_table_11.csv",
+          "rows": 1,
+          "table": 11
+        }
+      ],
+      "url": "https://en.wikipedia.org/wiki/List_of_Indian_military_missiles"
+    }
+  ],
+  "status_counts": {
+    "decommissioned_or_retired": 82,
+    "historical": 254,
+    "in_service": 602,
+    "in_service_and_on_order": 52,
+    "not_documented": 228,
+    "on_order": 74,
+    "planned_or_proposed": 29,
+    "reserve": 8,
+    "under_construction": 14,
+    "under_construction_and_planned": 1,
+    "under_development": 62,
+    "under_trials": 7
+  }
+}

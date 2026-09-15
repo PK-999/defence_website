@@ -1,0 +1,66 @@
+source_key,source_url,source_table,source_row,retrieved_at,Aircraft | Combat,Origin | Combat,Type | Combat,Variant | Combat,In service | Combat,Notes | Combat
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,1,2026-09-15T03:49:19Z,Dassault Mirage 2000,France,Multirole,Mirage 2000H/I,36,All aircraft being upgraded to 2000I variant
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,2,2026-09-15T03:49:19Z,Dassault Rafale,France,Multirole,Rafale EH,28,"Single-seat version, 114 planned"
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,3,2026-09-15T03:49:19Z,Dassault Rafale,France,Multirole,Rafale DH,8,Two-seat version
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,4,2026-09-15T03:49:19Z,HAL Tejas,India,Multirole,Tejas Mk 1,30,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,5,2026-09-15T03:49:19Z,HAL Tejas,India,Multirole,Tejas Mk 1A,–,141 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,6,2026-09-15T03:49:19Z,Mikoyan MiG-29,Soviet Union,Multirole,MiG-29B,40,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,7,2026-09-15T03:49:19Z,Mikoyan MiG-29,Soviet Union,Multirole,MiG-29UPG,12,Upgraded version of MiG-29B
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,8,2026-09-15T03:49:19Z,Mikoyan MiG-29,Soviet Union,Multirole,MiG-29UB,7,Two-seat version
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,9,2026-09-15T03:49:19Z,Multirole,,,,,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,10,2026-09-15T03:49:19Z,Sukhoi Su-30MKI,Russia / India[a],Su-30MKI,258,"12 on order, 84 to be upgraded",
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,11,2026-09-15T03:49:19Z,SEPECAT Jaguar,United Kingdom / India[a],Attack,Jaguar-IM,8,Single-seat maritime strike version
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,12,2026-09-15T03:49:19Z,SEPECAT Jaguar,United Kingdom / India[a],Attack,Jaguar-IS,78,Single-seat ground attack version
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,13,2026-09-15T03:49:19Z,Fighter trainers,Fighter trainers,Fighter trainers,Fighter trainers,Fighter trainers,Fighter trainers
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,14,2026-09-15T03:49:19Z,Dassault Mirage 2000,France,Conversion trainer,Mirage 2000TH/TI,10,All aircraft being upgraded to 2000TI variant
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,15,2026-09-15T03:49:19Z,HAL Tejas,India,Lead-in fighter trainer / conversion trainer,Tejas Mk 1 Trainer,6,10 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,16,2026-09-15T03:49:19Z,HAL Tejas,India,Lead-in fighter trainer / conversion trainer,Tejas Mk 1A Trainer,–,29 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,17,2026-09-15T03:49:19Z,SEPECAT Jaguar,United Kingdom / India[a],Conversion trainer,Jaguar-IB,26,Two-seat training version
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,18,2026-09-15T03:49:19Z,AEW&C,AEW&C,AEW&C,AEW&C,AEW&C,AEW&C
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,19,2026-09-15T03:49:19Z,Beriev A-50,Soviet Union,AEW&C,A-50EI,3,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,20,2026-09-15T03:49:19Z,Embraer EMB-145I,Brazil / India[b],AEW&C,Netra Mk1/Mk1A,3,6 planned
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,21,2026-09-15T03:49:19Z,Airbus A321,Europe / India[b],AEW&C,Netra Mk2,–,"6 ex-Air India aircraft, to be modified"
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,22,2026-09-15T03:49:19Z,Reconnaissance,Reconnaissance,Reconnaissance,Reconnaissance,Reconnaissance,Reconnaissance
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,23,2026-09-15T03:49:19Z,Bombardier Global 5000,Canada / Israel,ELINT,Global 5000,2,Operated by Aviation Research Centre of R&AW
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,24,2026-09-15T03:49:19Z,Boeing 707,United States,Reconnaissance,707-337C,1,Operated by Aviation Research Centre of R&AW
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,25,2026-09-15T03:49:19Z,Boeing 737,United States,Reconnaissance,737-700,2,Operated by Aviation Research Centre of R&AW
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,26,2026-09-15T03:49:19Z,Gulfstream III,United States,Reconnaissance,III SRA,3,Operated by Aviation Research Centre of R&AW
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,27,2026-09-15T03:49:19Z,Gulfstream G100,Israel,Reconnaissance,1125 Astra,2,Operated by Aviation Research Centre of R&AW
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,28,2026-09-15T03:49:19Z,Tanker,Tanker,Tanker,Tanker,Tanker,Tanker
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,29,2026-09-15T03:49:19Z,Airbus A330 MRTT,France,Tanker/transport,A330 MRTT,–,"One to be wet leased from French Air Force, 6 planned"
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,30,2026-09-15T03:49:19Z,Boeing KC-135,United States,Tanker,KC-135R,1,Wet leased from Metrea
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,31,2026-09-15T03:49:19Z,Ilyushin Il-78,Soviet Union,Tanker,Il-78MKI,6,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,32,2026-09-15T03:49:19Z,Transport,Transport,Transport,Transport,Transport,Transport
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,33,2026-09-15T03:49:19Z,Airbus A321,Europe,Transport,A321-200,4,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,34,2026-09-15T03:49:19Z,Boeing 777,United States,Transport,777-300ER,2,Used as Air India One
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,35,2026-09-15T03:49:19Z,Embraer Legacy 600,Brazil,VIP transport,Legacy 6000,4,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,36,2026-09-15T03:49:19Z,Airbus C-295,Europe / India[c],Tactical airlifter,C-295W,16,40 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,37,2026-09-15T03:49:19Z,Antonov An-32,Soviet Union,Tactical airlifter,An-32RE,55,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,38,2026-09-15T03:49:19Z,Antonov An-32,Soviet Union,Tactical airlifter,An-32,47,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,39,2026-09-15T03:49:19Z,Dornier 228,Germany / India[a],Tactical airlifter,228-201,62,6 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,40,2026-09-15T03:49:19Z,Hawker Siddeley HS 748,United Kingdom,Tactical airlifter,HS 748,56,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,41,2026-09-15T03:49:19Z,Lockheed Martin C-130J,United States,Tactical airlifter,C-130J-30,12,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,42,2026-09-15T03:49:19Z,Boeing C-17,United States,Strategic airlifter,C-17A,11,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,43,2026-09-15T03:49:19Z,Ilyushin Il-76,Soviet Union,Strategic airlifter,Il-76MD,17,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,44,2026-09-15T03:49:19Z,Helicopters,Helicopters,Helicopters,Helicopters,Helicopters,Helicopters
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,45,2026-09-15T03:49:19Z,Aérospatiale Alouette III,France / India[a],Utility,Chetak,79,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,46,2026-09-15T03:49:19Z,Aérospatiale Alouette III,France / India[a],Utility,Cheetal,18,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,47,2026-09-15T03:49:19Z,Aérospatiale SA 315B,France / India[a],Utility,Cheetah,18,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,48,2026-09-15T03:49:19Z,HAL Dhruv,India,Utility,Dhruv Mk I/III,95,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,49,2026-09-15T03:49:19Z,HAL Light Utility Helicopter,India,Utility,LUH,–,6 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,50,2026-09-15T03:49:19Z,Boeing CH-47,United States,Transport,CH-47F,15,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,51,2026-09-15T03:49:19Z,Mil Mi-17,Russia,Transport,Mi-17V-5,222,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,52,2026-09-15T03:49:19Z,Boeing AH-64,United States,Attack,AH-64E,22,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,53,2026-09-15T03:49:19Z,HAL Prachand,India,Attack,Prachand,10,66 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,54,2026-09-15T03:49:19Z,HAL Rudra,India,Attack,Rudra,16,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,55,2026-09-15T03:49:19Z,Mil Mi-24,Russia,Attack,Mi-25/35P,15,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,56,2026-09-15T03:49:19Z,Trainer,Trainer,Trainer,Trainer,Trainer,Trainer
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,57,2026-09-15T03:49:19Z,BAE Hawk,United Kingdom / India[a],Advanced trainer,Hawk 132,102,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,58,2026-09-15T03:49:19Z,HAL Kiran,India,Intermediate trainer,HJT-16,77,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,59,2026-09-15T03:49:19Z,HAL HTT-40,India,Basic trainer,HTT-40,–,70 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,60,2026-09-15T03:49:19Z,Pilatus PC-7,Switzerland,Basic trainer,PC-7 Mk II,74,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,61,2026-09-15T03:49:19Z,Pipistrel Virus,Slovenia,Ab-initio trainer,Garud,72,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,62,2026-09-15T03:49:19Z,UAV,UAV,UAV,UAV,UAV,UAV
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,63,2026-09-15T03:49:19Z,IAI Heron,Israel,Surveillance,Heron Mk II,9,2 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,64,2026-09-15T03:49:19Z,IAI Searcher,Israel,Surveillance,Searcher Mk II,Few,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,1,65,2026-09-15T03:49:19Z,MQ-9 Reaper,United States,Combat / Surveillance,SkyGuardian,–,8 on order

@@ -1,0 +1,24 @@
+source_key,source_url,source_table,source_row,retrieved_at,Aircraft | Combat,Origin | Combat,Type | Combat,Variant | Combat,In service | Combat,Notes | Combat
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,1,2026-09-15T03:49:19Z,Dassault Rafale,France,Multirole,Rafale M,–,26 (22 single-seat and four twin-seat) on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,2,2026-09-15T03:49:19Z,Mikoyan MiG-29K,Russia,Multirole,MiG-29K,34,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,3,2026-09-15T03:49:19Z,Mikoyan MiG-29K,Russia,Multirole,MiG-29KUB,6,Two seater
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,4,2026-09-15T03:49:19Z,Patrol / Utility,Patrol / Utility,Patrol / Utility,Patrol / Utility,Patrol / Utility,Patrol / Utility
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,5,2026-09-15T03:49:19Z,Boeing P-8,United States,ASW / Patrol,P-8I,12,6 planned
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,6,2026-09-15T03:49:19Z,Britten-Norman BN-2,United Kingdom,Patrol / Utility,BN-2B/2T,4,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,7,2026-09-15T03:49:19Z,Dornier 228,Germany / India[a],Patrol / Surveillance,228-201,31,"Includes 4 upgraded, rest being upgraded. 8 more on order"
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,8,2026-09-15T03:49:19Z,Helicopters,Helicopters,Helicopters,Helicopters,Helicopters,Helicopters
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,9,2026-09-15T03:49:19Z,Aérospatiale Alouette III,France / India[a],Utility,Chetak,42,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,10,2026-09-15T03:49:19Z,HAL Dhruv,India,Utility,Dhruv Mk I/III,24,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,11,2026-09-15T03:49:19Z,Kamov Ka-27,Russia,ASW,Ka-28,14,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,12,2026-09-15T03:49:19Z,Westland Sea King,United Kingdom,ASW,WS-61 Mk 42B,25,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,13,2026-09-15T03:49:19Z,Westland Sea King,United Kingdom,Utility,WS-61 Mk 42C,25,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,14,2026-09-15T03:49:19Z,Kamov Ka-31,Russia,AEW,Ka-31,14,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,15,2026-09-15T03:49:19Z,Sikorsky SH-60,United States,Combat / Utility,MH-60R,22,2 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,16,2026-09-15T03:49:19Z,Trainer,Trainer,Trainer,Trainer,Trainer,Trainer
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,17,2026-09-15T03:49:19Z,BAE Hawk,United Kingdom / India[a],Jet trainer,Hawk 132,17,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,18,2026-09-15T03:49:19Z,HAL Kiran,India,Jet trainer,HJT-16,18,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,19,2026-09-15T03:49:19Z,Pipistrel Virus,Slovenia,Ab-initio trainer,Garud,12,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,20,2026-09-15T03:49:19Z,UAV,UAV,UAV,UAV,UAV,UAV
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,21,2026-09-15T03:49:19Z,Elbit Hermes 900,Israel / India[d],Surveillance,Drishti-10,1,10 planned
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,22,2026-09-15T03:49:19Z,IAI Heron,Israel,Surveillance,Heron Mk I,10,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,3,23,2026-09-15T03:49:19Z,General Atomics MQ-9 Reaper,United States,Combat / Surveillance,SeaGuardian,2,15 on order

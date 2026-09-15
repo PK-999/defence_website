@@ -1,0 +1,6 @@
+source_key,source_url,source_table,source_row,retrieved_at,Aircraft | Patrol,Origin | Patrol,Type | Patrol,Variant | Patrol,In service | Patrol,Notes | Patrol
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,4,1,2026-09-15T03:49:19Z,Dornier 228,Germany / India[a],Patrol / Reconnaissance,228-101/201,41,"2 upgraded in 2024, 2 inducted in 2026; 8 on order"
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,4,2,2026-09-15T03:49:19Z,Helicopters,Helicopters,Helicopters,Helicopters,Helicopters,Helicopters
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,4,3,2026-09-15T03:49:19Z,Aérospatiale Alouette III,France / India[a],Utility,Chetak,19,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,4,4,2026-09-15T03:49:19Z,HAL Dhruv,India,Utility,Dhruv Mk I,4,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,4,5,2026-09-15T03:49:19Z,HAL Dhruv,India,Utility,Dhruv Mk III,19,11 on order

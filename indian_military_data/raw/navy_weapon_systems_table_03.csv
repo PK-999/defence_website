@@ -1,0 +1,14 @@
+source_key,source_url,source_table,source_row,retrieved_at,Name,Origin,Type,Caliber (mm),Platforms
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,1,2026-09-15T03:49:19Z,A-190(E),USSR,Naval gun,100.0,Talwar-class frigate (except INS Trishul)
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,2,2026-09-15T03:49:19Z,AK-100,USSR,Naval gun,100.0,
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,3,2026-09-15T03:49:19Z,AK-176-M,USSR,Naval gun,76.2,"Veer (except INS Prabal, INS Pralaya)-class corvettes"
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,4,2026-09-15T03:49:19Z,Oto Melara 76mm Super Raid,Italy,Naval gun,76.0,"INS Vikrant aircraft carrier; All destroyers; INS Trishul, Shivalik, Niligiri-class frigates; Kamorta, Veer (INS Prabal, INS Pralaya)-class corvettes; Saryu-class OPV"
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,5,2026-09-15T03:49:19Z,Oto Melara 76mm,Italy,Naval gun,76.0,Brahmaputra-class frigate; Kora-class corvette
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,6,2026-09-15T03:49:19Z,Bofors 60mm,,Autocannon,60.0,
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,7,2026-09-15T03:49:19Z,Bofors 57mm,,Autocannon,57.0,
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,8,2026-09-15T03:49:19Z,Bofors 40mm,,Autocannon,40.0,Magar-class LST; Sukanya-class OPV; INS Tir; Sandhayak-class survey ship (1981)
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,9,2026-09-15T03:49:19Z,Oerlikon 20mm,,Autocannon,20.0,
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,10,2026-09-15T03:49:19Z,Naval Surface Gun (30mm),,Autocannon,30.0,"Arnala, Mahe-class corvette"
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,11,2026-09-15T03:49:19Z,CRN-91,India,Autocannon,30.0,"Shardul-class LST, Mk. IV LCU; All patrol vessels; INS Aditya; INS Tir; Sandhayak-class survey vessel"
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,12,2026-09-15T03:49:19Z,AK-630,USSR,CIWS,30.0,"INS Vikrant, INS Vikramaditya aircraft carriers; INS Jalashwa LPD; All destroyers; Brahmaputra, Talwar (except INS Talwar, INS Tabar), Shivalik, Niligiri-class frigates; All corvettes; Deepak-class fleet tanker; Sandhayak-class survey vessel"
+navy_weapon_systems,https://en.wikipedia.org/wiki/Weapon_systems_of_the_Indian_Navy,3,13,2026-09-15T03:49:19Z,Kashtan,USSR,CIWS,30.0,"INS Talwar, INS Tabar"

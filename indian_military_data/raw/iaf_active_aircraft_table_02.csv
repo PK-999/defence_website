@@ -1,0 +1,21 @@
+source_key,source_url,source_table,source_row,retrieved_at,Aircraft | Helicopters,Origin | Helicopters,Type | Helicopters,Variant | Helicopters,In service | Helicopters,Notes | Helicopters
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,1,2026-09-15T03:49:19Z,Aérospatiale Alouette III,France / India[a],Utility,Chetak,60,To be phased out by 2033.
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,2,2026-09-15T03:49:19Z,Aérospatiale SA 315B,France / India[a],Utility,Cheetah,115,To be phased out by 2033.
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,3,2026-09-15T03:49:19Z,HAL Dhruv,India,Utility,Dhruv Mk I/II/III,78,25 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,4,2026-09-15T03:49:19Z,HAL Light Utility Helicopter,India,Utility,LUH,–,6 on order; 110 planned
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,5,2026-09-15T03:49:19Z,Boeing AH-64,United States,Attack,AH-64E,6,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,6,2026-09-15T03:49:19Z,HAL Prachand,India,Attack,Prachand,5,90 on order; 95 planned
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,7,2026-09-15T03:49:19Z,HAL Rudra,India,Attack,Rudra,74,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,8,2026-09-15T03:49:19Z,UAV,UAV,UAV,UAV,UAV,UAV
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,9,2026-09-15T03:49:19Z,Asteria AT,India,Surveillance,AT-15,Unknown,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,10,2026-09-15T03:49:19Z,DRDO Nishant,India,Surveillance,Nishant,13,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,11,2026-09-15T03:49:19Z,IAI Heron,Israel,Surveillance,Heron Mk II,4,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,12,2026-09-15T03:49:19Z,IAI Searcher,Israel,Surveillance,Searcher Mk I/II,12,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,13,2026-09-15T03:49:19Z,IFT Switch,India,Surveillance,Switch 1.0,200,More on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,14,2026-09-15T03:49:19Z,Johnnette JF,India,Surveillance,JF-2,Unknown,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,15,2026-09-15T03:49:19Z,Newspace Beluga/Nimbus,India,Swarm,Beluga/Nimbus,100,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,16,2026-09-15T03:49:19Z,Endure Sabal,India,Cargo,Sabal 20,Unknown,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,17,2026-09-15T03:49:19Z,Raphe mPhibr MR,India,Cargo,MR-20,48,
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,18,2026-09-15T03:49:19Z,Gati,India,Grenade launcher,Gati,–,20 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,19,2026-09-15T03:49:19Z,MQ-9 Reaper,United States,Combat / Surveillance,SkyGuardian,–,8 on order
+iaf_active_aircraft,https://en.wikipedia.org/wiki/List_of_active_Indian_military_aircraft,2,20,2026-09-15T03:49:19Z,Elbit Hermes 900,Israel / India[d],Surveillance,Drishti-10,1,1 on order

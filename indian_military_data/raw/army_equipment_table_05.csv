@@ -1,0 +1,6 @@
+source_key,source_url,source_table,source_row,retrieved_at,Name,Image,Type,Quantity,Origin,Notes
+army_equipment,https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army,5,1,2026-09-15T03:49:19Z,THeMIS,,Unmanned ground vehicle,,Estonia,Status: In service. Used as a reconnaissance vehicle.
+army_equipment,https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army,5,2,2026-09-15T03:49:19Z,DRDO Daksh,,Bomb disposal robot,250.0,India,Status: In service. Used in sensitive missions including bombs and mines.
+army_equipment,https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army,5,3,2026-09-15T03:49:19Z,Vision-60 robotic MULE,,Unmanned ground vehicle,100.0,United States,Status: In service. Made in India by AeroArc and Ghost Robotics in joint venture with ToT.
+army_equipment,https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army,5,4,2026-09-15T03:49:19Z,Krushna,,Unmanned ground vehicle,,India,Status: In service. Purchased from Jaipur-based Club First Robotics. Use for combat fire support and carries a Konkurs (ATGM).
+army_equipment,https://en.wikipedia.org/wiki/List_of_equipment_of_the_Indian_Army,5,5,2026-09-15T03:49:19Z,All Terrain Tactical Haulers (ATT Haulers),,Unmanned ground vehicle,300.0,Israel,Status: In service. Made in India by TVS Sundaram and Marom Dolphin joint venture with ToT.

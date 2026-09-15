@@ -1,0 +1,8 @@
+source_key,source_url,source_table,source_row,retrieved_at,Name,Headquarters,Commander
+iaf_weapon_systems,https://en.wikipedia.org/wiki/Indian_Air_Force,2,1,2026-09-15T03:49:19Z,Central Air Command (CAC),"Prayagraj, Uttar Pradesh","Air Marshal Tarun Chaudhry, AVSM, VM"
+iaf_weapon_systems,https://en.wikipedia.org/wiki/Indian_Air_Force,2,2,2026-09-15T03:49:19Z,Eastern Air Command (EAC),"Shillong, Meghalaya","Air Marshal Inderpal Singh Walia, AVSM, VM"
+iaf_weapon_systems,https://en.wikipedia.org/wiki/Indian_Air_Force,2,3,2026-09-15T03:49:19Z,Southern Air Command (SAC),"Thiruvananthapuram, Kerala","Air Marshal Jasvir Singh Mann, AVSM, VM"
+iaf_weapon_systems,https://en.wikipedia.org/wiki/Indian_Air_Force,2,4,2026-09-15T03:49:19Z,South Western Air Command (SWAC),"Gandhinagar, Gujarat","Air Marshal P. V. Shivanand, AVSM, VM"
+iaf_weapon_systems,https://en.wikipedia.org/wiki/Indian_Air_Force,2,5,2026-09-15T03:49:19Z,Western Air Command (WAC),New Delhi,"Air Marshal George Thomas, AVSM, VM"
+iaf_weapon_systems,https://en.wikipedia.org/wiki/Indian_Air_Force,2,6,2026-09-15T03:49:19Z,Training Command (TC)+,"Bengaluru, Karnataka","Air Marshal Seethepalli Shrinivas, PVSM, AVSM, VSM"
+iaf_weapon_systems,https://en.wikipedia.org/wiki/Indian_Air_Force,2,7,2026-09-15T03:49:19Z,Maintenance Command (MC)+,"Nagpur, Maharashtra","Air Marshal Yalla Umesh, VSM"
