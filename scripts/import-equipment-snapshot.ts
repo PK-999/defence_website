@@ -105,7 +105,7 @@ function fallbackLegacyCategory(title: string, category: string): string {
 async function normalizeExistingEquipment(tx: Prisma.TransactionClient, mappedRows: EquipmentImportRow[]): Promise<string[]> {
   const importedByTitle = new Map<string, EquipmentImportRow[]>();
   for (const row of mappedRows) importedByTitle.set(row.title.toLowerCase(), [...(importedByTitle.get(row.title.toLowerCase()) ?? []), row]);
-  const existing = await tx.equipment.findMany({ select: { id: true, slug: true, title: true, domain: true, category: true, serviceStatus: true, summary: true } });
+  const existing = await tx.equipment.findMany({ select: { id: true, slug: true, title: true, domain: true, category: true, serviceStatus: true, summary: true, originCountries: true } });
   const changed: string[] = [];
   for (const row of existing) {
     if (row.slug.startsWith("equipment-")) continue;
@@ -115,8 +115,15 @@ async function normalizeExistingEquipment(tx: Prisma.TransactionClient, mappedRo
     const normalizedStatus = matching?.serviceStatus ?? ({ active: "Deployed", planned: "Planned", retired: "Decommissioned", decommissioned: "Decommissioned" }[row.serviceStatus] ?? row.serviceStatus);
     const genericSummary = /source-backed technical facts|configuration scope and limitations|source scope varies|dated, source-attributed research snapshot/i.test(row.summary);
     const readableSummary = genericSummary ? `${row.title} is listed for ${formatEquipmentValue("domain", normalizedDomain)} with a ${formatEquipmentValue("serviceStatus", normalizedStatus).toLowerCase()} status.` : row.summary;
-    if (normalizedDomain === row.domain && normalizedCategory === row.category && normalizedStatus === row.serviceStatus && readableSummary === row.summary) continue;
-    await tx.equipment.update({ where: { id: row.id }, data: { domain: normalizedDomain, category: normalizedCategory, serviceStatus: normalizedStatus, summary: readableSummary } });
+    let originCountries = row.originCountries;
+    try {
+      const parsed = JSON.parse(row.originCountries) as unknown;
+      if (Array.isArray(parsed)) originCountries = JSON.stringify(parsed.filter((country): country is string => typeof country === "string" && !/source scope varies/i.test(country)));
+    } catch {
+      // Preserve malformed legacy values for the database validator to report.
+    }
+    if (normalizedDomain === row.domain && normalizedCategory === row.category && normalizedStatus === row.serviceStatus && readableSummary === row.summary && originCountries === row.originCountries) continue;
+    await tx.equipment.update({ where: { id: row.id }, data: { domain: normalizedDomain, category: normalizedCategory, serviceStatus: normalizedStatus, summary: readableSummary, originCountries } });
     changed.push(row.id);
   }
   return changed;
