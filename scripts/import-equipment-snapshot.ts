@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaClient, type Prisma } from "@prisma/client";
 import { equipmentResearchSlug, equipmentSourceId, equipmentSourceSlug, mapEquipmentResearchRecord, type EquipmentImportRow, type EquipmentResearchRow } from "../src/lib/equipment-research-import";
+import { formatEquipmentValue } from "../src/lib/equipment-presentation";
 import { rebuildSearchDocument } from "../src/lib/search/service";
 
 const ROOT = path.resolve(__dirname, "..");
@@ -104,7 +105,7 @@ function fallbackLegacyCategory(title: string, category: string): string {
 async function normalizeExistingEquipment(tx: Prisma.TransactionClient, mappedRows: EquipmentImportRow[]): Promise<string[]> {
   const importedByTitle = new Map<string, EquipmentImportRow[]>();
   for (const row of mappedRows) importedByTitle.set(row.title.toLowerCase(), [...(importedByTitle.get(row.title.toLowerCase()) ?? []), row]);
-  const existing = await tx.equipment.findMany({ select: { id: true, slug: true, title: true, domain: true, category: true, serviceStatus: true } });
+  const existing = await tx.equipment.findMany({ select: { id: true, slug: true, title: true, domain: true, category: true, serviceStatus: true, summary: true } });
   const changed: string[] = [];
   for (const row of existing) {
     if (row.slug.startsWith("equipment-")) continue;
@@ -112,8 +113,10 @@ async function normalizeExistingEquipment(tx: Prisma.TransactionClient, mappedRo
     const matching = importedByTitle.get(row.title.toLowerCase())?.find((candidate) => candidate.domain === normalizedDomain);
     const normalizedCategory = matching?.category ?? fallbackLegacyCategory(row.title, row.category);
     const normalizedStatus = matching?.serviceStatus ?? ({ active: "Deployed", planned: "Planned", retired: "Decommissioned", decommissioned: "Decommissioned" }[row.serviceStatus] ?? row.serviceStatus);
-    if (normalizedDomain === row.domain && normalizedCategory === row.category && normalizedStatus === row.serviceStatus) continue;
-    await tx.equipment.update({ where: { id: row.id }, data: { domain: normalizedDomain, category: normalizedCategory, serviceStatus: normalizedStatus } });
+    const genericSummary = /source-backed technical facts|configuration scope and limitations|source scope varies|dated, source-attributed research snapshot/i.test(row.summary);
+    const readableSummary = genericSummary ? `${row.title} is listed for ${formatEquipmentValue("domain", normalizedDomain)} with a ${formatEquipmentValue("serviceStatus", normalizedStatus).toLowerCase()} status.` : row.summary;
+    if (normalizedDomain === row.domain && normalizedCategory === row.category && normalizedStatus === row.serviceStatus && readableSummary === row.summary) continue;
+    await tx.equipment.update({ where: { id: row.id }, data: { domain: normalizedDomain, category: normalizedCategory, serviceStatus: normalizedStatus, summary: readableSummary } });
     changed.push(row.id);
   }
   return changed;

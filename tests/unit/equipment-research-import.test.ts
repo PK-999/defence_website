@@ -45,11 +45,14 @@ describe("equipment research import mapping", () => {
       originCountries: ["India"],
     });
     expect(mapped.summary).toContain("Multirole aircraft");
-    expect(mapped.content).toContain("not independently verified");
+    expect(mapped.summary).not.toContain("source-attributed research snapshot");
+    expect(mapped.content).not.toContain("source-backed technical facts");
+    expect(mapped.content).not.toContain("Configuration scope and limitations");
+    expect(mapped.content).toContain("12 on order");
     expect(mapped.specs).toEqual(expect.arrayContaining([
       expect.objectContaining({ label: "Quantity", value: "12 on order", sourceId: "iaf-future-programmes" }),
       expect.objectContaining({ label: "Manufacturer", value: "Example Aeronautics" }),
-      expect.objectContaining({ label: "Source", value: "https://example.test/equipment" }),
+      expect.objectContaining({ label: "Keywords", value: "Aircraft, airforce, status planned" }),
     ]));
   });
 

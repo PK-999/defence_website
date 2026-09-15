@@ -1,3 +1,5 @@
+import { formatEquipmentValue } from "./equipment-presentation";
+
 export type EquipmentResearchRow = Record<string, unknown>;
 
 export type EquipmentImportRow = {
@@ -49,6 +51,10 @@ function listDisplay(value: unknown): string {
   return display(value);
 }
 
+function sentenceDisplay(value: unknown): string {
+  return display(value).replace(/[_-]+/g, " ").replace(/^\w/, (letter) => letter.toUpperCase());
+}
+
 function slugify(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
@@ -98,20 +104,17 @@ export function mapEquipmentResearchRecord(record: EquipmentResearchRow): Equipm
   const role = display(record.role_purpose);
   const quantity = display(record.quantity_raw ?? record.quantity);
   const sourceStatus = display(record.source_status);
-  const verification = display(record.verification_status).replace(/_/g, " ");
-  const sourceUrl = display(record.source_url);
-  const services = listDisplay(record.service_domains);
+  const services = listDisplay(record.service_domains).split(", ").map((service) => formatEquipmentValue("domain", service)).join(", ");
   const notes = display(record.notes);
   const variant = text(record.variant);
   const statusAsOf = text(record.status_as_of);
-  const summary = `${title} is listed for ${services} as ${normalizedStatus.toLowerCase()}. Role: ${role}. Quantity: ${quantity}. This is a dated, source-attributed research snapshot, not a live readiness count.`;
+  const summary = `${title} is listed for ${services} with a ${normalizedStatus.toLowerCase()} status. Role: ${role}. Quantity recorded: ${quantity}.`;
   const content = [
-    "This record is part of the Indian defence equipment research snapshot covering historical, deployed, and planned systems.",
-    `Role or purpose: ${role}. Quantity recorded by the source: ${quantity}. Source status: ${sourceStatus}.`,
-    `Verification status: ${verification}. A missing independent verification means the row remains a research record and should not be read as a current order-of-battle claim.`,
-    `Source: ${sourceUrl} (${locator}).`,
-    `Notes: ${notes}.`,
-  ].join("\n\n");
+    role !== "Not documented" ? `Role: ${role}.` : null,
+    `Quantity recorded: ${quantity}.`,
+    sourceStatus !== "Not documented" ? `Source status: ${sourceStatus}.` : null,
+    notes !== "Not documented" ? `Notes: ${notes}.` : null,
+  ].filter((part): part is string => Boolean(part)).join("\n\n");
   const specs = [
     spec("Quantity", quantity, source, locator),
     spec("Service domains", listDisplay(record.service_domains), source, locator),
@@ -123,9 +126,8 @@ export function mapEquipmentResearchRecord(record: EquipmentResearchRow): Equipm
     spec("Dimensions", record.dimensions, source, locator),
     spec("Specifications", record.specifications, source, locator),
     spec("Original source status", record.source_status, source, locator),
-    spec("Verification status", record.verification_status, source, locator),
-    spec("Source", record.source_url, source, locator),
-    spec("Tags", record.tags, source, locator),
+    spec("Verification", sentenceDisplay(record.verification_status), source, locator),
+    spec("Keywords", sentenceDisplay(listDisplay(record.tags)), source, locator),
   ];
 
   return {
