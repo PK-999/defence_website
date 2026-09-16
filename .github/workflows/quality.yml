@@ -29,7 +29,7 @@ jobs:
       - run: npm run test:integration
       - run: npm run validate:content
       - run: npm run validate:assets
-      - run: mkdir -p .test-data && npx prisma migrate deploy
+      - run: mkdir -p .test-data && touch .test-data/ci.db && npx prisma migrate deploy
       - run: npm run validate:database
       - run: npm run build
 
