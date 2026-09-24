@@ -58,7 +58,7 @@ export function groupHeroesByAwardAndYear(items: HeroCollectionItem[]): HeroAwar
 
   for (const item of items) {
     const documentedAwards = item.awards ?? [];
-    const gallantryAwards = documentedAwards.filter((award) => GALLANTRY_AWARDS.has(award));
+    const gallantryAwards = documentedAwards.filter((award: string) => GALLANTRY_AWARDS.has(award));
     const awards = gallantryAwards.length > 0
       ? gallantryAwards
       : [documentedAwards.length > 0 ? "Other decorations" : "Award not documented"];

@@ -1,44 +1,49 @@
-export type EquipmentSpecRow = {
+export interface EquipmentSpecRow {
   label: string;
   value: string;
-  unit?: string;
-  effectiveDate?: string;
-  scope?: string;
-  note?: string;
   sourceId?: string;
-  locator?: string;
-};
+  unit?: string;
+}
 
-const labelize = (value: string) => value
-  .replace(/[-_]/g, " ")
-  .replace(/\b\w/g, (letter) => letter.toUpperCase());
+function cleanLabel(raw: string): string {
+  return raw
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+    .replace(/^Ordered Quantity$/, "Fleet Ordered")
+    .replace(/^Commissioned On$/, "Commission Date")
+    .replace(/^Retired On$/, "Retirement Date")
+    .replace(/^Gun Calibre$/, "Calibre")
+    .replace(/^Status Event$/, "Procurement Milestone");
+}
 
-const optionalString = (value: unknown): string | undefined =>
-  typeof value === "string" && value.trim() ? value.trim() : undefined;
+export function parseEquipmentSpecs(specs: unknown): EquipmentSpecRow[] {
+  if (!specs) return [];
+  
+  let data = specs;
+  if (typeof specs === "string") {
+    try {
+      data = JSON.parse(specs);
+    } catch {
+      return [];
+    }
+  }
 
-export function parseEquipmentSpecs(value: unknown): EquipmentSpecRow[] {
-  if (Array.isArray(value)) {
-    return value.flatMap((entry) => {
-      if (typeof entry !== "object" || entry === null) return [];
-      const record = entry as Record<string, unknown>;
-      const field = optionalString(record.label) ?? optionalString(record.field) ?? optionalString(record.key) ?? "Specification";
-      return [{
-        label: labelize(field),
-        value: record.value === null || record.value === undefined ? "Not documented" : String(record.value),
-        ...(optionalString(record.unit) ? { unit: optionalString(record.unit) } : {}),
-        ...(optionalString(record.effectiveDate) ? { effectiveDate: optionalString(record.effectiveDate) } : {}),
-        ...(optionalString(record.scope) ?? optionalString(record.context) ? { scope: optionalString(record.scope) ?? optionalString(record.context) } : {}),
-        ...(optionalString(record.note) ? { note: optionalString(record.note) } : {}),
-        ...(optionalString(record.sourceId) ? { sourceId: optionalString(record.sourceId) } : {}),
-        ...(optionalString(record.locator) ? { locator: optionalString(record.locator) } : {}),
-      }];
+  if (Array.isArray(data)) {
+    return data.filter(Boolean).map((s: any) => {
+      const rawLabel = s.label || s.key || s.name || s.field || "Specification";
+      return {
+        label: cleanLabel(String(rawLabel)),
+        value: String(s.value ?? ""),
+        sourceId: s.sourceId,
+        unit: s.unit || undefined,
+      };
     });
   }
 
-  if (value && typeof value === "object") {
-    return Object.entries(value).map(([label, entry]) => ({
-      label: labelize(label),
-      value: typeof entry === "string" || typeof entry === "number" ? String(entry) : "Not documented",
+  if (typeof data === "object" && data !== null) {
+    return Object.entries(data).map(([key, val]) => ({
+      label: cleanLabel(key),
+      value: typeof val === "object" && val !== null ? JSON.stringify(val) : String(val ?? ""),
     }));
   }
 

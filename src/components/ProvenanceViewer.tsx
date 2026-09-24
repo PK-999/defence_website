@@ -40,7 +40,7 @@ export function ProvenanceViewer({ claims }: { claims: PublicClaim[] }) {
             
             {expandedId === claim.id && (
               <div id={`claim-evidence-${claim.id}`} className="p-4 bg-background/50 border-t border-primary/10 space-y-4">
-                {claim.evidence.map((evidence) => (
+                {claim.evidence.map((evidence: any) => (
                     <div key={evidence.id} className="text-sm space-y-3">
                       <div className="flex items-start gap-3">
                         <BookOpen className="w-4 h-4 text-muted-foreground mt-0.5" />
@@ -81,7 +81,7 @@ export function ProvenanceViewer({ claims }: { claims: PublicClaim[] }) {
 
 export function SourceEvidenceList({ versions }: { versions: Array<{ id: string; versionTag: string; evidence: PublicClaim["evidence"] }> }) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const evidence = versions.flatMap((version) => version.evidence.map((item) => ({ ...item, versionTag: version.versionTag })));
+  const evidence = versions.flatMap((version) => version.evidence.map((item: any) => ({ ...item, versionTag: version.versionTag })));
   if (evidence.length === 0) return <p className="rounded border border-dashed border-border p-5 text-sm text-muted-foreground">No public evidence locators are available for this source.</p>;
   return <div className="space-y-3">{evidence.map((item) => {
     const expanded = expandedId === item.id;

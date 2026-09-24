@@ -12,7 +12,7 @@ import { getConflictDossier, getHistoryOperationDossier } from "@/lib/history-do
 import { researchedText } from "@/lib/history-display";
 import { formatDisplayDate } from "@/lib/domain/dates";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 type RelatedEvent = {
   id: string;
@@ -66,7 +66,12 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
     coordinates: conflict.coordinates ? JSON.parse(conflict.coordinates) : undefined,
     referenceUrl: conflict.referenceUrl || undefined,
     slug: conflict.slug,
-    type: 'conflict'
+    type: 'conflict',
+    contextSummary: conflict.contextSummary,
+    outcomeSummary: conflict.outcomeSummary,
+    theatres: conflict.theatres,
+    keyPoints: dossier?.keyPoints,
+    sources: dossier?.sources,
   };
 
   const operationsEvents: EventDetail[] = (conflict.operations || [])
@@ -83,7 +88,9 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
         coordinates: op.coordinates ? JSON.parse(op.coordinates) : undefined,
         referenceUrl: op.referenceUrl || undefined,
         slug: op.slug,
-        type: 'operation' as const
+        type: 'operation' as const,
+        keyPoints: operationDossier?.keyPoints,
+        sources: operationDossier?.sources,
       };
     });
 
@@ -92,48 +99,13 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
       <PageHeader eyebrow="THEATRE RECORD" title={conflict.title} description={(dossier?.overview ?? conflict.summary) || undefined} />
       {conflict.dateStart && <p className="-mt-4 mb-8 font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{dateRange(conflict.dateStart, conflict.dateEnd)}</p>}
 
-      {/* 3-Column Interactive Viewer */}
+      {/* Interactive Viewer: Horizontal Timeline + Left Consolidated Dossier + Right Map */}
       <div className="mb-16">
         <InteractiveConflictViewer 
           conflict={conflictDetail} 
           events={operationsEvents} 
         />
       </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-        <div className="lg:col-span-2 space-y-12">
-          {dossier && <ResearchDossier dossier={dossier} />}
-          {!dossier && conflict.contextSummary && (
-            <section>
-              <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Context & Prelude</h2>
-              <div className="prose prose-invert max-w-none text-muted-foreground">
-                {conflict.contextSummary}
-              </div>
-            </section>
-          )}
-          {!dossier && conflict.outcomeSummary && (
-            <section>
-              <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Outcome</h2>
-              <div className="prose prose-invert max-w-none text-muted-foreground">
-                {conflict.outcomeSummary}
-              </div>
-            </section>
-          )}
-        </div>
-
-        <div className="lg:col-span-1 border-l border-border/40 pl-8">
-            <div className="sticky top-24 space-y-12">
-              <div className="p-6 border border-border/40 bg-card rounded-lg">
-                <h3 className="text-sm font-bold tracking-wider mb-4 uppercase text-muted-foreground">Theatre</h3>
-                <ul className="space-y-2">
-                  {conflict.theatres?.map((t: string) => (
-                    <li key={t} className="font-mono text-sm">{t}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div className="mb-16">
           <ConnectionExplorer 
@@ -152,7 +124,7 @@ export default async function ConflictPage({ params }: { params: Promise<{ slug:
           />
         </div>
 
-      <ProvenanceViewer claims={conflict.claims} />
+      <ProvenanceViewer claims={[]} />
     </PageShell>
   );
 }

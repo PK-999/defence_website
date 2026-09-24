@@ -1,4 +1,0 @@
-source_key,source_url,source_table,source_row,retrieved_at,Photo,Aircraft,Origin,Type,Versions,Quantity,Notes
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,12,1,2026-09-15T04:05:32Z,File:Salon du Bourget 20090619 075.jpg,IAI Heron,Israel,Unmanned aerial vehicle,,50+,
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,12,2,2026-09-15T04:05:32Z,File:Nishant UAV.JPG,DRDO Nishant,India,Unmanned aerial vehicle,,12+,Delivery of 12 UAV's in 2007.
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,12,3,2026-09-15T04:05:32Z,File:Pair of IN Searcher UAVs.JPG,IAI Searcher,Israel,Unmanned aerial vehicle,Searcher II Searcher I,120+,

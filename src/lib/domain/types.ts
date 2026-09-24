@@ -1,65 +1,34 @@
-export type ValidationIssue = {
+import type { EntityType } from "./entities";
+
+export interface ValidationIssue {
   code: string;
   path: string;
   message: string;
-  severity: "error" | "warning";
-};
+  severity: "warning" | "error";
+}
 
-import type { EntityRef, EntityType } from "./entities";
+export interface NormalizationResult<T> {
+  value: T;
+  issues: ValidationIssue[];
+}
 
-export type VerificationStatus =
-  | "OFFICIALLY_CONFIRMED"
-  | "MULTIPLE_CREDIBLE_SOURCES"
-  | "DECLASSIFIED_RECORD"
-  | "DISPUTED"
-  | "SOURCE_CONFLICT"
-  | "UNVERIFIED";
+export interface CollectionQuery {
+  page: number;
+  pageSize: number;
+  q?: string;
+  sort?: string;
+  service?: string;
+  year?: string;
+  conflict?: string;
+  medal?: string;
+  domain?: string;
+  category?: string;
+  status?: string;
+}
 
-export type PublicEvidence = {
+export interface CollectionItem {
+  type: EntityType;
   id: string;
-  locator: string;
-  sourceId: string;
-  sourceTitle: string;
-  publisher: string;
-  versionTag: string;
-  sourceHref: string;
-  originalUrl: string | null;
-  archiveUrl: string | null;
-  quote: string | null;
-};
-
-export type PublicClaim = {
-  id: string;
-  property: string;
-  value: string;
-  verificationStatus: VerificationStatus;
-  editorialExplanation: string | null;
-  evidence: PublicEvidence[];
-};
-
-export type PublicRelationship = {
-  id: string;
-  source: EntityRef;
-  target: EntityRef;
-  predicate: string;
-  validFrom: string | null;
-  validTo: string | null;
-  sourceTitle: string;
-  targetTitle: string;
-  sourceHref: string;
-  targetHref: string;
-  evidence: PublicEvidence[];
-};
-
-export type RelationshipInput = {
-  source: EntityRef;
-  target: EntityRef;
-  predicate: string;
-  validFrom?: string | null;
-  validTo?: string | null;
-};
-
-export type CollectionItem = EntityRef & {
   slug: string;
   title: string;
   summary: string;
@@ -67,25 +36,32 @@ export type CollectionItem = EntityRef & {
   facts: Array<{ label: string; value: string }>;
   awards?: string[];
   year?: string;
-};
+}
 
-export type CollectionQuery = {
+export interface PageResult<T> {
+  items: T[];
   page: number;
   pageSize: number;
-  q?: string;
-  service?: string;
-  medal?: string;
-  conflict?: string;
-  year?: string;
-  domain?: string;
-  category?: string;
-  status?: string;
-  sort: "title" | "date";
-};
+  total: number;
+  pageCount: number;
+}
 
-export type PageResult<T> = { items: T[]; page: number; pageSize: number; total: number; pageCount: number; invalid: string[] };
+export interface PublicEvidence {
+  id: string;
+  sourceHref: string;
+  sourceTitle: string;
+  versionTag?: string;
+  publisher?: string;
+  locator?: string;
+  quote?: string | null;
+  originalUrl?: string | null;
+  archiveUrl?: string | null;
+}
 
-export type NormalizationResult<T> = {
-  value: T;
-  issues: ValidationIssue[];
-};
+export interface PublicClaim {
+  id: string;
+  property: string;
+  value: string;
+  verificationStatus: string;
+  evidence: PublicEvidence[];
+}

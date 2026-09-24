@@ -14,7 +14,7 @@ import { formatDisplayDate } from "@/lib/domain/dates";
 
 type RelatedEntity = { id: string; title: string; slug: string };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -111,7 +111,7 @@ export default async function OperationPage({ params }: { params: Promise<{ slug
             <section>
               <h2 className="text-xl font-bold tracking-wider mb-4 border-l-2 border-primary pl-4 uppercase">Full report</h2>
               <div className="prose prose-invert max-w-none text-muted-foreground space-y-4">
-                {operation.content.split(/\n{2,}/).map((paragraph, index) => <p key={`${operation.id}-paragraph-${index}`}>{paragraph}</p>)}
+                {operation.content.split(/\n{2,}/).map((paragraph: string, index: number) => <p key={`${operation.id}-paragraph-${index}`}>{paragraph}</p>)}
               </div>
             </section>
           )}

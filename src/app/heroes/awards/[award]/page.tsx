@@ -7,6 +7,7 @@ import { formatDisplayDate } from "@/lib/domain/dates";
 import { parseCollectionQuery } from "@/lib/domain/query";
 import { displayAwardeeName, gallantryResearch, getAwardBySlug, groupAwardeesByYear } from "@/lib/heroes/gallantry-research";
 import { publicMetadata } from "@/lib/metadata";
+import { Medal3DViewer } from "@/components/Medal3DViewer";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -48,6 +49,12 @@ export default async function ResearchedAwardPage({ params, searchParams }: { pa
 
   return <PageShell>
     <PageHeader eyebrow="OFFICIAL GALLANTRY DIRECTORY" title={award} description={`${count.toLocaleString("en-IN")} ${count === 1 ? "hero" : "heroes"} from the Ministry of Defence Gallantry Awards portal, grouped by action year.`} />
+    
+    {/* 3D Medal Inspection Artifact */}
+    <div className="mb-8">
+      <Medal3DViewer awardName={award} variant="card" />
+    </div>
+
     <div className="mb-8 rounded-lg border border-border/60 bg-card/60 p-5 text-sm leading-6 text-muted-foreground">
       <p>Dates are shown as the portal’s documented gallantry action date where published. Awarded date, service entry date, biography, and citation details are shown on each hero’s source-linked dossier when available.</p>
       <a className="mt-3 inline-flex font-mono text-xs uppercase tracking-[0.16em] text-primary hover:underline" href={gallantryResearch.source.url} target="_blank" rel="noreferrer">Source: {gallantryResearch.source.publisher}</a>

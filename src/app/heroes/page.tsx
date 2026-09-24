@@ -5,8 +5,12 @@ import { PageHeader, PageShell } from "@/components/PageShell";
 import { formatDisplayDate } from "@/lib/domain/dates";
 import { GALLANTRY_AWARD_ORDER } from "@/lib/heroes/grouping";
 import { displayAwardeeName, gallantryResearch, getAwardees, getAwardeeStory } from "@/lib/heroes/gallantry-research";
+import { HUDFrame } from "@/components/HUDFrame";
+import { ScrambleText } from "@/components/ScrambleText";
+import { Medal, Shield, Award, RotateCw } from "lucide-react";
+import { Medal3DViewer } from "@/components/Medal3DViewer";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 function groupAwardeesByAwardAndYear(awardees: ReturnType<typeof getAwardees>) {
   const grouped = new Map<string, Map<string, ReturnType<typeof getAwardees>>>();
@@ -51,55 +55,199 @@ export default async function HeroesPage({ searchParams }: { searchParams: Promi
     href: `/heroes/awards/${award.toLowerCase().replaceAll(" ", "-")}`,
   }));
 
-  return <PageShell>
-    <PageHeader title="Heroes" description="Official gallantry awardee profiles, service histories, photos, biographies, and citations from the Ministry of Defence directory." />
-    <div className="mb-8">
-      <CollectionToolbar fields={[{ key: "service", label: "Service branch", options: services }, { key: "medal", label: "Gallantry award", options: [...GALLANTRY_AWARD_ORDER] }, { key: "year", label: "Action year", options: years }]} />
-    </div>
-    <p className="mb-6 text-sm text-muted-foreground">{allAwardees.length.toLocaleString("en-IN")} heroes · {filteredAwardees.length.toLocaleString("en-IN")} matching · showing a 24-hero preview per award · grouped by award, then year</p>
+  return (
+    <PageShell width="wide">
+      <PageHeader
+        eyebrow="MINISTRY OF DEFENCE · HONOUR ROLL"
+        title="Gallantry Heroes"
+        description="Official gallantry awardee dossiers, battlefield action narratives, citation documents, and service histories."
+      />
 
-    <section className="mb-10" aria-labelledby="award-index-heading">
-      <div className="mb-4 flex items-baseline justify-between gap-3">
-        <h2 id="award-index-heading" className="text-xl font-semibold">Gallantry awards</h2>
-        <span className="text-sm text-muted-foreground">Browse by award</span>
+      <div className="mb-8">
+        <CollectionToolbar
+          fields={[
+            { key: "service", label: "Service branch", options: services },
+            { key: "medal", label: "Gallantry award", options: [...GALLANTRY_AWARD_ORDER] },
+            { key: "year", label: "Action year", options: years },
+          ]}
+        />
       </div>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {awardLinks.map((item) => <Link key={item.award} data-testid="hero-award-index" href={item.href} className="rounded-lg border border-border/60 bg-card p-4 transition-colors hover:border-primary/60">
-          <span className="block font-semibold">{item.award}</span>
-          <span className="mt-1 block text-sm text-muted-foreground">{item.count.toLocaleString("en-IN")} {item.count === 1 ? "hero" : "heroes"}</span>
-        </Link>)}
-      </div>
-    </section>
 
-    {sections.length > 0 ? <div className="space-y-10">
-      {sections.map((section) => <section key={section.award} data-testid="hero-award-section" aria-labelledby={`award-${section.award.replaceAll(" ", "-")}`}>
-        <div className="mb-4 flex items-baseline justify-between gap-3 border-b border-border pb-3">
-          <h2 id={`award-${section.award.replaceAll(" ", "-")}`} className="text-2xl font-semibold">{section.award}</h2>
-          <span className="text-sm text-muted-foreground">{section.years.reduce((total, year) => total + year.items.length, 0).toLocaleString("en-IN")} heroes</span>
+      <div className="mb-6 flex items-center justify-between text-xs font-mono text-muted-foreground border-b border-primary/20 pb-2">
+        <span>
+          ARCHIVE INDEX: {allAwardees.length.toLocaleString("en-IN")} HEROES RECORDED
+        </span>
+        <span className="text-primary">
+          {filteredAwardees.length.toLocaleString("en-IN")} MATCHING DIRECTIVES
+        </span>
+      </div>
+
+      {/* GALLANTRY MEDAL TIERS */}
+      <section className="mb-14" aria-labelledby="award-index-heading">
+        <div className="mb-4 flex items-baseline justify-between gap-3">
+          <h2 id="award-index-heading" className="text-lg font-mono font-bold uppercase tracking-wider text-foreground flex items-center gap-2">
+            <Medal className="w-4 h-4 text-accent-gold" />
+            Gallantry Decorations
+          </h2>
+          <span className="text-xs font-mono text-muted-foreground">Select award category</span>
         </div>
-        <div className="space-y-6">
-          {section.years.map((year) => <div key={`${section.award}-${year.year}`} data-testid="hero-award-year">
-            <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">{year.year}</h3>
-            <div data-testid="hero-awardee-grid" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {year.items.map((awardee) => {
-                const name = displayAwardeeName(awardee.name);
-                const summary = awardee.citationDetails ?? awardee.biography ?? getAwardeeStory(awardee).body;
-                return <Link key={awardee.officialId} data-testid="hero-awardee" href={`/heroes/awardees/${awardee.officialId}`} className="group overflow-hidden rounded-lg border border-border/60 bg-card transition-colors hover:border-primary/60">
-                  {awardee.photoUrl ? <Image src={awardee.photoUrl} width={640} height={360} alt={`Portrait of ${name}`} className="h-44 w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]" unoptimized /> : <div className="flex h-44 items-center justify-center bg-muted text-xs uppercase tracking-[0.16em] text-muted-foreground">Photo not documented</div>}
-                  <div className="p-5">
-                    <p className="text-xs uppercase text-primary">{awardee.service ?? "Service not documented"} · {formatDisplayDate(awardee.actionDate)}</p>
-                    <h4 className="mt-2 text-xl font-semibold">{name}</h4>
-                    <p className="mt-2 text-sm text-muted-foreground">{awardee.rank ?? "Rank not documented"}{awardee.unit !== "N/A" ? ` · ${awardee.unit}` : ""}</p>
-                    <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted-foreground">{summary}</p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {awardLinks.map((item) => {
+            const isPVC = item.award.includes("Param Vir");
+            const isAshoka = item.award.includes("Ashoka");
+            const isMVC = item.award.includes("Maha Vir");
+            const classification = isPVC
+              ? "HIGHEST VALOUR · WARTIME"
+              : isAshoka
+              ? "HIGHEST VALOUR · PEACETIME"
+              : isMVC
+              ? "DISTINGUISHED VALOUR"
+              : "GALLANTRY DECORATION";
+
+            return (
+              <div key={item.award} className="group relative">
+                <HUDFrame
+                  variant={isPVC ? "danger" : isAshoka ? "gold" : isMVC ? "cyan" : "default"}
+                  classification={classification}
+                >
+                  <div className="p-3.5 flex items-center gap-3.5">
+                    {/* Interactive 3D Medal Flip Thumbnail */}
+                    <div className="shrink-0">
+                      <Medal3DViewer
+                        awardName={item.award}
+                        variant="disc"
+                        className="w-12 h-12"
+                      />
+                    </div>
+
+                    <Link
+                      data-testid="hero-award-index"
+                      href={item.href}
+                      className="min-w-0 flex-1 block"
+                    >
+                      <span className="block font-bold tracking-wide text-foreground group-hover:text-primary transition-colors text-sm sm:text-base leading-tight">
+                        {item.award}
+                      </span>
+                      <span className="mt-1 flex items-center justify-between text-xs font-mono text-muted-foreground">
+                        <span>
+                          {item.count.toLocaleString("en-IN")} {item.count === 1 ? "Citation" : "Citations"}
+                        </span>
+                        <span className="text-primary text-[10px] uppercase font-bold group-hover:underline">
+                          VIEW ARCHIVE &rarr;
+                        </span>
+                      </span>
+                    </Link>
                   </div>
-                </Link>;
-              })}
-            </div>
-          </div>)}
+                </HUDFrame>
+              </div>
+            );
+          })}
         </div>
-      </section>)}
-    </div> : <p className="rounded-lg border border-dashed p-8 text-center text-muted-foreground">No official heroes match these filters.</p>}
+      </section>
 
-    <p className="mt-8 text-xs text-muted-foreground">Filters are applied to the complete official directory snapshot. Open an award above to browse every matching hero.</p>
-  </PageShell>;
+      {/* HEROES BY AWARD & YEAR */}
+      {sections.length > 0 ? (
+        <div className="space-y-16">
+          {sections.map((section) => {
+            const isPVC = section.award.includes("Param Vir");
+            return (
+              <section
+                key={section.award}
+                data-testid="hero-award-section"
+                aria-labelledby={`award-${section.award.replaceAll(" ", "-")}`}
+              >
+                <div className="mb-6 flex items-baseline justify-between gap-3 border-b-2 border-primary/40 pb-3">
+                  <h2
+                    id={`award-${section.award.replaceAll(" ", "-")}`}
+                    className="text-2xl font-display font-bold uppercase tracking-wide text-foreground"
+                  >
+                    {section.award}
+                  </h2>
+                  <span className="font-mono text-xs text-primary font-semibold">
+                    {section.years.reduce((total, year) => total + year.items.length, 0).toLocaleString("en-IN")} DOSSIERS
+                  </span>
+                </div>
+
+                <div className="space-y-10">
+                  {section.years.map((year) => (
+                    <div key={`${section.award}-${year.year}`} data-testid="hero-award-year">
+                      <div className="mb-4 inline-flex items-center gap-2 px-2.5 py-1 rounded bg-muted border border-border/80 text-xs font-mono text-primary font-bold">
+                        <span>YEAR: {year.year}</span>
+                      </div>
+
+                      <div data-testid="hero-awardee-grid" className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        {year.items.map((awardee) => {
+                          const name = displayAwardeeName(awardee.name);
+                          const summary = awardee.citationDetails ?? awardee.biography ?? getAwardeeStory(awardee).body;
+                          return (
+                            <Link
+                              key={awardee.officialId}
+                              data-testid="hero-awardee"
+                              href={`/heroes/awardees/${awardee.officialId}`}
+                              className="group block"
+                            >
+                              <HUDFrame
+                                variant={isPVC ? "danger" : "default"}
+                                label={awardee.service ?? "ARMED FORCES"}
+                                scanline
+                                className="h-full"
+                              >
+                                <div className="overflow-hidden bg-background/60">
+                                  {awardee.photoUrl ? (
+                                    <Image
+                                      src={awardee.photoUrl}
+                                      width={640}
+                                      height={360}
+                                      alt={`Portrait of ${name}`}
+                                      className="h-44 w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                      unoptimized
+                                    />
+                                  ) : (
+                                    <div className="flex h-44 items-center justify-center bg-muted/40 text-xs font-mono uppercase tracking-[0.16em] text-muted-foreground">
+                                      Photo Classified / Unavailable
+                                    </div>
+                                  )}
+                                </div>
+                                <div className="p-5">
+                                  <p className="font-mono text-[11px] uppercase text-primary font-semibold">
+                                    {formatDisplayDate(awardee.actionDate)}
+                                  </p>
+                                  <h4 className="mt-1.5 text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors line-clamp-1">
+                                    {name}
+                                  </h4>
+                                  <p className="mt-1 font-mono text-xs text-muted-foreground">
+                                    {awardee.rank ?? "Rank unrecorded"}
+                                    {awardee.unit !== "N/A" ? ` · ${awardee.unit}` : ""}
+                                  </p>
+                                  <p className="mt-3 line-clamp-3 text-xs leading-relaxed text-muted-foreground">
+                                    {summary}
+                                  </p>
+                                  <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs font-mono text-primary">
+                                    <span>OPEN OFFICIAL DOSSIER</span>
+                                    <span>→</span>
+                                  </div>
+                                </div>
+                              </HUDFrame>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      ) : (
+        <p className="rounded-lg border border-dashed p-8 text-center text-muted-foreground">
+          No official heroes match these filters.
+        </p>
+      )}
+
+      <p className="mt-12 text-xs font-mono text-muted-foreground border-t border-border/40 pt-4">
+        Archive grounds exclusively in official Ministry of Defence records (gallantryawards.gov.in).
+      </p>
+    </PageShell>
+  );
 }

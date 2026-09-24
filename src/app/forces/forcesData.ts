@@ -1003,9 +1003,7 @@ function publishUnit(unit: UnitDetail): PublishedUnitDetail {
 function publishForce(force: Force): PublishedForce {
   const sources = force.sources ?? COMMAND_SOURCES[force.name];
   return { ...force, sources, commands: force.commands.map((command) => {
-    const publicCommand = { ...command, sources: command.sources ?? sources };
-    delete publicCommand.bases;
-    return publicCommand;
+    return { ...command, bases: command.bases, sources: command.sources ?? sources };
   }) };
 }
 

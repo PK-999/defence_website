@@ -3,7 +3,7 @@ import { absoluteSiteUrl } from "@/lib/config";
 import { entityRoutes, type EntityType } from "@/lib/domain/entities";
 import { getPublicSlugs } from "@/lib/repositories/entities";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 const staticPaths = ["/", "/about", "/editorial-policy", "/methodology", "/conflicts", "/operations", "/heroes", "/arsenal", "/forces", "/archive", "/graph", "/compare", "/intel"];
 

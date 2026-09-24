@@ -1,8 +1,0 @@
-source_key,source_url,source_table,source_row,retrieved_at,Name,Type,Quantity,Origin,Notes
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,5,1,2026-09-15T04:05:32Z,Casspir,Armoured personnel carrier,255,South Africa,
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,5,2,2026-09-15T04:05:32Z,Tarmour AFV,Armoured personnel carrier,,India,Based on Indian T-55 Tank.
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,5,3,2026-09-15T04:05:32Z,Hydrema,Mine clearing Vehicle,24,Denmark India,Manufactured locally by OFB India
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,5,4,2026-09-15T04:05:32Z,T-72 FWMP,Mine plow,,India,
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,5,5,2026-09-15T04:05:32Z,Aditya,Mine protected Vehicle,300+,India,OFB India. 1400 to be produced. 20/month manufactured at Ordnance Factory Medak AND Vehicle Factory Jabalpur.
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,5,6,2026-09-15T04:05:32Z,DRDO Daksh,Bomb disposal robot,190+,India,"The Army has placed orders for 200 Dakshs."""
-army_legacy_equipment,https://military-history.fandom.com/api.php?action=parse&page=Equipment_of_the_Indian_Army&prop=text&format=json,5,7,2026-09-15T04:05:32Z,CasspirDRDO Daksh,CasspirDRDO Daksh,CasspirDRDO Daksh,CasspirDRDO Daksh,CasspirDRDO Daksh
