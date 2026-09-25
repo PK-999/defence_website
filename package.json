@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit --incremental false",
     "seed": "tsx scripts/seed.ts",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "prisma:generate:node": "prisma generate"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

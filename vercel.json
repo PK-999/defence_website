@@ -4,7 +4,7 @@
     "DATABASE_URL": "file:./dev.db",
     "SITE_URL": "https://defence-website-zeta.vercel.app"
   },
-  "buildCommand": "gzip -dc prisma/dev.db.gz > prisma/dev.db && npm run prisma:generate:node && next build",
+  "buildCommand": "if [ -f prisma/dev.db.gz ]; then gzip -dc prisma/dev.db.gz > prisma/dev.db; fi && npm run prisma:generate && npm run build",
   "headers": [
     {
       "source": "/research/ledger.json",
