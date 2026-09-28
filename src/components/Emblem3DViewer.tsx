@@ -225,7 +225,7 @@ export function Emblem3DViewer({
   const data = EMBLEM_DATA[service] || EMBLEM_DATA["INDIAN ARMY"];
   const [modelViewerLoaded, setModelViewerLoaded] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
-  const [exposure, setExposure] = useState<number>(1.25);
+  const [exposure, setExposure] = useState<number>(1.15);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<HTMLElement | null>(null);
@@ -341,9 +341,9 @@ export function Emblem3DViewer({
 
           <button
             type="button"
-            onClick={() => setExposure(exposure === 1.25 ? 1.55 : 1.25)}
+            onClick={() => setExposure(exposure === 1.15 ? 1.45 : 1.15)}
             className={`p-1 rounded transition-colors ${
-              exposure > 1.3 ? "text-accent-gold" : "text-muted-foreground hover:text-foreground"
+              exposure > 1.2 ? "text-accent-gold" : "text-muted-foreground hover:text-foreground"
             }`}
             title="Toggle Specular Illumination"
           >
