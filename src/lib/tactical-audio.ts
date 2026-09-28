@@ -84,12 +84,13 @@ function getSharedAudioContext(): AudioContext | null {
 
 let lastMorseBeepTime = 0;
 
-/** Plays an authentic tactical telegraph morse tone */
+/** Plays an authentic tactical telegraph morse CW tone (750 Hz sine with raised-cosine keying) */
 export function playMorseBeep(type: "dit" | "dah" = "dit"): void {
   if (typeof window === "undefined" || isTacticalSoundMuted()) return;
   const nowMs = Date.now();
-  // Throttle to avoid audio buffer saturation (min 35ms between beeps)
-  if (nowMs - lastMorseBeepTime < 35) return;
+  // Minimum throttle to avoid audio queue collision
+  const minInterval = type === "dit" ? 38 : 95;
+  if (nowMs - lastMorseBeepTime < minInterval) return;
   lastMorseBeepTime = nowMs;
 
   const ctx = getSharedAudioContext();
@@ -97,8 +98,9 @@ export function playMorseBeep(type: "dit" | "dah" = "dit"): void {
 
   try {
     const now = ctx.currentTime;
-    const duration = type === "dit" ? 0.028 : 0.065;
-    const freq = type === "dit" ? 780 : 720;
+    // Authentic ITU radio telegraphy duration: dit = 42ms, dah = 126ms (1:3 ratio)
+    const duration = type === "dit" ? 0.042 : 0.126;
+    const freq = 750; // Standard international CW sidetone
 
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
@@ -106,10 +108,10 @@ export function playMorseBeep(type: "dit" | "dah" = "dit"): void {
     osc.type = "sine";
     osc.frequency.setValueAtTime(freq, now);
 
-    // Smooth envelope to prevent audible clicks
+    // Raised-cosine 4ms attack and release envelope to prevent key-click splatter
     gain.gain.setValueAtTime(0.0001, now);
-    gain.gain.linearRampToValueAtTime(0.045, now + 0.004);
-    gain.gain.setValueAtTime(0.045, now + duration - 0.006);
+    gain.gain.linearRampToValueAtTime(0.048, now + 0.004);
+    gain.gain.setValueAtTime(0.048, now + duration - 0.005);
     gain.gain.linearRampToValueAtTime(0.0001, now + duration);
 
     osc.connect(gain);
@@ -135,17 +137,17 @@ export function playDecryptionComplete(): void {
 
     osc.type = "sine";
     osc.frequency.setValueAtTime(880, now);
-    osc.frequency.exponentialRampToValueAtTime(1174.66, now + 0.07);
+    osc.frequency.exponentialRampToValueAtTime(1174.66, now + 0.08);
 
     gain.gain.setValueAtTime(0.0001, now);
-    gain.gain.linearRampToValueAtTime(0.04, now + 0.008);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
+    gain.gain.linearRampToValueAtTime(0.038, now + 0.006);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.11);
 
     osc.connect(gain);
     gain.connect(ctx.destination);
 
     osc.start(now);
-    osc.stop(now + 0.09);
+    osc.stop(now + 0.11);
   } catch {
     // Audio safe fallback
   }

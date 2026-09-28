@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import {
   RotateCw,
   RotateCcw,
@@ -8,13 +9,13 @@ import {
   ZoomOut,
   Maximize2,
   Minimize2,
-  Sparkles,
   Shield,
   Compass,
-  Layers,
   Award,
   Sun,
-  Eye,
+  Layers,
+  Sparkles,
+  Search,
 } from "lucide-react";
 
 export type ServiceBranch =
@@ -36,6 +37,7 @@ interface EmblemMeta {
   mottoSource: string;
   established: string;
   glb: string;
+  masterImage: string;
   accent: string;
   accentBg: string;
   heraldrySummary: string;
@@ -50,39 +52,40 @@ export const EMBLEM_DATA: Record<ServiceBranch, EmblemMeta> = {
     hindi: "भारतीय थल सेना",
     motto: "सेवा अस्माकं धर्मः",
     mottoEn: "Service Before Self",
-    mottoSource: "Ancient Indian philosophical tradition",
-    established: "15 January 1949 (Field Marshal Cariappa assumed command)",
+    mottoSource: "Ancient Indian martial tradition",
+    established: "15 January 1949 (Field Marshal K. M. Cariappa assumed command as first Indian C-in-C)",
     glb: "/models/indian-army.glb",
+    masterImage: "/images/emblems/army-master-hd.jpg",
     accent: "#83d65c",
     accentBg: "rgba(131, 214, 92, 0.15)",
     heraldrySummary:
-      "The State Emblem of India (Ashoka Lion Capital with Satyameva Jayate) resting upon two crossed traditional Indian curved scimitars (Talwars).",
+      "The State Emblem of India (Ashoka Lion Capital with Satyameva Jayate) surmounting two crossed Indian Army military swords on martial scarlet backing.",
     elements: [
       {
         element: "Ashoka Lion Capital",
         significance:
-          "Four Asiatic lions standing back-to-back atop an abacus adorned with the Dharma Chakra wheel, elephant, horse, bull, and lion, symbolizing supreme national sovereignty, vigilance, and moral righteousness.",
+          "Four Asiatic lions standing back-to-back atop an abacus with the Ashoka Dharma Chakra wheel, horse, bull, and lion, symbolizing supreme constitutional sovereignty, righteousness, and vigilance.",
       },
       {
         element: "Satyameva Jayate Inscription",
         significance:
-          "Devanagari script beneath the abacus proclaiming 'Truth Alone Triumphs' (Mundaka Upanishad), the foundational bedrock of the Republic.",
+          "Devanagari script beneath the abacus proclaiming 'Truth Alone Triumphs' (Mundaka Upanishad), the ethical foundation of the Republic of India.",
       },
       {
-        element: "Crossed Scimitars (Talwars)",
+        element: "Crossed Military Swords",
         significance:
-          "Two traditional curved blades crossed at 45 degrees, signifying ancient Indian martial heritage, resolute territorial defence, and readiness for offensive battle.",
+          "Two traditional straight pattern Indian military swords crossed at 45 degrees with circular pommels and guards, symbolizing offensive tactical readiness and resolute territorial defense.",
       },
       {
-        element: "Burnished Gold & Olive Patina",
+        element: "Gilded Gold & Martial Scarlet",
         significance:
-          "High-relief gilded relief celebrating seven decades of sacrifice from the heights of the Himalayas to the Thar Desert.",
+          "Burnished gold relief on military scarlet backing, celebrating seven decades of sacrifice from the Siachen Glacier to the Thar Desert.",
       },
     ],
     colorCodes: [
       { name: "Gold / Brass", hex: "#e5a93c" },
+      { name: "Martial Scarlet", hex: "#a81d24" },
       { name: "Army Olive", hex: "#4b5320" },
-      { name: "Martial Scarlet", hex: "#cc1122" },
     ],
     commandCount: 7,
   },
@@ -91,38 +94,39 @@ export const EMBLEM_DATA: Record<ServiceBranch, EmblemMeta> = {
     hindi: "भारतीय नौसेना",
     motto: "शं नो वरुणः",
     mottoEn: "May the Lord of the Oceans be Auspicious Unto Us",
-    mottoSource: "Rigveda, Hymn 1.25.19 invoking Lord Varuna",
-    established: "4 December (Celebrated as Navy Day commemorating Operation Trident, 1971)",
+    mottoSource: "Rigveda (Hymn 1.25.19 invoking Lord Varuna, deity of oceans)",
+    established: "26 January 1950 (Navy Day observed on 4 December commemorating Operation Trident, 1971)",
     glb: "/models/indian-navy.glb",
+    masterImage: "/images/emblems/navy-master-hd.jpg",
     accent: "#00e5ff",
     accentBg: "rgba(0, 229, 255, 0.15)",
     heraldrySummary:
-      "A gilded Fouled Naval Anchor encased by an azure shield crowned by the State Emblem of India, reflecting oceanic supremacy across the Indo-Pacific.",
+      "Official 2022 Crest: The Ashoka Lion Capital atop a gilded fouled anchor inside an octagonal golden border inspired by the Rajmudra naval seal of Chhatrapati Shivaji Maharaj.",
     elements: [
       {
-        element: "Fouled Anchor (नौसेना लंगर)",
+        element: "Chhatrapati Shivaji Octagonal Shield",
         significance:
-          "Solid brass maritime anchor encircled by a rope cable, traditional symbol of marine endurance, oceanic command, and safe harbour for the nation.",
+          "Adopted in 2022 to honour the father of modern Indian naval warfare. The twin golden octagonal borders represent the eight cardinal directions (Ashta Dishas), signifying multidirectional blue-water reach.",
       },
       {
-        element: "Chhatrapati Shivaji Shield",
+        element: "Gilded Fouled Anchor",
         significance:
-          "The octagonal golden border and azure enamel field inspired by the Rajmudra naval seal of Chhatrapati Shivaji Maharaj, the father of modern Indian naval warfare.",
+          "Solid golden maritime anchor encircled by a nautical rope cable, symbolizing steadfast marine endurance, seamanship, and maritime command.",
       },
       {
         element: "Ashoka Lion Capital Crown",
         significance:
-          "Surmounting the naval shield, representing the supreme constitutional authority under the President of India as Supreme Commander of the Armed Forces.",
+          "Surmounting the naval shield, representing the supreme authority under the President of India as Supreme Commander of the Armed Forces.",
       },
       {
-        element: "Deep Marine Azure Field",
+        element: "Rigvedic Devanagari Motto",
         significance:
-          "Reflects the vast expanse of the Indian Ocean, Arabian Sea, and Bay of Bengal protected by the blue-water fleet.",
+          "Golden Devanagari inscription 'शं नो वरुणः' (Shaṁ No Varuṇaḥ) invoking oceanic peace and divine victory.",
       },
     ],
     colorCodes: [
       { name: "Naval Gold", hex: "#f0b429" },
-      { name: "Oceanic Navy", hex: "#0c2340" },
+      { name: "Oceanic Navy Blue", hex: "#0c2340" },
       { name: "Electric Cyan", hex: "#00e5ff" },
     ],
     commandCount: 3,
@@ -135,30 +139,31 @@ export const EMBLEM_DATA: Record<ServiceBranch, EmblemMeta> = {
     mottoSource: "Bhagavad Gita (Chapter 11, Verse 24 - Lord Krishna's Vishwaroopa)",
     established: "8 October 1932 (Celebrated annually as Air Force Day)",
     glb: "/models/indian-air-force.glb",
+    masterImage: "/images/emblems/air-force-master-hd.jpg",
     accent: "#ffffff",
     accentBg: "rgba(255, 255, 255, 0.15)",
     heraldrySummary:
-      "A soaring golden Himalayan Eagle ascending on an azure roundel with national tricolour cockade, crowned by the Ashoka Lion Capital above a Devanagari motto scroll.",
+      "Official IAF Crest: Ashoka Lion Capital crest at apex, soaring golden Himalayan Eagle on an azure roundel with national tricolour cockade, surrounded by golden lotus wreath and Devanagari motto scroll.",
     elements: [
       {
         element: "Himalayan Eagle (हिमालयी चील)",
         significance:
-          "Golden eagle with outspread wings ascending vertically, symbolizing supreme aerial vigilance, supersonic strike capability, and fearless dominance of the skies.",
+          "Golden eagle with expansive outspread wings ascending vertically, symbolizing supreme aerial vigilance, supersonic strike capability, and fearless dominance of the skies.",
       },
       {
-        element: "Azure Roundel & Golden Laurel",
+        element: "Ashoka Lion Capital Apex",
         significance:
-          "Sky-blue circular disk bordered by golden lotus petals, housing the sacred symbol of victory and eternal vigilance.",
+          "Positioned directly at the top of the roundel with Satyameva Jayate, symbolizing total national devotion and constitutional loyalty.",
       },
       {
-        element: "Ashoka Lion Capital Crest",
+        element: "Azure Roundel & Golden Lotus Wreath",
         significance:
-          "Positioned directly at the apex above the eagle, symbolizing national devotion and loyalty to the Republic.",
+          "Sky-blue circular disk bordered by golden lotus petals, housing the national tricolour cockade (saffron, white, green) with Ashoka Chakra.",
       },
       {
-        element: "Devanagari Ribbon Scroll",
+        element: "Devanagari Motto Ribbon Scroll",
         significance:
-          "Curving golden scroll inscribed 'भारतीय वायु सेना' framing the base of the emblem with national honour.",
+          "Curving golden scroll inscribed 'भारतीय वायु सेना' and Gita motto 'नभः स्पृशं दीप्तम्' framing the base of the emblem.",
       },
     ],
     colorCodes: [
@@ -171,41 +176,42 @@ export const EMBLEM_DATA: Record<ServiceBranch, EmblemMeta> = {
   "TRI-SERVICE COMMANDS": {
     name: "Integrated Defence Staff & Tri-Service Commands",
     hindi: "एकीकृत रक्षा स्टाफ",
-    motto: "सदैव सजग",
-    mottoEn: "Victory Through Jointness · Always Alert",
-    mottoSource: "Joint Doctrine of the Indian Armed Forces",
-    established: "1 October 2001 (Formed post-Kargil Review Committee recommendations)",
+    motto: "Victory Through Jointness",
+    mottoEn: "Victory Through Jointness · सदैव सजग",
+    mottoSource: "Joint Doctrine of the Indian Armed Forces (HQ IDS)",
+    established: "1 October 2001 (Post-Kargil Review Committee; unified under Chief of Defence Staff)",
     glb: "/models/integrated-defence-staff.glb",
+    masterImage: "/images/emblems/tri-service-master-hd.jpg",
     accent: "#e5a93c",
     accentBg: "rgba(229, 169, 60, 0.15)",
     heraldrySummary:
-      "Tri-service jointness heraldry uniting crossed Army swords, naval fouled anchor, and Air Force eagle wings surmounted by the Ashoka Lion Capital.",
+      "Official IDS Crest: Tri-service joint heraldry unifying crossed Army swords, Naval fouled anchor, and Air Force eagle wings, crowned by the Ashoka Lion Capital and encircled by a golden laurel wreath.",
     elements: [
       {
-        element: "Crossed Swords (Land Force)",
+        element: "Crossed Swords (Land Power)",
         significance:
-          "Represent the Indian Army's resolute boots on the ground and ground combat power across all border theatres.",
+          "Representing the Indian Army's boots on the ground, mountain warfare divisions, and armored combat power across all border theatres.",
       },
       {
         element: "Naval Anchor (Sea Power)",
         significance:
-          "Represents the Indian Navy's maritime strike carrier battle groups and submarine sea deterrence.",
+          "Representing the Indian Navy's aircraft carrier battle groups, guided-missile destroyers, and blue-water maritime deterrence.",
       },
       {
         element: "Eagle Wings (Air Power)",
         significance:
-          "Flanking the anchor, representing the Indian Air Force's precision strikes and strategic airlift capabilities.",
+          "Flanking the anchor, representing the Indian Air Force's precision strikes, multi-role air superiority, and strategic airlift capabilities.",
       },
       {
-        element: "Unified Ashoka Capital",
+        element: "Unified Ashoka Capital & Laurel",
         significance:
-          "Unifies the tri-service commands (including Andaman & Nicobar Command and Strategic Forces Command) under unified theatre doctrine.",
+          "Unifies the tri-service commands (including Andaman & Nicobar Command and Strategic Forces Command) under unified joint theatre doctrine.",
       },
     ],
     colorCodes: [
+      { name: "Tri-Service Maroon", hex: "#800020" },
       { name: "Joint Tri-Gold", hex: "#e5a93c" },
-      { name: "Army Red", hex: "#a81d24" },
-      { name: "Navy Dark Blue", hex: "#0b1c3d" },
+      { name: "Naval Navy Blue", hex: "#0b1c3d" },
       { name: "Air Force Blue", hex: "#4a90e2" },
     ],
     commandCount: 2,
@@ -224,9 +230,10 @@ export function Emblem3DViewer({
   showHeraldryDetails = true,
 }: Emblem3DViewerProps) {
   const data = EMBLEM_DATA[service] || EMBLEM_DATA["INDIAN ARMY"];
+  const [viewMode, setViewMode] = useState<"3d" | "macro">("3d");
   const [modelViewerLoaded, setModelViewerLoaded] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
-  const [exposure, setExposure] = useState<number>(1.25);
+  const [exposure, setExposure] = useState<number>(1.35);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<HTMLElement | null>(null);
@@ -268,7 +275,7 @@ export function Emblem3DViewer({
     try {
       const current = mv.getCameraOrbit ? mv.getCameraOrbit() : { radius: 2.2 };
       const factor = direction === "in" ? 0.8 : 1.25;
-      const newRadius = Math.max(1.0, Math.min(4.5, current.radius * factor));
+      const newRadius = Math.max(0.9, Math.min(4.5, current.radius * factor));
       mv.cameraOrbit = `auto auto ${newRadius}m`;
     } catch {
       // Fallback
@@ -297,78 +304,105 @@ export function Emblem3DViewer({
             style={{ backgroundColor: data.accent }}
           />
           <span className="font-bold text-foreground tracking-wider uppercase">
-            3D MESH ARTIFACT · {data.name.toUpperCase()}
+            {data.name.toUpperCase()} · INSIGNIA ARTIFACT
           </span>
           <span className="text-muted-foreground hidden sm:inline">|</span>
-          <span className="text-primary hidden sm:inline">PBR GLB RELIEF</span>
+          <span className="text-primary hidden sm:inline">VOLUMETRIC PBR RELIEF</span>
         </div>
 
-        {/* Tactical 3D HUD Canvas Controls */}
+        {/* View Mode & Tactical Controls */}
         <div className="flex items-center gap-1.5 bg-black/60 p-1 rounded-lg border border-primary/30">
           <button
             type="button"
-            onClick={() => setAutoRotate(!autoRotate)}
+            onClick={() => setViewMode("3d")}
             className={`px-2.5 py-1 rounded text-[10px] uppercase font-mono font-bold transition-all flex items-center gap-1.5 ${
-              autoRotate
+              viewMode === "3d"
                 ? "bg-primary text-black shadow-sm"
                 : "text-muted-foreground hover:text-foreground hover:bg-white/10"
             }`}
-            title="Toggle 3D Turntable Auto-Rotation"
           >
-            <RotateCw className={`w-3 h-3 ${autoRotate ? "animate-spin" : ""}`} />
-            <span>{autoRotate ? "ROTATING" : "PAUSED"}</span>
+            <Compass className="w-3 h-3" />
+            <span>3D MESH</span>
           </button>
 
           <button
             type="button"
-            onClick={handleResetCamera}
-            className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors"
-            title="Reset Camera Orientation"
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleZoom("in")}
-            className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors"
-            title="Zoom In"
-          >
-            <ZoomIn className="w-3.5 h-3.5" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleZoom("out")}
-            className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors"
-            title="Zoom Out"
-          >
-            <ZoomOut className="w-3.5 h-3.5" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setExposure(exposure === 1.25 ? 1.55 : 1.25)}
-            className={`p-1 rounded transition-colors ${
-              exposure > 1.3 ? "text-accent-gold" : "text-muted-foreground hover:text-foreground"
+            onClick={() => setViewMode("macro")}
+            className={`px-2.5 py-1 rounded text-[10px] uppercase font-mono font-bold transition-all flex items-center gap-1.5 ${
+              viewMode === "macro"
+                ? "bg-primary text-black shadow-sm"
+                : "text-muted-foreground hover:text-foreground hover:bg-white/10"
             }`}
-            title="Toggle High-Dynamic Specular Illumination"
           >
-            <Sun className="w-3.5 h-3.5" />
+            <Search className="w-3 h-3" />
+            <span>MACRO DETAIL</span>
           </button>
+
+          {viewMode === "3d" && (
+            <>
+              <button
+                type="button"
+                onClick={() => setAutoRotate(!autoRotate)}
+                className={`p-1.5 rounded transition-all ${
+                  autoRotate ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                }`}
+                title="Toggle Turntable Auto-Rotate"
+              >
+                <RotateCw className={`w-3.5 h-3.5 ${autoRotate ? "animate-spin" : ""}`} />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleResetCamera}
+                className="p-1.5 rounded text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors"
+                title="Reset Camera"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handleZoom("in")}
+                className="p-1.5 rounded text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors"
+                title="Zoom In"
+              >
+                <ZoomIn className="w-3.5 h-3.5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handleZoom("out")}
+                className="p-1.5 rounded text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors"
+                title="Zoom Out"
+              >
+                <ZoomOut className="w-3.5 h-3.5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setExposure(exposure === 1.35 ? 1.65 : 1.35)}
+                className={`p-1.5 rounded transition-colors ${
+                  exposure > 1.4 ? "text-accent-gold" : "text-muted-foreground hover:text-foreground"
+                }`}
+                title="Toggle High-Dynamic Specular Lighting"
+              >
+                <Sun className="w-3.5 h-3.5" />
+              </button>
+            </>
+          )}
 
           <button
             type="button"
             onClick={toggleFullscreen}
-            className="p-1 rounded text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors hidden sm:inline-flex"
-            title="Toggle Fullscreen Inspection"
+            className="p-1.5 rounded text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors hidden sm:inline-flex"
+            title="Toggle Fullscreen"
           >
             {isFullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
           </button>
         </div>
       </div>
 
-      {/* Main 3D Canvas Chamber */}
+      {/* Main Visual Chamber */}
       <div className="relative h-[440px] sm:h-[520px] lg:h-[580px] w-full flex items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_center,_#0a2215_0%,_#030b06_70%,_#010503_100%)] select-none">
         {/* Subtle Background Polar Grid */}
         <div
@@ -387,33 +421,50 @@ export function Emblem3DViewer({
           }}
         />
 
-        {/* Interactive 3D Model Viewer */}
-        {modelViewerLoaded ? (
-          <model-viewer
-            ref={viewerRef as React.RefObject<HTMLElement>}
-            src={data.glb}
-            alt={`${data.name} 3D Master Emblem`}
-            camera-controls
-            auto-rotate={autoRotate ? true : undefined}
-            auto-rotate-delay={600}
-            rotation-per-second="20deg"
-            camera-orbit="0deg 75deg 105%"
-            min-camera-orbit="auto auto 65%"
-            max-camera-orbit="auto auto 180%"
-            shadow-intensity="1.8"
-            shadow-softness="0.35"
-            exposure={String(exposure)}
-            tone-mapping="aces"
-            environment-image="neutral"
-            interaction-prompt="none"
-            style={{ width: "100%", height: "100%", outline: "none" }}
-          />
+        {viewMode === "3d" ? (
+          modelViewerLoaded ? (
+            <model-viewer
+              ref={viewerRef as React.RefObject<HTMLElement>}
+              src={data.glb}
+              alt={`${data.name} 3D Master Emblem`}
+              camera-controls
+              auto-rotate={autoRotate ? true : undefined}
+              auto-rotate-delay={500}
+              rotation-per-second="22deg"
+              camera-orbit="0deg 75deg 105%"
+              min-camera-orbit="auto auto 60%"
+              max-camera-orbit="auto auto 180%"
+              shadow-intensity="1.6"
+              shadow-softness="0.4"
+              exposure={String(exposure)}
+              tone-mapping="aces"
+              environment-image="neutral"
+              interaction-prompt="none"
+              style={{ width: "100%", height: "100%", outline: "none" }}
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center gap-3 font-mono text-xs text-muted-foreground">
+              <RotateCw className="w-8 h-8 animate-spin text-primary" />
+              <span className="tracking-widest uppercase text-primary font-bold">
+                INITIALIZING 3D VOLUMETRIC SCULPT...
+              </span>
+            </div>
+          )
         ) : (
-          <div className="flex flex-col items-center justify-center gap-3 font-mono text-xs text-muted-foreground">
-            <RotateCw className="w-8 h-8 animate-spin text-primary" />
-            <span className="tracking-widest uppercase text-primary font-bold">
-              INITIALIZING WEBGL 3D RELIEF PIPELINE...
-            </span>
+          <div className="relative w-full h-full flex items-center justify-center p-6">
+            <div className="relative w-full max-w-[480px] aspect-square rounded-2xl overflow-hidden border-2 border-primary/40 shadow-[0_0_50px_rgba(0,0,0,0.9)] bg-black">
+              <Image
+                src={data.masterImage}
+                alt={`${data.name} Master Insignia Detailing`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 480px"
+                priority
+              />
+              <div className="absolute bottom-2 right-2 px-2.5 py-1 rounded bg-black/80 border border-primary/40 text-[9px] font-mono text-primary font-bold">
+                1024×1024 MASTER HERALDIC RELIEF
+              </div>
+            </div>
           </div>
         )}
 
@@ -426,7 +477,11 @@ export function Emblem3DViewer({
         {/* Interactive Instructions Overlay */}
         <div className="absolute bottom-3 left-4 pointer-events-none px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-primary/30 font-mono text-[10px] text-primary flex items-center gap-2">
           <Compass className="w-3.5 h-3.5 animate-spin" />
-          <span>DRAG 360° ORBIT · PINCH / SCROLL ZOOM · PBR LIGHTING ACTIVE</span>
+          <span>
+            {viewMode === "3d"
+              ? "DRAG 360° ORBIT · PINCH / SCROLL ZOOM · VOLUMETRIC 3D SCULPT"
+              : "1024×1024 MACRO RELIEF · RAZOR-SHARP HERALDIC ENGRAVING"}
+          </span>
         </div>
       </div>
 
@@ -465,7 +520,7 @@ export function Emblem3DViewer({
             <div className="flex items-center gap-2 mb-2">
               <Award className="w-4 h-4 text-accent-gold" />
               <h3 className="font-mono text-xs font-bold text-accent-gold uppercase tracking-widest">
-                HERALDIC SPECIFICATION & CARVING ANATOMY
+                OFFICIAL HERALDIC SPECIFICATION & EMBLEM ANATOMY
               </h3>
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground font-sans">

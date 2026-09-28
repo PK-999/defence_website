@@ -14,26 +14,25 @@ interface MorseTextProps {
   revealDelay?: number;
 }
 
-const MORSE_GLYPHS = [".", "-", "·", "—", "•", "−"];
-
 export function MorseText({
   text,
   className = "",
   as: Component = "span",
   triggerOnHover = true,
-  speed = 42,
+  speed = 55,
   playAudio = true,
-  revealDelay = 80,
+  revealDelay = 60,
 }: MorseTextProps) {
   const [displayText, setDisplayText] = useState<string>(text);
   const [isDecoding, setIsDecoding] = useState<boolean>(false);
+  const [activeMorseStream, setActiveMorseStream] = useState<string>("");
   const isDecodingRef = useRef(false);
   const timerRef = useRef<number | null>(null);
 
   const startDecode = useCallback(() => {
     if (isDecodingRef.current) return;
 
-    // Accessibility: respect reduced motion preference
+    // Respect reduced motion preference
     if (
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -47,55 +46,77 @@ export function MorseText({
 
     const chars = text.split("");
     const totalChars = chars.length;
-    let step = 0;
-    // Each character gets ~2-3 telegraph iterations before resolving
-    const totalSteps = totalChars * 2 + 4;
+    let charIdx = 0;
+    let morseSubIdx = 0;
 
     const tick = () => {
-      step++;
-      const resolvedCount = Math.floor(step / 2);
-
-      // Play authentic Morse tone during active transmission
-      if (playAudio && step % 2 === 0 && resolvedCount < totalChars) {
-        const targetChar = chars[resolvedCount];
-        const morse = charToMorse(targetChar);
-        const toneType = morse.startsWith("-") ? "dah" : "dit";
-        playMorseBeep(toneType);
-      }
-
-      const rendered = chars
-        .map((char, idx) => {
-          if (idx < resolvedCount) {
-            return char;
-          }
-          if (char === " " || char === "\n" || char === "\t") {
-            return char;
-          }
-          if (idx === resolvedCount) {
-            // Active decipher slot: display character's Morse or active dot/dash
-            const morse = charToMorse(char);
-            if (morse) {
-              const subIndex = step % morse.length;
-              return morse[subIndex] === "-" ? "—" : "•";
-            }
-            return MORSE_GLYPHS[Math.floor(Math.random() * MORSE_GLYPHS.length)];
-          }
-          // Pending character in transmission
-          return MORSE_GLYPHS[(idx + step) % MORSE_GLYPHS.length];
-        })
-        .join("");
-
-      setDisplayText(rendered);
-
-      if (step < totalSteps) {
-        timerRef.current = window.setTimeout(tick, speed);
-      } else {
+      if (charIdx >= totalChars) {
+        // Transmission fully decoded
         setDisplayText(text);
+        setActiveMorseStream("");
         isDecodingRef.current = false;
         setIsDecoding(false);
         if (playAudio) {
           playDecryptionComplete();
         }
+        return;
+      }
+
+      const currentChar = chars[charIdx];
+
+      // Automatically skip whitespace immediately
+      if (currentChar === " " || currentChar === "\n" || currentChar === "\t") {
+        charIdx++;
+        morseSubIdx = 0;
+        timerRef.current = window.setTimeout(tick, speed / 2);
+        return;
+      }
+
+      const morsePattern = charToMorse(currentChar) || "·";
+      const currentElement = morsePattern[morseSubIdx] || "·";
+      const isDah = currentElement === "-" || currentElement === "−" || currentElement === "—";
+
+      // Play authentic ITU Morse tone corresponding to this exact character element
+      if (playAudio) {
+        playMorseBeep(isDah ? "dah" : "dit");
+      }
+
+      // Render the string: resolved characters stay verbatim,
+      // active character displays its active Morse element,
+      // pending characters display subtle Morse dots/dashes
+      const rendered = chars
+        .map((c, i) => {
+          if (i < charIdx) {
+            return c; // Already locked in with original styling
+          }
+          if (c === " " || c === "\n" || c === "\t") {
+            return c;
+          }
+          if (i === charIdx) {
+            // Actively decoding: display current dit or dah
+            return isDah ? "−" : "·";
+          }
+          // Pending character: authentic Morse placeholder
+          return (i + morseSubIdx) % 2 === 0 ? "·" : "−";
+        })
+        .join("");
+
+      setDisplayText(rendered);
+      setActiveMorseStream(morsePattern);
+
+      morseSubIdx++;
+
+      // When all dits & dahs of this character are complete, lock in this character
+      if (morseSubIdx >= morsePattern.length) {
+        charIdx++;
+        morseSubIdx = 0;
+        // Inter-character gap before next letter
+        const charGap = speed * 1.2;
+        timerRef.current = window.setTimeout(tick, charGap);
+      } else {
+        // Intra-character gap between dits/dahs (dahs take slightly longer)
+        const elementDelay = isDah ? speed * 1.5 : speed;
+        timerRef.current = window.setTimeout(tick, elementDelay);
       }
     };
 
@@ -103,20 +124,23 @@ export function MorseText({
   }, [text, speed, playAudio, revealDelay]);
 
   useEffect(() => {
-    startDecode();
+    const initTimer = window.setTimeout(() => {
+      startDecode();
+    }, 20);
     return () => {
+      window.clearTimeout(initTimer);
       if (timerRef.current) clearTimeout(timerRef.current);
     };
   }, [startDecode]);
 
   return (
     <Component
-      className={`inline-block select-none transition-colors duration-200 ${
-        isDecoding ? "font-mono tracking-widest text-primary/95" : ""
-      } ${className}`}
+      // CRITICAL: NEVER mutate font family, tracking, line-height or layout properties!
+      // Inherit the exact parent styling at all times.
+      className={`inline-block select-none transition-opacity duration-150 ${className}`}
       aria-label={text}
       onMouseEnter={triggerOnHover ? startDecode : undefined}
-      title={isDecoding ? "Decrypting Morse Transmission..." : undefined}
+      title={isDecoding ? `Decrypting CW Morse Transmission: ${activeMorseStream}` : undefined}
     >
       {displayText}
     </Component>
