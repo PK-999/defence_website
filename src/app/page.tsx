@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Crosshair, Radar, Shield, Compass, Activity, Terminal, ChevronRight } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { HUDFrame } from "@/components/HUDFrame";
-import { ScrambleText } from "@/components/ScrambleText";
+import { MorseText } from "@/components/MorseText";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ParticleField } from "@/components/ParticleField";
 
@@ -86,10 +86,10 @@ export default async function Home() {
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary animate-ping" />
           </div>
 
-          {/* Main Scramble Headline */}
+          {/* Main Morse Decode Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight uppercase text-foreground">
             <span className="block text-primary glow-text-primary">
-              <ScrambleText text="INDIA'S DEFENCE ARCHIVE" speed={35} />
+              <MorseText text="INDIA'S DEFENCE ARCHIVE" speed={38} />
             </span>
           </h1>
 

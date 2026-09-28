@@ -6,7 +6,6 @@ import { formatDisplayDate } from "@/lib/domain/dates";
 import { GALLANTRY_AWARD_ORDER } from "@/lib/heroes/grouping";
 import { displayAwardeeName, gallantryResearch, getAwardees, getAwardeeStory } from "@/lib/heroes/gallantry-research";
 import { HUDFrame } from "@/components/HUDFrame";
-import { ScrambleText } from "@/components/ScrambleText";
 import { Medal, Shield, Award, RotateCw } from "lucide-react";
 import { Medal3DViewer } from "@/components/Medal3DViewer";
 

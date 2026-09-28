@@ -1,13 +1,31 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { PageHeader, PageShell } from "@/components/PageShell";
+import { PageShell } from "@/components/PageShell";
 import { formatDisplayDate } from "@/lib/domain/dates";
 import { displayAwardeeName, getAwardeeBiography, getAwardeeById, getAwardeeStory } from "@/lib/heroes/gallantry-research";
 import { publicMetadata } from "@/lib/metadata";
 import { HUDFrame } from "@/components/HUDFrame";
 import { Medal3DViewer } from "@/components/Medal3DViewer";
-import { Medal, Shield, Award, ExternalLink, BookOpen, FileText, Bookmark } from "lucide-react";
+import { MorseText } from "@/components/MorseText";
+import {
+  Medal,
+  Shield,
+  Award,
+  ExternalLink,
+  BookOpen,
+  FileText,
+  Bookmark,
+  Crosshair,
+  Flame,
+  Flag,
+  Quote,
+} from "lucide-react";
 import type { Metadata } from "next";
+import {
+  formatHeroCitation,
+  formatHeroBiography,
+  type FormattedSection,
+} from "@/lib/heroes/hero-text-formatter";
 
 const documented = (value: string | null | undefined) =>
   value?.trim() && !["N/A", "Not documented"].includes(value.trim())
@@ -31,13 +49,30 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   });
 }
 
+function SectionIcon({ name }: { name?: FormattedSection["iconName"] }) {
+  switch (name) {
+    case "crosshair":
+      return <Crosshair className="w-4 h-4 text-primary" />;
+    case "flame":
+      return <Flame className="w-4 h-4 text-accent-danger" />;
+    case "shield":
+      return <Shield className="w-4 h-4 text-accent-cyan" />;
+    case "flag":
+      return <Flag className="w-4 h-4 text-accent-gold" />;
+    case "book":
+      return <BookOpen className="w-4 h-4 text-primary" />;
+    default:
+      return <Award className="w-4 h-4 text-primary" />;
+  }
+}
+
 export default async function GallantryAwardeePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const awardee = getAwardeeById(id);
   if (!awardee) notFound();
 
   const name = displayAwardeeName(awardee.name);
-  const biography = getAwardeeBiography(awardee);
+  const rawBiography = getAwardeeBiography(awardee);
   const story = getAwardeeStory(awardee);
   const parentage = awardee.parentage.filter((value) => value.trim() && value.trim().toUpperCase() !== "N/A");
 
@@ -45,7 +80,8 @@ export default async function GallantryAwardeePage({ params }: { params: Promise
   const isMVC = awardee.award.includes("Maha Vir");
   const isAshoka = awardee.award.includes("Ashoka");
 
-  const rewardedAction = awardee.citationDetails || story?.body || "Conferred for conspicuous bravery and gallantry in the face of the enemy.";
+  const formattedCitation = formatHeroCitation(awardee.citationDetails || story?.body);
+  const formattedBiography = formatHeroBiography(rawBiography);
 
   const navSections = [
     { id: "rewarded-action", label: "01 // REWARDED ACTION" },
@@ -73,13 +109,11 @@ export default async function GallantryAwardeePage({ params }: { params: Promise
   ];
 
   return (
-    <PageShell width="wide">
+    <PageShell width="wide" breadcrumbTitle={name.toUpperCase()}>
       {/* 2-Column Tactical Layout: Frozen Left Column + Scrollable Right Column */}
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mt-2">
-        
         {/* LEFT COLUMN: Frozen Portrait & Facts Dossier */}
         <aside className="w-full lg:w-[380px] xl:w-[420px] shrink-0 lg:sticky lg:top-24 self-start space-y-6">
-          
           {/* Portrait with HUD Framing & Scanner */}
           <HUDFrame
             variant={isPVC ? "danger" : isAshoka ? "gold" : isMVC ? "cyan" : "default"}
@@ -165,18 +199,17 @@ export default async function GallantryAwardeePage({ params }: { params: Promise
 
         {/* RIGHT COLUMN: Scrollable Narrative, Rewarded Action, and Dossier */}
         <main className="flex-1 min-w-0 space-y-8">
-          
-          {/* Header Title & Summary */}
+          {/* Header Title with Morse Code Decode & Sound */}
           <header className="border-b border-border/50 pb-6">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.24em] text-primary mb-2 flex items-center gap-2">
               <Medal className="w-4 h-4 text-accent-gold" />
               MINISTRY OF DEFENCE · CANONICAL HONOUR ROLL
             </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground uppercase">
-              {name}
+              <MorseText text={name} />
             </h1>
             <p className="mt-3 text-base sm:text-lg leading-relaxed text-muted-foreground">
-              {awardee.award} recipient — a canonical Ministry of Defence record with service details, official citation documents, and battlefield engagement narratives.
+              {awardee.award} recipient — canonical Ministry of Defence record with service details, official citation documents, and battlefield engagement narratives.
             </p>
           </header>
 
@@ -198,10 +231,10 @@ export default async function GallantryAwardeePage({ params }: { params: Promise
             </div>
           </nav>
 
-          {/* 1. REWARDED ACTION (Prominently Placed at the Very Top as Requested) */}
+          {/* 1. REWARDED ACTION - Professionally Sub-sectioned & Paragraphed */}
           <section id="rewarded-action" className="scroll-mt-36">
-            <div className="rounded-lg border-2 border-primary/50 bg-[#06140b]/90 backdrop-blur-md p-6 sm:p-8 shadow-[0_0_30px_rgba(131,214,92,0.15)] relative">
-              <div className="flex items-center justify-between border-b border-primary/30 pb-3 mb-4">
+            <div className="rounded-lg border-2 border-primary/50 bg-[#06140b]/90 backdrop-blur-md p-6 sm:p-8 shadow-[0_0_30px_rgba(131,214,92,0.15)] relative space-y-6">
+              <div className="flex items-center justify-between border-b border-primary/30 pb-3">
                 <div className="flex items-center gap-2">
                   <Award className="w-5 h-5 text-primary" />
                   <h2 className="text-xl sm:text-2xl font-mono font-bold uppercase tracking-wider text-primary">
@@ -212,46 +245,147 @@ export default async function GallantryAwardeePage({ params }: { params: Promise
                   OFFICIAL CITATION DIRECTIVE
                 </span>
               </div>
-              <blockquote className="relative text-base sm:text-lg leading-relaxed text-foreground font-sans pl-4 border-l-4 border-primary whitespace-pre-line italic">
-                &ldquo;{rewardedAction}&rdquo;
-              </blockquote>
-              <div className="mt-4 pt-3 border-t border-primary/20 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-muted-foreground">
+
+              {/* Directive Header Box */}
+              {formattedCitation.directiveHeader && (
+                <div className="rounded-md border border-primary/30 bg-primary/10 p-3.5 font-mono text-xs text-primary leading-relaxed">
+                  <span className="font-bold uppercase tracking-wider block text-[10px] text-muted-foreground mb-1">
+                    GAZETTE DIRECTIVE HEADING:
+                  </span>
+                  {formattedCitation.directiveHeader}
+                </div>
+              )}
+
+              {/* Sub-sectioned Citation Paragraphs */}
+              <div className="space-y-6">
+                {formattedCitation.sections.map((section) => (
+                  <div key={section.id} className="rounded-lg border border-border/50 bg-[#050e08]/70 p-5 space-y-3">
+                    <div className="flex items-center justify-between gap-2 border-b border-border/40 pb-2">
+                      <div className="flex items-center gap-2">
+                        <SectionIcon name={section.iconName} />
+                        <h3 className="font-mono text-sm font-bold uppercase tracking-wider text-foreground">
+                          {section.title}
+                        </h3>
+                      </div>
+                      {section.badge && (
+                        <span className="px-2 py-0.5 rounded bg-muted/60 border border-border/60 text-[9px] font-mono text-primary font-bold uppercase tracking-wider">
+                          {section.badge}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="space-y-3 text-base leading-relaxed text-foreground font-sans">
+                      {section.paragraphs.map((para, pIdx) => (
+                        <p key={pIdx} className="text-muted-foreground">
+                          {para}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Concluding Official Commendation */}
+              {formattedCitation.concludingCommendation && (
+                <div className="rounded-lg border-2 border-accent-gold/40 bg-accent-gold/5 p-5 relative overflow-hidden">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Medal className="w-4 h-4 text-accent-gold" />
+                    <span className="text-[10px] font-mono text-accent-gold uppercase font-bold tracking-widest">
+                      CANONICAL VALOUR DECREE & CITATION SUMMARY
+                    </span>
+                  </div>
+                  <p className="font-serif italic text-base sm:text-lg text-foreground leading-relaxed pl-3 border-l-2 border-accent-gold">
+                    &ldquo;{formattedCitation.concludingCommendation}&rdquo;
+                  </p>
+                </div>
+              )}
+
+              <div className="pt-3 border-t border-primary/20 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-muted-foreground">
                 <span>CANONICAL CITATION GAZETTE</span>
                 <span className="text-primary">{formatDisplayDate(awardee.actionDate)}</span>
               </div>
             </div>
           </section>
 
-          {/* 2. BIOGRAPHY AND SERVICE RECORD */}
-          <section id="biography" className="scroll-mt-36 rounded-lg border border-border/60 bg-card/60 p-6 sm:p-8">
-            <h2 className="border-l-2 border-primary pl-4 text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground">
-              Biography and Service Record
-            </h2>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
-              <p>
-                {biography}{" "}
-                <a
-                  href={awardee.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="whitespace-nowrap text-xs font-semibold text-primary underline hover:text-primary/80"
-                  aria-label="Official Ministry of Defence awardee record"
-                >
-                  [Official Ministry of Defence Record]
-                </a>
-              </p>
+          {/* 2. BIOGRAPHY AND SERVICE RECORD - Professionally Sub-sectioned */}
+          <section id="biography" className="scroll-mt-36 rounded-lg border border-border/60 bg-card/60 p-6 sm:p-8 space-y-6">
+            <div className="flex items-center justify-between border-b border-border/40 pb-3">
+              <h2 className="border-l-2 border-primary pl-4 text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground">
+                Biography and Service Record
+              </h2>
+              <span className="font-mono text-xs text-muted-foreground hidden sm:inline">
+                AUTHENTICATED DOSSIER
+              </span>
             </div>
+
+            {formattedBiography.sections.length > 0 ? (
+              <div className="space-y-6">
+                {formattedBiography.sections.map((section) => (
+                  <article key={section.id} className="rounded-lg border border-border/40 bg-[#06110a]/50 p-5 space-y-3.5">
+                    <div className="flex items-center justify-between gap-2 border-b border-border/30 pb-2">
+                      <div className="flex items-center gap-2">
+                        <SectionIcon name={section.iconName} />
+                        <h3 className="font-mono text-sm font-bold uppercase tracking-wider text-foreground">
+                          {section.title}
+                        </h3>
+                      </div>
+                      {section.badge && (
+                        <span className="px-2 py-0.5 rounded bg-muted/60 border border-border/60 text-[9px] font-mono text-primary font-bold uppercase tracking-wider">
+                          {section.badge}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="space-y-3 text-base leading-relaxed text-muted-foreground font-sans">
+                      {section.paragraphs.map((p, pIdx) => (
+                        <p key={pIdx}>{p}</p>
+                      ))}
+                    </div>
+
+                    {/* Prominent Callout / Personal Diary Quote if present */}
+                    {section.callout && (
+                      <div className="rounded-lg border border-primary/40 bg-primary/10 p-4 mt-3">
+                        <div className="flex items-center gap-2 mb-1.5 text-primary">
+                          <Quote className="w-4 h-4" />
+                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider">
+                            {section.callout.author ?? "IMMORTAL WORDS"}
+                          </span>
+                        </div>
+                        <blockquote className="italic font-serif text-base sm:text-lg text-foreground pl-3 border-l-2 border-primary">
+                          &ldquo;{section.callout.text}&rdquo;
+                        </blockquote>
+                      </div>
+                    )}
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
+                <p>
+                  {rawBiography}{" "}
+                  <a
+                    href={awardee.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="whitespace-nowrap text-xs font-semibold text-primary underline hover:text-primary/80"
+                    aria-label="Official Ministry of Defence awardee record"
+                  >
+                    [Official Ministry of Defence Record]
+                  </a>
+                </p>
+              </div>
+            )}
           </section>
 
           {/* 3. BATTLE NARRATIVE / MEDAL STORY */}
           <section id="battle-narrative" className="scroll-mt-36 rounded-lg border border-border/60 bg-card/60 p-6 sm:p-8">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4 border-b border-border/40 pb-3">
               <Bookmark className="w-5 h-5 text-primary" />
               <h2 className="border-l-2 border-primary pl-4 text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground">
                 {story.title}
               </h2>
             </div>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
+            <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>{story.body}</p>
               {awardee.warOperationBattle && (
                 <div className="mt-6 rounded border border-primary/30 bg-primary/5 p-4 text-sm font-mono">
@@ -264,13 +398,13 @@ export default async function GallantryAwardeePage({ params }: { params: Promise
 
           {/* 4. OFFICIAL SOURCES & CITATION DOCUMENTS */}
           <section id="official-sources" className="scroll-mt-36 rounded-lg border border-border/60 bg-card/60 p-6 sm:p-8">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4 border-b border-border/40 pb-3">
               <BookOpen className="w-5 h-5 text-primary" />
               <h2 className="border-l-2 border-primary pl-4 text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground">
                 Official Sources & Verified Citations
               </h2>
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               The profile and citation files are directly authenticated against government and Ministry of Defence archival servers.
             </p>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -352,7 +486,6 @@ export default async function GallantryAwardeePage({ params }: { params: Promise
               </ol>
             </section>
           )}
-
         </main>
       </div>
     </PageShell>

@@ -6,13 +6,16 @@ import Link from "next/link";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-export function SiteBreadcrumbs() {
+interface SiteBreadcrumbsProps {
+  customLastTitle?: string;
+}
+
+export function SiteBreadcrumbs({ customLastTitle }: SiteBreadcrumbsProps) {
   const pathname = usePathname();
   if (pathname === "/") return null;
 
@@ -22,12 +25,18 @@ export function SiteBreadcrumbs() {
     <Breadcrumb className="mb-6">
       <BreadcrumbList>
         <BreadcrumbItem>
-          <Link href="/" className="transition-colors hover:text-foreground text-muted-foreground">HOME</Link>
+          <Link href="/" className="transition-colors hover:text-foreground text-muted-foreground">
+            HOME
+          </Link>
         </BreadcrumbItem>
         {segments.map((segment, index) => {
           const isLast = index === segments.length - 1;
           const href = `/${segments.slice(0, index + 1).join("/")}`;
-          const title = segment.replace(/-/g, " ").toUpperCase();
+          
+          let title = segment.replace(/-/g, " ").toUpperCase();
+          if (isLast && customLastTitle) {
+            title = customLastTitle.toUpperCase();
+          }
 
           return (
             <React.Fragment key={href}>
@@ -36,7 +45,9 @@ export function SiteBreadcrumbs() {
                 {isLast ? (
                   <BreadcrumbPage>{title}</BreadcrumbPage>
                 ) : (
-                  <Link href={href} className="transition-colors hover:text-foreground text-muted-foreground">{title}</Link>
+                  <Link href={href} className="transition-colors hover:text-foreground text-muted-foreground">
+                    {title}
+                  </Link>
                 )}
               </BreadcrumbItem>
             </React.Fragment>

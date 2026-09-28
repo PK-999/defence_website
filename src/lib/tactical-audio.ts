@@ -63,6 +63,95 @@ export function playTacticalClick(): void {
   body.addEventListener("ended", () => { void context.close(); }, { once: true });
 }
 
+let sharedAudioContext: AudioContext | null = null;
+
+function getSharedAudioContext(): AudioContext | null {
+  if (typeof window === "undefined") return null;
+  const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  if (!AudioContextClass) return null;
+  try {
+    if (!sharedAudioContext || sharedAudioContext.state === "closed") {
+      sharedAudioContext = new AudioContextClass();
+    }
+    if (sharedAudioContext.state === "suspended") {
+      sharedAudioContext.resume().catch(() => {});
+    }
+    return sharedAudioContext;
+  } catch {
+    return null;
+  }
+}
+
+let lastMorseBeepTime = 0;
+
+/** Plays an authentic tactical telegraph morse tone */
+export function playMorseBeep(type: "dit" | "dah" = "dit"): void {
+  if (typeof window === "undefined" || isTacticalSoundMuted()) return;
+  const nowMs = Date.now();
+  // Throttle to avoid audio buffer saturation (min 35ms between beeps)
+  if (nowMs - lastMorseBeepTime < 35) return;
+  lastMorseBeepTime = nowMs;
+
+  const ctx = getSharedAudioContext();
+  if (!ctx || ctx.state !== "running") return;
+
+  try {
+    const now = ctx.currentTime;
+    const duration = type === "dit" ? 0.028 : 0.065;
+    const freq = type === "dit" ? 780 : 720;
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(freq, now);
+
+    // Smooth envelope to prevent audible clicks
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.linearRampToValueAtTime(0.045, now + 0.004);
+    gain.gain.setValueAtTime(0.045, now + duration - 0.006);
+    gain.gain.linearRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + duration);
+  } catch {
+    // Audio safe fallback
+  }
+}
+
+/** Plays a soft tactical lock-in chime when morse decryption completes */
+export function playDecryptionComplete(): void {
+  if (typeof window === "undefined" || isTacticalSoundMuted()) return;
+  const ctx = getSharedAudioContext();
+  if (!ctx || ctx.state !== "running") return;
+
+  try {
+    const now = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(880, now);
+    osc.frequency.exponentialRampToValueAtTime(1174.66, now + 0.07);
+
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.linearRampToValueAtTime(0.04, now + 0.008);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start(now);
+    osc.stop(now + 0.09);
+  } catch {
+    // Audio safe fallback
+  }
+}
+
 export function setTacticalSoundMuted(muted: boolean): void {
   if (typeof window !== "undefined") window.localStorage.setItem(SOUND_MUTED_KEY, String(muted));
 }
+
