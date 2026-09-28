@@ -3,7 +3,7 @@ import { prisma } from "@/lib/db";
 import { ForcesExplorer } from "@/components/ForcesExplorer";
 import { getForcesForService, getRenownedUnitsForService } from "./forcesData";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export default async function ForcesPage() {
   const allForces = getForcesForService("All");
