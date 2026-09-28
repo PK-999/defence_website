@@ -179,8 +179,12 @@ export function ForcesExplorer({
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-[10px] font-mono mt-1 text-muted-foreground">
-                      <span className="truncate max-w-[200px]">AOR: {cmd.coverage}</span>
-                      <span>{baseCount} {baseCount === 1 ? "Station" : "Stations"}</span>
+                      <span className="text-primary/90 font-mono">
+                        {Math.abs(cmd.hqCoordinates[0]).toFixed(2)}° N, {Math.abs(cmd.hqCoordinates[1]).toFixed(2)}° E
+                      </span>
+                      <span className="bg-black/50 px-1.5 py-0.5 rounded border border-border/40 text-[9px] text-foreground font-semibold">
+                        {baseCount} {baseCount === 1 ? "Station Mapped" : "Stations Mapped"}
+                      </span>
                     </div>
                   </button>
                 );
